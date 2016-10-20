@@ -1,0 +1,172 @@
+
+import React, { Component } from 'react';
+
+
+import {
+   Image,
+  View,
+  Text,
+  StyleSheet,
+  ViewPagerAndroid,
+  BackAndroid,
+  ScrollView,
+  TouchableOpacity,
+  Navigator,
+  TextInput,
+} from 'react-native';
+
+import t from 'tcomb-form-native';
+
+//navigation
+var _navigator;
+var Form =t.form.Form;
+var User = t.struct({
+  email: t.String,              // a required string
+  password:t.String,
+  //rememberMe: t.Boolean        // a boolean
+});
+var options = {
+   fields: {
+    password: {
+      password: true,
+      secureTextEntry: true,
+    },
+  }
+};
+BackAndroid.addEventListener('hardwareBackPress', function() {
+  if(_navigator == null){
+    return false;
+  }
+  if(_navigator.getCurrentRoutes().length === 1){
+    return false;
+  }
+  _navigator.pop();
+  return true;
+});
+
+
+
+
+var TraineeloginView = React.createClass({
+
+    getInitialState: function(){
+    _navigator = this.props.navigator;
+    return {
+
+    };
+  },
+   _login:function(){
+      var value = this.refs.form.getValue();
+      var email = value["email"];
+      var password=value["password"];
+      var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
+      // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+      url += '?email='+email+'&password='+password;
+      fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+          console.log(res);
+            if (res["data"]!=null) {
+              _navigator.push({
+                title:'ClientInfoView',
+                id:'clientinfo'
+              });
+          }else{
+          Alert.alert('Fail to login','Please check your password');  
+          }
+        });
+    },
+ render: function(){
+   return (
+          <ScrollView 
+        contentContainerStyle={{flex:1}}
+        keyboardDismissMode='on-drag'
+        keyboardShouldPersistTaps={false}
+      >
+        
+       <View style={styles.container}>
+          <View style={styles.Top}>
+           <Text style={styles.WelcomeText}>Welcome to traineetest</Text>
+          </View>
+       </View>
+       <View style={styles.maincontain}>
+             <Form 
+                ref="form"
+                type={User}
+                options={options}/>
+
+
+            <View style={styles.choose}>
+              <TouchableOpacity style={styles.btn}
+              onPress={() => _navigator.push({title:'MyworkView',id:'mywork'})}>
+              <Text style={styles.text}>login</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.btn}
+                onPress={() => _navigator.push({title:'traineeregister',id:'traineeregister'})}>
+              <Text style={styles.text}>Forget</Text>
+              </TouchableOpacity>
+            </View>
+        </View>
+      </ScrollView>
+       );
+  }
+
+});
+var styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: '#F4FCFF',
+  },
+  Top:{
+    height:50,
+    alignItems: 'center',
+    backgroundColor:'#f5f2f0',
+    justifyContent: 'center',
+  },
+  WelcomeText:{
+    fontWeight: 'bold',
+    fontSize: 18,
+    color: '#d7499a', 
+  },
+  maincontain:
+  {
+    flex: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    backgroundColor: '#F4FCFF',
+    justifyContent: 'center',
+  },
+   logo:{
+    width:160,
+    height:160,
+  },
+  choose:{
+    flexDirection:'row'
+  },
+   input: {
+   height: 40,
+   width:200,
+   marginTop: 10, //间隔
+   borderWidth: 1, 
+   borderRadius: 5, //圆角
+   borderColor: 'lightblue'
+  },
+  btn:{
+     alignSelf: 'stretch',
+     alignItems: 'center',
+     justifyContent: 'center',
+     backgroundColor: '#80b8e4',
+     height: 40,
+     borderRadius: 5,
+     width:100,
+     marginTop: 100,
+     marginLeft:20,
+  },
+  text:{
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#FFF'
+  },
+});
+
+module.exports = TraineeloginView;
