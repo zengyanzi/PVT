@@ -13,7 +13,8 @@ import {
   TouchableOpacity,
   Navigator,
   TextInput,
-  Alert
+  Alert,
+  AsyncStorage
 } from 'react-native';
 import t from 'tcomb-form-native';
 //navigation
@@ -61,11 +62,15 @@ var InstructloginView = React.createClass({
     var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
     // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
     url += '?email='+email+'&password='+password;
+
+
     fetch(url).then(function(response) {  
           return response.json();
         }).then(function(res) {
         console.log(res);
           if (res["data"]!=null) {
+              AsyncStorage.setItem("email",email);
+             AsyncStorage.setItem("password",password);
             _navigator.push({
               title:'ClientInfoView',
               id:'clientinfo'
@@ -75,6 +80,7 @@ var InstructloginView = React.createClass({
         }
       });
   },
+
   render: function(){
     return (
        <ScrollView 

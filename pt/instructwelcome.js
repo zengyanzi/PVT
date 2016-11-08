@@ -12,6 +12,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Navigator,
+  AsyncStorage
 } from 'react-native';
 
 //navigation
@@ -34,6 +35,10 @@ var InstructwelcomeView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
+    AsyncStorage.setItem("type","instructor");
+            var type = AsyncStorage.getItem('type',(err, result) => {
+                console.log(type);
+              });    
     return {
 
     };

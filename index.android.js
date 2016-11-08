@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,ScrollView,View,Text,Image,Navigator,TouchableOpacity,BackAndroid,StyleSheet
+  AppRegistry,ScrollView,View,Text,Image,Navigator,TouchableOpacity,BackAndroid,StyleSheet,AsyncStorage
 } from 'react-native';
 
 var _navigator;
@@ -20,12 +20,56 @@ import MyworkView from'./pt/mywork';
 import MysessionView from'./pt/mysession';
 import MyrecordView from'./pt/myrecord';
 import ClientInfoView from'./pt/clientinfo';
+import MyplanView from'./pt/myplan';
+
 
 export default class PTV extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {};
+          var type =  AsyncStorage.getItem('type');
+          type='instructor';
+          if (type!==null) {
+            if (type=="instructor") {
+              var email =  AsyncStorage.getItem('email');
+              email='test@abc.com'
+              var password=  AsyncStorage.getItem('password');
+              password='123456'
+              // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+              var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
+                      url += '?email='+email+'&password='+password;
+                      console.log(url);
+                      fetch(url).then(function(response) {  
+                            return response.json();
+                          }).then(function(res) {
+                          console.log(res);
+                            if (res["data"]!=null) {
+                              _navigator.push({
+                                title:'ClientInfoView',
+                                id:'clientinfo'
+                              });
+                            }
+                        });
+            }else{
+              var email =  AsyncStorage.getItem('email');
+              var password=  AsyncStorage.getItem('password');
+              var url = 'http://192.168.1.15:8080/pt_server/traineelogin.action';
+                      url += '?email='+email+'&password='+password;
+                      fetch(url).then(function(response) {  
+                            return response.json();
+                          }).then(function(res) {
+                          console.log(res);
+                            if (res["data"]!=null) {
+                              _navigator.push({
+                                title:'MyworkView',
+                                id:'mywork'
+                              });
+                            }
+                        });
+            }
+          };
+
     }
 
   configureScenceAndroid(){
@@ -128,11 +172,12 @@ export default class PTV extends React.Component {
         <MyrecordView navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'BarChartScreen'){
+    if(route.id === 'myplan'){
       return (
-        <BarChartScreen navigator={navigator} route={route}/>
+        <MyplanView navigator={navigator} route={route}/>
       );
     }
+
 
 
   }

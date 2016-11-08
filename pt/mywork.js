@@ -48,12 +48,12 @@ var MyworkView = React.createClass({
         
        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>My Workout</Text>
+           <Text style={styles.WelcomeText}>My Plan</Text>
           </View>
        </View>
 
        <View style={styles.maincontain}>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MysessionView',id:'mysession'})}>
+          <TouchableOpacity onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
             <Image 
                 source={require('../img/mywork.png')}
                 style={styles.choice}/>
@@ -63,7 +63,7 @@ var MyworkView = React.createClass({
                 source={require('../img/myrecord.png')}
                 style={styles.choice}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => _navigator.push({title:'BarChartScreen',id:'BarChartScreen'})}>
+          <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})}>
             <Image 
                 source={require('../img/mydiet.png')}
                 style={styles.choice}/>

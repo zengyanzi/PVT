@@ -10,7 +10,7 @@ import {LineChart} from 'react-native-mp-android-chart';
 
 class MydietView extends React.Component {
 
-  constructor() {
+constructor() {
     super();
 
     this.state = {

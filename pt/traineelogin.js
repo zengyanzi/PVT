@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   Navigator,
   TextInput,
+  Alert
 } from 'react-native';
 
 import t from 'tcomb-form-native';
@@ -59,7 +60,7 @@ var TraineeloginView = React.createClass({
       var value = this.refs.form.getValue();
       var email = value["email"];
       var password=value["password"];
-      var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
+      var url = 'http://192.168.1.15:8080/pt_server/traineelogin.action';
       // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
       url += '?email='+email+'&password='+password;
       fetch(url).then(function(response) {  
@@ -68,8 +69,8 @@ var TraineeloginView = React.createClass({
           console.log(res);
             if (res["data"]!=null) {
               _navigator.push({
-                title:'ClientInfoView',
-                id:'clientinfo'
+                title:'MyworkView',
+                id:'mywork'
               });
           }else{
           Alert.alert('Fail to login','Please check your password');  
@@ -98,7 +99,7 @@ var TraineeloginView = React.createClass({
 
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
-              onPress={() => _navigator.push({title:'MyworkView',id:'mywork'})}>
+              onPress={this._login}>
               <Text style={styles.text}>login</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}

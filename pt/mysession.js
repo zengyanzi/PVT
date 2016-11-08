@@ -57,8 +57,8 @@ var MysessionView = React.createClass({
 
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
-              <Text style={styles.sportname}>Weight Lifting</Text>
-              <Text style={styles.sportgoal}>20</Text>
+              <Text style={styles.sportname}>BB BENCH PRESS</Text>
+              <Text style={styles.sportgoal}>12.5</Text>
               <TextInput style={styles.sportact} placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
@@ -71,8 +71,8 @@ var MysessionView = React.createClass({
                 onDateChange={(date) => {this.setState({date: date});}}/>
           </View>
           <View style={styles.sportlist}>
-              <Text style={styles.sportname}>Weight Lifting</Text>
-              <Text style={styles.sportgoal}>20</Text>
+              <Text style={styles.sportname}>DB FLYS</Text>
+              <Text style={styles.sportgoal}>7</Text>
               <TextInput style={styles.sportact} placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
@@ -90,7 +90,7 @@ var MysessionView = React.createClass({
                 <Text style={styles.text}>Submit</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'MyworkView',id:'mywork'})}>
+                onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
                 <Text style={styles.text}>My plan</Text>
               </TouchableOpacity>
             </View>
