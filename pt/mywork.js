@@ -14,6 +14,7 @@ import {
   TextInput,
   TouchableOpacity,
   ListView,
+  AsyncStorage
 } from 'react-native';
 
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -37,7 +38,23 @@ var MyworkView = React.createClass({
 
     };
   },
+  _logout: function(){
+            _navigator.push({
+            title:'main',
+            id:'main'
+           });  
+      AsyncStorage.removeItem('type',(err,result)=>{
+        console.log(result);
+      });
 
+      AsyncStorage.removeItem('email',(err,result)=>{
+        console.log(result);
+      });
+      AsyncStorage.removeItem('password',(err,result)=>{
+        console.log(result);
+      
+      });
+  },
   
  render: function(){
    return (
@@ -77,8 +94,16 @@ var MyworkView = React.createClass({
             <Image 
                 source={require('../img/instruct.png')}
                 style={styles.choice}/>
-          </TouchableOpacity>            
+          </TouchableOpacity>
+          <View style={styles.choice}>
+              <TouchableOpacity style={styles.btn}
+              onPress={this._logout}>
+              <Text style={styles.text}>Logout</Text>
+          </TouchableOpacity>
+          </View>
         </View>
+
+
       </ScrollView>
        );
   }
@@ -134,8 +159,8 @@ var styles = StyleSheet.create({
      height: 40,
      borderRadius: 5,
      width:100,
-     marginTop: 100,
-     marginLeft:20,
+     marginLeft:10,
+     flexDirection:'row'
   },
 });
 

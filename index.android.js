@@ -43,7 +43,8 @@ export default class PTV extends React.Component {
                       AsyncStorage.getItem('password',(err,result)=>{
                       // console.log(result);
                       password=result;
-                      var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
+                          // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
+                            var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
                           url += '?email='+email+'&password='+password;
                           console.log(url);
                           fetch(url).then(function(response) {  
@@ -68,7 +69,8 @@ export default class PTV extends React.Component {
                       AsyncStorage.getItem('password',(err,result)=>{
                       // console.log(result);
                       password=result;
-                      var url = 'http://192.168.20.17:8080/pt_server/traineelogin.action';
+                      // var url = 'http://192.168.20.17:8080/pt_server/traineelogin.action';
+                      var url = 'http://192.168.1.15:8080/pt_server/traineelogin.action';
                           url += '?email='+email+'&password='+password;
                           console.log(url);
                           fetch(url).then(function(response) {  

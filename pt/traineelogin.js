@@ -13,7 +13,8 @@ import {
   TouchableOpacity,
   Navigator,
   TextInput,
-  Alert
+  Alert,
+  AsyncStorage
 } from 'react-native';
 
 import t from 'tcomb-form-native';
@@ -68,6 +69,8 @@ var TraineeloginView = React.createClass({
           }).then(function(res) {
           console.log(res);
             if (res["data"]!=null) {
+             AsyncStorage.setItem("email",email);
+             AsyncStorage.setItem("password",password);
               _navigator.push({
                 title:'MyworkView',
                 id:'mywork'

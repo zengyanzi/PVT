@@ -60,6 +60,9 @@ var InstructregisterView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
+   this.state={
+    date:''
+   };
     return {
 
     };
