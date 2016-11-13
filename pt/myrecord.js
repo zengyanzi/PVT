@@ -48,8 +48,8 @@ class MyrecordView extends React.Component {
       },
       data: {
         datasets: [{
-          yValues: [100, 105, 102, 110, 114, 109, 105, 99, 95],
-          label: 'Bar dataset',
+          yValues: [20, 80, 102, 101, 108, 80, 105, 89, 90],
+          label: 'Real practise',
           config: {
             color: 'teal',
             barSpacePercent: 40,
@@ -57,6 +57,16 @@ class MyrecordView extends React.Component {
             highlightAlpha: 90,
             highlightColor: 'red'
           }
+        },{
+          yValues: [80, 105, 102, 110, 114, 109, 105, 99, 95],
+          label: 'Sport goal',
+          config: {
+            color: 'green',
+            barSpacePercent: 40,
+            barShadowColor: 'green',
+            highlightAlpha: 90,
+            highlightColor: 'red'
+          }          
         }],
         xValues: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
       }

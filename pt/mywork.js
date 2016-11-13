@@ -80,7 +80,7 @@ var MyworkView = React.createClass({
                 source={require('../img/myrecord.png')}
                 style={styles.choice}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})}>
+          <TouchableOpacity onPress={() => _navigator.push({title:'MydietView',id:'mydiet'})}>
             <Image 
                 source={require('../img/mydiet.png')}
                 style={styles.choice}/>

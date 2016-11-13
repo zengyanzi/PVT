@@ -21,6 +21,7 @@ import MysessionView from'./pt/mysession';
 import MyrecordView from'./pt/myrecord';
 import ClientInfoView from'./pt/clientinfo';
 import MyplanView from'./pt/myplan';
+import MydietView from'./pt/mydiet';
 
 
 export default class PTV extends React.Component {
@@ -44,7 +45,7 @@ export default class PTV extends React.Component {
                       // console.log(result);
                       password=result;
                           // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
-                            var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+                          var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
                           url += '?email='+email+'&password='+password;
                           console.log(url);
                           fetch(url).then(function(response) {  
@@ -198,6 +199,11 @@ export default class PTV extends React.Component {
     if(route.id === 'myplan'){
       return (
         <MyplanView navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'mydiet'){
+      return (
+        <MydietView navigator={navigator} route={route}/>
       );
     }
 

@@ -62,7 +62,7 @@ var TraineeloginView = React.createClass({
       var email = value["email"];
       var password=value["password"];
       var url = 'http://192.168.1.15:8080/pt_server/traineelogin.action';
-      // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+      // var url = 'http://192.168.20.17:8080/pt_server/traineelogin.action';
       url += '?email='+email+'&password='+password;
       fetch(url).then(function(response) {  
             return response.json();

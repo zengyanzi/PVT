@@ -10,7 +10,9 @@ import {
     Text,
     BackAndroid,
     TouchableOpacity,
-    navigator
+    navigator,
+    ScrollView,
+    DatePickerAndroid
 } from 'react-native';
 var Dimensions = require('Dimensions');
 
@@ -33,12 +35,29 @@ class MyplanView extends Component {
 
         this.state = {};
          _navigator = this.props.navigator;
+        function format (d) {
+            return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+        }
+        var today =new Date();
+        var today_format = format(today);
+        console.log(today_format);//今天
+        var tomorrow = new Date(today.getTime() + 1000* 60 * 60 * 24);
+        var tomorrow_format = format(tomorrow);
+        console.log(tomorrow_format); 
+        var afttomorrow=new Date(today.getTime() + 1000* 60 * 60 * 24+1000* 60 * 60 * 24);
+        var afttomorrow_format=format(afttomorrow);
+        console.log(afttomorrow_format); 
         var data = {
             CHEST: ['BB BENCH PRESS:12.5', 'DB FLYS:7', 'INCLINE DB BENCH:12.5 '],
             BACK: ['CLOSE MACHINE ROW:6', 'REVERSE ASSISTED CHIN UPS:green ', 'WIDE LATTT PULLDOWN:80 '],
             lEGS: ['LEGS PRESS', 'KB STEP UPS',],
         };
-        var sectionIDs = ['CHEST','BACK','lEGS'];
+        var sectionIDs=[];
+        // var sectionIDs = ['CHEST','BACK','lEGS'];
+        for (var i = 0; i <=2; i++) {
+            today_format=new Date(today.getTime() + 1000* 60 * 60 * 24);
+           sectionIDs.push(today_format);
+        };
         var rowIDs = [[0,1,2],[0,1,2],[0,1]]
         var ds = new ListView.DataSource({
             getRowData: this.getRowData,
@@ -67,11 +86,13 @@ class MyplanView extends Component {
 
     renderHeader() {
         return (
+
             <View style={styles.header}>
-                <Text>
-                    HERR IS YOUR WORK PLAN
-                </Text>
+                    <Text>
+                        HERR IS YOUR WORK PLAN
+                    </Text>
             </View>
+
         );
     }
 
@@ -100,14 +121,13 @@ class MyplanView extends Component {
         return (
             <View style={styles.row}>
                <TouchableOpacity 
-                onPress={() => _navigator.push({title:'MysessionView',id:'mysession'})}>
+                onPress={this._record}>
                 <Text style={styles.text}> {rowData}</Text>
               </TouchableOpacity>
             </View>
 
         );
     }
-
 
 
     render() {
