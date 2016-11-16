@@ -33,8 +33,10 @@ class MyplanView extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+        };
          _navigator = this.props.navigator;
+
         function format (d) {
             return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
@@ -49,16 +51,18 @@ class MyplanView extends Component {
         console.log(afttomorrow_format); 
         var data = {
             CHEST: ['BB BENCH PRESS:12.5', 'DB FLYS:7', 'INCLINE DB BENCH:12.5 '],
-            BACK: ['CLOSE MACHINE ROW:6', 'REVERSE ASSISTED CHIN UPS:green ', 'WIDE LATTT PULLDOWN:80 '],
-            lEGS: ['LEGS PRESS', 'KB STEP UPS',],
+            BACK: ['CLOSE MACHINE ROW:6', 'REVERSE ASSISTED CHIN UPS:green ', 'WIDE LATT PULLDOWN:80 '],
+            lEGS: ['LEGS PRESS:120', 'KB STEP UPS:6',],
+            SHOULDERS: ['CABLE UPRIGHT ROW:60', 'MILITARY PRESS:30','FRONT RAISE:7'],
+            STOMACH: ['PRONE HOLD/PLANK:30', 'OPP ARM LEG EXTENSION:4','SB PRONE ROLL OUTS:BW'],
         };
-        var sectionIDs=[];
-        // var sectionIDs = ['CHEST','BACK','lEGS'];
-        for (var i = 0; i <=2; i++) {
-            today_format=new Date(today.getTime() + 1000* 60 * 60 * 24);
-           sectionIDs.push(today_format);
-        };
-        var rowIDs = [[0,1,2],[0,1,2],[0,1]]
+        // var sectionIDs=[];
+        var sectionIDs = ['CHEST','BACK','lEGS','SHOULDERS','STOMACH'];
+        // for (var i = 0; i <=2; i++) {
+        //     today_format=new Date(today.getTime() + 1000* 60 * 60 * 24);
+        //    sectionIDs.push(today_format);
+        // };
+        var rowIDs = [[0,1,2],[0,1,2],[0,1],[0,1,2],[0,1,2]]
         var ds = new ListView.DataSource({
             getRowData: this.getRowData,
             getSectionHeaderData: this.getSectionData,
@@ -66,10 +70,13 @@ class MyplanView extends Component {
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
 
+
+
         this.state = {
             dataSource: ds.cloneWithRowsAndSections(data, sectionIDs, rowIDs)
         };
     }
+
 
 
     getRowData(dataBlob, sectionID, rowID){
@@ -116,15 +123,30 @@ class MyplanView extends Component {
             </View>
         );
     }
-
-    renderRow(rowData, sectionID, rowID) {
+    // if (navigator) {
+    //     navigator.push({
+    //         title:'MysessionView',
+    //         id:'mysession',
+            
+    //     })
+    // };
+        // _pressRow: function(rowID: number) {
+        //     this.props.navigator.push({
+        //         title:'MysessionView',
+        //          id:'mysession',
+        //          passProps: {rowID: rowID}
+        //     });
+        // }
+    renderRow(rowData, sectionID, rowID,sectionData) {
         return (
-            <View style={styles.row}>
-               <TouchableOpacity 
-                onPress={this._record}>
-                <Text style={styles.text}> {rowData}</Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity  onPress={() => _navigator.push({title:sectionID,id:sectionID+rowID})}>
+                <View style={styles.row}>
+                   
+                   
+                    <Text style={styles.text}>{rowData}</Text>
+                 
+                </View>
+             </TouchableOpacity>
 
         );
     }
@@ -206,8 +228,12 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width:screenW,
-
-    }
+    },
+    text:{
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#091016'
+  },
 });
 
 

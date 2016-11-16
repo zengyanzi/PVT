@@ -31,7 +31,7 @@ var _navigator ;
 
 
 
-var MysessionView = React.createClass({
+var BACK = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -59,7 +59,7 @@ var MysessionView = React.createClass({
 
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
-              <Text style={styles.sportname} ></Text>
+              <Text style={styles.sportname} >BACK</Text>
               <Text style={styles.sportgoal}>12.5</Text>
               <TextInput style={styles.sportact} placeholder='record'/>
               <DatePicker
@@ -193,4 +193,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = MysessionView;
+module.exports = BACK;

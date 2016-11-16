@@ -21,7 +21,8 @@ import MysessionView from'./pt/mysession';
 import MyrecordView from'./pt/myrecord';
 import ClientInfoView from'./pt/clientinfo';
 import MyplanView from'./pt/myplan';
-import MydietView from'./pt/mydiet';
+import CHESTBB from'./pt/chestBB';
+import BACK from'./pt/BACK';
 
 
 export default class PTV extends React.Component {
@@ -45,7 +46,9 @@ export default class PTV extends React.Component {
                       // console.log(result);
                       password=result;
                           // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
-                          var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+                          // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
+                          var url = 'http://47.90.60.206:8080/pt_server/instructorlogin.action';
+                          
                           url += '?email='+email+'&password='+password;
                           console.log(url);
                           fetch(url).then(function(response) {  
@@ -71,7 +74,7 @@ export default class PTV extends React.Component {
                       // console.log(result);
                       password=result;
                       // var url = 'http://192.168.20.17:8080/pt_server/traineelogin.action';
-                      var url = 'http://192.168.1.15:8080/pt_server/traineelogin.action';
+                      var url = 'http://47.90.60.206:8080/pt_server/traineelogin.action';
                           url += '?email='+email+'&password='+password;
                           console.log(url);
                           fetch(url).then(function(response) {  
@@ -183,7 +186,7 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'mysession'){
       return (
-        <MysessionView navigator={navigator} route={route}/>
+        <MysessionView  navigator={navigator} route={route} />
       );
     }
     if(route.id === 'plan'){
@@ -201,12 +204,27 @@ export default class PTV extends React.Component {
         <MyplanView navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'mydiet'){
+
+    if(route.id === 'CHEST0'){
       return (
-        <MydietView navigator={navigator} route={route}/>
+        <CHESTBB navigator={navigator} route={route}/>
       );
     }
-
+    if(route.id === 'CHEST1'){
+      return (
+        <CHEST navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'CHEST2'){
+      return (
+        <CHEST navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'BACK'){
+      return (
+        <BACK navigator={navigator} route={route}/>
+      );
+    }
 
 
   }

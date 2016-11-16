@@ -67,12 +67,11 @@ var TraineeregisterView = React.createClass({
     var value = this.refs.form.getValue();
     var name = value["name"];
     var surname = value["surname"];
-    var birthday = this.state.date;
     var phone = value["phone"];
     var password = value["password"];
     var email = value["email"];
-    var url = 'http://192.168.20.17:8080/pt_server/traineeregister.action';
-    url += '?name='+name+'&surname='+surname+'&birthday='+birthday+'&email='+email+'&phone='+phone+'&password='+password;
+    var url = 'http://47.90.60.206:8080/pt_server/traineeregister.action';
+    url += '?name='+name+'&surname='+surname+'&email='+email+'&phone='+phone+'&password='+password;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -110,16 +109,6 @@ var TraineeregisterView = React.createClass({
                 ref="form"
                 type={Person}
                 options={options}/>
-              <Text style={styles.birthday}>Birthday</Text>
-              <DatePicker
-                style={styles.sportdate}
-                date={this.state.date}
-                mode="date"
-                placeholder="Date"
-                format="YYYY-MM-DD"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                onDateChange={(date) => {this.setState({date: date});}}/>
               <TouchableHighlight style={styles.button} onPress={this._register} underlayColor='#99d9f4'>
                 <Text style={styles.buttonText}>Save</Text>
               </TouchableHighlight>

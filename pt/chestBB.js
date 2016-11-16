@@ -13,6 +13,7 @@ import {
   Navigator,
   TextInput,
   TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 import DatePicker from './date.js';
 
@@ -31,18 +32,44 @@ var _navigator ;
 
 
 
-var MysessionView = React.createClass({
+var CHESTBB = React.createClass({
 
   getInitialState: function(){
-    _navigator = this.props.navigator;
-    this.state={
-      sport:null
+    _navigator = this.props.navigator;      
+    this.state = {
+
     };
+
     return {
 
     };
   },
 
+_submit: function(){
+      var day=this.state.date;
+      var sportType=this.state.sportType;
+      var sportsize=this.state.sportsize;
+      console.log(day);
+      console.log(this.state.sportType);
+      console.log(sportsize);
+      var url = 'http://47.90.60.206:8080/pt_server/addrecord.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?day='+day+'&sporttype='+sporttype+'&sportsize='+sportsize;
+      fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+          console.log(res);
+            if (res["data"]!=null) {
+
+              _navigator.push({
+                title:'MyworkView',
+                id:'mywork'
+              });
+          }else{
+          Alert.alert('Fail to record','Please check your data');  
+          }
+        });
+},
 
  render: function(){
        return (
@@ -59,9 +86,9 @@ var MysessionView = React.createClass({
 
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
-              <Text style={styles.sportname} ></Text>
+              <Text style={styles.sportname}>BB BENCH PRESS</Text>
               <Text style={styles.sportgoal}>12.5</Text>
-              <TextInput style={styles.sportact} placeholder='record'/>
+              <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
                 date={this.state.date}
@@ -72,23 +99,9 @@ var MysessionView = React.createClass({
                 cancelBtnText="Cancel"
                 onDateChange={(date) => {this.setState({date: date});}}/>
           </View>
-          <View style={styles.sportlist}>
-              <Text style={styles.sportname}>DB FLYS</Text>
-              <Text style={styles.sportgoal}>7</Text>
-              <TextInput style={styles.sportact} placeholder='record'/>
-              <DatePicker
-                style={styles.sportdate}
-                date={this.state.datetime}
-                mode="date"
-                placeholder="Date"
-                format="YYYY-MM-DD"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                onDateChange={(date) => {this.setState({datetime: date});}}/>
-          </View>
             <View style={styles.choose}>
              <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'MyworkView',id:'mywork'})}>
+                onPress={this._submit}>
                 <Text style={styles.text}>Submit</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
@@ -193,4 +206,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = MysessionView;
+module.exports = CHESTBB;

@@ -33,6 +33,18 @@ class MyrecordView extends React.Component {
 
   constructor() {
     super();
+        function format (d) {
+            return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+        }
+        var today =new Date();
+        var today_format = format(today);
+        console.log(today_format);//今天
+        var tomorrow = new Date(today.getTime() + 1000* 60 * 60 * 24);
+        var tomorrow_format = format(tomorrow);
+        console.log(tomorrow_format); 
+        var afttomorrow=new Date(today.getTime() + 1000* 60 * 60 * 24+1000* 60 * 60 * 24);
+        var afttomorrow_format=format(afttomorrow);
+        console.log(afttomorrow_format); 
 
     this.state = {
       legend: {
@@ -51,7 +63,7 @@ class MyrecordView extends React.Component {
           yValues: [20, 80, 102, 101, 108, 80, 105, 89, 90],
           label: 'Real practise',
           config: {
-            color: 'teal',
+            color: 'yellow',
             barSpacePercent: 40,
             barShadowColor: 'lightgrey',
             highlightAlpha: 90,
@@ -68,7 +80,7 @@ class MyrecordView extends React.Component {
             highlightColor: 'red'
           }          
         }],
-        xValues: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+        xValues: [today_format, tomorrow_format, afttomorrow_format, 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
       }
     };
   }
