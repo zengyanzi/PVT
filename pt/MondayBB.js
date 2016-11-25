@@ -32,7 +32,7 @@ var _navigator ;
 
 
 
-var CHESTBB = React.createClass({
+var MondayBB = React.createClass({
   //   constructor(props) {
   //   super(props);
   //   this.state = {
@@ -233,4 +233,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = CHESTBB;
+module.exports = MondayBB;

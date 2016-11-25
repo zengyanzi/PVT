@@ -32,7 +32,7 @@ var _navigator ;
 
 
 
-var CHESTBB = React.createClass({
+var STOMACHOP= React.createClass({
   //   constructor(props) {
   //   super(props);
   //   this.state = {
@@ -43,8 +43,9 @@ var CHESTBB = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator; 
+ 
       this.state = {
-        sporttype: "BB BENCH PRESS",
+        sporttype: "OPP ARM LEG EXTENSION",
         userid:null
       };
  
@@ -54,6 +55,8 @@ var CHESTBB = React.createClass({
         sporttype: this.state.sporttype,
     };
   },
+
+  
 
 _submit: function(){
       var day=this.state.date;
@@ -100,7 +103,7 @@ _submit: function(){
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
               <Text style={styles.sporttype}>{this.state.sporttype}</Text>
-              <Text style={styles.sportgoal}>12.5</Text>
+              <Text style={styles.sportgoal}>4</Text>
               <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
@@ -126,7 +129,7 @@ _submit: function(){
       </ScrollView>
        );
   },
-  componentDidMount() {
+componentDidMount() {
     let _that=this;
      AsyncStorage.getItem('userid',(err, result) => {
         console.log(result);
@@ -140,8 +143,9 @@ _submit: function(){
     });
 
 }
-
 });
+
+
 
 var styles = StyleSheet.create({
   container:{
@@ -178,7 +182,7 @@ var styles = StyleSheet.create({
 
   sporttype:{
     flex: 3,
-    height: 50,
+    height: 80,
     fontWeight: 'bold',
     fontSize: 18,
     color: '#d7499a', 
@@ -233,4 +237,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = CHESTBB;
+module.exports = STOMACHOP;

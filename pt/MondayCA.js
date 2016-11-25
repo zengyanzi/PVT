@@ -32,7 +32,7 @@ var _navigator ;
 
 
 
-var CHESTBB = React.createClass({
+var MondayCA = React.createClass({
   //   constructor(props) {
   //   super(props);
   //   this.state = {
@@ -44,7 +44,7 @@ var CHESTBB = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator; 
       this.state = {
-        sporttype: "BB BENCH PRESS",
+        sporttype: "CABLE UPRIGHT ROW",
         userid:null
       };
  
@@ -100,7 +100,7 @@ _submit: function(){
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
               <Text style={styles.sporttype}>{this.state.sporttype}</Text>
-              <Text style={styles.sportgoal}>12.5</Text>
+              <Text style={styles.sportgoal}>60</Text>
               <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
@@ -233,4 +233,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = CHESTBB;
+module.exports = MondayCA;

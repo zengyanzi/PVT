@@ -21,8 +21,28 @@ import MysessionView from'./pt/mysession';
 import MyrecordView from'./pt/myrecord';
 import ClientInfoView from'./pt/clientinfo';
 import MyplanView from'./pt/myplan';
+import AllplanView from'./pt/myplan';
+import MyhistoryView from'./pt/myhistory'
 import CHESTBB from'./pt/chestBB';
-import BACK from'./pt/BACK';
+import CHESTDB from'./pt/chestDB';
+import CHESTIN from'./pt/chestIN';
+import BACKCL from'./pt/backCL';
+import BACKWI from'./pt/backWI';
+import LEGSLE from'./pt/legsLE';
+import LEGSKB from'./pt/legsKB';
+import SHOULDERSCA from'./pt/shouldersCA';
+import SHOULDERSMI from'./pt/shouldersMI';
+import SHOULDERSFR from'./pt/shouldersFR';
+import STOMACHPR from'./pt/stomachPR';
+import STOMACHOP from'./pt/stomachOP';
+import BBhisotryView from './pt/BBhistory';
+import DBhisotryView from './pt/DBhistory';
+import TimetableView from './pt/timetable';
+import MondayView from './pt/Monday';
+import MondayBB from './pt/MondayBB';
+import MondayCA from './pt/MondayCA';
+
+ 
 
 
 export default class PTV extends React.Component {
@@ -181,7 +201,7 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'mywork'){
       return (
-        <MyworkView navigator={navigator} route={route}/>
+        <MyworkView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'mysession'){
@@ -201,7 +221,7 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'myplan'){
       return (
-        <MyplanView navigator={navigator} route={route}/>
+        <MyplanView {...route.params} navigator={navigator} route={route}/>
       );
     }
 
@@ -212,21 +232,103 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'CHEST1'){
       return (
-        <CHEST navigator={navigator} route={route}/>
+        <CHESTDB navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'CHEST2'){
       return (
-        <CHEST navigator={navigator} route={route}/>
+        <CHESTIN navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'BACK'){
+
+    if(route.id === 'BACK0'){
       return (
-        <BACK navigator={navigator} route={route}/>
+        <BACKCL navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'BACK2'){
+      return (
+        <BACKWI navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'lEGS0'){
+      return (
+        <LEGSLE navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'lEGS1'){
+      return (
+        <LEGSKB navigator={navigator} route={route}/>
       );
     }
 
-
+    if(route.id === 'SHOULDERS0'){
+      return (
+        <SHOULDERSCA navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'SHOULDERS1'){
+      return (
+        <SHOULDERSMI navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'SHOULDERS2'){
+      return (
+        <SHOULDERSFR navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'STOMACH0'){
+      return (
+        <STOMACHPR navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'STOMACH1'){
+      return (
+        <STOMACHOP navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'myhistory'){
+      return (
+        <MyhistoryView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'allmyplan'){
+      return (
+        <AllmyView navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'HCHEST0'){
+      return (
+        <BBhisotryView {...route.params} navigator={navigator} route={route}/>
+      );
+    }   
+    if(route.id === 'HCHEST1'){
+      return (
+        <DBhisotryView navigator={navigator} route={route}/>
+      );
+    } 
+    
+    if(route.id === 'timetable'){
+      return (
+        <TimetableView navigator={navigator} route={route}/>
+      );
+    } 
+    if(route.id === 'Monday'){
+      return (
+        <MondayView navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Monday0'){
+      return (
+        <MondayBB navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Monday1'){
+      return (
+        <MondayCA navigator={navigator} route={route}/>
+      );
+    }
+    
   }
 
  render(){

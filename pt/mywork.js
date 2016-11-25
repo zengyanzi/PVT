@@ -34,7 +34,11 @@ var MyworkView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
+    this.state={
+      author:"jenny"
+    };
     return {
+      author:this.state.author,
 
     };
   },
@@ -65,12 +69,12 @@ var MyworkView = React.createClass({
         
        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>My Plan</Text>
+           <Text style={styles.WelcomeText}>Keep record</Text>
           </View>
        </View>
 
        <View style={styles.maincontain}>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
+          <TouchableOpacity onPress={() => _navigator.push({title:'MyplanView',id:'myplan',params:{author:this.state.author}})}>
             <Image 
                 source={require('../img/mywork.png')}
                 style={styles.choice}/>

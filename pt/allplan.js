@@ -17,7 +17,8 @@ import {
 
 //navigation
 var _navigator;
-
+import InstructregisterView from'./instructregister';
+import InstructloginView from'./instructlogin';
 
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -30,18 +31,18 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   return true;
 });
 
-var MyplanView = React.createClass({
+var AllplanView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
-    this.state={
-      author:null
-    };
+    AsyncStorage.setItem("type",'instructor');
+            var type = AsyncStorage.getItem('type',(err, result) => {
+                console.log(result);
+              });    
     return {
-     author:this.state.author,
+
     };
   },
-
 
   render: function(){
     return (
@@ -53,29 +54,24 @@ var MyplanView = React.createClass({
         
        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>{this.state.author}</Text>
+           <Text style={styles.WelcomeText}>Check Plan</Text>
           </View>
        </View>
        <View style={styles.maincontain}>
 
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
-              onPress={() => _navigator.push({title:'Myhistoryview',id:'myhistory'})}>
+              onPress={() => _navigator.push({title:'InstructregisterView',id:'instructregister'})}>
               <Text style={styles.text}>My history</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
-             onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})}>
+             onPress={() => _navigator.push({title:'InstructloginView',id:'instructlogin'})}>
               <Text style={styles.text}>Check Schedule</Text>
               </TouchableOpacity>
             </View>
         </View>
       </ScrollView>
     );
-  },
-  componentDidMount() {
-    this.setState({
-      author:this.props.author,
-    });
   }
 });
 var styles = StyleSheet.create({
@@ -102,27 +98,29 @@ var styles = StyleSheet.create({
     backgroundColor: '#F4FCFF',
     justifyContent: 'center',
     alignItems: 'center',
-
   },
-
+   logo:{
+    width:160,
+    height:160,
+  },
+  choose:{
+    flexDirection:'row'
+  },
   btn:{
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#80b8e4',
-     height: 80,
+     height: 40,
      borderRadius: 5,
-     width:200,
-     marginTop: 10,
+     width:100,
+     marginTop: 100,
      marginLeft:20,
   },
   text:{
     fontWeight: 'bold',
     fontSize: 16,
-    color: '#FFF',
-    marginLeft:5,
-     alignItems: 'center',
-     justifyContent: 'center'
+    color: '#FFF'
   },
 });
 

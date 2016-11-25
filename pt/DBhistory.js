@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 
@@ -11,8 +10,7 @@ import {
   BackAndroid,
   navigator,
   Animated,
-  AsyncStorage,
-  Alert
+  AsyncStorage
 } from 'react-native';
 
 import {BarChart} from 'react-native-mp-android-chart';
@@ -31,7 +29,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 var _navigator ;
 
-class MyrecordView extends React.Component {
+class DBhisotryView extends React.Component {
 
   constructor() {
     super();
@@ -54,17 +52,16 @@ class MyrecordView extends React.Component {
         var day2_format=format(day2);
         var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
         var startday=format(day1);
-         
 
     this.state = {
       startday:startday,
       endday:endday,
-      userid:null,
+      type:null,
       legend: {
         enabled: true,
         textSize: 14,
         form: 'SQUARE',
-        formSize: 14, 
+        formSize: 14,
         xEntrySpace: 10,
         yEntrySpace: 5,
         formToTextSpace: 5,
@@ -73,8 +70,8 @@ class MyrecordView extends React.Component {
       },
       data: {
         datasets: [{
-          yValues: [0,2,3,4,5,6,7],
-          label: 'Real practise',
+          yValues: [12.5, 12.5, 12.5, 12.5, 12.5, 14, 14, 15, 15],
+          label: 'BB BENCH PRESS',
           config: {
             color: 'yellow',
             barSpacePercent: 40,
@@ -82,29 +79,14 @@ class MyrecordView extends React.Component {
             highlightAlpha: 90,
             highlightColor: 'red'
           }
-        },{
-          yValues: [0,2,3,4,5,6,7],
-          label: 'Sport goal',
-          config: {
-            color: 'green',
-            barSpacePercent: 40,
-            barShadowColor: 'green',
-            highlightAlpha: 90,
-            highlightColor: 'red'
-          }          
         }],
-        xValues: [startday,day2_format,day3_format,day4_format,day5_format,day6_format,endday]
-      },
-      urldata:null
+        xValues: [startday,day2_format,day3_format,day4_format,day5_format,day6_format,endday],
+      }
     };
-        console.log(this.state.urldata);
   }
 
-
   render() {
-
     return (
-
       <View style={styles.container}>
         <BarChart
           style={styles.chart}
@@ -115,24 +97,27 @@ class MyrecordView extends React.Component {
 
           drawBarShadow={false}
           drawValueAboveBar={true}
-          drawHighlightArrow={true}         
+          drawHighlightArrow={true}
         />
       </View>
     );
   }
-  componentDidMount() {
-      let _that=this;
+    componentDidMount() {
+      let _that=this;     
        AsyncStorage.getItem('userid',(err, result) => {
-          console.log(result);
+          console.log(result); 
         var userid=result;
+        var type='BB BENCH PRESS';
+        var sporttype=type.replace(/\s+/g,'%20');
         var startday=this.state.startday;
         var endday=this.state.endday;
         console.log(userid);
         console.log(startday);
+        console.log(type);
         console.log(endday);
-        var url = 'http://47.90.60.206:8080/pt_server/sportchart.action';
+        var url = 'http://47.90.60.206:8080/pt_server/sportsizechart.action';
           // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-          url += '?userid='+userid+'&start='+startday+'&end='+endday;
+          url += '?userid='+userid+'&start='+startday+'&end='+endday+'&sporttype='+sporttype;
           console.log(url);
           fetch(url).then(function(response) { 
                 return response.json();
@@ -144,8 +129,7 @@ class MyrecordView extends React.Component {
                     data: {
                       datasets: [{
                         yValues: res["data"]["record"],
-                        label: 'Real practise',
-                        label: 'Real practise',
+                        label: type,
                         config: {
                           color: 'yellow',
                           barSpacePercent: 40,
@@ -153,16 +137,6 @@ class MyrecordView extends React.Component {
                           highlightAlpha: 90,
                           highlightColor: 'red'
                         }
-                      },{
-                        yValues: res["data"]["plan"],
-                        label: 'Sport goal',
-                        config: {
-                          color: 'green',
-                          barSpacePercent: 40,
-                          barShadowColor: 'green',
-                          highlightAlpha: 90,
-                          highlightColor: 'red'
-                        }          
                       }],
                       xValues: res["data"]["date"]
                     }
@@ -187,4 +161,4 @@ const styles = StyleSheet.create({
     flex: 1
   }
 });
-export default MyrecordView;
+export default DBhisotryView;

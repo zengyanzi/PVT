@@ -32,7 +32,7 @@ var _navigator ;
 
 
 
-var CHESTBB = React.createClass({
+var CHESTIN= React.createClass({
   //   constructor(props) {
   //   super(props);
   //   this.state = {
@@ -43,8 +43,9 @@ var CHESTBB = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator; 
+ 
       this.state = {
-        sporttype: "BB BENCH PRESS",
+        sporttype: "INCLINE DB BENCH",
         userid:null
       };
  
@@ -54,6 +55,8 @@ var CHESTBB = React.createClass({
         sporttype: this.state.sporttype,
     };
   },
+
+  
 
 _submit: function(){
       var day=this.state.date;
@@ -126,7 +129,7 @@ _submit: function(){
       </ScrollView>
        );
   },
-  componentDidMount() {
+componentDidMount() {
     let _that=this;
      AsyncStorage.getItem('userid',(err, result) => {
         console.log(result);
@@ -140,8 +143,9 @@ _submit: function(){
     });
 
 }
-
 });
+
+
 
 var styles = StyleSheet.create({
   container:{
@@ -233,4 +237,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = CHESTBB;
+module.exports = CHESTIN;

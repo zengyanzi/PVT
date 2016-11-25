@@ -71,7 +71,7 @@ var TraineeloginView = React.createClass({
             if (res["data"]!=null) {
              AsyncStorage.setItem("email",email);
              AsyncStorage.setItem("password",password);
-             var userid=res['data']['id']
+             var userid=res['data']['id'].toString();
              AsyncStorage.setItem('userid',userid);
              console.log(userid);
 
