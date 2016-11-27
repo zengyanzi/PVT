@@ -49,11 +49,11 @@ class MyhistoryView extends Component {
         var afttomorrow_format=format(afttomorrow);
         console.log(afttomorrow_format); 
         var data = {
-            CHEST: ['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH '],
-            BACK: ['CLOSE MACHINE ROW:6', 'REVERSE ASSISTED CHIN UPS(not):green ', 'WIDE LATT PULLDOWN:80 '],
-            lEGS: ['LEGS PRESS:120', 'KB STEP UPS:6',],
-            SHOULDERS: ['CABLE UPRIGHT ROW:60', 'MILITARY PRESS:30','FRONT RAISE:7'],
-            STOMACH: ['PRONE HOLD/PLANK:30', 'OPP ARM LEG EXTENSION:4','SB PRONE ROLL OUTS(not):BW'],
+            CHEST: ['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH'],
+            BACK: ['CLOSE MACHINE ROW', 'REVERSE ASSISTED CHIN UPS', 'WIDE LATT PULLDOWN'],
+            lEGS: ['LEGS PRESS', 'KB STEP UPS',],
+            SHOULDERS: ['CABLE UPRIGHT ROW', 'MILITARY PRESS','FRONT RAISE'],
+            STOMACH: ['PRONE HOLD/PLANK', 'OPP ARM LEG EXTENSION','SB PRONE ROLL OUTS'],
         };
         // var sectionIDs=[];
         var sectionIDs = ['CHEST','BACK','lEGS','SHOULDERS','STOMACH'];
@@ -138,7 +138,7 @@ class MyhistoryView extends Component {
         // }
     renderRow(rowData, sectionID, rowID,sectionData) {
         return (
-            <TouchableOpacity  onPress={() => _navigator.push({title:sectionID,id:'H'+sectionID+rowID,params:{rowData:rowData}})}>
+            <TouchableOpacity  onPress={() => _navigator.push({title:'SinglehistoryView',id:'singlehistory',params:{rowData:rowData}})}>
                 <View style={styles.row}>
                    
                    

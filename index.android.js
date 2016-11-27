@@ -21,14 +21,13 @@ import MysessionView from'./pt/mysession';
 import MyrecordView from'./pt/myrecord';
 import ClientInfoView from'./pt/clientinfo';
 import MyplanView from'./pt/myplan';
-import AllplanView from'./pt/myplan';
 import MyhistoryView from'./pt/myhistory'
+import SinglehisotryView from'./pt/singlehistory';
 import BBhisotryView from './pt/BBhistory';
 import DBhisotryView from './pt/DBhistory';
 import TimetableView from './pt/timetable';
 import MondayView from './pt/Monday';
-import MondayBB from './pt/MondayBB';
-import MondayCA from './pt/MondayCA';
+
 
  
 
@@ -219,9 +218,9 @@ export default class PTV extends React.Component {
         <MyhistoryView {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'allmyplan'){
+    if(route.id === 'singlehistory'){
       return (
-        <AllmyView navigator={navigator} route={route}/>
+        <SinglehisotryView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'HCHEST0'){
@@ -245,16 +244,7 @@ export default class PTV extends React.Component {
         <MondayView navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'Monday0'){
-      return (
-        <MondayBB navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'Monday1'){
-      return (
-        <MondayCA navigator={navigator} route={route}/>
-      );
-    }
+
     
   }
 

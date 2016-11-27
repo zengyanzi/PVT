@@ -76,7 +76,7 @@ var MyworkView = React.createClass({
        <View style={styles.maincontain}>
           <TouchableOpacity onPress={() => _navigator.push({title:'MyplanView',id:'myplan',params:{author:this.state.author}})}>
             <Image 
-                source={require('../img/mywork.png')}
+                source={require('../img/myplan.png')}
                 style={styles.choice}/>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})}>
