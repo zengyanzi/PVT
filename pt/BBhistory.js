@@ -10,6 +10,7 @@ import {
   BackAndroid,
   navigator,
   Animated,
+  AsyncStorage
 } from 'react-native';
 
 import {BarChart} from 'react-native-mp-android-chart';
@@ -102,6 +103,7 @@ class BBhisotryView extends React.Component {
     );
   }
   componentDidMount() {
+        let _that=this;    
         function format (d) {
             return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
@@ -121,22 +123,52 @@ class BBhisotryView extends React.Component {
         var day2_format=format(day2);
         var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
         var startday=format(day1);
-    this.setState({
-            data: {
-        datasets: [{
-          yValues: [12.5, 12.5, 12.5, 12.5, 12.5, 14, 14, 15, 15],
-          label: this.props.rowData,
-          config: {
-            color: 'yellow',
-            barSpacePercent: 40,
-            barShadowColor: 'lightgrey',
-            highlightAlpha: 90,
-            highlightColor: 'red'
-          }
-        }],
-        xValues: [startday,day2_format,day3_format,day4_format,day5_format,day6_format,endday],
-      }
-    });
+
+       AsyncStorage.getItem('userid',(err, result) => {
+          console.log(result); 
+        var userid=result;
+        var type=this.props.rowData;
+        var sporttype=type.replace(/\s+/g,'%20');
+        console.log(userid);
+        console.log(type);
+        console.log(sporttype);
+        console.log(startday);
+        console.log(endday);
+        var url = 'http://47.90.60.206:8080/pt_server/sportsizechart.action';
+          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+          url += '?userid='+userid+'&start='+startday+'&end='+endday+'&sporttype='+sporttype;
+          console.log(url);
+          fetch(url).then(function(response) { 
+                return response.json();
+              }).then(function(res) {
+              console.log(res);
+                if (res["data"]!=null) {
+                  _that.setState(
+                  {
+                    data: {
+                      datasets: [{
+                        yValues: res["data"]["record"],
+                        label: type,
+                        config: {
+                          color: 'red',
+                          barSpacePercent: 40,
+                          barShadowColor: 'lightgrey',
+                          highlightAlpha: 90,
+                          highlightColor: 'red'
+                        }
+                      }],
+                      xValues: res["data"]["date"]
+                    }
+                  }
+                );
+                
+
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+              }
+        });
+      });
+
   }  
 }
 

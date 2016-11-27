@@ -23,18 +23,6 @@ import ClientInfoView from'./pt/clientinfo';
 import MyplanView from'./pt/myplan';
 import AllplanView from'./pt/myplan';
 import MyhistoryView from'./pt/myhistory'
-import CHESTBB from'./pt/chestBB';
-import CHESTDB from'./pt/chestDB';
-import CHESTIN from'./pt/chestIN';
-import BACKCL from'./pt/backCL';
-import BACKWI from'./pt/backWI';
-import LEGSLE from'./pt/legsLE';
-import LEGSKB from'./pt/legsKB';
-import SHOULDERSCA from'./pt/shouldersCA';
-import SHOULDERSMI from'./pt/shouldersMI';
-import SHOULDERSFR from'./pt/shouldersFR';
-import STOMACHPR from'./pt/stomachPR';
-import STOMACHOP from'./pt/stomachOP';
 import BBhisotryView from './pt/BBhistory';
 import DBhisotryView from './pt/DBhistory';
 import TimetableView from './pt/timetable';
@@ -206,7 +194,7 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'mysession'){
       return (
-        <MysessionView  navigator={navigator} route={route} />
+        <MysessionView {...route.params} navigator={navigator} route={route} />
       );
     }
     if(route.id === 'plan'){
@@ -225,68 +213,7 @@ export default class PTV extends React.Component {
       );
     }
 
-    if(route.id === 'CHEST0'){
-      return (
-        <CHESTBB navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'CHEST1'){
-      return (
-        <CHESTDB navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'CHEST2'){
-      return (
-        <CHESTIN navigator={navigator} route={route}/>
-      );
-    }
-
-    if(route.id === 'BACK0'){
-      return (
-        <BACKCL navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'BACK2'){
-      return (
-        <BACKWI navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'lEGS0'){
-      return (
-        <LEGSLE navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'lEGS1'){
-      return (
-        <LEGSKB navigator={navigator} route={route}/>
-      );
-    }
-
-    if(route.id === 'SHOULDERS0'){
-      return (
-        <SHOULDERSCA navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'SHOULDERS1'){
-      return (
-        <SHOULDERSMI navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'SHOULDERS2'){
-      return (
-        <SHOULDERSFR navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'STOMACH0'){
-      return (
-        <STOMACHPR navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'STOMACH1'){
-      return (
-        <STOMACHOP navigator={navigator} route={route}/>
-      );
-    }
+   
     if(route.id === 'myhistory'){
       return (
         <MyhistoryView {...route.params} navigator={navigator} route={route}/>
@@ -310,7 +237,7 @@ export default class PTV extends React.Component {
     
     if(route.id === 'timetable'){
       return (
-        <TimetableView navigator={navigator} route={route}/>
+        <TimetableView {...route.params} navigator={navigator} route={route}/>
       );
     } 
     if(route.id === 'Monday'){

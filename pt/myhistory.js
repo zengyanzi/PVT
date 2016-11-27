@@ -49,7 +49,7 @@ class MyhistoryView extends Component {
         var afttomorrow_format=format(afttomorrow);
         console.log(afttomorrow_format); 
         var data = {
-            CHEST: ['BB BENCH PRESS chest', 'DB FLYS', 'INCLINE DB BENCH '],
+            CHEST: ['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH '],
             BACK: ['CLOSE MACHINE ROW:6', 'REVERSE ASSISTED CHIN UPS(not):green ', 'WIDE LATT PULLDOWN:80 '],
             lEGS: ['LEGS PRESS:120', 'KB STEP UPS:6',],
             SHOULDERS: ['CABLE UPRIGHT ROW:60', 'MILITARY PRESS:30','FRONT RAISE:7'],

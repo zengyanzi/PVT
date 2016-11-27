@@ -139,7 +139,7 @@ class TimetableView extends Component {
         // }
     renderRow(rowData, sectionID, rowID,sectionData) {
         return (
-            <TouchableOpacity  onPress={() => _navigator.push({title:sectionID,id:sectionID})}>
+            <TouchableOpacity  onPress={() => _navigator.push({title:"MysessionView",id:"mysession",params:{rowData:rowData}})}>
                 <View style={styles.row}>
                    
                    
