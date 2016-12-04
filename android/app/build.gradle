@@ -96,6 +96,15 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+	
+	signingConfigs{
+		release {
+			storeFile file("D:/rn/PTV/my-release-key.keystore")
+			storePassword "123456"
+			keyAlias "my-key-alias"
+			keyPassword "123456"
+		}
+	}
     splits {
         abi {
             reset()
@@ -108,6 +117,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+			signingConfig signingConfigs.release //添加这句话引用签名配置
         }
     }
     // applicationVariants are e.g. debug, release

@@ -14,6 +14,7 @@ import {
   TextInput,
   TouchableOpacity,
   ListView,
+  PixelRatio,
   AsyncStorage
 } from 'react-native';
 
@@ -69,43 +70,42 @@ var MyworkView = React.createClass({
         
        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>Keep record</Text>
+           <Text style={styles.WelcomeText}>Welecome</Text>
+          </View>
+          <View style={[styles.row,styles.lineCenter]}>
+            <TouchableOpacity onPress={() => _navigator.push({title:'MyhistoryView',id:'myhistory'})} style={[styles.choose,styles.column]}>
+              <View style={styles.column}>  
+                <Text style={styles.BtnText}>My History</Text>
+              </View>
+            </TouchableOpacity>   
+            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Schedule</Text></View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
+              <View style={styles.column}><Text style={styles.BtnText}>My Diet</Text></View>
+            </TouchableOpacity>
+          </View>
+          <View style={[styles.row,styles.lineCenter]}>
+            <TouchableOpacity onPress={() => _navigator.push({title:'PlanView',id:'plan'})} style={[styles.choose,styles.column]}>
+              <View style={styles.column}><Text style={styles.BtnText}>Manage Plan</Text></View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Join Gym</Text></View>
+            </TouchableOpacity>
+            <View style={styles.column}><Text style={styles.BtnText}>Instructor</Text></View>
+          </View>
+          <View style={[styles.row,styles.lineCenter]}>
+            <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})} style={[styles.choose,styles.column]}>
+              <View style={styles.column}><Text style={styles.BtnText}>Sport Record</Text></View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>                       
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Diet Record</Text></View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>                       
+              <View style={styles.column}><Text style={styles.BtnText}>My profile</Text></View>
+            </TouchableOpacity>
           </View>
        </View>
-
-       <View style={styles.maincontain}>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MyplanView',id:'myplan',params:{author:this.state.author}})}>
-            <Image 
-                source={require('../img/myplan.png')}
-                style={styles.choice}/>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})}>
-            <Image 
-                source={require('../img/myrecord.png')}
-                style={styles.choice}/>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => _navigator.push({title:'MydietView',id:'mydiet'})}>
-            <Image 
-                source={require('../img/mydiet.png')}
-                style={styles.choice}/>
-          </TouchableOpacity> 
-           <TouchableOpacity onPress={() => _navigator.push({title:'BarChartScreen',id:'BarChartScreen'})}>
-            <Image 
-                source={require('../img/mygym.png')}
-                style={styles.choice}/>
-          </TouchableOpacity>   
-           <TouchableOpacity onPress={() => _navigator.push({title:'BarChartScreen',id:'BarChartScreen'})}>
-            <Image 
-                source={require('../img/instruct.png')}
-                style={styles.choice}/>
-          </TouchableOpacity>
-          <View style={styles.choice}>
-              <TouchableOpacity style={styles.btn}
-              onPress={this._logout}>
-              <Text style={styles.text}>Logout</Text>
-          </TouchableOpacity>
-          </View>
-        </View>
 
 
       </ScrollView>
@@ -130,19 +130,36 @@ var styles = StyleSheet.create({
     fontSize: 18,
     color: '#d7499a', 
   },
-
-  maincontain:
-  {
-    flex: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    backgroundColor: '#F4FCFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection:'column',
+  BtnText:{
+    fontWeight: 'bold',
+    fontSize: 22,
+    color: '#80b8e4',     
   },
-  choice:{
-    marginTop:10,
+  row:{
+    backgroundColor: '#F4FCFF',
+    alignItems: 'center',
+    flexDirection:'row',  
+    flex:1, 
+  },
+  lineCenter:{
+    borderWidth:1/PixelRatio.get(),
+    borderColor:'#d7499a',
+  },
+  lineLeftRight:{
+    borderLeftWidth:2/PixelRatio.get(),
+    borderRightWidth:2/PixelRatio.get(),
+    borderColor:'#d7499a',
+  },
+  column:{
+    backgroundColor: '#F4FCFF',
+    flexDirection:'row', 
+    alignItems: 'center',
+    justifyContent: 'center',
+    height:190,
+    flex:1,      
+  },
+  choose:{
+    flex:1
   },
   input: {
    height: 40,

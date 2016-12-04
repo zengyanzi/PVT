@@ -26,6 +26,7 @@ import SinglehisotryView from'./pt/singlehistory';
 import BBhisotryView from './pt/BBhistory';
 import DBhisotryView from './pt/DBhistory';
 import TimetableView from './pt/timetable';
+import PlanView from './pt/plan';
 import MondayView from './pt/Monday';
 
 
@@ -209,6 +210,11 @@ export default class PTV extends React.Component {
     if(route.id === 'myplan'){
       return (
         <MyplanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'plan'){
+      return (
+        <PlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
 
