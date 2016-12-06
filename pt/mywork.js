@@ -78,31 +78,31 @@ var MyworkView = React.createClass({
                 <Text style={styles.BtnText}>My History</Text>
               </View>
             </TouchableOpacity>   
-            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
-              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Schedule</Text></View>
+            <TouchableOpacity onPress={() => _navigator.push({title:'PlanView',id:'plan'})} style={[styles.choose,styles.column]}>
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Sport {'\n'}Schedule</Text></View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
-              <View style={styles.column}><Text style={styles.BtnText}>My Diet</Text></View>
+            <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})} style={[styles.choose,styles.column]}>
+              <View style={styles.column}><Text style={styles.BtnText}>Sport Record</Text></View>
             </TouchableOpacity>
           </View>
           <View style={[styles.row,styles.lineCenter]}>
             <TouchableOpacity onPress={() => _navigator.push({title:'PlanView',id:'plan'})} style={[styles.choose,styles.column]}>
-              <View style={styles.column}><Text style={styles.BtnText}>Manage Plan</Text></View>
+              <View style={styles.column}><Text style={styles.BtnText}>My Diet</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>
-              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Join Gym</Text></View>
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Diet Record</Text></View>
             </TouchableOpacity>
-            <View style={styles.column}><Text style={styles.BtnText}>Instructor</Text></View>
+            <View style={styles.column}><Text style={styles.BtnText}>My profile</Text></View>
           </View>
           <View style={[styles.row,styles.lineCenter]}>
             <TouchableOpacity onPress={() => _navigator.push({title:'MyrecordView',id:'myrecord'})} style={[styles.choose,styles.column]}>
-              <View style={styles.column}><Text style={styles.BtnText}>Sport Record</Text></View>
+              <View style={styles.column}><Text style={styles.BtnText}>Find Instructor</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>                       
-              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Diet Record</Text></View>
+              <View style={[styles.column,styles.lineLeftRight]}><Text style={styles.BtnText}>Join Gym</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => _navigator.push({title:'TimetableView',id:'timetable'})} style={[styles.choose,styles.column]}>                       
-              <View style={styles.column}><Text style={styles.BtnText}>My profile</Text></View>
+              <View style={styles.column}><Text style={styles.BtnText}>Setting</Text></View>
             </TouchableOpacity>
           </View>
        </View>
@@ -129,11 +129,14 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     color: '#d7499a', 
+
   },
   BtnText:{
     fontWeight: 'bold',
     fontSize: 22,
-    color: '#80b8e4',     
+    color: '#80b8e4',  
+    justifyContent: 'center',  
+    alignItems: 'center',     
   },
   row:{
     backgroundColor: '#F4FCFF',

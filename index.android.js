@@ -28,6 +28,7 @@ import DBhisotryView from './pt/DBhistory';
 import TimetableView from './pt/timetable';
 import PlanView from './pt/plan';
 import MondayView from './pt/Monday';
+import EditplanView from './pt/editplan';
 
 
  
@@ -154,37 +155,37 @@ export default class PTV extends React.Component {
 
     if(route.id === 'instructwelcome'){
       return (
-        <InstructwelcomeView navigator={navigator} route={route} />
+        <InstructwelcomeView {...route.params} navigator={navigator} route={route} />
        );
     }
     if(route.id === 'instructlogin'){
       return (
-        <InstructloginView navigator={navigator} route={route} />
+        <InstructloginView {...route.params} navigator={navigator} route={route} />
        );
     }
     if(route.id === 'instructregister'){
       return (
-        <InstructregisterView navigator={navigator} route={route} />
+        <InstructregisterView {...route.params} navigator={navigator} route={route} />
        );
     }
     if(route.id === 'traineewelcome'){
       return (
-        <TraineewelcomeView navigator={navigator} route={route}/>
+        <TraineewelcomeView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'traineeregister'){
       return (
-        <TraineeregisterView navigator={navigator} route={route}/>
+        <TraineeregisterView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'traineelogin'){
       return (
-        <TraineeloginView navigator={navigator} route={route}/>
+        <TraineeloginView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if (route.id ==='clientinfo') {
       return(
-        <ClientInfoView navigator={navigator} route={route}/>
+        <ClientInfoView {...route.params} navigator={navigator} route={route}/>
         );
     }
     if(route.id === 'mywork'){
@@ -199,12 +200,12 @@ export default class PTV extends React.Component {
     }
     if(route.id === 'plan'){
       return (
-        <PlanView navigator={navigator} route={route}/>
+        <PlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'myrecord'){
       return (
-        <MyrecordView navigator={navigator} route={route}/>
+        <MyrecordView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'myplan'){
@@ -236,7 +237,7 @@ export default class PTV extends React.Component {
     }   
     if(route.id === 'HCHEST1'){
       return (
-        <DBhisotryView navigator={navigator} route={route}/>
+        <DBhisotryView {...route.params} navigator={navigator} route={route}/>
       );
     } 
     
@@ -247,7 +248,12 @@ export default class PTV extends React.Component {
     } 
     if(route.id === 'Monday'){
       return (
-        <MondayView navigator={navigator} route={route}/>
+        <MondayView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'editplan'){
+      return (
+        <EditplanView {...route.params} navigator={navigator} route={route}/>
       );
     }
 

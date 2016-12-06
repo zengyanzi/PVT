@@ -108,8 +108,12 @@ _submit: function(){
                 <Text style={styles.text}>Submit</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
+                onPress={() => _navigator.push({title:'EditplanView',id:'editplan'})}>
+                <Text style={styles.text}>Edit</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.btn}
                 onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
-                <Text style={styles.text}>My plan</Text>
+                <Text style={styles.text}>Delete</Text>
               </TouchableOpacity>
             </View>
         </View>

@@ -33,8 +33,6 @@ class TimetableView extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-        };
          _navigator = this.props.navigator;
 
         function format (d) {
