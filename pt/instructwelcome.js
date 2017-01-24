@@ -53,12 +53,10 @@ var InstructwelcomeView = React.createClass({
       >
         
        <View style={styles.container}>
-          <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>Hello Instructor</Text>
-          </View>
+ 
        </View>
        <View style={styles.maincontain}>
-         <Image source={require('../img/logo.png')} />
+         <Image source={require('../img/welcomeinstruct.png')} style={{width: 280, height: 140}}  />
 
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
@@ -78,12 +76,12 @@ var InstructwelcomeView = React.createClass({
 var styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
   },
   Top:{
     height:50,
     alignItems: 'center',
-    backgroundColor:'#f5f2f0',
+    backgroundColor:'#38bda0',
     justifyContent: 'center',
   },
   WelcomeText:{
@@ -96,7 +94,7 @@ var styles = StyleSheet.create({
     flex: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -111,10 +109,10 @@ var styles = StyleSheet.create({
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#80b8e4',
-     height: 40,
+     backgroundColor: '#2cb395',
+     height: 50,
      borderRadius: 5,
-     width:100,
+     width:140,
      marginTop: 100,
      marginLeft:20,
   },

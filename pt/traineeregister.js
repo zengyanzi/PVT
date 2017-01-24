@@ -18,8 +18,12 @@ import t from 'tcomb-form-native';
 import DatePicker from './date.js';
 
 var Form =t.form.Form;
+var _ = require('lodash');
 var _navigator ;
-
+const stylesheet = _.cloneDeep(t.form.Form.stylesheet);
+t.form.Form.stylesheet.controlLabel.normal.color = '#ffffff';
+t.form.Form.stylesheet.textbox.normal.color = '#2cb395';
+t.form.Form.stylesheet.textbox.normal.backgroundColor = '#ecf0f1';
 var Person = t.struct({
   Name: t.String,              // a required string
   surname: t.maybe(t.String),  // an optional string
@@ -34,7 +38,8 @@ var options = {
     password: {
       password: true,
       secureTextEntry: true,
-    }
+    },
+
   }
 }; // optional rendering options (see documentation)
 
@@ -121,12 +126,12 @@ var TraineeregisterView = React.createClass({
 var styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
   },
   Top:{
     height:50,
     alignItems: 'center',
-    backgroundColor:'#f5f2f0',
+    backgroundColor:'#38bda0',
     justifyContent: 'center',
   },
   WelcomeText:{
@@ -139,7 +144,7 @@ var styles = StyleSheet.create({
     flex: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
     justifyContent: 'center',
  },
   birthday:{
@@ -163,13 +168,18 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 36,
-    backgroundColor: '#d7499a',
-    borderColor: '#48BBEC',
+    backgroundColor: '#2cb395',
+    borderColor: '#2cb395',
     borderWidth: 1,
     borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
     justifyContent: 'center'
+  },
+  formstyle:{
+
+    borderRadius: 8,
+    borderColor: '#2cb395',
   },
 });
 

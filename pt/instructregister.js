@@ -131,7 +131,7 @@ var styles = StyleSheet.create({
   Top:{
     height:50,
     alignItems: 'center',
-    backgroundColor:'#f5f2f0',
+    backgroundColor:'#38bda0',
     justifyContent: 'center',
   },
   WelcomeText:{
@@ -146,7 +146,7 @@ var styles = StyleSheet.create({
     flex: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
     justifyContent: 'center',
  },
  birthday:{
@@ -170,8 +170,8 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 36,
-    backgroundColor: '#d7499a',
-    borderColor: '#48BBEC',
+    backgroundColor: '#2cb395',
+    borderColor: '#2cb395',
     borderWidth: 1,
     borderRadius: 8,
     marginBottom: 10,

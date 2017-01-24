@@ -16,20 +16,7 @@ import InstructloginView from'./pt/instructlogin';
 import TraineewelcomeView from './pt/traineewelcome';
 import TraineeloginView from'./pt/traineelogin';
 import TraineeregisterView from'./pt/traineeregister';
-import MyworkView from'./pt/mywork';
-import MysessionView from'./pt/mysession';
-import MyrecordView from'./pt/myrecord';
-import ClientInfoView from'./pt/clientinfo';
-import MyplanView from'./pt/myplan';
-import MyhistoryView from'./pt/myhistory'
-import SinglehisotryView from'./pt/singlehistory';
-import BBhisotryView from './pt/BBhistory';
-import DBhisotryView from './pt/DBhistory';
-import TimetableView from './pt/timetable';
-import PlanView from './pt/plan';
-import MondayView from './pt/Monday';
-import EditplanView from './pt/editplan';
-
+import ThomeView from './pt/Thome';
 
  
 
@@ -92,8 +79,8 @@ export default class PTV extends React.Component {
                                 console.log(res);
                                   if (res["data"]!=null) {
                                     _navigator.push({
-                                      title:'MyworkView',
-                                      id:'mywork'
+                                      title:'ThomeView',
+                                      id:'Thome'
                                     });
                                   }
                                 });
@@ -131,12 +118,10 @@ export default class PTV extends React.Component {
       >
         
        <View style={styles.container}>
-          <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>Welcome to Virtual PT</Text>
-          </View>
+
        </View>
        <View style={styles.maincontain}>
-        <Image source={require('./img/logo.png')} />
+        <Image source={require('./img/ptv.png')} style={{width: 280, height: 140}}/>
 
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
@@ -183,79 +168,20 @@ export default class PTV extends React.Component {
         <TraineeloginView {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if (route.id ==='clientinfo') {
-      return(
-        <ClientInfoView {...route.params} navigator={navigator} route={route}/>
-        );
-    }
-    if(route.id === 'mywork'){
-      return (
-        <MyworkView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'mysession'){
-      return (
-        <MysessionView {...route.params} navigator={navigator} route={route} />
-      );
-    }
-    if(route.id === 'plan'){
-      return (
-        <PlanView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'myrecord'){
-      return (
-        <MyrecordView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'myplan'){
-      return (
-        <MyplanView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
+
+
     if(route.id === 'plan'){
       return (
         <PlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
 
-   
-    if(route.id === 'myhistory'){
+    if(route.id === 'Thome'){
       return (
-        <MyhistoryView {...route.params} navigator={navigator} route={route}/>
+        <ThomeView {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'singlehistory'){
-      return (
-        <SinglehisotryView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'HCHEST0'){
-      return (
-        <BBhisotryView {...route.params} navigator={navigator} route={route}/>
-      );
-    }   
-    if(route.id === 'HCHEST1'){
-      return (
-        <DBhisotryView {...route.params} navigator={navigator} route={route}/>
-      );
-    } 
-    
-    if(route.id === 'timetable'){
-      return (
-        <TimetableView {...route.params} navigator={navigator} route={route}/>
-      );
-    } 
-    if(route.id === 'Monday'){
-      return (
-        <MondayView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'editplan'){
-      return (
-        <EditplanView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
+
 
     
   }
@@ -276,7 +202,7 @@ export default class PTV extends React.Component {
 var styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
   },
   Top:{
     height:50,
@@ -294,7 +220,7 @@ var styles = StyleSheet.create({
     flex: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -309,10 +235,10 @@ var styles = StyleSheet.create({
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#80b8e4',
-     height: 40,
+     backgroundColor: '#2cb395',
+     height: 50,
      borderRadius: 5,
-     width:120,
+     width:140,
      marginTop: 100,
      marginLeft:20,
   },

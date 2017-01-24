@@ -13,7 +13,8 @@ import {
   Navigator,
   TextInput,
   TouchableOpacity,
-  AsyncStorage
+  AsyncStorage,
+  Picker
 } from 'react-native';
 import DatePicker from './date.js';
 
@@ -32,7 +33,7 @@ var _navigator ;
 
 
 
-var MysessionView = React.createClass({
+var MydietView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -82,15 +83,25 @@ _submit: function(){
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps={false}>
         
-       <View style={styles.container}>
+        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>My session</Text>
-          </View>
+           <Text style={styles.WelcomeText}>My daily diet</Text>
+            </View>
        </View>
 
        <View style={styles.maincontain}>
           <View style={styles.sportlist}>
-              <Text style={styles.sportname}>{this.state.sportname}</Text>
+              <Picker style={styles.sportact}
+              prompt="Please choose sportclass"
+              style={{width:200}}
+              selectedValue={this.state.sportclass}
+              onValueChange={(value) => this.setState({sportclass: value})}>
+              <Picker.Item label="Breakfast" value="Breakfast"/>
+              <Picker.Item label="Lunch" value="Lunch" />
+              <Picker.Item label="Dinner" value="Dinner" />
+              <Picker.Item label="Snack" value="Snack" />
+
+          </Picker>
               <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
               <DatePicker
                 style={styles.sportdate}
@@ -109,11 +120,11 @@ _submit: function(){
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
                 onPress={() => _navigator.push({title:'EditplanView',id:'editplan'})}>
-                <Text style={styles.text}>Edit my plan</Text>
+                <Text style={styles.text}>Edit my diet</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
                 onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
-                <Text style={styles.text}>Delete my plan</Text>
+                <Text style={styles.text}>Delete my diet</Text>
               </TouchableOpacity>
             </View>
         </View>
@@ -228,4 +239,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = MysessionView;
+module.exports = MydietView;
