@@ -22,6 +22,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 
+import rows from './plandata';
 
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -42,15 +43,63 @@ var PlanView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
-
+    var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+    var Pdate="Monday";
+    var rowIDs = [];
     this.state = {
+      dataSource: ds.cloneWithRows(rows),
+      scrollEnabled: true,
 
     };
     return {
+      dataSource: this.state.dataSource,
+      scrollEnabled: true,
+
     };
 
   },
+//  set scrolling to true/false
+  allowScroll(scrollEnabled) {
+    this.setState({ scrollEnabled: scrollEnabled });
+  },
 
+  //  set active swipeout item
+  handleSwipeout(sectionID,rowID) {
+    for (var i = 0; i < rows.length; i++) {
+
+      if (i != rowID) rows[i].active = false;
+      else rows[i].active = true;
+    }
+    this.updateDataSource(rows);
+  },
+
+  updateDataSource(data) {
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(data),
+    });
+  },
+
+
+  renderRow(rowData: string, sectionID: number, rowID: number) {
+    return (
+      <Swipeout
+        left={rowData.left}
+        right={rowData.right}
+        rowID={rowID}
+        sectionID={sectionID}
+        autoClose={rowData.autoClose}
+        backgroundColor={rowData.backgroundColor}
+        close={!rowData.active}
+        onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
+        scroll={event => this.allowScroll(event)}>
+        <View style={styles.li}>
+          <View ><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
+          
+          <Text style={styles.liText}>Calories: {rowData.Calories} {rowData.text}</Text>
+        </View>
+      </Swipeout>
+    );
+  },
 
 
  render: function(){
@@ -72,10 +121,14 @@ var PlanView = React.createClass({
               </View>
             </View>
 
-
+            <ListView style={styles.listview}
+              scrollEnabled={this.state.scrollEnabled}
+              dataSource={this.state.dataSource}
+              renderRow={this.renderRow}
+              />
                   
 
-          </View>
+            </View>
         </ScrollView>
         );
 
@@ -118,45 +171,29 @@ var styles = StyleSheet.create({
   },
   maincontain:
   {
-    flex: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
+    flex: 1,
     backgroundColor: '#38bda0',
-    alignItems: 'center',
     flexDirection:'column',
 
   },
-
-  choose:{
-    flexDirection:'row'
+  listview: {
+    flex: 1,
   },
-  input: {
-   height: 40,
-   width:200,
-   borderWidth: 1, 
-   borderRadius: 5, //圆角
-   borderColor: 'lightblue'
+  li: {
+    backgroundColor: '#fff',
+    borderBottomColor: '#38bda0',
+    borderColor: 'transparent',
+    borderWidth: 1,
+    paddingLeft: 16,
+    paddingTop: 14,
+    paddingBottom: 16,
   },
-  btn:{
-     alignSelf: 'stretch',
-     alignItems: 'center',
-     justifyContent: 'center',
-     backgroundColor: '#80b8e4',
-     height: 40,
-     borderRadius: 5,
-     width:200,
-     marginTop:20,
+  liContainer: {
+    flex: 2,
   },
-    buttonstyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 150,
-        height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        backgroundColor: '#06c1ae',
-        marginBottom: 5,
-    },
-
+  liText: {
+    color: '#333',
+    fontSize: 16,
+  },
 });
 module.exports = PlanView;

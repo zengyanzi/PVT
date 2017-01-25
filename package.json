@@ -12,6 +12,7 @@
     "react-native-dropdown": "0.0.6",
     "react-native-mp-android-chart": "^0.1.1",
     "react-native-swipe-left": "^0.1.2",
+    "react-native-swipeable": "^0.3.2",
     "react-native-swipeout": "^2.0.12",
     "react-native-tab-navigator": "^0.3.3"
   },

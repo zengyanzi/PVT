@@ -20,6 +20,9 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 import Dimensions from 'Dimensions';
 import PlanView from './plan.js';
+import SwipeoutExample from './SwipeoutExample.js';
+import SwipeableExample from './swipeable-example.js'
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -51,16 +54,8 @@ var ThomeView = React.createClass({
   },
 
  render: function(){ 
-    var RecordView =(
-      <View style={styles.container}>
-        <Text>check the record</Text>
-      </View>    
-    );
-    var GymView =(
-      <View style={styles.container}>
-        <Text>join a gym </Text>
-      </View>    
-    );
+ 
+
     var TrainerView =(
       <View style={styles.container}>
         <Text>find your trainer here</Text>
@@ -93,7 +88,7 @@ var ThomeView = React.createClass({
               onPress={() => this.setState({ selectedTab: 'Record' })}       
               >
 
-               {RecordView}
+             <SwipeoutExample {...this.props}/>
           </TabNavigator.Item>
           <TabNavigator.Item
               selected={this.state.selectedTab === 'Gym'}
@@ -102,8 +97,8 @@ var ThomeView = React.createClass({
               renderSelectedIcon={() => <Image  source={require('../img/gym_pressed.png') }/>}
               onPress={() => this.setState({ selectedTab: 'Gym' })}       
               >
-
-               {GymView}
+              <SwipeableExample {...this.props}/>
+              
           </TabNavigator.Item>
           <TabNavigator.Item
               selected={this.state.selectedTab === 'Trainer'}
