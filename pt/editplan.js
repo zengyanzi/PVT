@@ -17,7 +17,11 @@ import {
   Picker,
   ListView
 } from 'react-native';
+
+var Slider = require('react-native-slider');
+import Dimensions from 'Dimensions';
 import DatePicker from './date.js';
+var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -30,69 +34,45 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 
 var _navigator ;
-var EditplanView = React.createClass({
+
+
+var EditPlanView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
-   var grouptype = {};
-    grouptype['CHEST']=['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH'];
-    grouptype['BACK']=['CLOSE MACHINE ROW', 'REVERSE ASSISTED CHIN UPS', 'WIDE LATT PULLDOWN'];
-    grouptype['lEGS']=['LEGS PRESS', 'KB STEP UPS','Other'];
-    grouptype['SHOULDERS']=['CABLE UPRIGHT ROW', 'MILITARY PRESS','FRONT RAISE'];
-    grouptype['STOMACH']=['PRONE HOLD/PLANK', 'OPP ARM LEG EXTENSION','SB PRONE ROLL OUTS'];
-    this.state={
-      author:null,
-      grouptype:grouptype,
-      sportclass: 'CHEST',
-      sporttype:null,
+
+    this.state = {
+    value: 0.2,
+
     };
     return {
-      author:this.state.author,
-      sportclass:this.state.sportclass,
-      sporttype:this.state.sporttype,
-      grouptype:this.state.grouptype,
+     value: 0.2,
+
     };
+
   },
 
-  render: function(){
-    return (
-      <ScrollView 
-        contentContainerStyle={{flex:1}}
-        keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}
-      >
-        
-       <View style={styles.container}>
-          <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>My session</Text>
-          </View>
-       </View>
-       <View style={styles.maincontain}>
-          <Picker style={styles.sportact}
-              prompt="Please choose sportclass"
-              style={{width:200}}
-              selectedValue={this.state.sportclass}
-              onValueChange={(value) => this.setState({sportclass: value})}>
-              <Picker.Item label="CHEST" value="CHEST"/>
-              <Picker.Item label="BACK" value="BACK" />
-              <Picker.Item label="lEGS" value="lEGS" />
-              <Picker.Item label="SHOULDERS" value="SHOULDERS" />
-              <Picker.Item label="STOMACH" value="STOMACH" />
-          </Picker>
-
-          <Picker style={styles.sportact}
-              prompt="Please choose sporttype"
-              style={{width:200}}
-              selectedValue={this.state.sporttype}
-              onValueChange={(value) => this.setState({sporttype: value})}>
-              <Picker.Item label={this.state.grouptype[this.state.sportclass][0]} value={this.state.grouptype[this.state.sportclass][0]} />
-              <Picker.Item label={this.state.grouptype[this.state.sportclass][1]} value={this.state.grouptype[this.state.sportclass][1]} />
-              <Picker.Item label={this.state.grouptype[this.state.sportclass][2]} value={this.state.grouptype[this.state.sportclass][2]} />
-          </Picker>
-           <View style={styles.sportact}>
-            <TextInput  onChangeText={(text) => this.setState({sportsize: text})}   keyboardType="numeric" placeholder='Target'/>
-           </View> 
-          <DatePicker
+ render: function(){
+      return(
+        <ScrollView 
+            contentContainerStyle={{flex:1}}
+            keyboardDismissMode='on-drag'
+            keyboardShouldPersistTaps={false}>
+          <View style={styles.maincontain}>
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                <Image source={require('../img/setting_normal.png') }/>
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              <View style={[styles.Topbar,styles.Right]}>
+                <Image source={require('../img/add_pressed.png') }/>
+              </View>
+            </View>
+            <View>
+              <Text>Please Choose the Date</Text>
+              <DatePicker
                 style={styles.sportact}
                 date={this.state.date}
                 mode="date"
@@ -101,87 +81,98 @@ var EditplanView = React.createClass({
                 confirmBtnText="Confirm"
                 cancelBtnText="Cancel"
                 onDateChange={(date) => {this.setState({date: date});}}/>
-            <View style={styles.choose}>
-                 <TouchableOpacity style={styles.btn}
-                     onPress={this._submit}>
-                    <Text style={styles.text}>Submit</Text>
-                  </TouchableOpacity>
             </View>
+            <View>
+               <Picker 
+                  prompt="Please choose sportclass"
+                  style={{width:200}}
+                  selectedValue={this.state.sportclass}
+                  onValueChange={(value) => this.setState({sportclass: value})}>
+                  <Picker.Item label="CHEST" value="CHEST"/>
+                  <Picker.Item label="BACK" value="BACK" />
+                  <Picker.Item label="lEGS" value="lEGS" />
+                  <Picker.Item label="SHOULDERS" value="SHOULDERS" />
+                  <Picker.Item label="STOMACH" value="STOMACH" />
+              </Picker>
+            </View>
+            <View>
+              <Slider
+                value={this.state.value}
+                onValueChange={(value) => this.setState({value})} />
+              <Text>Value: {this.state.value}</Text>
+            </View>
+            <View>
+              <TouchableOpacity style={styles.btn}
+              onPress={this._login}>
+              <Text style={styles.text}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+        );
 
-        </View>
-      </ScrollView>
-    );
   },
-  componentDidMount() {
-    this.setState({
-      author:this.props.author,
-    });
-  }
+
 });
+
 var styles = StyleSheet.create({
-  container:{
+   container:{
     flex: 1,
-    backgroundColor: '#F4FCFF',
+    backgroundColor: '#38bda0',
     justifyContent: 'center',
   },
   Top:{
+    flexDirection: 'row',
     height:50,
     alignItems: 'center',
-    backgroundColor:'#f5f2f0',
+    backgroundColor:'#38bda0',
     justifyContent: 'center',
   },
-
-  WelcomeText:{
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#d7499a', 
-
+  Bottomline:{
+    borderBottomWidth:2,
+    borderColor:'gray'
   },
 
+  Topbar:{
+    flex:1,
+    alignItems: 'center',
+
+  },
+  Left:{
+    position: 'absolute', 
+    top: 5, 
+    left: 5
+  },
+  Right:{
+    position: 'absolute', 
+    top: 5, 
+    right: 5,
+  },
   maincontain:
   {
-    flex: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    backgroundColor: '#F4FCFF',
-    alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#38bda0',
     flexDirection:'column',
 
   },
-
-  choose:{
-    flexDirection:'row',
-    height:50,
-    width:200,
+  listview: {
+    flex: 1,
   },
-  btn:{
-     alignSelf: 'stretch',
-     alignItems: 'center',
-     justifyContent: 'center',
-     backgroundColor: '#80b8e4',
-     height: 50,
-     borderRadius: 5,
-     width:200,
-     marginTop: 20,
+  li: {
+    backgroundColor: '#fff',
+    borderBottomColor: '#38bda0',
+    borderColor: 'transparent',
+    borderWidth: 1,
+    paddingLeft: 16,
+    paddingTop: 14,
+    paddingBottom: 16,
   },
-  sportact:{
-    marginTop:20,
-    height:50,
-    width:200,
+  liContainer: {
+    flex: 2,
   },
-  sportdate:{
-    marginTop:20,
-    height:50,
-    width:200
-  },
-  text:{
-    fontWeight: 'bold',
+  liText: {
+    color: '#333',
     fontSize: 16,
-    color: '#FFF',
-    marginLeft:5,
-    alignItems: 'center',
-    justifyContent: 'center'
   },
 });
-
-module.exports = EditplanView;
+module.exports = EditPlanView;

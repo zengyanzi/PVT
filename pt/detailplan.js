@@ -22,9 +22,6 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 
-
-import rows from './plandata';
-
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -38,17 +35,52 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 
 var _navigator ;
+ var btnsDefault = [ { text: 'Button' } ];
+
+  var btnsTypes = [
+      { text: 'Edit', onPress: function(){ _navigator.push({
+                title:'EditplanView',
+                id:'editplan'
+              })},type: 'primary',},
+        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
+        { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
+  ];
+  var detailrows = [
+    {
+       Calories :"457",
+       text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
+       right: btnsTypes,
+      autoClose: true,
+    }, {
+
+      Calories :"457",
+       text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
+      right: btnsTypes,
+      autoClose: true,
+    }, {
+
+        Calories :"457",
+        text: "Upper Back 18,29 30-60 sec 1 1",
+      right: btnsTypes,
+      autoClose: true,
+    }, {
+
+      Calories :"457",
+      text: "Bike Fast  3min  Moderate  15  60Sec",
+      right:btnsTypes,
+    },
+    
+  ];
 
 
-var PlanView = React.createClass({
+
+var DetailPlanView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    var Pdate="Monday";
-    var rowIDs = [];
     this.state = {
-      dataSource: ds.cloneWithRows(rows),
+      dataSource: ds.cloneWithRows(detailrows),
       scrollEnabled: true,
 
     };
@@ -66,12 +98,12 @@ var PlanView = React.createClass({
 
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
-    for (var i = 0; i < rows.length; i++) {
+    for (var i = 0; i < detailrows.length; i++) {
 
-      if (i != rowID) rows[i].active = false;
-      else rows[i].active = true;
+      if (i != rowID) detailrows[i].active = false;
+      else detailrows[i].active = true;
     }
-    this.updateDataSource(rows);
+    this.updateDataSource(detailrows);
   },
 
   updateDataSource(data) {
@@ -93,19 +125,20 @@ var PlanView = React.createClass({
         close={!rowData.active}
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
-        <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan'})}>
-          <View style={styles.li}>
-            <View ><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
-            
-              <Text style={styles.liText}>Calories:{rowData.Calories} {rowData.text}</Text>
-            
-          </View>
-        </TouchableOpacity>
+        <View style={styles.li}>
+              <Text style={styles.liText}>{rowData.text}Calories: {rowData.Calories}</Text>        
+        </View>
       </Swipeout>
     );
   },
 
+
+_editplan:function(){
+     _navigator.push({
+      title:'TraineeloinView',
+      id:'traineelogin'
+    })
+   },
 
  render: function(){
       return(
@@ -124,6 +157,11 @@ var PlanView = React.createClass({
               <View style={[styles.Topbar,styles.Right]}>
                 <Image source={require('../img/add_pressed.png') }/>
               </View>
+            </View>
+            <View style={[styles.header,styles.Bottomline]}>
+              <Image  source={require('../img/plan_normal.png') }/>
+              <Text>Monday</Text>
+              <Text>Total Calories: 2800</Text>
             </View>
 
             <ListView style={styles.listview}
@@ -181,6 +219,15 @@ var styles = StyleSheet.create({
     flexDirection:'column',
 
   },
+  header:{
+
+    flexDirection: 'row',
+    height:50,
+    alignItems: 'center',
+    backgroundColor:'#fff',
+    justifyContent: 'center',
+
+  },
   listview: {
     flex: 1,
   },
@@ -199,6 +246,7 @@ var styles = StyleSheet.create({
   liText: {
     color: '#333',
     fontSize: 16,
+    height:50,
   },
 });
-module.exports = PlanView;
+module.exports = DetailPlanView;

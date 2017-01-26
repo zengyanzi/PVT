@@ -17,7 +17,8 @@ import TraineewelcomeView from './pt/traineewelcome';
 import TraineeloginView from'./pt/traineelogin';
 import TraineeregisterView from'./pt/traineeregister';
 import ThomeView from './pt/Thome';
-
+import DetailPlanView from './pt/detailplan';
+import EditPlanView from './pt/editplan';
  
 
 
@@ -181,7 +182,16 @@ export default class PTV extends React.Component {
         <ThomeView {...route.params} navigator={navigator} route={route}/>
       );
     }
-
+    if(route.id === 'detailplan'){
+      return (
+        <DetailPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'editplan'){
+      return (
+        <EditPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
 
     
   }
