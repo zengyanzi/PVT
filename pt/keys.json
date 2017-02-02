@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Monday",
+    "checked": true
+  },
+  {
+    "name": "Tuesday",
+    "checked": true
+  },
+  {
+    "name": "Wednesday",
+    "checked": true
+  },
+  {
+    "name": "Thursday",
+    "checked": false
+  },
+  {
+    "name": "Friday",
+    "checked": false
+  },
+  {
+    "name": " Saturday",
+    "checked": false
+  },
+  {
+    "name": " Sunday",
+    "checked": false
+  }
+]

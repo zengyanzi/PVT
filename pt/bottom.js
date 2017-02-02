@@ -22,8 +22,6 @@ import Dimensions from 'Dimensions';
 import PlanView from './plan.js';
 import SwipeoutExample from './SwipeoutExample.js';
 import SwipeableExample from './swipeable-example.js'
-import Topview from './top.js';
-import RecordView from './record.js'
 
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -39,13 +37,13 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 var _navigator ;
 
-var ThomeView = React.createClass({
+var BottomView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
 
     this.state = {
-      selectedTab: 'Plan',
+      selectedTab: '',
 
     };
     return {
@@ -56,7 +54,9 @@ var ThomeView = React.createClass({
   },
 
  render: function(){ 
-     var TrainerView =(
+ 
+
+    var TrainerView =(
       <View style={styles.container}>
         <Text>find your trainer here</Text>
       </View>    
@@ -73,10 +73,7 @@ var ThomeView = React.createClass({
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
               <View style={styles.maincontain}>
-                <View>
-                  <Topview {...this.props}/>
-                </View>
-                <TabNavigator
+               <TabNavigator
                 tabBarStyle={{ height: 60 }}
                 >
                 <TabNavigator.Item
@@ -97,7 +94,7 @@ var ThomeView = React.createClass({
                     onPress={() => this.setState({ selectedTab: 'Record' })}       
                     >
 
-                   <RecordView {...this.props}/>
+                   <SwipeoutExample {...this.props}/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'Gym'}
@@ -184,9 +181,6 @@ var styles = StyleSheet.create({
 
   },
 
-  choose:{
-    flexDirection:'row'
-  },
 });
 
-module.exports = ThomeView;
+module.exports = BottomView;

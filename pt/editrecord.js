@@ -37,7 +37,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 var _navigator ;
 
 
-var EditPlanView = React.createClass({
+var EditRecordView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -210,4 +210,4 @@ var styles = StyleSheet.create({
   },
 
 });
-module.exports = EditPlanView;
+module.exports = EditRecordView;

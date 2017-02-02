@@ -22,7 +22,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import Topview from './top.js';
-import BottomView from './bottom.js'
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -75,7 +75,7 @@ var _navigator ;
 
 
 
-var DetailPlanView = React.createClass({
+var PlanInfoView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -143,30 +143,24 @@ _editplan:function(){
 
  render: function(){
       return(
-         <ScrollView 
+        <ScrollView 
             contentContainerStyle={{flex:1}}
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
             <View>
-              <Topview {...this.props}/>
+            <Topview {...this.props}/>
             </View>
             <View style={[styles.header,styles.Bottomline]}>
-              <Image  source={require('../img/plan_normal.png') }/>
-              <Text>Monday</Text>
+              <Text style={{fontSize:20}}>Full Body Workout</Text>
               <Text>Total Calories: 2800</Text>
             </View>
 
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}
-              renderRow={this.renderRow}
-              />
-            <View>
-            <BottomView {...this.props}/>
-            </View>     
-
-            </View>
+              renderRow={this.renderRow}/>
+          </View>
         </ScrollView>
         );
 
@@ -224,7 +218,7 @@ var styles = StyleSheet.create({
 
   },
   listview: {
-    flex: 1,
+    flex: 3,
   },
   li: {
     backgroundColor: '#fff',
@@ -244,4 +238,4 @@ var styles = StyleSheet.create({
     height:50,
   },
 });
-module.exports = DetailPlanView;
+module.exports = PlanInfoView;

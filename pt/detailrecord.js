@@ -40,8 +40,8 @@ var _navigator ;
 
   var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan'
+                title:'EditRecordView',
+                id:'editrecord'
               })},type: 'primary',},
         { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
         { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
@@ -75,7 +75,7 @@ var _navigator ;
 
 
 
-var DetailPlanView = React.createClass({
+var DetailRecordView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -244,4 +244,4 @@ var styles = StyleSheet.create({
     height:50,
   },
 });
-module.exports = DetailPlanView;
+module.exports = DetailRecordView;

@@ -21,8 +21,7 @@ import {
 
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import Topview from './top.js';
-import BottomView from './bottom.js'
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -39,43 +38,62 @@ var _navigator ;
  var btnsDefault = [ { text: 'Button' } ];
 
   var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan'
+      { text: 'Detail', onPress: function(){ _navigator.push({
+                title:'PlanInfoView',
+                id:'planinfo'
               })},type: 'primary',},
-        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
-        { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
+        { text: 'Choose',onPress: function(){ alert('confirm to Choose?') },type:'secondary'},
+      
   ];
   var detailrows = [
-    {
-       Calories :"457",
-       text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-       right: btnsTypes,
-      autoClose: true,
-    }, {
+  {
 
-      Calories :"457",
-       text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-      right: btnsTypes,
-      autoClose: true,
-    }, {
+     Calories :"957",
+     text: "Full Body Workout",
+     right:btnsTypes,
+    autoClose: true,
+  }, {
 
-        Calories :"457",
-        text: "Upper Back 18,29 30-60 sec 1 1",
-      right: btnsTypes,
-      autoClose: true,
-    }, {
+    Calories :"1457",
+    text: "Strength,Shape,Tone",
+    right:btnsTypes,
+    autoClose: true,
+  }, {
+    Calories :"1657",
+    text: "Mixed Cadio",
+    right:btnsTypes,
+    autoClose: true,
+  }, {
+    Calories :"1257",
+    text: "Tone Shape",
+    right:btnsTypes,
+  },
+   {
+    Calories :"1257",
+    text: "Tone Shape",
+    right:btnsTypes,
+  },
+   {
+    Calories :"1257",
+    text: "Tone Shape",
+    right:btnsTypes,
+  },
+   {
+    Calories :"1257",
+    text: "Tone Shape",
+    right:btnsTypes,
+  },
+   {
+    Calories :"1257",
+    text: "Tone Shape",
+    right:btnsTypes,
+  },
 
-      Calories :"457",
-      text: "Bike Fast  3min  Moderate  15  60Sec",
-      right:btnsTypes,
-    },
-    
   ];
 
 
 
-var DetailPlanView = React.createClass({
+var PlanCreateView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -148,25 +166,14 @@ _editplan:function(){
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
-            </View>
-            <View style={[styles.header,styles.Bottomline]}>
-              <Image  source={require('../img/plan_normal.png') }/>
-              <Text>Monday</Text>
-              <Text>Total Calories: 2800</Text>
-            </View>
-
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}
+              initialListSize={6}
               renderRow={this.renderRow}
               />
-            <View>
-            <BottomView {...this.props}/>
-            </View>     
+          </View>
 
-            </View>
         </ScrollView>
         );
 
@@ -223,6 +230,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
+
   listview: {
     flex: 1,
   },
@@ -231,17 +239,16 @@ var styles = StyleSheet.create({
     borderBottomColor: '#38bda0',
     borderColor: 'transparent',
     borderWidth: 1,
-    paddingLeft: 16,
-    paddingTop: 14,
-    paddingBottom: 16,
+    paddingLeft:5,
+    paddingTop: 5,
+    paddingBottom:5,
   },
   liContainer: {
-    flex: 2,
+    flex: 1,
   },
   liText: {
     color: '#333',
-    fontSize: 16,
-    height:50,
+    fontSize: 18,
   },
 });
-module.exports = DetailPlanView;
+module.exports = PlanCreateView;

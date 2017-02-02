@@ -21,8 +21,7 @@ import {
 
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import Topview from './top.js';
-import BottomView from './bottom.js'
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -36,52 +35,55 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 
 var _navigator ;
- var btnsDefault = [ { text: 'Button' } ];
+
+var btnsDefault = [ { text: 'Button' } ];
 
   var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan'
+                title:'EditRecordView',
+                id:'editrecord'
               })},type: 'primary',},
-        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
         { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
   ];
-  var detailrows = [
-    {
-       Calories :"457",
-       text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-       right: btnsTypes,
-      autoClose: true,
-    }, {
 
+var rows = [
+  {
+     Pdate:"Monday",
+     Calories :"457",
+     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+
+    right:btnsTypes,
+    autoClose: true,
+  }, {
+    Pdate:"Sunday",
+    Calories :"457",
+     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+    autoClose: true,
+  }, {
+      Pdate:"Friday",
       Calories :"457",
-       text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-      right: btnsTypes,
-      autoClose: true,
-    }, {
+      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+    autoClose: true,
+  }, {
+    Pdate:"Tuesday",
+    Calories :"457",
+    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+  },
+  
+];
 
-        Calories :"457",
-        text: "Upper Back 18,29 30-60 sec 1 1",
-      right: btnsTypes,
-      autoClose: true,
-    }, {
-
-      Calories :"457",
-      text: "Bike Fast  3min  Moderate  15  60Sec",
-      right:btnsTypes,
-    },
-    
-  ];
-
-
-
-var DetailPlanView = React.createClass({
+var RecordView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+    var Pdate="Monday";
+    var rowIDs = [];
     this.state = {
-      dataSource: ds.cloneWithRows(detailrows),
+      dataSource: ds.cloneWithRows(rows),
       scrollEnabled: true,
 
     };
@@ -99,12 +101,12 @@ var DetailPlanView = React.createClass({
 
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
-    for (var i = 0; i < detailrows.length; i++) {
+    for (var i = 0; i < rows.length; i++) {
 
-      if (i != rowID) detailrows[i].active = false;
-      else detailrows[i].active = true;
+      if (i != rowID) rows[i].active = false;
+      else rows[i].active = true;
     }
-    this.updateDataSource(detailrows);
+    this.updateDataSource(rows);
   },
 
   updateDataSource(data) {
@@ -126,20 +128,19 @@ var DetailPlanView = React.createClass({
         close={!rowData.active}
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
-        <View style={styles.li}>
-              <Text style={styles.liText}>{rowData.text}Calories: {rowData.Calories}</Text>        
-        </View>
+        <TouchableOpacity style={styles.btn}
+                onPress={() => _navigator.push({title:'DetailRecordView',id:'detailrecord'})}>
+          <View style={styles.li}>
+            <View  style={styles.lidate}><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
+            
+              <Text style={styles.liText}>Calories:{rowData.Calories} {rowData.text}</Text>
+            
+          </View>
+        </TouchableOpacity>
       </Swipeout>
     );
   },
 
-
-_editplan:function(){
-     _navigator.push({
-      title:'TraineeloinView',
-      id:'traineelogin'
-    })
-   },
 
  render: function(){
       return(
@@ -147,26 +148,16 @@ _editplan:function(){
             contentContainerStyle={{flex:1}}
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
-          <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
-            </View>
-            <View style={[styles.header,styles.Bottomline]}>
-              <Image  source={require('../img/plan_normal.png') }/>
-              <Text>Monday</Text>
-              <Text>Total Calories: 2800</Text>
-            </View>
+   
 
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}
               renderRow={this.renderRow}
               />
-            <View>
-            <BottomView {...this.props}/>
-            </View>     
+                  
 
-            </View>
+           
         </ScrollView>
         );
 
@@ -214,15 +205,6 @@ var styles = StyleSheet.create({
     flexDirection:'column',
 
   },
-  header:{
-
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#fff',
-    justifyContent: 'center',
-
-  },
   listview: {
     flex: 1,
   },
@@ -233,6 +215,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 16,
     paddingTop: 14,
+    height:120,
     paddingBottom: 16,
   },
   liContainer: {
@@ -240,8 +223,12 @@ var styles = StyleSheet.create({
   },
   liText: {
     color: '#333',
-    fontSize: 16,
-    height:50,
+    fontSize: 18,
+  },
+  lidate:{
+    flex: 1,
+    flexDirection:'row',
+    alignItems: 'center',
   },
 });
-module.exports = DetailPlanView;
+module.exports = RecordView;

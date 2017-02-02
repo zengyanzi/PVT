@@ -19,8 +19,10 @@ import TraineeregisterView from'./pt/traineeregister';
 import ThomeView from './pt/Thome';
 import DetailPlanView from './pt/detailplan';
 import EditPlanView from './pt/editplan';
- 
-
+import CreateplanView from './pt/createplan';
+import PlanInfoView from './pt/planinfo';
+import EditRecordView from './pt/editrecord';
+import DetailRecordView from './pt/detailrecord';
 
 export default class PTV extends React.Component {
 
@@ -190,6 +192,26 @@ export default class PTV extends React.Component {
     if(route.id === 'editplan'){
       return (
         <EditPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'createplan'){
+      return (
+        <CreateplanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'planinfo'){
+      return (
+        <PlanInfoView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'editrecord'){
+      return (
+        <EditRecordView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'detailrecord'){
+      return (
+        <DetailRecordView {...route.params} navigator={navigator} route={route}/>
       );
     }
 

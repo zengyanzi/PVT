@@ -9,8 +9,11 @@
   "dependencies": {
     "react": "15.3.2",
     "react-native": "0.35.0",
+    "react-native-check-box": "^1.0.4",
+    "react-native-checkbox": "^1.1.0",
     "react-native-dropdown": "0.0.6",
     "react-native-mp-android-chart": "^0.1.1",
+    "react-native-simple-radio-button": "^2.4.0",
     "react-native-slider": "^0.9.1",
     "react-native-swipe-left": "^0.1.2",
     "react-native-swipeable": "^0.3.2",

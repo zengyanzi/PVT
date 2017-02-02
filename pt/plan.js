@@ -22,9 +22,6 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 
-
-import rows from './plandata';
-
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -39,6 +36,44 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 var _navigator ;
 
+var btnsDefault = [ { text: 'Button' } ];
+
+  var btnsTypes = [
+      { text: 'Edit', onPress: function(){ _navigator.push({
+                title:'EditplanView',
+                id:'editplan'
+              })},type: 'primary',},
+        { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
+  ];
+
+var rows = [
+  {
+     Pdate:"Monday",
+     Calories :"457",
+     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+
+    right:btnsTypes,
+    autoClose: true,
+  }, {
+    Pdate:"Sunday",
+    Calories :"457",
+     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+    autoClose: true,
+  }, {
+      Pdate:"Friday",
+      Calories :"457",
+      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+    autoClose: true,
+  }, {
+    Pdate:"Tuesday",
+    Calories :"457",
+    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
+     right:btnsTypes,
+  },
+  
+];
 
 var PlanView = React.createClass({
 
@@ -96,7 +131,7 @@ var PlanView = React.createClass({
         <TouchableOpacity style={styles.btn}
                 onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan'})}>
           <View style={styles.li}>
-            <View ><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
+            <View  style={styles.lidate}><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
             
               <Text style={styles.liText}>Calories:{rowData.Calories} {rowData.text}</Text>
             
@@ -113,18 +148,7 @@ var PlanView = React.createClass({
             contentContainerStyle={{flex:1}}
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
-          <View style={styles.maincontain}>
-            <View style={[styles.Top,styles.Bottomline]}>
-              <View style={[styles.Topbar,styles.Left]}>
-                <Image source={require('../img/setting_normal.png') }/>
-              </View>
-              <View style={styles.Topbar}>
-                <Image source={require('../img/ptv_sized.png') }/>
-              </View>
-              <View style={[styles.Topbar,styles.Right]}>
-                <Image source={require('../img/add_pressed.png') }/>
-              </View>
-            </View>
+   
 
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
@@ -133,7 +157,7 @@ var PlanView = React.createClass({
               />
                   
 
-            </View>
+           
         </ScrollView>
         );
 
@@ -191,6 +215,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 16,
     paddingTop: 14,
+    height:120,
     paddingBottom: 16,
   },
   liContainer: {
@@ -198,7 +223,12 @@ var styles = StyleSheet.create({
   },
   liText: {
     color: '#333',
-    fontSize: 16,
+    fontSize: 18,
+  },
+  lidate:{
+    flex: 1,
+    flexDirection:'row',
+    alignItems: 'center',
   },
 });
 module.exports = PlanView;
