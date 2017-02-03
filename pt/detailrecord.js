@@ -43,7 +43,6 @@ var _navigator ;
                 title:'EditRecordView',
                 id:'editrecord'
               })},type: 'primary',},
-        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
         { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
   ];
   var detailrows = [
@@ -153,7 +152,7 @@ _editplan:function(){
             </View>
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>
-              <Text>Monday</Text>
+              <Text style={{fontSize:20}}>21-01-2017</Text>
               <Text>Total Calories: 2800</Text>
             </View>
 

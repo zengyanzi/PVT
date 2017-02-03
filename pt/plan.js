@@ -21,7 +21,7 @@ import {
 
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-
+import Topview from './top.js'
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -149,7 +149,9 @@ var PlanView = React.createClass({
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
    
-
+             <View>
+                <Topview {...this.props}/>
+            </View>
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}

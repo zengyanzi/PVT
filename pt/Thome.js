@@ -22,7 +22,6 @@ import Dimensions from 'Dimensions';
 import PlanView from './plan.js';
 import SwipeoutExample from './SwipeoutExample.js';
 import SwipeableExample from './swipeable-example.js'
-import Topview from './top.js';
 import RecordView from './record.js'
 
 var screenW = Dimensions.get('window').width;
@@ -73,9 +72,7 @@ var ThomeView = React.createClass({
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
               <View style={styles.maincontain}>
-                <View>
-                  <Topview {...this.props}/>
-                </View>
+
                 <TabNavigator
                 tabBarStyle={{ height: 60 }}
                 >

@@ -48,26 +48,26 @@ var btnsDefault = [ { text: 'Button' } ];
 
 var rows = [
   {
-     Pdate:"Monday",
+     Pdate:"11-01-2017",
      Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
 
     right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"Sunday",
+    Pdate:"14-01-2017",
     Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-      Pdate:"Friday",
+      Pdate:"19-01-2017",
       Calories :"457",
       text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"Tuesday",
+    Pdate:"21-01-2017",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
@@ -148,7 +148,25 @@ var RecordView = React.createClass({
             contentContainerStyle={{flex:1}}
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
-   
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                  <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
+                    <Image source={require('../img/setting_normal.png') }/>
+                   </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              
+              <View style={[styles.Topbar,styles.Right]}>
+              <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
+                <Image source={require('../img/chart-pressed.png') }/>
+              </TouchableOpacity> 
+              </View>
+              
+            </View>
 
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}

@@ -23,6 +23,7 @@ import CreateplanView from './pt/createplan';
 import PlanInfoView from './pt/planinfo';
 import EditRecordView from './pt/editrecord';
 import DetailRecordView from './pt/detailrecord';
+import ChartView from './pt/chart';
 
 export default class PTV extends React.Component {
 
@@ -214,7 +215,11 @@ export default class PTV extends React.Component {
         <DetailRecordView {...route.params} navigator={navigator} route={route}/>
       );
     }
-
+    if(route.id === 'chart'){
+      return (
+        <ChartView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     
   }
 
