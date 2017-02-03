@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -692,3 +693,8 @@ To provide functions of managing work out plan, view by chart</p>
   </body>
 </html>
 
+=======
+# PVT
+update with ES6
+To provide functions of managing work out plan, view by chart
+>>>>>>> 49fd72ff3f56863b3b75a0563388b64600b3e0d9
