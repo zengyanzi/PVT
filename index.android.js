@@ -24,6 +24,7 @@ import PlanInfoView from './pt/planinfo';
 import EditRecordView from './pt/editrecord';
 import DetailRecordView from './pt/detailrecord';
 import ChartView from './pt/chart';
+import AdditemtodayView from'./pt/additemtoday';
 
 export default class PTV extends React.Component {
 
@@ -218,6 +219,11 @@ export default class PTV extends React.Component {
     if(route.id === 'chart'){
       return (
         <ChartView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'additemtoday'){
+      return (
+        <AdditemtodayView {...route.params} navigator={navigator} route={route}/>
       );
     }
     

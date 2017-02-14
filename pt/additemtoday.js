@@ -37,7 +37,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 var _navigator ;
 
 
-var EditRecordView = React.createClass({
+var AdditemtodayView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -46,18 +46,38 @@ var EditRecordView = React.createClass({
         }
     this.state = {
     value: 0.2,
-
+    sportclass:1,
+    date:''
     };
     return {
-     value: 0.2,
+     value:this.state.value,
+     sportclass:this.state.sportclass,
+     date:this.state.date
+
 
     };
 
   },
-    componentWillMount() {
-    AsyncStorage.getItem('userid',(err, result) => {
-                console.log(result);
-              });   
+  _submit:function(){
+    var item_id=this.state.sportclass;
+    console.log(item_id);
+    var day=this.state.date;
+    console.log(day);
+    var sportsize=this.state.value;
+    console.log(sportsize);
+    AsyncStorage.getItem('planid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+
+      var url = 'http://www.zhimainz.com:8080/pt_server/additem2day.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?trainee_id='+trainee_id+'&item_id='+item_id+'&day='+day+'&sportsize='+sportsize;
+      fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+          console.log(res);
+        })
+    })
   },
 
  render: function(){
@@ -89,11 +109,11 @@ var EditRecordView = React.createClass({
                   style={{width:200,color:'#fff',alignItems:'center'}}
                   selectedValue={this.state.sportclass}
                   onValueChange={(value) => this.setState({sportclass: value})}>
-                  <Picker.Item label="CHEST" value="CHEST"/>
-                  <Picker.Item label="BACK" value="BACK" />
-                  <Picker.Item label="lEGS" value="lEGS" />
-                  <Picker.Item label="SHOULDERS" value="SHOULDERS" />
-                  <Picker.Item label="STOMACH" value="STOMACH" />
+                  <Picker.Item label="CHEST" value="1"/>
+                  <Picker.Item label="BACK" value="2" />
+                  <Picker.Item label="lEGS" value="3" />
+                  <Picker.Item label="SHOULDERS" value="4" />
+                  <Picker.Item label="STOMACH" value="5" />
               </Picker>
             </View>
             <View style={styles.slider}>
@@ -111,7 +131,7 @@ var EditRecordView = React.createClass({
             </View>
             <View>
               <TouchableOpacity style={styles.btn}
-              onPress={this._login}>
+              onPress={this._submit}>
               <Text style={styles.text}>Save</Text>
               </TouchableOpacity>
             </View>
@@ -215,4 +235,4 @@ var styles = StyleSheet.create({
   },
 
 });
-module.exports = EditRecordView;
+module.exports = AdditemtodayView;

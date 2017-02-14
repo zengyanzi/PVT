@@ -24,7 +24,6 @@ import PlanView from './plan.js';
 import DatePicker from './date.js';
 import CheckBox from 'react-native-check-box';
 import keys from './keys.json';
-
 import PlanCreateView from './plancreate';
 
 
@@ -44,7 +43,10 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 var _navigator ;
 
-
+var radio_props = [
+  {label: 'FUllbody', value: 1 },
+  {label: 'extention', value: 2 }
+];
 var CreateplanView = React.createClass({
 
   getInitialState: function(){
@@ -53,10 +55,17 @@ var CreateplanView = React.createClass({
     selectedTab: '',
     dataArray: [],
     scrollEnabled: true,
+    enddate:'',
+    startdate:'',
+    value: 1,
     };
     return {
     selectedTab:this.state.selectedTab,
     scrollEnabled: true,
+    enddate:this.state.enddate,
+    startdate:this.state.startdate,
+    value:this.state.value,
+
     };
   },
 
@@ -64,9 +73,7 @@ var CreateplanView = React.createClass({
 
 //  set for the attendance
 
-    componentDidMount() {
-        this.loadData();
-    },
+
 //  set for the attendance
 
     loadData() {
@@ -108,6 +115,7 @@ var CreateplanView = React.createClass({
 
     renderCheckBox(data) {
         var rightText = data.name;
+        var value=data.value;
         return (
             <CheckBox
                 style={{flex: 1, padding: 10}}
@@ -118,7 +126,48 @@ var CreateplanView = React.createClass({
         );
     },
 
-  render: function(){ 
+    //set the submit function
+
+  _submit:function(){
+    var start=this.state.startdate;
+    var end=this.state.enddate; 
+    let _that=this;     
+      AsyncStorage.getItem('userid',(err, result) => {
+      var traineeid=result;
+        AsyncStorage.getItem('planid',(err, result) => {
+        console.log(result);//check the planid
+        var optionplanid=result;
+        console.log(start);
+        console.log(traineeid);
+        console.log(end);
+        _that.loadData();
+        var dataArray=this.state.dataArray;
+        var len = this.state.dataArray.length;
+        var attendance=[];
+        for (var i = 0; i < len; i += 1) {
+          if(dataArray[i]["checked"]){
+          attendance.push(dataArray[i]["value"]);
+        }
+
+      }
+        var attendanceday=attendance.join();// join the addendance number
+
+        var url = 'http://www.zhimainz.com:8080/pt_server/createplan.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?traineeid='+traineeid+'&start='+start+'&end='+end+'&attendance='+attendance+'&optionplanid='+optionplanid;
+      fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+          console.log(res);
+        })
+
+     });
+     
+ 
+  });
+},
+
+  render: function(){
 
        return (
 
@@ -175,15 +224,14 @@ var CreateplanView = React.createClass({
                     </View>
                     <View style={{height:180,flex:1}}>
                       <Text style={styles.text}>Please Choose Your Plan</Text>
+                        <PlanCreateView {...this.props}/>
 
-                    
-                      <PlanCreateView {...this.props}/>
                     </View>
 
                     <View>
                       <TouchableOpacity style={styles.btn}
-                      onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
-                      <Text style={styles.text}>Save</Text>
+                      onPress={this._submit}>
+                      <Text style={styles.text}>Submit</Text>
                       </TouchableOpacity>
                     </View>
 
@@ -195,6 +243,11 @@ var CreateplanView = React.createClass({
 
        );
   },
+
+      componentDidMount() {
+        this.loadData();
+
+    },
 
 });
 

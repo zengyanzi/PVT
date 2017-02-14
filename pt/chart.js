@@ -51,7 +51,11 @@ var ChartView = React.createClass({
     };
 
   },
-
+  componentWillMount() {
+    AsyncStorage.getItem('userid',(err, result) => {
+                console.log(result);
+              });   
+  },
 _editplan:function(){
      _navigator.push({
       title:'TraineeloinView',
@@ -87,12 +91,12 @@ _editplan:function(){
                 initialPage={1}
                 renderTabBar={() => <ScrollableTabBar  />}
                 >
-                  <ScrollView tabLabel="ChartByTime" style={styles.tabView}>
+                  <ScrollView tabLabel="ChartBySport" style={styles.tabView}>
                     <View style={styles.card}>
                       <SportChartView {...this.props}/>
                     </View>
                   </ScrollView>
-                  <ScrollView tabLabel="ChartBySport" style={styles.tabView}>
+                  <ScrollView tabLabel="ChartByTime" style={styles.tabView}>
                     <View style={styles.card}>
                       <TimeChartView {...this.props}/>
                     </View>

@@ -21,8 +21,9 @@ import TabNavigator from 'react-native-tab-navigator';
 import Dimensions from 'Dimensions';
 import PlanView from './plan.js';
 import SwipeoutExample from './SwipeoutExample.js';
-import SwipeableExample from './swipeable-example.js'
-import RecordView from './record.js'
+import SwipeableExample from './swipeable-example.js';
+import RecordView from './record.js';
+import LogoutView from './logout.js';
 
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -124,13 +125,14 @@ var ThomeView = React.createClass({
                     onPress={() => this.setState({ selectedTab: 'Profile' })}       
                     >
 
-                     {ProfileView}
+                     <LogoutView {...this.props}/>
                 </TabNavigator.Item>
               </TabNavigator>
             </View>
           </ScrollView>
 
        );
+
   },
 
 });

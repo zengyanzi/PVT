@@ -20,7 +20,6 @@ import {
 
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
-import DatePicker from './date.js';
 import Topview from './top.js';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -46,15 +45,22 @@ var EditPlanView = React.createClass({
         }
     this.state = {
     value: 0.2,
-
+    sportdate:'10-02-2017',
+    sportclass:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill']
     };
     return {
-     value: 0.2,
+     value:this.state.value,
+     sportdate:this.state.sportdate,
+     sportclass:this.state.sportclass
 
     };
 
   },
-
+  componentWillMount() {
+    AsyncStorage.getItem('userid',(err, result) => {
+                console.log(result);
+              });   
+  },
  render: function(){
       return(
         <ScrollView 
@@ -66,16 +72,7 @@ var EditPlanView = React.createClass({
               <Topview {...this.props}/>
             </View>
             <View>
-              <Text style={styles.text}>Please Choose the Date</Text>
-              <DatePicker
-                style={styles.datepicker}
-                date={this.state.date}
-                mode="date"
-                placeholder="Date"
-                format="YYYY-MM-DD"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                onDateChange={(date) => {this.setState({date: date});}}/>
+              <Text style={styles.text}>Sport Date {this.state.sportdate}</Text>
             </View>
             <View>
                 <Text style={styles.text}>Please Choose the sport item</Text>
@@ -84,11 +81,11 @@ var EditPlanView = React.createClass({
                   style={{width:200,color:'#fff',alignItems:'center'}}
                   selectedValue={this.state.sportclass}
                   onValueChange={(value) => this.setState({sportclass: value})}>
-                  <Picker.Item label="CHEST" value="CHEST"/>
-                  <Picker.Item label="BACK" value="BACK" />
-                  <Picker.Item label="lEGS" value="lEGS" />
-                  <Picker.Item label="SHOULDERS" value="SHOULDERS" />
-                  <Picker.Item label="STOMACH" value="STOMACH" />
+                  <Picker.Item label={this.state.sportclass[0]} value="0"/>
+                  <Picker.Item label={this.state.sportclass[1]}  value="1" />
+                  <Picker.Item label={this.state.sportclass[2]} value="2" />
+                  <Picker.Item label={this.state.sportclass[3]} value="3" />
+                  <Picker.Item label={this.state.sportclass[4]}  value="4" />
               </Picker>
             </View>
             <View style={styles.slider}>
@@ -115,6 +112,7 @@ var EditPlanView = React.createClass({
         );
 
   },
+
 
 });
 var customStyles2 = StyleSheet.create({

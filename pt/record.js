@@ -94,6 +94,11 @@ var RecordView = React.createClass({
     };
 
   },
+    componentWillMount() {
+    AsyncStorage.getItem('userid',(err, result) => {
+                console.log(result);
+              });   
+  },
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });

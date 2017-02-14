@@ -12,10 +12,11 @@ import {
   ScrollView,
   Navigator,
   TextInput,
-  TouchableOpacity,
+  TouchableHighlight,
   AsyncStorage,
   Picker,
-  ListView
+  ListView,
+  Alert,
 } from 'react-native';
 
 
@@ -34,6 +35,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   return true;
 });
 
+
 var _navigator ;
  var btnsDefault = [ { text: 'Button' } ];
 
@@ -42,48 +44,54 @@ var _navigator ;
                 title:'PlanInfoView',
                 id:'planinfo'
               })},type: 'primary',},
-        { text: 'Choose',onPress: function(){ alert('confirm to Choose?') },type:'secondary'},
+
       
   ];
   var detailrows = [
   {
-
+    rowID:'1',
      Calories :"957",
      text: "Full Body Workout",
      right:btnsTypes,
     autoClose: true,
   }, {
-
+    rowID:'2',
     Calories :"1457",
     text: "Strength,Shape,Tone",
     right:btnsTypes,
     autoClose: true,
   }, {
+    rowID:'3',
     Calories :"1657",
     text: "Mixed Cadio",
     right:btnsTypes,
     autoClose: true,
   }, {
+    rowID:'4',
     Calories :"1257",
     text: "Tone Shape",
     right:btnsTypes,
   },
    {
+    rowID:'5',
     Calories :"1257",
     text: "Tone Shape",
     right:btnsTypes,
   },
    {
+    rowID:'6',
     Calories :"1257",
     text: "Tone Shape",
     right:btnsTypes,
   },
    {
+    rowID:'7',
     Calories :"1257",
     text: "Tone Shape",
     right:btnsTypes,
   },
    {
+    rowID:'8',
     Calories :"1257",
     text: "Tone Shape",
     right:btnsTypes,
@@ -101,11 +109,15 @@ var PlanCreateView = React.createClass({
     this.state = {
       dataSource: ds.cloneWithRows(detailrows),
       scrollEnabled: true,
+      optionplanid:'',
+      planid:1,
 
     };
     return {
       dataSource: this.state.dataSource,
       scrollEnabled: true,
+      optionplanid:this.state.optionplanid,
+      planid:this.state.planid
 
     };
 
@@ -118,9 +130,9 @@ var PlanCreateView = React.createClass({
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
     for (var i = 0; i < detailrows.length; i++) {
-
       if (i != rowID) detailrows[i].active = false;
       else detailrows[i].active = true;
+
     }
     this.updateDataSource(detailrows);
   },
@@ -131,8 +143,8 @@ var PlanCreateView = React.createClass({
     });
   },
 
-
-  renderRow(rowData: string, sectionID: number, rowID: number) {
+  renderRow(rowData: string, sectionID: number, rowID: number,) {
+  
     return (
       <Swipeout
         left={rowData.left}
@@ -140,13 +152,17 @@ var PlanCreateView = React.createClass({
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
-        backgroundColor={rowData.backgroundColor}
+        backgroundColor='transparent'
         close={!rowData.active}
+   
+
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
-        <View style={styles.li}>
-              <Text style={styles.liText}>{rowData.text}Calories: {rowData.Calories}</Text>        
-        </View>
+         <TouchableHighlight style={styles.li} activeOpacity={0.5} underlayColor = '#2cb395'  onPress={() =>this.setState({planid:parseInt(rowID)+1})}>
+          
+                <Text style={styles.liText}>Plan NO: {parseInt(rowID)+1} {rowData.text}Calories: {rowData.Calories}</Text>        
+          
+        </TouchableHighlight >
       </Swipeout>
     );
   },
@@ -160,12 +176,14 @@ _editplan:function(){
    },
 
  render: function(){
+
       return(
          <ScrollView 
             contentContainerStyle={{flex:1}}
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
+            <Text style={styles.text}>Your Plan is NO: {this.state.planid}</Text>
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}
@@ -178,6 +196,12 @@ _editplan:function(){
         );
 
   },
+
+        componentDidUpdate() {
+        var planid=this.state.planid.toString();
+        AsyncStorage.setItem("planid",planid);
+
+    },
 
 });
 
@@ -249,6 +273,13 @@ var styles = StyleSheet.create({
   liText: {
     color: '#333',
     fontSize: 18,
+  },
+  choosestyle:{
+    borderColor:'red'
+  },
+ text:{
+    fontSize:18,
+    color:'#fff',
   },
 });
 module.exports = PlanCreateView;
