@@ -83,19 +83,31 @@ var DetailPlanView = React.createClass({
     this.state = {
       dataSource: ds.cloneWithRows(detailrows),
       scrollEnabled: true,
+      date:'2017-02-10'
 
     };
     return {
       dataSource: this.state.dataSource,
       scrollEnabled: true,
+      date:this.state.date
 
     };
 
   },
 
     componentWillMount() {
-    AsyncStorage.getItem('userid',(err, result) => {
-                console.log(result);
+      AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+      var day=this.props.date;
+      var url = 'http://www.zhimainz.com:8080/pt_server/detailplan.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?trainee_id='+trainee_id+'&day='+day;
+      fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+          console.log(res);
+        })
               });   
   },
 //  set scrolling to true/false
@@ -159,7 +171,7 @@ _editplan:function(){
             </View>
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>
-              <Text>Monday</Text>
+              <Text>{this.props.date} </Text>
               <Text>Total Calories: 2800</Text>
             </View>
 
