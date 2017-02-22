@@ -46,70 +46,86 @@ var _navigator ;
         { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
         { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
   ];
-  var detailrows = [
+ detailrows = [
     {
        Calories :"457",
        text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-       right: btnsTypes,
-      autoClose: true,
+    
     }, {
 
       Calories :"457",
        text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-      right: btnsTypes,
-      autoClose: true,
+     
+   
     }, {
 
         Calories :"457",
         text: "Upper Back 18,29 30-60 sec 1 1",
-      right: btnsTypes,
-      autoClose: true,
+     
     }, {
 
       Calories :"457",
       text: "Bike Fast  3min  Moderate  15  60Sec",
-      right:btnsTypes,
+      
     },
     
   ];
-
-
-
+ 
 var DetailPlanView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
-    var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
+     
       dataSource: ds.cloneWithRows(detailrows),
+      btnsTypes:btnsTypes,
       scrollEnabled: true,
       date:'2017-02-10'
 
     };
     return {
+    
       dataSource: this.state.dataSource,
       scrollEnabled: true,
-      date:this.state.date
+      date:this.state.date,
+      btnsTypes:this.state.btnsTypes
 
     };
 
   },
-
-    componentWillMount() {
+      componentWillMount() {
+      let _that=this;
       AsyncStorage.getItem('userid',(err, result) => {
       console.log(result);
       var trainee_id=result;
       var day=this.props.date;
-      var url = 'http://www.zhimainz.com:8080/pt_server/detailplan.action';
+      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+      var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
       url += '?trainee_id='+trainee_id+'&day='+day;
+      console.log(url);
       fetch(url).then(function(response) {  
             return response.json();
           }).then(function(res) {
           console.log(res);
+           if (res["data"]!=null) {
+           
+          _that.setState({
+           dataSource: ds.cloneWithRows(res["data"]),
+           detailrows:res["data"]
         })
-              });   
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }
+        
+     
+        });
+        
+       });  
+
   },
+
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });
@@ -117,12 +133,12 @@ var DetailPlanView = React.createClass({
 
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
-    for (var i = 0; i < detailrows.length; i++) {
-
-      if (i != rowID) detailrows[i].active = false;
-      else detailrows[i].active = true;
+    for (var i = 0; i < this.state.detailrows.length; i++) {
+      
+      if (i != rowID) this.state.detailrows[i].active = false;
+      else this.state.detailrows[i].active = true;
     }
-    this.updateDataSource(detailrows);
+    this.updateDataSource(this.state.detailrows);
   },
 
   updateDataSource(data) {
@@ -136,7 +152,7 @@ var DetailPlanView = React.createClass({
     return (
       <Swipeout
         left={rowData.left}
-        right={rowData.right}
+        right={this.state.btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
@@ -145,7 +161,7 @@ var DetailPlanView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <View style={styles.li}>
-              <Text style={styles.liText}>{rowData.text}Calories: {rowData.Calories}</Text>        
+              <Text style={styles.liText}>{rowData.item_name}Sportsize: {rowData.sportsize}</Text>        
         </View>
       </Swipeout>
     );
@@ -178,6 +194,7 @@ _editplan:function(){
             <ListView style={styles.listview}
               scrollEnabled={this.state.scrollEnabled}
               dataSource={this.state.dataSource}
+              enableEmptySections={true}
               renderRow={this.renderRow}
               />
             <View>
@@ -189,6 +206,7 @@ _editplan:function(){
         );
 
   },
+
 
 });
 
