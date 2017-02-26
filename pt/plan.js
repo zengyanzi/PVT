@@ -43,7 +43,7 @@ var btnsDefault = [ { text: 'Button' } ];
                 title:'EditplanView',
                 id:'editplan'
               })},type: 'primary',},
-        { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
+       
   ];
 
 var rows = [

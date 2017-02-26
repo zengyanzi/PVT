@@ -36,16 +36,12 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 
 var _navigator ;
- var btnsDefault = [ { text: 'Button' } ];
+var btnsDefault = [ { text: 'Button' } ];
 
-  var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan'
-              })},type: 'primary',},
-        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
-        { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
-  ];
+
+
+  //delete choose item
+
  detailrows = [
     {
        Calories :"457",
@@ -79,50 +75,47 @@ var DetailPlanView = React.createClass({
     this.state = {
      
       dataSource: ds.cloneWithRows(detailrows),
-      btnsTypes:btnsTypes,
       scrollEnabled: true,
-      date:'2017-02-10'
-
     };
     return {
     
       dataSource: this.state.dataSource,
       scrollEnabled: true,
-      date:this.state.date,
-      btnsTypes:this.state.btnsTypes
 
+     
     };
 
   },
       componentWillMount() {
       let _that=this;
       AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var day=this.props.date;
-      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&day='+day;
-      console.log(url);
-      fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-          console.log(res);
-           if (res["data"]!=null) {
-           
-          _that.setState({
-           dataSource: ds.cloneWithRows(res["data"]),
-           detailrows:res["data"]
-        })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }
+        console.log(result);
+        var trainee_id=result;
+        var day=this.props.date;
+        var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+        var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
+        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+        url += '?trainee_id='+trainee_id+'&day='+day;
+        console.log(url);
+        fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+            console.log(res);
         
-     
-        });
+             if (res["data"]!=null) {
+             
+            _that.setState({
+             dataSource: ds.cloneWithRows(res["data"]),
+             detailrows:res["data"]
+          })
+          }else{
+            Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
         
-       });  
+    });  
 
   },
 
@@ -139,20 +132,84 @@ var DetailPlanView = React.createClass({
       else this.state.detailrows[i].active = true;
     }
     this.updateDataSource(this.state.detailrows);
+
   },
 
+ 
   updateDataSource(data) {
     this.setState({
       dataSource: this.state.dataSource.cloneWithRows(data),
     });
   },
 
+  delete:function(rowData){
+    let _that=this;
+     AsyncStorage.getItem('userid',(err, result) => {
+        console.log(result);
+        var trainee_id=result;
+        var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+        var plan_id =rowData.id;
+        var url = 'http://47.90.60.206:8080/pt_server/delplan.action';
+        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+        url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
+        console.log(url);
+              fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+            console.log(res);
+        
+             if (res["data"]==true) {
+
+              var day=_that.props.date;
+              console.log(day);
+              var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
+              // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+              url += '?trainee_id='+trainee_id+'&day='+day;
+              console.log(url);
+              fetch(url).then(function(response) {  
+                    return response.json();
+                  }).then(function(res) {
+                  console.log(res);
+              
+                   if (res["data"]!=null) {
+                   
+                  _that.setState({
+                   dataSource: ds.cloneWithRows(res["data"]),
+                   detailrows:res["data"]
+                })
+                }else{
+                  Alert.alert('Fail to display','Please check your data'); 
+                }
+                
+             
+             });
+              
+          }else{
+            Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+    })
+ 
+  },
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
+
+
+    var btnsTypes = [
+      { text: 'Edit', onPress: function(){ _navigator.push({
+                title:'EditplanView',
+                id:'editplan'
+              })},type: 'primary',},
+        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
+        { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
+  ];
+
     return (
       <Swipeout
         left={rowData.left}
-        right={this.state.btnsTypes}
+        right={btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
@@ -161,7 +218,7 @@ var DetailPlanView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <View style={styles.li}>
-              <Text style={styles.liText}>{rowData.item_name}Sportsize: {rowData.sportsize}</Text>        
+              <Text style={styles.liText}>{rowData.item_name}Sportsize: {rowData.sportsize} </Text>        
         </View>
       </Swipeout>
     );
