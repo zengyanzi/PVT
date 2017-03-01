@@ -46,21 +46,92 @@ var EditPlanView = React.createClass({
     this.state = {
     value: 0.2,
     sportdate:'10-02-2017',
-    sportclass:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill']
-    };
+    sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
+    sportselected:'',
+       };
     return {
      value:this.state.value,
      sportdate:this.state.sportdate,
-     sportclass:this.state.sportclass
+     sportname:this.state.sportname,
+     sportselected:this.state.sportselected,
 
     };
 
   },
-  componentWillMount() {
+    componentWillMount() {
+    let _that=this;
     AsyncStorage.getItem('userid',(err, result) => {
                 console.log(result);
-              });   
+      var url = 'http://47.90.60.206:8080/pt_server/item.action';  
+      fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) { 
+             
+               if (res["data"]!=null) {
+               //get the sport item name from the database
+               var sportobj=res["data"];
+               var arr=[];
+               for(i in sportobj){
+                
+                arr.push(sportobj[i]["name"]);
+               }
+               console.log(arr);
+                _that.setState({
+                  sportname:arr
+              })
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+        
+    });  
+
   },
+ _save:function(){
+    console.log(this.state.sportselected);
+    var itemname=this.state.sportselected;
+    var item_id;
+    var sportsize=this.state.value;
+    var day=this.props.date;
+     AsyncStorage.getItem('userid',(err, result) => {
+                console.log(result);
+    var trainee_id=result;
+    var url = 'http://47.90.60.206:8080/pt_server/item.action'; 
+    fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+               if (res["data"]!=null) {
+               //get the sport item name from the database
+               
+               for(i in res["data"]){
+                if(itemname==res["data"][i]["name"]){
+                   item_id=res["data"][i]["id"];
+                }
+                 
+               }
+                console.log(item_id);
+                var urlsave='http://47.90.60.206:8080/pt_server/addrecord2day.action'; 
+                urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+                console.log(urlsave);
+
+                   fetch(urlsave).then(function(response) {  
+                                return response.json();
+                              }).then(function(res) {
+                              console.log(res);
+                      });
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+
+
+    });
+
+ },
  render: function(){
       return(
         <ScrollView 
@@ -72,38 +143,41 @@ var EditPlanView = React.createClass({
               <Topview {...this.props}/>
             </View>
             <View>
-              <Text style={styles.text}>Sport Date {this.state.sportdate}</Text>
+              <Text style={styles.text}>Sport Date {this.props.date}</Text>
             </View>
             <View>
-                <Text style={styles.text}>Please Choose the sport item</Text>
+                <Text style={styles.text}>Please Choose the sport item{this.state.sportname[10]}</Text>
                 <Picker 
-                  prompt="Please choose sportclass"
+                  prompt="Please choose sportname"
                   style={{width:200,color:'#fff',alignItems:'center'}}
-                  selectedValue={this.state.sportclass}
-                  onValueChange={(value) => this.setState({sportclass: value})}>
-                  <Picker.Item label={this.state.sportclass[0]} value="0"/>
-                  <Picker.Item label={this.state.sportclass[1]}  value="1" />
-                  <Picker.Item label={this.state.sportclass[2]} value="2" />
-                  <Picker.Item label={this.state.sportclass[3]} value="3" />
-                  <Picker.Item label={this.state.sportclass[4]}  value="4" />
+                  selectedValue={this.state.sportselected}
+                  onValueChange={(value) => this.setState({sportselected: value})}>
+                 
+                    { this.state.sportname.map((s, i) => {
+                        return <Picker.Item
+                                 key={i}
+                                 value={s}
+                                 label={s} />
+                     }) }
+               
               </Picker>
             </View>
             <View style={styles.slider}>
               <Text style={styles.text}>Please Choose the sport size</Text>
               <Slider 
                 value={this.state.value}
-                maximumValue={1000}
+                maximumValue={100}
                 step={0.5}
                 trackStyle={customStyles2.track}
                 thumbStyle={customStyles2.thumb}
                 thumbTouchSize={{width: 50, height: 40}}
                 minimumTrackTintColor='#2cb395'
                 onValueChange={(value) => Math.floor(this.setState({value}))} />
-              <Text style={styles.text}>Value:{this.state.value} </Text>
+              <Text style={styles.text}>Sprotsize:{this.state.value} </Text>
             </View>
             <View>
               <TouchableOpacity style={styles.btn}
-              onPress={this._login}>
+              onPress={this._save}>
               <Text style={styles.text}>Save</Text>
               </TouchableOpacity>
             </View>

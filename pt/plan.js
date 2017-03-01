@@ -48,26 +48,26 @@ var btnsDefault = [ { text: 'Button' } ];
 
 var rows = [
   {
-     Pdate:"2017-02-08",
+     day:"2017-02-08",
      Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
 
     right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"2017-02-09",
+    day:"2017-02-09",
     Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-      Pdate:"2017-02-10",
+      day:"2017-02-10",
       Calories :"457",
       text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"2017-02-11",
+    day:"2017-02-11",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
@@ -81,7 +81,6 @@ var PlanView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     var Pdate="Monday";
-    var rowIDs = [];
     this.state = {
       dataSource: ds.cloneWithRows(rows),
       scrollEnabled: true,
@@ -119,36 +118,11 @@ var PlanView = React.createClass({
             console.log(res);
            
              if (res["data"]!=null) {
-              var jsondata=res["data"];
-              //get the length of json
-            function getJsonLength(jsonData){
-            var jsonLength = 0;
-            for(var item in jsonData){
-            jsonLength++;
-            }
-            return jsonLength;
-            };
-            var jl=getJsonLength(jsondata);
-            
-            //get the data from json to array
-          
-              
-              var arr=[];
-             for(var i in jsondata){
-              var obj={};
-                 obj.Pdate=i;
-                 obj.text=JSON.stringify(jsondata[i]).replace("{","").replace("}","");  
-                 arr.push(obj);
-          
-            } 
-              
-             console.log(jl);
-             console.log(arr);
-            
     
             _that.setState({
-             dataSource: ds.cloneWithRows(arr),
-             detailrows:arr
+             dataSource: ds.cloneWithRows(res["data"]),
+             
+             rows:res["data"]
           })
           }else{
             Alert.alert('Fail to display','Please check your data'); 
@@ -167,12 +141,12 @@ var PlanView = React.createClass({
 
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
-    for (var i = 0; i < rows.length; i++) {
+    for (var i = 0; i < this.state.rows.length; i++) {
 
-      if (i != rowID) rows[i].active = false;
-      else rows[i].active = true;
+      if (i != rowID) this.state.rows[i].active = false;
+      else this.state.rows[i].active = true;
     }
-    this.updateDataSource(rows);
+    this.updateDataSource(this.state.rows);
   },
 
   updateDataSource(data) {
@@ -186,7 +160,11 @@ var PlanView = React.createClass({
      var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
                 title:'EditplanView',
-                id:'editplan'
+                id:'editplan',
+                params:
+                {date:rowData.day,
+                sportclass:rowData.text
+                }
               })},type: 'primary',},
         { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
@@ -203,9 +181,9 @@ var PlanView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan',params:{date:rowData.Pdate}})}>
+                onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan',params:{date:rowData.day}})}>
           <View style={styles.li}>
-            <View  style={styles.lidate}><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
+            <View  style={styles.lidate}><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.day}</Text></View>
             
               <Text style={styles.liText}>Sport:{rowData.text}</Text>
             
