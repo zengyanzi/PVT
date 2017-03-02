@@ -15,7 +15,8 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
-  ListView
+  ListView,
+  Alert
 } from 'react-native';
 
 
@@ -73,12 +74,12 @@ var DetailPlanView = React.createClass({
     _navigator = this.props.navigator;
      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-     
+      day:this.props.date,
       dataSource: ds.cloneWithRows(detailrows),
       scrollEnabled: true,
     };
     return {
-    
+      day:this.state.day,
       dataSource: this.state.dataSource,
       scrollEnabled: true,
 
@@ -193,16 +194,41 @@ var DetailPlanView = React.createClass({
     })
  
   },
+ submitrecord:function(rowData){
+    let _that=this;
+     AsyncStorage.getItem('userid',(err, result) => {
+        console.log(result);
+        var trainee_id=result;
+        var day =rowData.day;
+        var item_id=rowData.item_id;
+        var sportsize=rowData.sportsize;
+        var url = 'http://47.90.60.206:8080/pt_server/addrecord2day.action';
+        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+        url += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+        console.log(url);
+              fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+            console.log(res);
+             if (res["data"]==true) {
+              Alert.alert('Submit','Successfully!'); 
+             }
+          
 
+       
+       });
+    })
+  },
   renderRow(rowData: string, sectionID: number, rowID: number) {
-
+   
 
     var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
                 title:'EditplanView',
-                id:'editplan'
+                id:'editplan',
+                params:{date:rowData.day}
               })},type: 'primary',},
-        { text: 'Submit',onPress: function(){ alert('confirm to submit?') },type:'secondary'},
+        { text: 'Submit',onPress:  () => { this.submitrecord(rowData) },type:'secondary'},
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
   ];
 
@@ -225,12 +251,6 @@ var DetailPlanView = React.createClass({
   },
 
 
-_editplan:function(){
-     _navigator.push({
-      title:'TraineeloinView',
-      id:'traineelogin'
-    })
-   },
 
  render: function(){
       return(
@@ -244,7 +264,7 @@ _editplan:function(){
             </View>
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>
-              <Text>{this.props.date} </Text>
+              <Text>{this.state.day} </Text>
               <Text>Total Calories: 2800</Text>
             </View>
 

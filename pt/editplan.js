@@ -37,7 +37,7 @@ var _navigator ;
 
 
 var EditPlanView = React.createClass({
-
+//set the original data
   getInitialState: function(){
     _navigator = this.props.navigator;
     function floor (d) {
@@ -58,6 +58,7 @@ var EditPlanView = React.createClass({
     };
 
   },
+  //get the item 
     componentWillMount() {
     let _that=this;
     AsyncStorage.getItem('userid',(err, result) => {
@@ -89,6 +90,7 @@ var EditPlanView = React.createClass({
     });  
 
   },
+  //save the modify item to database
  _save:function(){
     console.log(this.state.sportselected);
     var itemname=this.state.sportselected;
@@ -98,12 +100,12 @@ var EditPlanView = React.createClass({
      AsyncStorage.getItem('userid',(err, result) => {
                 console.log(result);
     var trainee_id=result;
-    var url = 'http://47.90.60.206:8080/pt_server/item.action'; 
+    var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
     fetch(url).then(function(response) {  
               return response.json();
             }).then(function(res) {
                if (res["data"]!=null) {
-               //get the sport item name from the database
+               //find the id of selected item
                
                for(i in res["data"]){
                 if(itemname==res["data"][i]["name"]){
@@ -112,7 +114,7 @@ var EditPlanView = React.createClass({
                  
                }
                 console.log(item_id);
-                var urlsave='http://47.90.60.206:8080/pt_server/addrecord2day.action'; 
+                var urlsave='http://47.90.60.206:8080/pt_server/additem2day.action'; 
                 urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
                 console.log(urlsave);
 
@@ -120,6 +122,11 @@ var EditPlanView = React.createClass({
                                 return response.json();
                               }).then(function(res) {
                               console.log(res);
+                       _navigator.push({
+                      title:'ThomeView',
+                      id:'Thome',
+                  
+                       })
                       });
               }else{
                 Alert.alert('Fail to display','Please check your data'); 
