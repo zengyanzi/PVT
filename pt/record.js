@@ -48,26 +48,26 @@ var btnsDefault = [ { text: 'Button' } ];
 
 var rows = [
   {
-     Pdate:"11-01-2017",
+     Pdate:"2017-03-03",
      Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
 
     right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"14-01-2017",
+    Pdate:"2017-03-04",
     Calories :"457",
      text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-      Pdate:"19-01-2017",
+      Pdate:"2017-03-05",
       Calories :"457",
       text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
     autoClose: true,
   }, {
-    Pdate:"21-01-2017",
+    Pdate:"2017-03-06",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
      right:btnsTypes,
@@ -134,7 +134,7 @@ var RecordView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailRecordView',id:'detailrecord'})}>
+                onPress={() => _navigator.push({title:'DetailRecordView',id:'detailrecord',params:{date:rowData.Pdate}})}>
           <View style={styles.li}>
             <View  style={styles.lidate}><Image  source={require('../img/plan_normal.png') }/><Text>{rowData.Pdate}</Text></View>
             

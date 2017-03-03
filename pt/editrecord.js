@@ -20,7 +20,6 @@ import {
 
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
-import DatePicker from './date.js';
 import Topview from './top.js';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -46,19 +45,100 @@ var EditRecordView = React.createClass({
         }
     this.state = {
     value: 0.2,
-
+    sportdate:'10-02-2017',
+    sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
+    sportselected:'',
     };
     return {
-     value: 0.2,
+     value:this.state.value,
+     sportdate:this.state.sportdate,
+     sportname:this.state.sportname,
+     sportselected:this.state.sportselected,
 
     };
 
   },
+  //get the item 
     componentWillMount() {
+    let _that=this;
     AsyncStorage.getItem('userid',(err, result) => {
                 console.log(result);
-              });   
+      var url = 'http://47.90.60.206:8080/pt_server/item.action';  
+      fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) { 
+             
+               if (res["data"]!=null) {
+               //get the sport item name from the database
+               var sportobj=res["data"];
+               var arr=[];
+               for(i in sportobj){
+                
+                arr.push(sportobj[i]["name"]);
+               }
+               console.log(arr);
+                _that.setState({
+                  sportname:arr
+              })
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+        
+    });  
+
   },
+  //save the modify item to database
+ _save:function(){
+    console.log(this.state.sportselected);
+    var itemname=this.state.sportselected;
+    var item_id;
+    var sportsize=this.state.value;
+    var day=this.props.date;
+     AsyncStorage.getItem('userid',(err, result) => {
+                console.log(result);
+    var trainee_id=result;
+    var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
+    fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+               if (res["data"]!=null) {
+               //find the id of selected item
+               
+               for(i in res["data"]){
+                if(itemname==res["data"][i]["name"]){
+                   item_id=res["data"][i]["id"];
+                }
+                 
+               }
+                console.log(item_id);
+                var urlsave='http://47.90.60.206:8080/pt_server/addrecord2day.action'; 
+                urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+                console.log(urlsave);
+
+                   fetch(urlsave).then(function(response) {  
+                                return response.json();
+                              }).then(function(res) {
+                              console.log(res);
+                       _navigator.push({
+                      title:'ThomeView',
+                      id:'Thome',
+                  
+                       })
+                      });
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+
+
+    });
+
+ },
 
  render: function(){
       return(
@@ -71,36 +151,29 @@ var EditRecordView = React.createClass({
               <Topview {...this.props}/>
             </View>
             <View>
-              <Text style={styles.text}>Please Choose the Date</Text>
-              <DatePicker
-                style={styles.datepicker}
-                date={this.state.date}
-                mode="date"
-                placeholder="Date"
-                format="YYYY-MM-DD"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                onDateChange={(date) => {this.setState({date: date});}}/>
+               <Text style={styles.text}>Sport Date {this.props.date}</Text>
             </View>
             <View>
                 <Text style={styles.text}>Please Choose the sport item</Text>
                 <Picker 
                   prompt="Please choose sportclass"
                   style={{width:200,color:'#fff',alignItems:'center'}}
-                  selectedValue={this.state.sportclass}
-                  onValueChange={(value) => this.setState({sportclass: value})}>
-                  <Picker.Item label="CHEST" value="CHEST"/>
-                  <Picker.Item label="BACK" value="BACK" />
-                  <Picker.Item label="lEGS" value="lEGS" />
-                  <Picker.Item label="SHOULDERS" value="SHOULDERS" />
-                  <Picker.Item label="STOMACH" value="STOMACH" />
-              </Picker>
+                  selectedValue={this.state.sportselected}
+                  onValueChange={(value) => this.setState({sportselected: value})}>
+                 
+                    { this.state.sportname.map((s, i) => {
+                        return <Picker.Item
+                                 key={i}
+                                 value={s}
+                                 label={s} />
+                     }) }
+                </Picker>
             </View>
             <View style={styles.slider}>
               <Text style={styles.text}>Please Choose the sport size</Text>
               <Slider 
                 value={this.state.value}
-                maximumValue={1000}
+                maximumValue={100}
                 step={0.5}
                 trackStyle={customStyles2.track}
                 thumbStyle={customStyles2.thumb}
@@ -111,7 +184,7 @@ var EditRecordView = React.createClass({
             </View>
             <View>
               <TouchableOpacity style={styles.btn}
-              onPress={this._login}>
+              onPress={this._save}>
               <Text style={styles.text}>Save</Text>
               </TouchableOpacity>
             </View>
