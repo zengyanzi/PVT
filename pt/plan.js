@@ -109,7 +109,7 @@ var PlanView = React.createClass({
         var trainee_id=result;
         var day=this.props.date;
         var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-        var url = 'http://47.90.60.206:8080/pt_server/myrecord.action';
+        var url = 'http://47.90.60.206:8080/pt_server/myplan.action';
         // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
         url += '?trainee_id='+trainee_id+'&start='+start+'&end='+end;
         console.log(url);
