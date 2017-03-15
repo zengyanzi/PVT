@@ -78,7 +78,7 @@ componentWillMount() {
         var trainee_id=result;
         console.log(trainee_id);
         console.log(end);
-        var url = 'http://www.zhimainz.com:8080/pt_server/stat.action';
+        var url = 'http://47.90.60.206:8080/pt_server/stat.action';
           // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
           url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end;
           console.log(url);

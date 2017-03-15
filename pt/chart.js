@@ -171,7 +171,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderColor: 'rgba(0,0,0,0.1)',
     margin: 5,
-    height:300,
+    height:500,
     padding: 15,
     shadowColor: '#ccc',
     shadowOffset: { width: 2, height: 2, },

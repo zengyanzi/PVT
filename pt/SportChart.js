@@ -11,7 +11,9 @@ import {
   navigator,
   Animated,
   Picker,
-  AsyncStorage
+  AsyncStorage,
+  TouchableOpacity,
+  Alert
 } from 'react-native';
 
 import {BarChart} from 'react-native-mp-android-chart';
@@ -29,11 +31,10 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 
 var _navigator ;
+var SportChartView = React.createClass({
 
-class SportChartView extends React.Component {
 
-  constructor() {
-    super();
+   getInitialState: function(){
         function format (d) {
             return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
@@ -55,7 +56,7 @@ class SportChartView extends React.Component {
         var startday=format(day1);
 
     this.state = {
-      sportselected:'',
+      sportselected:'Rower',
       sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
       legend: {
         enabled: true,
@@ -86,10 +87,24 @@ class SportChartView extends React.Component {
 
 
     };
+    return {
+    sportselected:this.state.sportselected,
+    sportname:this.state.sportname,
+    legend:this.state.legend,
+    data:this.state.data,
+    type:this.state.type
+    };
 
-  }
-componentWillMount() {
-        let _that=this; 
+
+  },
+  componentWillMount() {
+      let _that=this; 
+      console.log(this.state.sportselected);
+      var itemname=this.state.sportselected;
+      var item_id;
+        AsyncStorage.getItem('userid',(err, result) => {
+          console.log(result); 
+        var trainee_id=result;
         function format (d) {
             return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
@@ -97,6 +112,9 @@ componentWillMount() {
         var end = format(today);
         var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
         var startday=format(day1);
+        console.log(trainee_id);
+        console.log(startday);
+        console.log(end);
         var urlitem = 'http://47.90.60.206:8080/pt_server/item.action';  
             fetch(urlitem).then(function(response) {  
                     return response.json();
@@ -110,29 +128,21 @@ componentWillMount() {
                       
                       arr.push(sportobj[i]["name"]);
                      }
+
                      console.log(arr);
+                      for(i in res["data"]){
+                      if(itemname==res["data"][i]["name"]){
+                         item_id=res["data"][i]["id"];
+                      }
+                       
+                     }
+                      console.log(item_id);
                       _that.setState({
                         sportname:arr
                     })
-                    }else{
-                      Alert.alert('Fail to display','Please check your data'); 
-                }
-                
-             
-             });
-        AsyncStorage.getItem('userid',(err, result) => {
-          console.log(result); 
-        var trainee_id=result;
-        var type=this.state.type;
-        var sporttype=type.replace(/\s+/g,'%20');
-        console.log(trainee_id);
-        console.log(type);
-        console.log(sporttype);
-        console.log(startday);
-        console.log(end);
-        var url = 'http://www.zhimainz.com:8080/pt_server/stat.action';
-          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-          url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end;
+          var url = 'http://47.90.60.206:8080/pt_server/statsport.action';
+        
+          url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
           console.log(url);
           fetch(url).then(function(response) { 
                 return response.json();
@@ -152,7 +162,7 @@ componentWillMount() {
                     data: {
                       datasets: [{
                         yValues: energy,
-                        label: type,
+                        label: 'rower',
                         config: {
                           color: 'red',
                           barSpacePercent: 40,
@@ -167,14 +177,105 @@ componentWillMount() {
                 );
                 
 
-              }else{
-                Alert.alert('Fail to display','Please check your data'); 
-              }
-        });
+                  }else{
+                    Alert.alert('Fail to display','Please check your data'); 
+                  }
+            });
+                    }else{
+                      Alert.alert('Fail to display','Please check your data'); 
+                }
+                
+             
+             });
+      
       });
 
-  }  
-  render() {
+ },
+  //UPDATE the CHART 
+ UPDATE:function() {
+    let _that=this; 
+    function format (d) {
+            return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+        }
+    var today =new Date();
+    var end = format(today);
+    var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
+    var startday=format(day1);
+    var itemname='Burpees';
+    console.log(this.state.sportselected);
+    var itemname=this.state.sportselected;
+    var item_id;
+     AsyncStorage.getItem('userid',(err, result) => {
+     console.log(result);
+      var trainee_id=result;
+      var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
+      fetch(url).then(function(response) {  
+                return response.json();
+              }).then(function(res) {
+               if (res["data"]!=null) {
+               //find the id of selected item
+               
+               for(i in res["data"]){
+                if(itemname==res["data"][i]["name"]){
+                   item_id=res["data"][i]["id"];
+                }
+                 
+               }
+                console.log(item_id);
+               var urlupdate = 'http://47.90.60.206:8080/pt_server/statsport.action';
+        
+               urlupdate += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
+                console.log(urlupdate);
+
+                   fetch(urlupdate).then(function(response) {  
+                                return response.json();
+                              }).then(function(res) {
+                              console.log(res);
+                              if (res["data"]!=null) {
+                  var energy=[];
+                  var date=[];
+                  for (var i = 0; i < res["data"].length; i++) {
+                    energy.push(res["data"][i]["energy"]);
+                    date.push(res["data"][i]["day"]);
+                  };
+                   console.log(energy);
+                   console.log(date);
+                   _that.setState(
+                  {
+                    data: {
+                      datasets: [{
+                        yValues: energy,
+                        label: itemname,
+                        config: {
+                          color: 'red',
+                          barSpacePercent: 40,
+                          barShadowColor: 'lightgrey',
+                          highlightAlpha: 90,
+                          highlightColor: 'red'
+                        }
+                      }],
+                      xValues: date
+                    }
+                  }
+                );
+                
+                      }else{
+                        Alert.alert('Fail to display','Please check your data'); 
+                      }
+                });
+                    
+              }else{
+                Alert.alert('Fail to display','Please check your data'); 
+          }
+          
+       
+       });
+
+
+    });
+
+ },
+  render: function(){
     return (
       <View style={styles.container}>
         <Picker style={styles.sportact}
@@ -189,6 +290,12 @@ componentWillMount() {
                                  label={s} />
                      }) }
         </Picker>
+          <View>
+              <TouchableOpacity style={styles.btn}
+              onPress={this.UPDATE}>
+              <Text style={styles.text}>UPDATE</Text>
+              </TouchableOpacity>
+            </View>  
         <BarChart
           style={styles.chart}
           data={this.state.data}
@@ -200,12 +307,13 @@ componentWillMount() {
           drawValueAboveBar={true}
           drawHighlightArrow={true}
         />
-        
+       
       </View>
+
     );
   }
   
-}
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -213,12 +321,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   chart: {
-    flex: 1
+    flex: 20
   },
   sportact:{
     marginTop:20,
     height:50,
     width:200,
+  },
+  btn:{
+    flex:1,
+     alignSelf: 'stretch',
+     alignItems: 'center',
+     justifyContent: 'center',
+     backgroundColor: '#2cb395',
+     height: 30,
+     borderRadius: 5,
+     width:340,
+  },
+    text:{
+    fontSize:18,
+    color:'#fff',
   },
 });
 export default SportChartView;
