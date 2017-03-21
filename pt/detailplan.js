@@ -226,7 +226,10 @@ var DetailPlanView = React.createClass({
       { text: 'Edit', onPress: function(){ _navigator.push({
                 title:'EditplanView',
                 id:'editplan',
-                params:{date:rowData.day}
+                params:{date:rowData.day,
+                  itemname:rowData.item_name,
+                  dayplan_id:rowData.id
+                }
               })},type: 'primary',},
         { text: 'Submit',onPress:  () => { this.submitrecord(rowData) },type:'secondary'},
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},

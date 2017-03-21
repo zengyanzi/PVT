@@ -47,50 +47,16 @@ var EditPlanView = React.createClass({
     this.state = {
     value: 0.2,
     sportdate:'10-02-2017',
-    sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
-    sportselected:'',
+
        };
     return {
      value:this.state.value,
      sportdate:this.state.sportdate,
-     sportname:this.state.sportname,
-     sportselected:this.state.sportselected,
 
     };
 
   },
-  //get the item 
-    componentWillMount() {
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-                console.log(result);
-      var url = 'http://47.90.60.206:8080/pt_server/item.action';  
-      fetch(url).then(function(response) {  
-              return response.json();
-            }).then(function(res) { 
-             
-               if (res["data"]!=null) {
-               //get the sport item name from the database
-               var sportobj=res["data"];
-               var arr=[];
-               for(i in sportobj){
-                
-                arr.push(sportobj[i]["name"]);
-               }
-               console.log(arr);
-                _that.setState({
-                  sportname:arr
-              })
-              }else{
-                Alert.alert('Fail to display','Please check your data'); 
-          }
-          
-       
-       });
-        
-    });  
-
-  },
+  
   //save the modify item to database
  _save:function(){
     console.log(this.state.sportselected);
@@ -98,6 +64,7 @@ var EditPlanView = React.createClass({
     var item_id;
     var sportsize=this.state.value;
     var day=this.props.date;
+    var dayplan_id=this.props.dayplan_id;
      AsyncStorage.getItem('userid',(err, result) => {
                 console.log(result);
     var trainee_id=result;
@@ -115,8 +82,8 @@ var EditPlanView = React.createClass({
                  
                }
                 console.log(item_id);
-                var urlsave='http://47.90.60.206:8080/pt_server/additem2day.action'; 
-                urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+                var urlsave='http://47.90.60.206:8080/pt_server/adjustplan.action'; 
+                urlsave += '?dayplan_id='+dayplan_id+'&sportsize='+sportsize;
                 console.log(urlsave);
 
                    fetch(urlsave).then(function(response) {  
@@ -154,21 +121,8 @@ var EditPlanView = React.createClass({
               <Text style={styles.text}>Sport Date {this.props.date}</Text>
             </View>
             <View>
-                <Text style={styles.text}>Please Choose the sport item{this.state.sportname[10]}</Text>
-                <Picker 
-                  prompt="Please choose sportname"
-                  style={{width:200,color:'#fff',alignItems:'center'}}
-                  selectedValue={this.state.sportselected}
-                  onValueChange={(value) => this.setState({sportselected: value})}>
-                 
-                    { this.state.sportname.map((s, i) => {
-                        return <Picker.Item
-                                 key={i}
-                                 value={s}
-                                 label={s} />
-                     }) }
-               
-              </Picker>
+                <Text style={styles.text}>{this.props.itemname}</Text>
+      
             </View>
             <View style={styles.slider}>
               <Text style={styles.text}>Please Choose the sport size</Text>

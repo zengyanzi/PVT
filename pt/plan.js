@@ -183,14 +183,7 @@ var PlanView = React.createClass({
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
      var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan',
-                params:
-                {date:rowData.day,
-                sportclass:rowData.text
-                }
-              })},type: 'primary',},
+      
         { text: 'Submit',onPress: () => { this.submitrecord(rowData) },type:'secondary'},
         
   ];
