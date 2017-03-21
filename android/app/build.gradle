@@ -99,10 +99,10 @@ android {
 	
 	signingConfigs{
 		release {
-			storeFile file("D:/rn/PTV/my-release-key.keystore")
-			storePassword "123456"
-			keyAlias "my-key-alias"
-			keyPassword "123456"
+			storeFile file("D:/rn/PTV/myptv-key.keystore")
+			storePassword "hr123456"
+			keyAlias "myptv-alias"
+			keyPassword "hr123456"
 		}
 	}
     splits {

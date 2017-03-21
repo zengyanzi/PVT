@@ -74,7 +74,7 @@ var SportChartView = React.createClass({
           yValues: [12.5, 12.5, 12.5, 12.5, 12.5, 14, 14, 15, 15],
           label: 'BB BENCH PRESS',
           config: {
-            color: 'yellow',
+            color: '#2cb395',
             barSpacePercent: 40,
             barShadowColor: 'lightgrey',
             highlightAlpha: 90,
@@ -164,7 +164,7 @@ var SportChartView = React.createClass({
                         yValues: energy,
                         label: 'rower',
                         config: {
-                          color: 'red',
+                          color: '#2cb395',
                           barSpacePercent: 40,
                           barShadowColor: 'lightgrey',
                           highlightAlpha: 90,
@@ -212,64 +212,62 @@ var SportChartView = React.createClass({
       fetch(url).then(function(response) {  
                 return response.json();
               }).then(function(res) {
-               if (res["data"]!=null) {
+                if (res["data"]!=null) {
                //find the id of selected item
                
-               for(i in res["data"]){
-                if(itemname==res["data"][i]["name"]){
-                   item_id=res["data"][i]["id"];
-                }
-                 
-               }
+                   for(i in res["data"]){
+                    if(itemname==res["data"][i]["name"]){
+                       item_id=res["data"][i]["id"];
+                    }
+                     
+                   }
                 console.log(item_id);
-               var urlupdate = 'http://47.90.60.206:8080/pt_server/statsport.action';
+                var urlupdate = 'http://47.90.60.206:8080/pt_server/statsport.action';
         
-               urlupdate += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
-                console.log(urlupdate);
+                  urlupdate += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
+                    console.log(urlupdate);
 
                    fetch(urlupdate).then(function(response) {  
                                 return response.json();
                               }).then(function(res) {
                               console.log(res);
                               if (res["data"]!=null) {
-                  var energy=[];
-                  var date=[];
-                  for (var i = 0; i < res["data"].length; i++) {
-                    energy.push(res["data"][i]["energy"]);
-                    date.push(res["data"][i]["day"]);
-                  };
-                   console.log(energy);
-                   console.log(date);
-                   _that.setState(
-                  {
-                    data: {
-                      datasets: [{
-                        yValues: energy,
-                        label: itemname,
-                        config: {
-                          color: 'red',
-                          barSpacePercent: 40,
-                          barShadowColor: 'lightgrey',
-                          highlightAlpha: 90,
-                          highlightColor: 'red'
-                        }
-                      }],
-                      xValues: date
-                    }
-                  }
-                );
-                
-                      }else{
-                        Alert.alert('Fail to display','Please check your data'); 
-                      }
-                });
+                                var energy=[];
+                                var date=[];
+                                for (var i = 0; i < res["data"].length; i++) {
+                                  energy.push(res["data"][i]["energy"]);
+                                  date.push(res["data"][i]["day"]);
+                                };
+                                   console.log(energy);
+                                   console.log(date);
+                                     _that.setState(
+                                    {
+                                      data: {
+                                        datasets: [{
+                                          yValues: energy,
+                                          label: itemname,
+                                          config: {
+                                            color: '#2cb395',
+                                            barSpacePercent: 40,
+                                            barShadowColor: 'lightgrey',
+                                            highlightAlpha: 90,
+                                            highlightColor: 'red'
+                                          }
+                                        }],
+                                        xValues: date
+                                      }
+                                    }
+                                  );
+                                  
+                              }else{
+                                Alert.alert('Fail to display','Please check your data'); 
+                              }
+                             });
                     
               }else{
                 Alert.alert('Fail to display','Please check your data'); 
-          }
-          
-       
-       });
+              }
+            });
 
 
     });

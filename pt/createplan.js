@@ -70,10 +70,6 @@ var CreateplanView = React.createClass({
   },
 
 
-
-//  set for the attendance
-
-
 //  set for the attendance
 
     loadData() {

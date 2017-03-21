@@ -190,7 +190,6 @@ _editplan:function(){
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>
               <Text style={{fontSize:20}}>{this.props.date}</Text>
-              <Text>Total Calories: 2800</Text>
             </View>
 
             <ListView style={styles.listview}

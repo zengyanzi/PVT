@@ -52,7 +52,7 @@ class TimeChartView extends React.Component {
           yValues: [100, 105, 102, 110, 114, 109, 105, 99, 95],
           label: 'Time Barchart',
           config: {
-            color: '#38bda0',
+            color: '#2cb395',
             barSpacePercent: 40,
             barShadowColor: '#38bda0',
             highlightAlpha: 90,
@@ -102,7 +102,7 @@ componentWillMount() {
                         yValues: energy,
                         label: 'Time Barchart',
                         config: {
-                          color: 'red',
+                          color: '#2cb395',
                           barSpacePercent: 40,
                           barShadowColor: 'lightgrey',
                           highlightAlpha: 90,

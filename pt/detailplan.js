@@ -265,7 +265,6 @@ var DetailPlanView = React.createClass({
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>
               <Text>{this.state.day} </Text>
-              <Text>Total Calories: 2800</Text>
             </View>
 
             <ListView style={styles.listview}
