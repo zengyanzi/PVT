@@ -109335,14 +109335,7 @@ _reactNative.Alert.alert('Submit','Successfully!');
 
 renderRow:function renderRow(rowData,sectionID,rowID){var _this2=this;
 var btnsTypes=[
-{text:'Edit',onPress:function onPress(){_navigator.push({
-title:'EditplanView',
-id:'editplan',
-params:
-{date:rowData.day,
-sportclass:rowData.text}});
 
-},type:'primary'},
 {text:'Submit',onPress:function onPress(){_this2.submitrecord(rowData);},type:'secondary'}];
 
 
@@ -111170,9 +111163,9 @@ function format(d){
 return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
 }
 var today=new Date();
-var start=format(today);
-var day1=new Date(today.getTime()+1000*60*60*24*6);
-var end=format(day1);
+var end=format(today);
+var day1=new Date(today.getTime()-1000*60*60*24*6);
+var start=format(day1);
 var trainee_id=result;
 var day=_this.props.date;
 var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
@@ -111731,7 +111724,10 @@ var btnsTypes=[
 {text:'Edit',onPress:function onPress(){_navigator.push({
 title:'EditplanView',
 id:'editplan',
-params:{date:rowData.day}});
+params:{date:rowData.day,
+itemname:rowData.item_name,
+dayplan_id:rowData.id}});
+
 },type:'primary'},
 {text:'Submit',onPress:function onPress(){_this2.submitrecord(rowData);},type:'secondary'},
 {text:'Delete',onPress:function onPress(){_this2.delete(rowData);},type:'delete'}];
@@ -111769,8 +111765,7 @@ _react2.default.createElement(_top2.default,this.props)),
 
 _react2.default.createElement(_reactNative.View,{style:[styles.header,styles.Bottomline]},
 _react2.default.createElement(_reactNative.Image,{source:require(749 /* ../img/plan_normal.png */)}),
-_react2.default.createElement(_reactNative.Text,null,this.state.day,' '),
-_react2.default.createElement(_reactNative.Text,null,'Total Calories: 2800')),
+_react2.default.createElement(_reactNative.Text,null,this.state.day,' ')),
 
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,
@@ -112099,51 +112094,17 @@ return Math.floor(d);
 }
 this.state={
 value:0.2,
-sportdate:'10-02-2017',
-sportname:['BB BENCH PRESS','DB FLYS','INCLINE DB BENCH','Rower','Treadmill'],
-sportselected:''};
+sportdate:'10-02-2017'};
+
 
 return{
 value:this.state.value,
-sportdate:this.state.sportdate,
-sportname:this.state.sportname,
-sportselected:this.state.sportselected};
+sportdate:this.state.sportdate};
 
 
 
 },
 
-componentWillMount:function componentWillMount(){
-var _that=this;
-_reactNative.AsyncStorage.getItem('userid',function(err,result){
-console.log(result);
-var url='http://47.90.60.206:8080/pt_server/item.action';
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-
-if(res["data"]!=null){
-
-var sportobj=res["data"];
-var arr=[];
-for(i in sportobj){
-
-arr.push(sportobj[i]["name"]);
-}
-console.log(arr);
-_that.setState({
-sportname:arr});
-
-}else{
-_reactNative.Alert.alert('Fail to display','Please check your data');
-}
-
-
-});
-
-});
-
-},
 
 _save:function _save(){
 console.log(this.state.sportselected);
@@ -112151,6 +112112,7 @@ var itemname=this.state.sportselected;
 var item_id;
 var sportsize=this.state.value;
 var day=this.props.date;
+var dayplan_id=this.props.dayplan_id;
 _reactNative.AsyncStorage.getItem('userid',function(err,result){
 console.log(result);
 var trainee_id=result;
@@ -112168,8 +112130,8 @@ item_id=res["data"][i]["id"];
 
 }
 console.log(item_id);
-var urlsave='http://47.90.60.206:8080/pt_server/additem2day.action';
-urlsave+='?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+var urlsave='http://47.90.60.206:8080/pt_server/adjustplan.action';
+urlsave+='?dayplan_id='+dayplan_id+'&sportsize='+sportsize;
 console.log(urlsave);
 
 fetch(urlsave).then(function(response){
@@ -112207,20 +112169,7 @@ _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.Text,{style:styles.text},'Sport Date ',this.props.date)),
 
 _react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Please Choose the sport item',this.state.sportname[10]),
-_react2.default.createElement(_reactNative.Picker,{
-prompt:'Please choose sportname',
-style:{width:200,color:'#fff',alignItems:'center'},
-selectedValue:this.state.sportselected,
-onValueChange:function onValueChange(value){return _this.setState({sportselected:value});}},
-
-this.state.sportname.map(function(s,i){
-return _react2.default.createElement(_reactNative.Picker.Item,{
-key:i,
-value:s,
-label:s});
-}))),
-
+_react2.default.createElement(_reactNative.Text,{style:styles.text},this.props.itemname)),
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.slider},
@@ -113046,10 +112995,6 @@ value:this.state.value};
 
 
 
-
-
-
-
 loadData:function loadData(){
 this.setState({
 dataArray:_keys2.default});
@@ -113487,62 +113432,22 @@ return true;
 var _navigator;
 var btnsDefault=[{text:'Button'}];
 
-var btnsTypes=[
-{text:'Detail',onPress:function onPress(){_navigator.push({
-title:'PlanInfoView',
-id:'planinfo'});
-},type:'primary'}];
-
-
-
 var detailrows=[
 {
 rowID:'1',
 Calories:"957",
 text:"Full Body Workout",
-right:btnsTypes,
 autoClose:true},
 {
 rowID:'2',
 Calories:"1457",
 text:"Strength,Shape,Tone",
-right:btnsTypes,
 autoClose:true},
 {
 rowID:'3',
 Calories:"1657",
 text:"Mixed Cadio",
-right:btnsTypes,
-autoClose:true},
-{
-rowID:'4',
-Calories:"1257",
-text:"Tone Shape",
-right:btnsTypes},
-
-{
-rowID:'5',
-Calories:"1257",
-text:"Tone Shape",
-right:btnsTypes},
-
-{
-rowID:'6',
-Calories:"1257",
-text:"Tone Shape",
-right:btnsTypes},
-
-{
-rowID:'7',
-Calories:"1257",
-text:"Tone Shape",
-right:btnsTypes},
-
-{
-rowID:'8',
-Calories:"1257",
-text:"Tone Shape",
-right:btnsTypes}];
+autoClose:true}];
 
 
 
@@ -113571,19 +113476,53 @@ planid:this.state.planid};
 
 },
 
+componentWillMount:function componentWillMount(){
+var _that=this;
+var url='http://47.90.60.206:8080/pt_server/optionplan.action';
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+console.log(res["data"]);
+if(res["data"]!=null){
+
+_that.setState({
+dataSource:ds.cloneWithRows(res["data"]),
+detailrows:res["data"]});
+
+}else{
+_reactNative.Alert.alert('Fail to display','Please check your data');
+}
+
+
+});
+
+
+
+},
+
 allowScroll:function allowScroll(scrollEnabled){
 this.setState({scrollEnabled:scrollEnabled});
 },
 
 
 handleSwipeout:function handleSwipeout(sectionID,rowID){
-for(var i=0;i<detailrows.length;i++){
-if(i!=rowID)detailrows[i].active=false;else
-detailrows[i].active=true;
+for(var i=0;i<this.state.detailrows.length;i++){
 
+if(i!=rowID)this.state.detailrows[i].active=false;else
+this.state.detailrows[i].active=true;
 }
-this.updateDataSource(detailrows);
+this.updateDataSource(this.state.detailrows);
+
 },
+
+
+updateDataSource:function updateDataSource(data){
+this.setState({
+dataSource:this.state.dataSource.cloneWithRows(data)});
+
+},
+
 
 updateDataSource:function updateDataSource(data){
 this.setState({
@@ -113592,11 +113531,22 @@ dataSource:this.state.dataSource.cloneWithRows(data)});
 },
 
 renderRow:function renderRow(rowData,sectionID,rowID){var _this=this;
+var btnsTypes=[
+{text:'Detail',onPress:function onPress(){_navigator.push({
+title:'PlanInfoView',
+id:'planinfo',
+params:{plantitle:rowData.title,
+planid:rowData.id}});
+
+},type:'primary'}];
+
+
+
 
 return(
 _react2.default.createElement(_reactNativeSwipeout2.default,{
 left:rowData.left,
-right:rowData.right,
+right:btnsTypes,
 rowID:rowID,
 sectionID:sectionID,
 autoClose:rowData.autoClose,
@@ -113606,9 +113556,9 @@ close:!rowData.active,
 
 onOpen:function onOpen(sectionID,rowID){return _this.handleSwipeout(sectionID,rowID);},
 scroll:function scroll(event){return _this.allowScroll(event);}},
-_react2.default.createElement(_reactNative.TouchableHighlight,{style:styles.li,activeOpacity:0.5,underlayColor:'#2cb395',onPress:function onPress(){return _this.setState({planid:parseInt(rowID)+1});}},
+_react2.default.createElement(_reactNative.TouchableHighlight,{style:styles.li,activeOpacity:0.5,underlayColor:'#2cb395',onPress:function onPress(){return _this.setState({planid:rowData.id});}},
 
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Plan NO: ',parseInt(rowID)+1,' ',rowData.text,'Calories: ',rowData.Calories))));
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Plan NO: ',rowData.id,' ',rowData.title))));
 
 
 
@@ -113622,6 +113572,9 @@ title:'TraineeloinView',
 id:'traineelogin'});
 
 },
+
+
+
 
 render:function render(){
 
@@ -113773,38 +113726,34 @@ return true;
 
 var _navigator;
 var btnsDefault=[{text:'Button'}];
-
 var btnsTypes=[
-{text:'Edit',onPress:function onPress(){_navigator.push({
-title:'EditplanView',
-id:'editplan'});
-},type:'primary'},
-{text:'Submit',onPress:function onPress(){alert('confirm to submit?');},type:'secondary'},
-{text:'Delete',onPress:function onPress(){alert('Confirm to delete?');},type:'delete'}];
+{text:'Detail',onPress:function onPress(){_navigator.push({
+title:'PlanInfoView',
+id:'planinfo'});
+},type:'primary'}];
+
+
+
 
 var detailrows=[
 {
 Calories:"457",
 text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-right:btnsTypes,
 autoClose:true},
 {
 
 Calories:"457",
 text:"Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-right:btnsTypes,
 autoClose:true},
 {
 
 Calories:"457",
 text:"Upper Back 18,29 30-60 sec 1 1",
-right:btnsTypes,
 autoClose:true},
 {
 
 Calories:"457",
-text:"Bike Fast  3min  Moderate  15  60Sec",
-right:btnsTypes}];
+text:"Bike Fast  3min  Moderate  15  60Sec"}];
 
 
 
@@ -113829,19 +113778,84 @@ scrollEnabled:true};
 
 },
 
+componentWillMount:function componentWillMount(){
+var _that=this;
+var url='http://47.90.60.206:8080/pt_server/optionplan.action';
+
+console.log(url);
+
+console.log(this.props.planid);
+var optionplanid=this.props.planid;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+
+if(res["data"]!=null){
+for(var i=0;i<res["data"].length;i++){
+if(res["data"][i]["id"]===optionplanid){
+var optionItems=res["data"][i]["optionItems"];
+
+};
+console.log(optionItems);
+var urlitem='http://47.90.60.206:8080/pt_server/item.action';
+console.log(urlitem);
+fetch(urlitem).then(function(response){
+return response.json();
+}).then(function(result){
+console.log(result["data"]);
+if(result["data"]!=null){
+var planinfo=[];
+for(var i=0;i<result["data"].length;i++){
+for(var j=0;j<optionItems.length;j++){
+if(result["data"][i]["id"]===optionItems[j]["item_id"]){
+var iteminfo={};
+iteminfo.itemname=result["data"][i]["name"];
+iteminfo.sportsize=optionItems[j]["sportsize"];
+planinfo.push(iteminfo);
+};
+};
+
+};
+console.log(planinfo);
+_that.setState({
+dataSource:ds.cloneWithRows(planinfo),
+detailrows:planinfo});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+
+};
+
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+
+
+});
+
+
+
+},
+
 allowScroll:function allowScroll(scrollEnabled){
 this.setState({scrollEnabled:scrollEnabled});
 },
 
 
 handleSwipeout:function handleSwipeout(sectionID,rowID){
-for(var i=0;i<detailrows.length;i++){
+for(var i=0;i<this.state.detailrows.length;i++){
 
-if(i!=rowID)detailrows[i].active=false;else
-detailrows[i].active=true;
+if(i!=rowID)this.state.detailrows[i].active=false;else
+this.state.detailrows[i].active=true;
 }
-this.updateDataSource(detailrows);
+this.updateDataSource(this.state.detailrows);
+
 },
+
 
 updateDataSource:function updateDataSource(data){
 this.setState({
@@ -113849,12 +113863,12 @@ dataSource:this.state.dataSource.cloneWithRows(data)});
 
 },
 
-
 renderRow:function renderRow(rowData,sectionID,rowID){var _this=this;
+
 return(
 _react2.default.createElement(_reactNativeSwipeout2.default,{
 left:rowData.left,
-right:rowData.right,
+right:btnsTypes,
 rowID:rowID,
 sectionID:sectionID,
 autoClose:rowData.autoClose,
@@ -113863,19 +113877,12 @@ close:!rowData.active,
 onOpen:function onOpen(sectionID,rowID){return _this.handleSwipeout(sectionID,rowID);},
 scroll:function scroll(event){return _this.allowScroll(event);}},
 _react2.default.createElement(_reactNative.View,{style:styles.li},
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},rowData.text,'Calories: ',rowData.Calories))));
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},rowData.itemname,' sportsize: ',rowData.sportsize))));
 
 
 
 },
 
-
-_editplan:function _editplan(){
-_navigator.push({
-title:'TraineeloinView',
-id:'traineelogin'});
-
-},
 
 render:function render(){
 return(
@@ -113888,8 +113895,7 @@ _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_top2.default,this.props)),
 
 _react2.default.createElement(_reactNative.View,{style:[styles.header,styles.Bottomline]},
-_react2.default.createElement(_reactNative.Text,{style:{fontSize:20}},'Full Body Workout'),
-_react2.default.createElement(_reactNative.Text,null,'Total Calories: 2800')),
+_react2.default.createElement(_reactNative.Text,{style:{fontSize:20}},this.props.plantitle)),
 
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,
@@ -114459,8 +114465,7 @@ _react2.default.createElement(_top2.default,this.props)),
 
 _react2.default.createElement(_reactNative.View,{style:[styles.header,styles.Bottomline]},
 _react2.default.createElement(_reactNative.Image,{source:require(749 /* ../img/plan_normal.png */)}),
-_react2.default.createElement(_reactNative.Text,{style:{fontSize:20}},this.props.date),
-_react2.default.createElement(_reactNative.Text,null,'Total Calories: 2800')),
+_react2.default.createElement(_reactNative.Text,{style:{fontSize:20}},this.props.date)),
 
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,

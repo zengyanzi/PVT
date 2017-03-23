@@ -146,9 +146,10 @@ var DetailRecordView = React.createClass({
       { text: 'Edit', onPress: function(){ _navigator.push({
                 title:'EditrecordView',
                 id:'editrecord',
-                params:{date:rowData.day}
+                params:{date:rowData.day,
+                  itemname:rowData.itemname
+                }
               })},type: 'primary',},
-        { text: 'Submit',onPress:  () => { this.submitrecord(rowData) },type:'secondary'},
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
   ];
     return (
@@ -184,8 +185,24 @@ _editplan:function(){
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
+             <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                  <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
+                    <Image source={require('../img/add_pressed.png') }/>
+                   </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              
+              <View style={[styles.Topbar,styles.Right]}>
+              <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
+                <Image source={require('../img/chart-pressed.png') }/>
+              </TouchableOpacity> 
+              </View>
+              
             </View>
             <View style={[styles.header,styles.Bottomline]}>
               <Image  source={require('../img/plan_normal.png') }/>

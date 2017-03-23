@@ -160,14 +160,7 @@ var RecordView = React.createClass({
   renderRow(rowData: string, sectionID: number, rowID: number) {
 
       var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditrecordView',
-                id:'editrecord',
-                params:
-                {date:rowData.day,
-                sportclass:rowData.text
-                }
-              })},type: 'primary',},
+
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
       ];
     return (
@@ -204,8 +197,8 @@ var RecordView = React.createClass({
             <View style={[styles.Top,styles.Bottomline]}>
               <View style={[styles.Topbar,styles.Left]}>
                   <TouchableOpacity 
-                      onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
-                    <Image source={require('../img/setting_normal.png') }/>
+                      onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
+                    <Image source={require('../img/add_pressed.png') }/>
                    </TouchableOpacity> 
               </View>
               <View style={styles.Topbar}>

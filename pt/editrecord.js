@@ -46,14 +46,12 @@ var EditRecordView = React.createClass({
     this.state = {
     value: 0.2,
     sportdate:'10-02-2017',
-    sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
-    sportselected:'',
+
     };
     return {
      value:this.state.value,
      sportdate:this.state.sportdate,
-     sportname:this.state.sportname,
-     sportselected:this.state.sportselected,
+
 
     };
 
@@ -147,27 +145,31 @@ var EditRecordView = React.createClass({
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                  <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
+                    <Image source={require('../img/setting_normal.png') }/>
+                   </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              
+              <View style={[styles.Topbar,styles.Right]}>
+              <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
+                <Image source={require('../img/chart-pressed.png') }/>
+              </TouchableOpacity> 
+              </View>
+              
             </View>
             <View>
                <Text style={styles.text}>Sport Date {this.props.date}</Text>
             </View>
             <View>
-                <Text style={styles.text}>Please Choose the sport item</Text>
-                <Picker 
-                  prompt="Please choose sportclass"
-                  style={{width:200,color:'#fff',alignItems:'center'}}
-                  selectedValue={this.state.sportselected}
-                  onValueChange={(value) => this.setState({sportselected: value})}>
-                 
-                    { this.state.sportname.map((s, i) => {
-                        return <Picker.Item
-                                 key={i}
-                                 value={s}
-                                 label={s} />
-                     }) }
-                </Picker>
+                <Text style={styles.text}>{this.props.itemname}</Text>
+
             </View>
             <View style={styles.slider}>
               <Text style={styles.text}>Please Choose the sport size</Text>

@@ -48,7 +48,7 @@ var AdditemtodayView = React.createClass({
     value: 0.2,
     sportdate:'10-02-2017',
     sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
-    sportselected:'',
+    sportselected:'Rower',
        };
     return {
      value:this.state.value,
@@ -146,9 +146,20 @@ _submit:function(){
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps={false}>
           <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
-            </View>
+              <View style={[styles.Top,styles.Bottomline]}>
+                <View style={[styles.Topbar,styles.Left]}>
+                    <TouchableOpacity 
+                        onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
+                      <Image source={require('../img/back.png') }/>
+                     </TouchableOpacity> 
+                </View>
+                <View style={styles.Topbar}>
+                  <Image source={require('../img/ptv_sized.png') }/>
+                </View>
+                <View style={[styles.Topbar,styles.Right]}>
+                  
+                </View>
+              </View>
             <View>
               <Text style={styles.text}>Please Choose the Date</Text>
               <DatePicker

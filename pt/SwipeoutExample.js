@@ -63,15 +63,75 @@ class SwipeoutExample extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.statusbar}/>
-        <View style={styles.navbar}><Text style={styles.navbarTitle}>Swipeout</Text></View>
-        <ListView
-          scrollEnabled={this.state.scrollEnabled}
-          dataSource={this.state.dataSource}
-          renderRow={this._renderRow.bind(this)}
-          style={styles.listview}/>
-      </View>
+           <ScrollView 
+            contentContainerStyle={{flex:1}}
+            keyboardDismissMode='on-drag'
+            keyboardShouldPersistTaps={false}>
+          <View style={styles.maincontain}>
+              <View style={[styles.Top,styles.Bottomline]}>
+                <View style={[styles.Topbar,styles.Left]}>
+                    <TouchableOpacity 
+                        onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
+                      <Image source={require('../img/back.png') }/>
+                     </TouchableOpacity> 
+                </View>
+                <View style={styles.Topbar}>
+                  <Image source={require('../img/ptv_sized.png') }/>
+                </View>
+                <View style={[styles.Topbar,styles.Right]}>
+                  
+                </View>
+              </View>
+            <View>
+              <Text style={styles.text}>Please Choose the Date</Text>
+              <DatePicker
+                style={styles.datepicker}
+                date={this.state.date}
+                mode="date"
+                placeholder="Date"
+                format="YYYY-MM-DD"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                onDateChange={(date) => {this.setState({date: date});}}/>
+            </View>
+            <View>
+                <Text style={styles.text}>Please Choose the sport item</Text>
+             <Picker 
+                  prompt="Please choose sportname"
+                  style={{width:200,color:'#fff',alignItems:'center'}}
+                  selectedValue={this.state.sportselected}
+                  onValueChange={(value) => this.setState({sportselected: value})}>
+                 
+                    { this.state.sportname.map((s, i) => {
+                        return <Picker.Item
+                                 key={i}
+                                 value={s}
+                                 label={s} />
+                     }) }
+               
+              </Picker>
+            </View>
+            <View style={styles.slider}>
+              <Text style={styles.text}>Please Choose the sport size</Text>
+              <Slider 
+                value={this.state.value}
+                maximumValue={100}
+                step={0.5}
+                trackStyle={customStyles2.track}
+                thumbStyle={customStyles2.thumb}
+                thumbTouchSize={{width: 50, height: 40}}
+                minimumTrackTintColor='#2cb395'
+                onValueChange={(value) => Math.floor(this.setState({value}))} />
+              <Text style={styles.text}>Value:{this.state.value} </Text>
+            </View>
+            <View>
+              <TouchableOpacity style={styles.btn}
+              onPress={this._submit}>
+              <Text style={styles.text}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
     );
   }
 
