@@ -25,6 +25,8 @@ import EditRecordView from './pt/editrecord';
 import DetailRecordView from './pt/detailrecord';
 import ChartView from './pt/chart';
 import AdditemtodayView from'./pt/additemtoday';
+import AddrecordtodayView from'./pt/addrecordtoday';
+
 
 export default class PTV extends React.Component {
 
@@ -226,6 +228,12 @@ export default class PTV extends React.Component {
         <AdditemtodayView {...route.params} navigator={navigator} route={route}/>
       );
     }
+   if(route.id === 'addrecordtoday'){
+      return (
+        <AddrecordtodayView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    
     
   }
 

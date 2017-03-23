@@ -82,7 +82,10 @@ _editplan:function(){
                 <Image source={require('../img/ptv_sized.png') }/>
               </View>
               <View style={[styles.Topbar,styles.Right]}>
+              <TouchableOpacity 
+                 onPress={() => _navigator.push({title:'AddrecordtodayView',id:'addrecordtoday'})}>
                 <Image source={require('../img/add_pressed.png') }/>
+                </TouchableOpacity> 
               </View>
             </View>
 
