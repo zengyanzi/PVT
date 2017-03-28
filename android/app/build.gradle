@@ -99,9 +99,9 @@ android {
 	
 	signingConfigs{
 		release {
-			storeFile file("D:/rn/PTV/myptv-key.keystore")
+			storeFile file("D:/rn/PTV/anptv.keystore")
 			storePassword "hr123456"
-			keyAlias "myptv-alias"
+			keyAlias "anptv-alias"
 			keyPassword "hr123456"
 		}
 	}
