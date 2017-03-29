@@ -13,6 +13,7 @@ import {
   AsyncStorage,
   Picker,
   Modal,
+  TouchableHighlight,
   ListView
 } from 'react-native';
 
@@ -21,13 +22,43 @@ import Dimensions from 'Dimensions';
 import { List, ListItem } from 'react-native-elements';
 
 
+class Button extends Component {
+  state = {
+  active: false,
+  };
+  _onHighlight = () => {
+  this.setState({active: true});
+  };
+  _onUnhighlight = () => {
+  this.setState({active: false});
+  };
+  render() {
+  var colorStyle = {
+    color: this.state.active ? '#fff' : '#000',
+  };
+  return (
+    <TouchableHighlight
+    onHideUnderlay={this._onUnhighlight}
+    onPress={this.props.onPress}
+    onShowUnderlay={this._onHighlight}
+    style={[styles.button, this.props.style]}
+    underlayColor="#a9d9d4">
+      <Text style={[styles.buttonText, colorStyle]}>{this.props.children}</Text>
+    </TouchableHighlight>
+  );
+  }
+}
+
 var screenW = Dimensions.get('window').width;
 
 
 var _navigator ;
 
 
-var ProfileView = React.createClass({
+
+
+
+var ProfileModifyView = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -36,35 +67,17 @@ var ProfileView = React.createClass({
     this.state = {
 
 
+
     };
     return {
-       
+   
+
     };
 
   },
 
-
-
-  _logout: function(){
-            _navigator.push({
-            title:'main',
-            id:'main'
-           });  
-      AsyncStorage.removeItem('type',(err,result)=>{
-        console.log(result);
-      });
-
-      AsyncStorage.removeItem('email',(err,result)=>{
-        console.log(result);
-      });
-      AsyncStorage.removeItem('password',(err,result)=>{
-        console.log(result);
-      
-      });
-  },
-
-
  render: function(){
+
       return(
          <ScrollView 
             contentContainerStyle={{flex:1}}
@@ -72,7 +85,7 @@ var ProfileView = React.createClass({
             keyboardShouldPersistTaps={false}>
             <View style={styles.maincontain}>
               <View style={[styles.Top,styles.Bottomline]}>
-
+        
                 <View style={styles.Topbar}>
 
                 </View>
@@ -87,61 +100,41 @@ var ProfileView = React.createClass({
             </View>
            <View >
 
-           <TouchableOpacity onPress={() => _navigator.push({title:'ProfileModifyView',id:'profilemodify'})}>
             <List>
+              <TouchableOpacity onPress={() => _navigator.push({title:'EmailModifyView',id:'emailmodify'})}>
+
               <ListItem
                 roundAvatar
-                title='Zeng Jenny'
-                subtitle={
+                title='Modify Email'
+                 subtitle={
                   <View style={styles.subtitleView}>
                     <Text style={styles.ratingText}>zeng@gmail.com</Text>
                   </View>
                 }
-                avatar={require('../img/profile_normal.png')}
               />
-            </List>
             </TouchableOpacity>
-          
-            <List>
+
               <ListItem
                 roundAvatar
-                title='Gender'
-                avatar={require('../img/gender.png')}
+                title='Modify Nickname'
+                 subtitle={
+                  <View style={styles.subtitleView}>
+                    <Text style={styles.ratingText}>Jenny bunny</Text>
+                  </View>
+                }
               />
               <ListItem
                 roundAvatar
-                title='Birthday'
-                avatar={require('../img/plan_normal.png')}
-              />
-      
-            <ListItem
-                roundAvatar
-                title='Height'
-                avatar={require('../img/height.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='Initial Weight'
-                avatar={require('../img/weight.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='Target Weight'
-                avatar={require('../img/target.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='BMI'
-                avatar={require('../img/Heart.png')}
+                title='Modify Password'
+             
               />
             </List>
+
+
+
+
             </View>  
-            <View >
-              <TouchableOpacity style={styles.btn}
-              onPress={this._logout}>
-              <Text style={styles.text}>Logout</Text>
-              </TouchableOpacity>
-            </View>       
+     
 
       </View>   
         </ScrollView>
@@ -207,8 +200,8 @@ var styles = StyleSheet.create({
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     height: 50,
+     height: 30,
      borderRadius: 5,
-   }
+   },
 });
-module.exports = ProfileView;
+module.exports = ProfileModifyView;
