@@ -16,6 +16,7 @@ import {
 var _navigator;
 import InstructregisterView from'./instructregister';
 import InstructloginView from'./instructlogin';
+import URLnetowrk from './network';
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;

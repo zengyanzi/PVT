@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import t from 'tcomb-form-native';
 import DatePicker from './date.js';
+import URLnetowrk from './network';
 var Form =t.form.Form;
 var _ = require('lodash');
 var _navigator ;
@@ -62,7 +63,7 @@ var TraineeregisterView = React.createClass({
     var phone = value["phone"];
     var password = value["password"];
     var email = value["email"];
-    var url = 'http://47.90.60.206:8080/pt_server/traineeregister.action';
+    var url = URLnetowrk+'traineeregister.action';
     url += '?name='+name+'&surname='+surname+'&email='+email+'&phone='+phone+'&password='+password;
     fetch(url, {
       method: 'GET',

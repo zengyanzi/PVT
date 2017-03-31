@@ -18,7 +18,7 @@ import {
 var _navigator;
 var TraineeregisterView = require('./traineeregister.js');
 var TraineeloginView = require('./traineelogin.js');
-
+import URLnetowrk from './network';
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;

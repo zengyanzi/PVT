@@ -14,6 +14,7 @@ import {
   Alert
 } from 'react-native';
 import {BarChart} from 'react-native-mp-android-chart';
+import URLnetowrk from './network';
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -102,7 +103,7 @@ var SportChartView = React.createClass({
       console.log(trainee_id);
       console.log(startday);
       console.log(end);
-      var urlitem = 'http://47.90.60.206:8080/pt_server/item.action';  
+      var urlitem = URLnetowrk+'item.action';  
       fetch(urlitem).then(function(response) {  
           return response.json();
       }).then(function(res) { 
@@ -123,7 +124,7 @@ var SportChartView = React.createClass({
           _that.setState({
             sportname:arr
           })
-          var url = 'http://47.90.60.206:8080/pt_server/statsport.action';
+          var url = URLnetowrk+'statsport.action';
           url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
           console.log(url);
           fetch(url).then(function(response) { 
@@ -184,7 +185,7 @@ var SportChartView = React.createClass({
     AsyncStorage.getItem('userid',(err, result) => {
       console.log(result);
       var trainee_id=result;
-      var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
+      var url = URLnetowrk+'item.action'; // get the item data again 
       fetch(url).then(function(response) {  
         return response.json();
       }).then(function(res) {
@@ -196,7 +197,7 @@ var SportChartView = React.createClass({
             }                   
           }
           console.log(item_id);
-          var urlupdate = 'http://47.90.60.206:8080/pt_server/statsport.action';
+          var urlupdate = URLnetowrk+'statsport.action';
           urlupdate += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
           console.log(urlupdate);
           fetch(urlupdate).then(function(response) {  

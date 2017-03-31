@@ -18,6 +18,7 @@ import {
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
 import Topview from './top.js';
+import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -57,7 +58,7 @@ var EditPlanView = React.createClass({
     AsyncStorage.getItem('userid',(err, result) => {
       console.log(result);
     var trainee_id=result;
-    var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
+    var url = URLnetowrk+'item.action'; // get the item data again 
     fetch(url).then(function(response) {  
       return response.json();
     }).then(function(res) {
@@ -69,7 +70,7 @@ var EditPlanView = React.createClass({
           }         
          }
         console.log(item_id);
-        var urlsave='http://47.90.60.206:8080/pt_server/adjustplan.action'; 
+        var urlsave=URLnetowrk+'adjustplan.action'; 
         urlsave += '?dayplan_id='+dayplan_id+'&sportsize='+sportsize;
         console.log(urlsave);
         fetch(urlsave).then(function(response) {  

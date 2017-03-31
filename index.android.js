@@ -28,6 +28,8 @@ import AdditemtodayView from'./pt/additemtoday';
 import AddrecordtodayView from'./pt/addrecordtoday';
 import ProfileModifyView from './pt/profilemodify';
 import EmailModifyView from './pt/emailmodify';
+import URLnetowrk from './pt/network';
+
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
@@ -49,7 +51,7 @@ export default class PTV extends React.Component {
                 password=result;
                 // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
                   // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
-                var url = 'http://47.90.60.206:8080/pt_server/instructorlogin.action';
+                var url = URLnetowrk+'instructorlogin.action';
                 url += '?email='+email+'&password='+password;
                 console.log(url);
                 fetch(url).then(function(response) {  
@@ -75,7 +77,7 @@ export default class PTV extends React.Component {
                 // console.log(result);
                 password=result;
                   // var url = 'http://192.168.20.17:8080/pt_server/traineelogin.action';
-                var url = 'http://47.90.60.206:8080/pt_server/traineelogin.action';
+                var url = URLnetowrk+'traineelogin.action';
                 url += '?email='+email+'&password='+password;
                 console.log(url);
                 fetch(url).then(function(response) {  

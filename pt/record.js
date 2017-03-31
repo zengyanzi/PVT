@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-
+import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -79,7 +79,7 @@ var RecordView = React.createClass({
       var trainee_id=result;
       var day=this.props.date;
       var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var url = 'http://47.90.60.206:8080/pt_server/myrecord.action';
+      var url = URLnetowrk+'myrecord.action';
       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
       url += '?trainee_id='+trainee_id+'&start='+start+'&end='+end;
       console.log(url);

@@ -12,6 +12,7 @@ import {
   Alert
 } from 'react-native';
 import {BarChart} from 'react-native-mp-android-chart';
+import URLnetowrk from './network';
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -69,7 +70,7 @@ componentWillMount() {
         var trainee_id=result;
         console.log(trainee_id);
         console.log(end);
-        var url = 'http://47.90.60.206:8080/pt_server/stat.action';
+        var url = URLnetowrk+'stat.action';
           // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
           url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end;
           console.log(url);

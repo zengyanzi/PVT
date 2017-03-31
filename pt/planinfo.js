@@ -18,6 +18,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import Topview from './top.js';
+import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -75,7 +76,7 @@ var PlanInfoView = React.createClass({
 //get the option 
 componentWillMount() {
   let _that=this;
-  var url = 'http://47.90.60.206:8080/pt_server/optionplan.action';  
+  var url = URLnetowrk+'optionplan.action';  
   console.log(url);
   console.log(this.props.planid);
   var optionplanid=this.props.planid;
@@ -89,7 +90,7 @@ componentWillMount() {
           var optionItems=res["data"][i]["optionItems"];
         };
         console.log(optionItems);
-        var urlitem = 'http://47.90.60.206:8080/pt_server/item.action';
+        var urlitem = URLnetowrk+'item.action';
         console.log(urlitem);
         fetch(urlitem).then(function(response) {  
             return response.json();
