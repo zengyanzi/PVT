@@ -1,18 +1,13 @@
 import React from 'react';
 import {Image} from 'react-native';
-
-
-
-  var btnsDefault = [ { text: 'Button' } ];
-
-  var btnsTypes = [
+var btnsDefault = [ { text: 'Button' } ];
+var btnsTypes = [
     { text: 'Primary',    type: 'primary',   },
     { text: 'Secondary',  type: 'secondary', },
     { text: 'Delete',     type: 'delete',    }
   ];
-  var detailrows = [
+var detailrows = [
     {
-
        Calories :"457",
        text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
       right: [
@@ -22,7 +17,6 @@ import {Image} from 'react-native';
       ],
       autoClose: true,
     }, {
-
       Calories :"457",
        text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
       right: [
@@ -32,7 +26,6 @@ import {Image} from 'react-native';
       ],
       autoClose: true,
     }, {
-
         Calories :"457",
         text: "Upper Back 18,29 30-60 sec 1 1",
       right: [
@@ -51,7 +44,5 @@ import {Image} from 'react-native';
         { text: 'Delete',onPress: function(){ alert('Confirm to delete?') },type: 'delete'},
       ],
     },
-    
   ];
-
 export default detailrows;

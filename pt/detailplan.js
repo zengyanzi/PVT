@@ -1,9 +1,6 @@
-
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -18,8 +15,6 @@ import {
   ListView,
   Alert
 } from 'react-native';
-
-
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import Topview from './top.js';
@@ -35,41 +30,25 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
 var btnsDefault = [ { text: 'Button' } ];
-
-
-
-  //delete choose item
-
- detailrows = [
+//delete choose item
+detailrows = [
     {
-       Calories :"457",
-       text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-    
-    }, {
-
       Calories :"457",
-       text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-     
-   
+      text:"Rower Moderate  5 min 30 sec fast:60 sec slow",  
     }, {
-
-        Calories :"457",
-        text: "Upper Back 18,29 30-60 sec 1 1",
-     
-    }, {
-
       Calories :"457",
-      text: "Bike Fast  3min  Moderate  15  60Sec",
-      
-    },
-    
+      text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",  
+    }, {
+      Calories :"457",
+      text: "Upper Back 18,29 30-60 sec 1 1",
+    }, {
+      Calories :"457",
+      text: "Bike Fast  3min  Moderate  15  60Sec",      
+    },   
   ];
- 
 var DetailPlanView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -81,147 +60,121 @@ var DetailPlanView = React.createClass({
     return {
       day:this.state.day,
       dataSource: this.state.dataSource,
-      scrollEnabled: true,
-
-     
+      scrollEnabled: true,   
     };
-
   },
-      componentWillMount() {
-      let _that=this;
-      AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-        var trainee_id=result;
-        var day=this.props.date;
-        var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-        var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
-        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-        url += '?trainee_id='+trainee_id+'&day='+day;
-        console.log(url);
-        fetch(url).then(function(response) {  
-              return response.json();
-            }).then(function(res) {
-            console.log(res);
-        
-             if (res["data"]!=null) {
-             
-            _that.setState({
-             dataSource: ds.cloneWithRows(res["data"]),
-             detailrows:res["data"]
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+      var day=this.props.date;
+      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+      var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?trainee_id='+trainee_id+'&day='+day;
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        console.log(res); 
+        if (res["data"]!=null) {        
+          _that.setState({
+            dataSource: ds.cloneWithRows(res["data"]),
+            detailrows:res["data"]
           })
-          }else{
-            Alert.alert('Fail to display','Please check your data'); 
-          }
-          
-       
-       });
-        
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }  
+      });       
     });  
-
   },
-
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });
   },
-
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
     for (var i = 0; i < this.state.detailrows.length; i++) {
       
-      if (i != rowID) this.state.detailrows[i].active = false;
-      else this.state.detailrows[i].active = true;
+      if (i != rowID){
+        this.state.detailrows[i].active = false;
+      } 
+      else{
+        this.state.detailrows[i].active = true;
+      } 
     }
     this.updateDataSource(this.state.detailrows);
-
   },
-
- 
   updateDataSource(data) {
     this.setState({
       dataSource: this.state.dataSource.cloneWithRows(data),
     });
   },
-
   delete:function(rowData){
     let _that=this;
-     AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-        var trainee_id=result;
-        var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-        var plan_id =rowData.id;
-        var url = 'http://47.90.60.206:8080/pt_server/delplan.action';
-        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-        url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
-        console.log(url);
-              fetch(url).then(function(response) {  
-              return response.json();
-            }).then(function(res) {
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+      var plan_id =rowData.id;
+      var url = 'http://47.90.60.206:8080/pt_server/delplan.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
+      console.log(url);
+      fetch(url).then(function(response) {  
+          return response.json();
+      }).then(function(res) {
+        console.log(res);        
+        if (res["data"]==true) {
+          var day=_that.props.date;
+          console.log(day);
+          var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
+          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+          url += '?trainee_id='+trainee_id+'&day='+day;
+          console.log(url);
+          fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
             console.log(res);
-        
-             if (res["data"]==true) {
-
-              var day=_that.props.date;
-              console.log(day);
-              var url = 'http://47.90.60.206:8080/pt_server/detailplan.action';
-              // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-              url += '?trainee_id='+trainee_id+'&day='+day;
-              console.log(url);
-              fetch(url).then(function(response) {  
-                    return response.json();
-                  }).then(function(res) {
-                  console.log(res);
-              
-                   if (res["data"]!=null) {
-                   
-                  _that.setState({
-                   dataSource: ds.cloneWithRows(res["data"]),
-                   detailrows:res["data"]
-                })
-                }else{
-                  Alert.alert('Fail to display','Please check your data'); 
-                }
-                
-             
-             });
-              
+            if (res["data"]!=null) {                 
+              _that.setState({
+                dataSource: ds.cloneWithRows(res["data"]),
+                detailrows:res["data"]
+              })
+            }else{
+              Alert.alert('Fail to display','Please check your data'); 
+            }
+           });   
           }else{
             Alert.alert('Fail to display','Please check your data'); 
           }
-          
-       
-       });
-    })
- 
-  },
- submitrecord:function(rowData){
+        });
+      }) 
+    },
+  submitrecord:function(rowData){
     let _that=this;
-     AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-        var trainee_id=result;
-        var day =rowData.day;
-        var item_id=rowData.item_id;
-        var sportsize=rowData.sportsize;
-        var url = 'http://47.90.60.206:8080/pt_server/addrecord2day.action';
-        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-        url += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
-        console.log(url);
-              fetch(url).then(function(response) {  
-              return response.json();
-            }).then(function(res) {
-            console.log(res);
-             if (res["data"]==true) {
-              Alert.alert('Submit','Successfully!'); 
-             }
-          
-
-       
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+      var day =rowData.day;
+      var item_id=rowData.item_id;
+      var sportsize=rowData.sportsize;
+      var url = 'http://47.90.60.206:8080/pt_server/addrecord2day.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      url += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+      console.log(url);
+        fetch(url).then(function(response) {  
+          return response.json();
+        }).then(function(res) {
+          console.log(res);
+          if (res["data"]==true) {
+            Alert.alert('Submit','Successfully!'); 
+          }
        });
     })
   },
   renderRow(rowData: string, sectionID: number, rowID: number) {
-   
-
     var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
                 title:'EditplanView',
@@ -233,8 +186,7 @@ var DetailPlanView = React.createClass({
               })},type: 'primary',},
         { text: 'Submit',onPress:  () => { this.submitrecord(rowData) },type:'secondary'},
         { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
-  ];
-
+    ];
     return (
       <Swipeout
         left={rowData.left}
@@ -252,41 +204,33 @@ var DetailPlanView = React.createClass({
       </Swipeout>
     );
   },
-
-
-
- render: function(){
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-          <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
-            </View>
-            <View style={[styles.header,styles.Bottomline]}>
-              <Image  source={require('../img/plan_normal.png') }/>
-              <Text>{this.state.day} </Text>
-            </View>
-
-            <ListView style={styles.listview}
-              scrollEnabled={this.state.scrollEnabled}
-              dataSource={this.state.dataSource}
-              enableEmptySections={true}
-              renderRow={this.renderRow}
-              />
-            <View>
+  render: function(){
+    return(
+       <ScrollView 
+          contentContainerStyle={{flex:1}}
+          keyboardDismissMode='on-drag'
+          keyboardShouldPersistTaps={false}>
+        <View style={styles.maincontain}>
+          <View>
+            <Topview {...this.props}/>
+          </View>
+          <View style={[styles.header,styles.Bottomline]}>
+            <Image  source={require('../img/plan_normal.png') }/>
+            <Text>{this.state.day} </Text>
+          </View>
+          <ListView style={styles.listview}
+            scrollEnabled={this.state.scrollEnabled}
+            dataSource={this.state.dataSource}
+            enableEmptySections={true}
+            renderRow={this.renderRow}
+            />
+          <View>
             <BottomView {...this.props}/>
-            </View>     
-
-            </View>
-        </ScrollView>
-        );
-
+          </View>     
+        </View>
+      </ScrollView>
+    );
   },
-
-
 });
 
 var styles = StyleSheet.create({
@@ -310,7 +254,6 @@ var styles = StyleSheet.create({
   Topbar:{
     flex:1,
     alignItems: 'center',
-
   },
   Left:{
     position: 'absolute', 
@@ -327,16 +270,13 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },
   header:{
-
     flexDirection: 'row',
     height:50,
     alignItems: 'center',
     backgroundColor:'#fff',
     justifyContent: 'center',
-
   },
   listview: {
     flex: 1,

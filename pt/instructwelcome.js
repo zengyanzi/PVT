@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-
 import {
   Image,
   View,
@@ -14,12 +12,10 @@ import {
   Navigator,
   AsyncStorage
 } from 'react-native';
-
 //navigation
 var _navigator;
 import InstructregisterView from'./instructregister';
 import InstructloginView from'./instructlogin';
-
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -30,42 +26,36 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var InstructwelcomeView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     AsyncStorage.setItem("type",'instructor');
-            var type = AsyncStorage.getItem('type',(err, result) => {
-                console.log(result);
-              });    
+    var type = AsyncStorage.getItem('type',(err, result) => {
+        console.log(result);
+    });    
     return {
-
     };
   },
 
   render: function(){
     return (
-          <ScrollView 
+      <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps={false}
-      >
-        
+      >        
        <View style={styles.container}>
- 
        </View>
        <View style={styles.maincontain}>
-         <Image source={require('../img/welcomeinstruct.png')} style={{width: 280, height: 140}}  />
-
+          <Image source={require('../img/welcomeinstruct.png')} style={{width: 280, height: 140}}  />
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
               onPress={() => _navigator.push({title:'InstructregisterView',id:'instructregister'})}>
-              <Text style={styles.text}>Register</Text>
+               <Text style={styles.text}>Register</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
              onPress={() => _navigator.push({title:'InstructloginView',id:'instructlogin'})}>
-              <Text style={styles.text}> Login</Text>
+                <Text style={styles.text}> Login</Text>
               </TouchableOpacity>
             </View>
         </View>

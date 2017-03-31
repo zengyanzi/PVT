@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -15,71 +13,43 @@ import {
   TouchableHighlight,
   ListView
 } from 'react-native';
-
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
 import { FormLabel, FormInput } from 'react-native-elements'
-
-
-
 var screenW = Dimensions.get('window').width;
-
-
 var _navigator ;
-
-
-
-
 var EmailModifyView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-
     this.state = {
-        Email:''
-
-
     };
     return {
-      Email:this.state.Email
-
     };
 
   },
 
- render: function(){
-
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-            <View style={styles.maincontain}>
-              <View style={[styles.Top,styles.Bottomline]}>
-        
-                <View style={styles.Topbar}>
-
-                </View>
-                
-                <View style={styles.right}>
-
-                </View>
-
+  render: function(){
+    return(
+       <ScrollView 
+          contentContainerStyle={{flex:1}}
+          keyboardDismissMode='on-drag'
+          keyboardShouldPersistTaps={false}>
+          <View style={styles.maincontain}>
+            <View style={[styles.Top,styles.Bottomline]}>      
+              <View style={styles.Topbar}>
               </View>
-            <View >
-              <FormLabel labelStyle={{color: '#fff',fontSize:18}}>Email</FormLabel>
-              <FormInput  onChangeText={(text) => this.setState({Email: text})}/>
-              
-            
-          </View>   
+              <View style={styles.right}>
+              </View>
             </View>
-           
-        </ScrollView>
-        );
-
+           <View >
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
+            <FormInput  onChangeText={(text) => this.setState({Email: text})}/>
+          </View>   
+        </View>       
+      </ScrollView>
+    );
   },
-
 });
 
 var styles = StyleSheet.create({
@@ -120,10 +90,8 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     flexDirection:'column',
 
-  },
-
-
-    btn:{
+  },   
+  btn:{
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',

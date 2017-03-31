@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -16,7 +14,6 @@ import {
   AsyncStorage
 } from 'react-native';
 import DatePicker from './date.js';
-
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -27,13 +24,8 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
-
-
-
 var MysessionView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     this.state={
@@ -44,100 +36,93 @@ var MysessionView = React.createClass({
       sportname:this.state.rowData,
     };
   },
-
 _submit: function(){
-      var day=this.state.date;
-      var userid=this.state.userid;
-      var sportname=this.state.sportname;
-      var num=sportname.indexOf(":")
-      var sporttype=sportname.slice(0, num);
-      var sportsize=this.state.sportsize;
-      console.log(sportname);
-      console.log(day);
-      console.log(this.state.userid);      
-      console.log(sporttype);
-      console.log(sportsize);
-      var url = 'http://47.90.60.206:8080/pt_server/addrecord.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?userid='+userid+'&day='+day+'&sporttype='+sporttype+'&sportsize='+sportsize;
-      fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-          console.log(res);
-            if (res["data"]!=null) {
-
-              _navigator.push({
-                title:'MyworkView',
-                id:'mywork'
-              });
-          }else{
-          Alert.alert('Fail to record','Please check your data');  
-          }
-        });
+  var day=this.state.date;
+  var userid=this.state.userid;
+  var sportname=this.state.sportname;
+  var num=sportname.indexOf(":")
+  var sporttype=sportname.slice(0, num);
+  var sportsize=this.state.sportsize;
+  console.log(sportname);
+  console.log(day);
+  console.log(this.state.userid);      
+  console.log(sporttype);
+  console.log(sportsize);
+  var url = 'http://47.90.60.206:8080/pt_server/addrecord.action';
+  // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  url += '?userid='+userid+'&day='+day+'&sporttype='+sporttype+'&sportsize='+sportsize;
+  fetch(url).then(function(response) {  
+        return response.json();
+  }).then(function(res) {
+  console.log(res);
+    if (res["data"]!=null) {
+      _navigator.push({
+        title:'MyworkView',
+        id:'mywork'
+      });
+    }else{
+      Alert.alert('Fail to record','Please check your data');  
+    }
+ });
 },
  render: function(){
-       return (
-      <ScrollView 
-        contentContainerStyle={{flex:1}}
-        keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}>
-        
-       <View style={styles.container}>
-          <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>My session</Text>
-          </View>
-       </View>
-
-       <View style={styles.maincontain}>
-          <View style={styles.sportlist}>
-              <Text style={styles.sportname}>{this.state.sportname}</Text>
-              <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
-              <DatePicker
-                style={styles.sportdate}
-                date={this.state.date}
-                mode="date"
-                placeholder="Date"
-                format="YYYY-MM-DD"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                onDateChange={(date) => {this.setState({date: date});}}/>
-          </View>
-            <View style={styles.choose}>
-             <TouchableOpacity style={styles.btn}
-                 onPress={this._submit}>
-                <Text style={styles.text}>Submit my record</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'EditplanView',id:'editplan'})}>
-                <Text style={styles.text}>Edit my plan</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
-                <Text style={styles.text}>Delete my plan</Text>
-              </TouchableOpacity>
-            </View>
+   return (
+    <ScrollView 
+      contentContainerStyle={{flex:1}}
+      keyboardDismissMode='on-drag'
+      keyboardShouldPersistTaps={false}>
+      
+      <View style={styles.container}>
+        <View style={styles.Top}>
+          <Text style={styles.WelcomeText}>My session</Text>
         </View>
-      </ScrollView>
-       );
+      </View>
+      <View style={styles.maincontain}>
+        <View style={styles.sportlist}>
+          <Text style={styles.sportname}>{this.state.sportname}</Text>
+          <TextInput  onChangeText={(text) => this.setState({sportsize: text})} style={styles.sportact}  keyboardType="numeric" placeholder='record'/>
+          <DatePicker
+            style={styles.sportdate}
+            date={this.state.date}
+            mode="date"
+            placeholder="Date"
+            format="YYYY-MM-DD"
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            onDateChange={(date) => {this.setState({date: date});}}/>
+        </View>
+        <View style={styles.choose}>
+          <TouchableOpacity style={styles.btn}
+               onPress={this._submit}>
+            <Text style={styles.text}>Submit my record</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}
+              onPress={() => _navigator.push({title:'EditplanView',id:'editplan'})}>
+            <Text style={styles.text}>Edit my plan</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}
+             onPress={() => _navigator.push({title:'MyplanView',id:'myplan'})}>
+            <Text style={styles.text}>Delete my plan</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ScrollView>
+   );
   },
   componentDidMount(){
-        let _that=this;
-     AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-        id=result;
-
+    let _that=this;
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      id=result;
       _that.setState(
         {
-        userid:id,
-        sportname:this.props.rowData  
+          userid:id,
+          sportname:this.props.rowData  
         }
-
       );
     });
   }
-
 });
-
 var styles = StyleSheet.create({
   container:{
     flex: 1,
@@ -153,9 +138,7 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     color: '#d7499a', 
-
   },
-
   maincontain:
   {
     flex: 10,
@@ -170,8 +153,7 @@ var styles = StyleSheet.create({
      flexDirection:'row',
      justifyContent: 'space-between',
   },
-
-  sportname:{
+ sportname:{
     flex: 3,
     height: 50,
     fontWeight: 'bold',
@@ -202,7 +184,6 @@ var styles = StyleSheet.create({
     flex:2,
     height:50,
   },
-
   choose:{
     flexDirection:'row'
   },

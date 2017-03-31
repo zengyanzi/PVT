@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -18,8 +16,6 @@ import {
   ListView,
   Alert
 } from 'react-native';
-
-
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import Topview from './top.js'
@@ -34,52 +30,34 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
-
-var btnsDefault = [ { text: 'Button' } ];
-
-  var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan'
-              })},type: 'primary',},
-       
-  ];
-
 var rows = [
   {
     day:"2017-02-08",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    right:btnsTypes,
     autoClose: true,
   }, {
     day:"2017-02-09",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    right:btnsTypes,
     autoClose: true,
   }, {
     day:"2017-02-10",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    right:btnsTypes,
     autoClose: true,
   }, {
     day:"2017-02-11",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    right:btnsTypes,
   },  
 ];
 
 var PlanView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    var Pdate="Monday";
     this.state = {
       dataSource: ds.cloneWithRows(rows),
       scrollEnabled: true,
@@ -89,7 +67,7 @@ var PlanView = React.createClass({
       scrollEnabled: true,
     };
   },
-    componentWillMount() {
+  componentWillMount() {
     let _that=this;
     AsyncStorage.getItem('userid',(err, result) => {
       console.log(result);
@@ -126,7 +104,6 @@ var PlanView = React.createClass({
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });
   },
-
   //  set active swipeout item
   handleSwipeout(sectionID,rowID) {
     for (var i = 0; i < this.state.rows.length; i++) {
@@ -193,25 +170,24 @@ var PlanView = React.createClass({
   },
 
 
- render: function(){
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-            <View>
-                <Topview {...this.props}/>
-            </View>
-            <ListView style={styles.listview}
-              scrollEnabled={this.state.scrollEnabled}
-              dataSource={this.state.dataSource}
-              renderRow={this.renderRow}
-              enableEmptySections={true}
-            />
-        </ScrollView>
-      );
+  render: function(){
+    return(
+       <ScrollView 
+          contentContainerStyle={{flex:1}}
+          keyboardDismissMode='on-drag'
+          keyboardShouldPersistTaps={false}>
+          <View>
+              <Topview {...this.props}/>
+          </View>
+          <ListView style={styles.listview}
+            scrollEnabled={this.state.scrollEnabled}
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+            enableEmptySections={true}
+          />
+      </ScrollView>
+    );
   },
-
 });
 
 var styles = StyleSheet.create({
@@ -235,7 +211,6 @@ var styles = StyleSheet.create({
   Topbar:{
     flex:1,
     alignItems: 'center',
-
   },
   Left:{
     position: 'absolute', 
@@ -252,7 +227,6 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },
   listview: {
     flex: 1,

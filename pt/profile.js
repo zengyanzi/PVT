@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -15,93 +13,65 @@ import {
   Modal,
   ListView
 } from 'react-native';
-
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
 import { List, ListItem } from 'react-native-elements';
-
-
 var screenW = Dimensions.get('window').width;
-
-
 var _navigator ;
-
-
 var ProfileView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-
     this.state = {
-
-
+       email:'jenny@gmail.com'
     };
-    return {
-       
+    return {      
+      email:this.state.email
     };
-
   },
-
-
-
   _logout: function(){
-            _navigator.push({
-            title:'main',
-            id:'main'
-           });  
-      AsyncStorage.removeItem('type',(err,result)=>{
-        console.log(result);
-      });
-
-      AsyncStorage.removeItem('email',(err,result)=>{
-        console.log(result);
-      });
-      AsyncStorage.removeItem('password',(err,result)=>{
-        console.log(result);
-      
-      });
+    _navigator.push({
+    title:'main',
+    id:'main'
+    });  
+    AsyncStorage.removeItem('type',(err,result)=>{
+      console.log(result);
+    });
+    AsyncStorage.removeItem('email',(err,result)=>{
+      console.log(result);
+    });
+    AsyncStorage.removeItem('password',(err,result)=>{
+      console.log(result);   
+    });
   },
-
-
- render: function(){
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-            <View style={styles.maincontain}>
-              <View style={[styles.Top,styles.Bottomline]}>
-
-                <View style={styles.Topbar}>
-
-                </View>
-                
-                <View style={styles.right}>
-
-                </View>
-
-              </View>
-            <View>
-
+  render: function(){
+    return(
+     <ScrollView 
+        contentContainerStyle={{flex:1}}
+        keyboardDismissMode='on-drag'
+        keyboardShouldPersistTaps={false}>
+        <View style={styles.maincontain}>
+          <View style={[styles.Top,styles.Bottomline]}>
+            <View style={styles.Topbar}>
+            </View>        
+            <View style={styles.right}>
             </View>
-           <View >
-
-           <TouchableOpacity onPress={() => _navigator.push({title:'ProfileModifyView',id:'profilemodify'})}>
-            <List>
-              <ListItem
-                roundAvatar
-                title='Zeng Jenny'
-                subtitle={
-                  <View style={styles.subtitleView}>
-                    <Text style={styles.ratingText}>zeng@gmail.com</Text>
-                  </View>
-                }
-                avatar={require('../img/profile_normal.png')}
-              />
-            </List>
+          </View>
+          <View >
+            <TouchableOpacity onPress={() => _navigator.push({title:'ProfileModifyView',id:'profilemodify',params:{email:this.state.email}})}>
+              <List>
+                <ListItem
+                  roundAvatar
+                  title='Zeng Jenny'
+                  subtitle={
+                    <View style={styles.subtitleView}>
+                      <Text style={styles.ratingText}>{this.state.email}</Text>
+                    </View>
+                  }
+                  avatar={require('../img/profile_normal.png')}
+                />
+              </List>
             </TouchableOpacity>
-          
             <List>
               <ListItem
                 roundAvatar
@@ -112,45 +82,40 @@ var ProfileView = React.createClass({
                 roundAvatar
                 title='Birthday'
                 avatar={require('../img/plan_normal.png')}
-              />
-      
-            <ListItem
-                roundAvatar
-                title='Height'
-                avatar={require('../img/height.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='Initial Weight'
-                avatar={require('../img/weight.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='Target Weight'
-                avatar={require('../img/target.png')}
-              />
-            <ListItem
-                roundAvatar
-                title='BMI'
-                avatar={require('../img/Heart.png')}
-              />
-            </List>
-            </View>  
-            <View >
+              /> 
+              <ListItem
+                  roundAvatar
+                  title='Height'
+                  avatar={require('../img/height.png')}
+                />
+              <ListItem
+                  roundAvatar
+                  title='Initial Weight'
+                  avatar={require('../img/weight.png')}
+                />
+              <ListItem
+                  roundAvatar
+                  title='Target Weight'
+                  avatar={require('../img/target.png')}
+                />
+              <ListItem
+                  roundAvatar
+                  title='BMI'
+                  avatar={require('../img/Heart.png')}
+                />
+            </List>         
+            <View>
               <TouchableOpacity style={styles.btn}
               onPress={this._logout}>
-              <Text style={styles.text}>Logout</Text>
+                <Text style={styles.text}>Logout</Text>
               </TouchableOpacity>
             </View>       
-
-      </View>   
-        </ScrollView>
-        );
-
+          </View> 
+        </View>   
+      </ScrollView>
+    );
   },
-
 });
-
 var styles = StyleSheet.create({
    container:{
     flex: 1,
@@ -172,23 +137,20 @@ var styles = StyleSheet.create({
   Topbar:{
     flex:2,
     flexDirection: 'row',
-
   },
    Left:{
     flex:1,
     flexDirection: 'row',
   },
   Right:{
-  flex:1,
-  flexDirection: 'row',
-
+    flex:1,
+    flexDirection: 'row',
   },
   maincontain:
   {
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },
    subtitleView: {
     flexDirection: 'row',

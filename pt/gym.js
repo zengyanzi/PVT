@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -14,88 +12,60 @@ import {
   Picker,
   ListView
 } from 'react-native';
-
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
-
 import { SearchBar } from 'react-native-elements'
 import Swiper from 'react-native-swiper';
-
 var width = Dimensions.get('window').width;
-
-
 var _navigator ;
-
-
 var GymView = React.createClass({
-
   getInitialState: function(){
-    _navigator = this.props.navigator;
-    
+    _navigator = this.props.navigator;  
     this.state = {
-
     };
     return {
-
-
     };
-
   },
-
-
-
- render: function(){
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-            <View style={[styles.Top,styles.Bottomline]}>
-                <TouchableOpacity 
-                onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
-                  <Image source={require('../img/add_pressed.png') }/>
-
-                </TouchableOpacity> 
-              <View style={styles.Topbar}>
-
-              </View>
-              
-              <View style={styles.right}>
-              <TouchableOpacity 
+  render: function(){
+    return(
+      <ScrollView 
+          contentContainerStyle={{flex:1}}
+          keyboardDismissMode='on-drag'
+          keyboardShouldPersistTaps={false}>
+        <View style={[styles.Top,styles.Bottomline]}>
+          <TouchableOpacity 
+              onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
+            <Image source={require('../img/add_pressed.png') }/>
+          </TouchableOpacity> 
+          <View style={styles.Topbar}>
+          </View>
+          <View style={styles.right}>
+            <TouchableOpacity 
                       onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
-                <Image source={require('../img/chart-pressed.png') }/>
-              </TouchableOpacity> 
-              </View>
-              
-            </View>
-          <SearchBar
-             
-              placeholder='Find your Gym here' />             
+              <Image source={require('../img/chart-pressed.png') }/>
+            </TouchableOpacity> 
+          </View>
+        </View>
+        <SearchBar
+            placeholder='Find your Gym here' />             
         <Swiper style={styles.wrapper} showsButtons={true}>
-        <View style={styles.slide1}>
-          <Text style={styles.text}>Join a gym</Text>
-          <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-        </View>
-        <View style={styles.slide2}>
-          <Text style={styles.text}>Beautiful</Text>
-        <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-
-        </View>
-      </Swiper>       
-
-           
-        </ScrollView>
-        );
-
+          <View style={styles.slide1}>
+            <Text style={styles.text}>Join a gym</Text>
+            <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
+          </View>
+          <View style={styles.slide2}>
+            <Text style={styles.text}>Beautiful</Text>
+            <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
+          </View>
+          <View style={styles.slide3}>
+            <Text style={styles.text}>And simple</Text>
+             <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
+          </View>
+        </Swiper>       
+      </ScrollView>
+    );
   },
-
 });
-
 var styles = StyleSheet.create({
    container:{
     flex: 1,

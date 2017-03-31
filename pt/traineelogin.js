@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-
 import {
    Image,
   View,
@@ -16,9 +14,7 @@ import {
   Alert,
   AsyncStorage
 } from 'react-native';
-
 import t from 'tcomb-form-native';
-
 //navigation
 var _navigator;
 var Form =t.form.Form;
@@ -28,10 +24,10 @@ var User = t.struct({
   //rememberMe: t.Boolean        // a boolean
 });
 var options = {
-   fields: {
-    password: {
-      password: true,
-      secureTextEntry: true,
+  fields: {
+  password: {
+    password: true,
+    secureTextEntry: true,
     },
   }
 };
@@ -45,19 +41,13 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
-
-
-
 var TraineeloginView = React.createClass({
-
     getInitialState: function(){
     _navigator = this.props.navigator;
     return {
-
     };
   },
-   _login:function(){
+  _login:function(){
       var value = this.refs.form.getValue();
       var email = value["email"];
       var password=value["password"];
@@ -65,60 +55,56 @@ var TraineeloginView = React.createClass({
       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
       url += '?email='+email+'&password='+password;
       fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-          console.log(res);
-            if (res["data"]!=null) {
-             AsyncStorage.setItem("email",email);
-             AsyncStorage.setItem("password",password);
-             var userid=res['data']['id'].toString();
-             AsyncStorage.setItem('userid',userid);
-             console.log(userid);
-
-              _navigator.push({
-                title:'ThomeView',
-                id:'Thome'
-              });
-          }else{
+        return response.json();
+      }).then(function(res){
+        console.log(res);
+        if (res["data"]!=null) {
+          AsyncStorage.setItem("email",email);
+          AsyncStorage.setItem("password",password);
+          var userid=res['data']['id'].toString();
+          AsyncStorage.setItem('userid',userid);
+          console.log(userid);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome'
+          });
+        }else{
           Alert.alert('Fail to login','Please check your password');  
-          }
-        });
-    },
- render: function(){
-   return (
-          <ScrollView 
+        }
+    });
+  },
+  render: function(){
+    return (
+      <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps={false}
       >
-        
-       <View style={styles.container}>
+        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>Welcome Back to Training</Text>
+            <Text style={styles.WelcomeText}>Welcome Back to Training</Text>
           </View>
-       </View>
-       <View style={styles.maincontain}>
-             <Form 
-                ref="form"
-                type={User}
-                options={options}/>
-
-
-            <View style={styles.choose}>
-              <TouchableOpacity style={styles.btn}
+        </View>
+        <View style={styles.maincontain}>
+          <Form 
+            ref="form"
+            type={User}
+            options={options}
+          />
+          <View style={styles.choose}>
+            <TouchableOpacity style={styles.btn}
               onPress={this._login}>
               <Text style={styles.text}>login</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'traineeregister',id:'traineeregister'})}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.btn}
+                  onPress={() => _navigator.push({title:'traineeregister',id:'traineeregister'})}>
               <Text style={styles.text}>Forget</Text>
-              </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
-       );
+    );
   }
-
 });
 var styles = StyleSheet.create({
   container:{
@@ -176,5 +162,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-
 module.exports = TraineeloginView;

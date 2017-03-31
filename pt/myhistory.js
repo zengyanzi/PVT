@@ -1,9 +1,6 @@
 
 import React, { Component } from 'react';
-
-
 import {
-
     StyleSheet,
     View,
     ListView,
@@ -15,7 +12,6 @@ import {
     DatePickerAndroid
 } from 'react-native';
 var Dimensions = require('Dimensions');
-
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -29,60 +25,41 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 var _navigator ;
 class MyhistoryView extends Component {
-
     constructor(props) {
         super(props);//这一句不能省略，照抄即可
-
         var getSectionData = (dataBlob, sectionID) => {
             return dataBlob[sectionID];
         };
-
         var getRowData = (dataBlob, sectionID, rowID) => {
             return dataBlob[sectionID + ':' + rowID];
         };
-
-
         this.state = {
             dataSource:new ListView.DataSource({
                 getSectionData          : getSectionData,
                 getRowData              : getRowData,
                 rowHasChanged:(row1,row2)=> row1 !== row2,
                 sectionHeaderHasChanged : (s1, s2) => s1 !== s2
-
             }),
         };
     }
-
-
-
     render(){
-
-
         //从网络上获取了数据的情况
         //var movie = this.state.movies[0];
         //return this.renderMovie(movie);
-
         return(
-
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>My Plan</Text>
                 </View>
-
                 <ListView
                     dataSource = {this.state.dataSource}
                     style      = {styles.listview}
                     renderRow  = {this.renderRow}
                     renderSectionHeader = {this.renderSectionHeader}
-                    />
-
+                 />
             </View>
-
-
         );
-
     }
-
     renderSectionHeader(sectionData, sectionID) {
         return (
             <View style={styles.section}>
@@ -90,26 +67,17 @@ class MyhistoryView extends Component {
             </View>
         );
     }
-
     renderRow (rowData, sectionID, rowID) {
-    return (
-
+        return (
             <View style={styles.rowStyle}>
                 <Text style={styles.rowText}>{rowData.name} : {rowData.content} {rowData.target}{rowID}</Text>
             </View>
-
-    );
+        );
 }
-
-
-
-
     componentDidMount() {
         //this.fetchData();
-
         this.fetchData2();
     }
-
     fetchData2 () {
        var responseData={
             "results" : [
@@ -135,52 +103,39 @@ class MyhistoryView extends Component {
                 }
             ]
         };
- 
-         var SDates = responseData.results,
-                length = SDates.length,
-            //4个组织机构
-                dataBlob = {},
-                sectionIDs = [],
-                rowIDs = [],
-                SDate,
-                types,
-                typeLength,
-                type,
-                i,
-                j;
-
-            for (i = 0; i < length; i++) {
-                //某个组织机构的所有信息organization
-                SDate = SDates[i];
-
-                sectionIDs.push(SDate.id);
-                //片段id为 12348124 内容为 ：马云的淘宝
-                dataBlob[SDate.id] = SDate.SDate;
-
-                types = SDate.types;//某个组织的所有用户
-                typeLength = types.length;//该组织一共有多少人？
-
-                rowIDs[i] = [];//rowIDs是一个二维数组
-
-                for(j = 0; j < typeLength; j++) {
-                    type = types[j].type;
-                    rowIDs[i].push(type.content);//二维数组放 
-
-                    dataBlob[SDate.id + ':' + type.content] = type;
-                }
+        var SDates = responseData.results,
+            length = SDates.length,
+        //4个组织机构
+            dataBlob = {},
+            sectionIDs = [],
+            rowIDs = [],
+            SDate,
+            types,
+            typeLength,
+            type,
+            i,
+            j;
+        for (i = 0; i < length; i++) {
+            //某个组织机构的所有信息organization
+            SDate = SDates[i];
+            sectionIDs.push(SDate.id);
+            //片段id为 12348124 内容为 ：马云的淘宝
+              dataBlob[SDate.id] = SDate.SDate;
+            types = SDate.types;//某个组织的所有用户
+            typeLength = types.length;//该组织一共有多少人？
+            rowIDs[i] = [];//rowIDs是一个二维数组
+            for(j = 0; j < typeLength; j++) {
+                type = types[j].type;
+                rowIDs[i].push(type.content);//二维数组放 
+                dataBlob[SDate.id + ':' + type.content] = type;
             }
-
-
-            this.setState({
-                dataSource : this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs),
-            });
-
-
+        }
+        this.setState({
+            dataSource : this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs),
+        });
     }
-}
-;
+};
 var styles = StyleSheet.create({
-
     container: {
         flex: 1
     },

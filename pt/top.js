@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -17,11 +15,8 @@ import {
   Picker,
   ListView
 } from 'react-native';
-
-
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -33,63 +28,50 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
-
 var TopView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     this.state = {
- 
     };
     return {
-
     };
-
   },
-
-_editplan:function(){
-     _navigator.push({
+  _editplan:function(){
+    _navigator.push({
       title:'TraineeloinView',
       id:'traineelogin'
     })
-   },
-
- render: function(){
-      return(
-         <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-          <View style={styles.maincontain}>
-            <View style={[styles.Top,styles.Bottomline]}>
-              <View style={[styles.Topbar,styles.Left]}>
-                  <TouchableOpacity 
-                      onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
-                    <Image source={require('../img/setting_normal.png') }/>
-                   </TouchableOpacity> 
-              </View>
-              <View style={styles.Topbar}>
-                <Image source={require('../img/ptv_sized.png') }/>
-              </View>
-              <View style={[styles.Topbar,styles.Right]}>
-                <TouchableOpacity 
-                onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
-                  <Image source={require('../img/add_pressed.png') }/>
-
-                </TouchableOpacity> 
-              </View>
-            </View>
-            
-          </View>
-        </ScrollView>
-        );
-
   },
-
+  render: function(){
+    return(
+      <ScrollView 
+        contentContainerStyle={{flex:1}}
+        keyboardDismissMode='on-drag'
+        keyboardShouldPersistTaps={false}>
+        <View style={styles.maincontain}>
+          <View style={[styles.Top,styles.Bottomline]}>
+            <View style={[styles.Topbar,styles.Left]}>
+              <TouchableOpacity 
+                      onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
+                <Image source={require('../img/setting_normal.png') }/>
+              </TouchableOpacity> 
+            </View>
+            <View style={styles.Topbar}>
+              <Image source={require('../img/ptv_sized.png') }/>
+            </View>
+            <View style={[styles.Topbar,styles.Right]}>
+              <TouchableOpacity 
+                  onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
+                <Image source={require('../img/add_pressed.png') }/>
+              </TouchableOpacity> 
+            </View>
+          </View>            
+        </View>
+      </ScrollView>
+    );
+  },
 });
-
 var styles = StyleSheet.create({
    container:{
     flex: 1,
@@ -107,11 +89,9 @@ var styles = StyleSheet.create({
     borderBottomWidth:2,
     borderColor:'gray'
   },
-
   Topbar:{
     flex:1,
     alignItems: 'center',
-
   },
   Left:{
     position: 'absolute', 
@@ -128,16 +108,13 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },
   header:{
-
     flexDirection: 'row',
     height:50,
     alignItems: 'center',
     backgroundColor:'#fff',
     justifyContent: 'center',
-
   },
 });
 module.exports = TopView;

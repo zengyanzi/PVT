@@ -1,9 +1,6 @@
 
 import React, { Component } from 'react';
-
-
 import {
-
     StyleSheet,
     View,
     ListView,
@@ -15,7 +12,6 @@ import {
     DatePickerAndroid
 } from 'react-native';
 var Dimensions = require('Dimensions');
-
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -29,12 +25,9 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 });
 var _navigator ;
 class TimetableView extends Component {
-
     constructor(props) {
         super(props);
-
-         _navigator = this.props.navigator;
-
+        _navigator = this.props.navigator;
         function format (d) {
             return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
         }
@@ -67,41 +60,25 @@ class TimetableView extends Component {
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
-
-
-
         this.state = {
-            dataSource: ds.cloneWithRowsAndSections(data, sectionIDs, rowIDs)
+           dataSource: ds.cloneWithRowsAndSections(data, sectionIDs, rowIDs)
         };
     }
-
-
-
     getRowData(dataBlob, sectionID, rowID){
-            return dataBlob[sectionID][rowID];
+        return dataBlob[sectionID][rowID];
     }
-
     getSectionData(dataBlob, sectionID ){
                 return sectionID;
     }
-
-
-
-
-
     renderHeader() {
         return (
-
             <View style={styles.header}>
                     <Text>
                         HERR IS YOUR WORK PLAN
                     </Text>
             </View>
-
         );
     }
-
-
     renderFooter() {
         return (
             <View style={styles.footer}>
@@ -111,7 +88,6 @@ class TimetableView extends Component {
             </View>
         );
     }
-
     renderSectionHeader(sectionData, sectionID) {
         return (
             <View style={styles.section}>
@@ -139,19 +115,12 @@ class TimetableView extends Component {
         return (
             <TouchableOpacity  onPress={() => _navigator.push({title:"MysessionView",id:"mysession",params:{rowData:rowData}})}>
                 <View style={styles.row}>
-                   
-                   
-                    <Text style={styles.text}>{rowData}</Text>
-                 
+                  <Text style={styles.text}>{rowData}</Text>               
                 </View>
              </TouchableOpacity>
-
         );
     }
-
-
     render() {
-
         return (
             <View style={styles.container}>
                 <ListView
@@ -167,12 +136,10 @@ class TimetableView extends Component {
                     pageSize={10}
                     scrollRenderAheadDistance={2000}
                 />
-
             </View>
         );
     }
-}
-;
+};
 var styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -196,9 +163,7 @@ var styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor:'#cdcdcd',
         width:screenW,
-
     },
-
     header:{
         borderColor: 'red',
         borderWidth: 1,
@@ -207,7 +172,6 @@ var styles = StyleSheet.create({
         height:44,
         justifyContent: 'center',
         alignItems:'center',
-
     },
     footer:{
         borderColor: 'yellow',
@@ -233,6 +197,4 @@ var styles = StyleSheet.create({
     color: '#091016'
   },
 });
-
-
 export default TimetableView;

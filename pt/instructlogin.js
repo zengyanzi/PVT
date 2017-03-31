@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -25,7 +23,6 @@ var User = t.struct({
   password:t.String,
   //rememberMe: t.Boolean        // a boolean
 });
-
 var options = {
    fields: {
     password: {
@@ -44,80 +41,68 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
-
 var InstructloginView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     return {
-
     };
   },
-
-   _login:function(){
+  _login:function(){
     var value = this.refs.form.getValue();
     var email = value["email"];
     var password=value["password"];
     var url = 'http://47.90.60.206:8080/pt_server/instructorlogin.action';
     // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
     // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
-    
     url += '?email='+email+'&password='+password;
-
-
     fetch(url).then(function(response) {  
-          return response.json();
-        }).then(function(res) {
-        console.log(res);
-          if (res["data"]!=null) {
-              AsyncStorage.setItem("email",email);
-             AsyncStorage.setItem("password",password);
-            _navigator.push({
-              title:'ClientInfoView',
-              id:'clientinfo'
-            });
-        }else{
-        Alert.alert('Fail to login','Please check your password');  
-        }
-      });
+      return response.json();
+    }).then(function(res) {
+      console.log(res);
+      if (res["data"]!=null) {
+        AsyncStorage.setItem("email",email);
+        AsyncStorage.setItem("password",password);
+        _navigator.push({
+          title:'ClientInfoView',
+          id:'clientinfo'
+        });
+      }else{
+      Alert.alert('Fail to login','Please check your password');  
+      }
+    });
   },
 
   render: function(){
     return (
-       <ScrollView 
+      <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps={false}
-      >
-        
+      >        
        <View style={styles.container}>
           <View style={styles.Top}>
            <Text style={styles.WelcomeText}>Welcome instructor back to work</Text>
           </View>
        </View>
        <View style={styles.maincontain}>
-              <Form 
-                ref="form"
-                type={User}
-                options={options}/>
-
-            <View style={styles.choose}>
-              <TouchableOpacity style={styles.btn}
-              onPress={this._login}>
+          <Form 
+            ref="form"
+            type={User}
+            options={options}/>
+          <View style={styles.choose}>
+            <TouchableOpacity style={styles.btn}
+            onPress={this._login}>
               <Text style={styles.text}>login</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'instructregister',id:'instructregister'})}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.btn}
+              onPress={() => _navigator.push({title:'instructregister',id:'instructregister'})}>
               <Text style={styles.text}>Forget</Text>
-              </TouchableOpacity>
-              
-            </View>
+            </TouchableOpacity>           
+          </View>
         </View>
       </ScrollView>
    );
   }
-
 });
 var styles = StyleSheet.create({
   container:{
@@ -134,7 +119,6 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     color: '#ffffff', 
-
   },
   maincontain:
   {
@@ -143,7 +127,6 @@ var styles = StyleSheet.create({
     paddingRight: 10,
     backgroundColor: '#38bda0',
     justifyContent: 'center',
-
   },
   choose:{
     flexDirection:'row'
@@ -173,5 +156,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-
 module.exports = InstructloginView;

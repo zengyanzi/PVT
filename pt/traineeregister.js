@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -16,7 +16,6 @@ import {
 } from 'react-native';
 import t from 'tcomb-form-native';
 import DatePicker from './date.js';
-
 var Form =t.form.Form;
 var _ = require('lodash');
 var _navigator ;
@@ -32,18 +31,14 @@ var Person = t.struct({
   password:t.String,            // a required number
   //rememberMe: t.Boolean        // a boolean
 });
-
 var options = {
-   fields: {
+  fields: {
     password: {
       password: true,
       secureTextEntry: true,
     },
-
   }
 }; // optional rendering options (see documentation)
-
-
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -54,21 +49,13 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
-
-
-
 var TraineeregisterView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     return {
-
     };
   },
-
-   _register: function () {
-
+  _register: function () {
     var value = this.refs.form.getValue();
     var name = value["name"];
     var surname = value["surname"];
@@ -85,7 +72,6 @@ var TraineeregisterView = React.createClass({
       }
     }).then(function(res){
       console.log(res);
-
     }).catch((error)=>{
       console.log(error);
     });
@@ -93,35 +79,28 @@ var TraineeregisterView = React.createClass({
       title:'TraineeloinView',
       id:'traineelogin'
     })
-
-
   },
-
-
-
- render: function(){
+  render: function(){
     return (
       <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false} >
-
- 
-
+        contentContainerStyle={{flex:1}}
+        keyboardDismissMode='on-drag'
+        keyboardShouldPersistTaps={false} >
         <View style={styles.maincontain}>
-            <View style={styles.formstyle}>
-              <Form
-                ref="form"
-                type={Person}
-                options={options}/>
-              <TouchableHighlight style={styles.button} onPress={this._register} underlayColor='#99d9f4'>
-                <Text style={styles.buttonText}>Save</Text>
-              </TouchableHighlight>
-            </View>
+          <View style={styles.formstyle}>
+            <Form
+              ref="form"
+              type={Person}
+             options={options}
+            />
+            <TouchableHighlight style={styles.button} onPress={this._register} underlayColor='#99d9f4'>
+              <Text style={styles.buttonText}>Save</Text>
+            </TouchableHighlight>
+          </View>
         </View>
       </ScrollView>
-       );
-    }
+    );
+  }
 });
 var styles = StyleSheet.create({
   container:{
@@ -177,7 +156,6 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   },
   formstyle:{
-
     borderRadius: 8,
     borderColor: '#2cb395',
   },

@@ -1,6 +1,5 @@
 var React = require('react')
 var {StyleSheet} = React
-
 var Dstyles = StyleSheet.create({
   container: {
     backgroundColor: '#f2f2f2',
@@ -44,5 +43,4 @@ var Dstyles = StyleSheet.create({
     height: 22,
   }
 })
-
 module.exports = Dstyles

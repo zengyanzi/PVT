@@ -1,9 +1,6 @@
-
 import React, { Component } from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -18,7 +15,6 @@ import {
   Alert,
   ListView
 } from 'react-native';
-
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
 import Topview from './top.js';
@@ -33,10 +29,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
-
-
 var EditPlanView = React.createClass({
 //set the original data
   getInitialState: function(){
@@ -47,109 +40,92 @@ var EditPlanView = React.createClass({
     this.state = {
     value: 0.2,
     sportdate:'10-02-2017',
-
        };
     return {
      value:this.state.value,
      sportdate:this.state.sportdate,
-
     };
-
-  },
-  
+  }, 
   //save the modify item to database
- _save:function(){
+  _save:function(){
     console.log(this.state.sportselected);
     var itemname=this.state.sportselected;
     var item_id;
     var sportsize=this.state.value;
     var day=this.props.date;
     var dayplan_id=this.props.dayplan_id;
-     AsyncStorage.getItem('userid',(err, result) => {
-                console.log(result);
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
     var trainee_id=result;
     var url = 'http://47.90.60.206:8080/pt_server/item.action'; // get the item data again 
     fetch(url).then(function(response) {  
-              return response.json();
-            }).then(function(res) {
-               if (res["data"]!=null) {
-               //find the id of selected item
-               
-               for(i in res["data"]){
-                if(itemname==res["data"][i]["name"]){
-                   item_id=res["data"][i]["id"];
-                }
-                 
-               }
-                console.log(item_id);
-                var urlsave='http://47.90.60.206:8080/pt_server/adjustplan.action'; 
-                urlsave += '?dayplan_id='+dayplan_id+'&sportsize='+sportsize;
-                console.log(urlsave);
-
-                   fetch(urlsave).then(function(response) {  
-                                return response.json();
-                              }).then(function(res) {
-                              console.log(res);
-                       _navigator.push({
-                      title:'ThomeView',
-                      id:'Thome',
-                  
-                       })
-                      });
-              }else{
-                Alert.alert('Fail to display','Please check your data'); 
-          }
-          
-       
-       });
-
-
+      return response.json();
+    }).then(function(res) {
+      if (res["data"]!=null) {
+       //find the id of selected item
+        for(i in res["data"]){
+          if(itemname==res["data"][i]["name"]){
+             item_id=res["data"][i]["id"];
+          }         
+         }
+        console.log(item_id);
+        var urlsave='http://47.90.60.206:8080/pt_server/adjustplan.action'; 
+        urlsave += '?dayplan_id='+dayplan_id+'&sportsize='+sportsize;
+        console.log(urlsave);
+        fetch(urlsave).then(function(response) {  
+          return response.json();
+        }).then(function(res) {
+          console.log(res);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome',       
+          })
+        });
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }         
     });
-
+  });
  },
  render: function(){
-      return(
-        <ScrollView 
-            contentContainerStyle={{flex:1}}
-            keyboardDismissMode='on-drag'
-            keyboardShouldPersistTaps={false}>
-          <View style={styles.maincontain}>
-            <View>
-              <Topview {...this.props}/>
-            </View>
-            <View>
-              <Text style={styles.text}>Sport Date {this.props.date}</Text>
-            </View>
-            <View>
-                <Text style={styles.text}>{this.props.itemname}</Text>
-      
-            </View>
-            <View style={styles.slider}>
-              <Text style={styles.text}>Please Choose the sport size</Text>
-              <Slider 
-                value={this.state.value}
-                maximumValue={100}
-                step={0.5}
-                trackStyle={customStyles2.track}
-                thumbStyle={customStyles2.thumb}
-                thumbTouchSize={{width: 50, height: 40}}
-                minimumTrackTintColor='#2cb395'
-                onValueChange={(value) => Math.floor(this.setState({value}))} />
-              <Text style={styles.text}>Sprotsize:{this.state.value} </Text>
-            </View>
-            <View>
-              <TouchableOpacity style={styles.btn}
-              onPress={this._save}>
-              <Text style={styles.text}>Save</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </ScrollView>
-        );
-
+  return(
+    <ScrollView 
+        contentContainerStyle={{flex:1}}
+        keyboardDismissMode='on-drag'
+        keyboardShouldPersistTaps={false}>
+      <View style={styles.maincontain}>
+        <View>
+          <Topview {...this.props}/>
+        </View>
+        <View>
+          <Text style={styles.text}>Sport Date {this.props.date}</Text>
+        </View>
+        <View>
+            <Text style={styles.text}>{this.props.itemname}</Text>
+        </View>
+        <View style={styles.slider}>
+          <Text style={styles.text}>Please Choose the sport size</Text>
+          <Slider 
+            value={this.state.value}
+            maximumValue={100}
+            step={0.5}
+            trackStyle={customStyles2.track}
+            thumbStyle={customStyles2.thumb}
+            thumbTouchSize={{width: 50, height: 40}}
+            minimumTrackTintColor='#2cb395'
+            onValueChange={(value) => Math.floor(this.setState({value}))} />
+          <Text style={styles.text}>Sprotsize:{this.state.value} </Text>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.btn}
+          onPress={this._save}>
+          <Text style={styles.text}>Save</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ScrollView>
+    );
   },
-
-
 });
 var customStyles2 = StyleSheet.create({
   track: {

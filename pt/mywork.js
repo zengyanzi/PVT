@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-
 import {
    Image,
   View,
@@ -17,7 +15,6 @@ import {
   PixelRatio,
   AsyncStorage
 } from 'react-native';
-
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -28,11 +25,8 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
 var _navigator ;
-
 var MyworkView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     this.state={
@@ -40,37 +34,33 @@ var MyworkView = React.createClass({
     };
     return {
       author:this.state.author,
-
     };
   },
   _logout: function(){
-            _navigator.push({
-            title:'main',
-            id:'main'
-           });  
-      AsyncStorage.removeItem('type',(err,result)=>{
-        console.log(result);
-      });
+    _navigator.push({
+    title:'main',
+    id:'main'
+  });  
+    AsyncStorage.removeItem('type',(err,result)=>{
+      console.log(result);
+    });
 
-      AsyncStorage.removeItem('email',(err,result)=>{
-        console.log(result);
-      });
-      AsyncStorage.removeItem('password',(err,result)=>{
-        console.log(result);
-      
-      });
+    AsyncStorage.removeItem('email',(err,result)=>{
+      console.log(result);
+    });
+    AsyncStorage.removeItem('password',(err,result)=>{
+      console.log(result);
+    });
   },
-  
  render: function(){
    return (
       <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}>
-        
+        keyboardShouldPersistTaps={false}>  
        <View style={styles.container}>
           <View style={styles.Top}>
-           <Text style={styles.WelcomeText}>Welecome</Text>
+            <Text style={styles.WelcomeText}>Welecome</Text>
           </View>
           <View style={[styles.row,styles.lineCenter]}>
             <TouchableOpacity onPress={() => _navigator.push({title:'MyhistoryView',id:'myhistory'})} style={[styles.choose,styles.column]}>
@@ -106,12 +96,9 @@ var MyworkView = React.createClass({
             </TouchableOpacity>
           </View>
        </View>
-
-
-      </ScrollView>
-       );
+     </ScrollView>
+    );
   }
-
 });
 
 var styles = StyleSheet.create({

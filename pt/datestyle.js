@@ -1,8 +1,6 @@
 import {StyleSheet} from 'react-native';
-
 let style = StyleSheet.create({
   dateTouch: {
-
   },
   dateTouchBody: {
     flexDirection: 'row',
@@ -27,7 +25,6 @@ let style = StyleSheet.create({
   },
   dateText: {
     color: '#fff',
-
   },
   placeholderText: {
     color: '#fff',
@@ -75,5 +72,4 @@ let style = StyleSheet.create({
     backgroundColor: '#eee'
   }
 });
-
 export default style;

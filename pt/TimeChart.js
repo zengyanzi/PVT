@@ -1,8 +1,6 @@
 import React from 'react';
-
-
 import {
-   Image,
+  Image,
   View,
   Text,
   StyleSheet,
@@ -13,9 +11,7 @@ import {
   AsyncStorage,
   Alert
 } from 'react-native';
-
 import {BarChart} from 'react-native-mp-android-chart';
-
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -26,15 +22,10 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
-
 var _navigator ;
-
 class TimeChartView extends React.Component {
-
   constructor() {
     super();
-
     this.state = {
       legend: {
         enabled: true,

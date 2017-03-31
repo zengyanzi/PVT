@@ -14,7 +14,6 @@ import {
   Navigator,
   AsyncStorage
 } from 'react-native';
-
 //navigation
 var _navigator;
 var TraineeregisterView = require('./traineeregister.js');
@@ -37,44 +36,37 @@ var TraineewelcomeView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     AsyncStorage.setItem("type",'trainee');
-            var type = AsyncStorage.getItem('type',(err, result) => {
-                console.log(result);
-              });   
+      var type = AsyncStorage.getItem('type',(err, result) => {
+        console.log(result);
+      });   
     return {
-
     };
   },
-
-
- render: function(){
-
-     return (
-          <ScrollView 
+  render: function(){
+    return (
+      <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps={false}
-      >
-        
-       <View style={styles.container}>
-       </View>
-       <View style={styles.maincontain}>
-         <Image source={require('../img/welcometrainer.png')} style={{width: 280, height: 140}} />
-
+      > 
+        <View style={styles.container}>
+        </View>
+        <View style={styles.maincontain}>
+          <Image source={require('../img/welcometrainer.png')} style={{width: 280, height: 140}} />
             <View style={styles.choose}>
               <TouchableOpacity style={styles.btn}
               onPress={() => _navigator.push({title:'TraineeregisterView',id:'traineeregister'})}>
-              <Text style={styles.text}>Register</Text>
+                <Text style={styles.text}>Register</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.btn}
-             onPress={() => _navigator.push({title:'TraineeloginView',id:'traineelogin'})}>
-              <Text style={styles.text}> Login</Text>
+              onPress={() => _navigator.push({title:'TraineeloginView',id:'traineelogin'})}>
+                <Text style={styles.text}> Login</Text>
               </TouchableOpacity>
             </View>
         </View>
       </ScrollView>
-       );
+    );
   }
-
 });
 var styles = StyleSheet.create({
   container:{
@@ -125,5 +117,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-
 module.exports = TraineewelcomeView;

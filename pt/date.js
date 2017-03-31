@@ -13,26 +13,21 @@ import {
 } from 'react-native';
 import Style from './datestyle';
 import Moment from 'moment';
-
 const FORMATS = {
   'date': 'YYYY-MM-DD',
   'datetime': 'YYYY-MM-DD HH:mm',
   'time': 'HH:mm'
 };
-
 class DatePicker extends Component {
   constructor(props) {
     super(props);
-
     this.format = this.props.format || FORMATS[this.props.mode];
-
     this.state = {
       date: this.getDate(),
       modalVisible: false,
       disabled: this.props.disabled,
       animatedHeight: new Animated.Value(0)
     };
-
     this.datePicked = this.datePicked.bind(this);
     this.onPressDate = this.onPressDate.bind(this);
     this.onPressCancel = this.onPressCancel.bind(this);
@@ -43,7 +38,6 @@ class DatePicker extends Component {
     this.onDatetimeTimePicked = this.onDatetimeTimePicked.bind(this);
     this.setModalVisible = this.setModalVisible.bind(this);
   }
-
   componentWillMount() {
     // ignore the warning of Failed propType for date of DatePickerIOS, will remove after being fixed by official
     console.ignoredYellowBox = [
@@ -51,10 +45,8 @@ class DatePicker extends Component {
       // Other warnings you don't want like 'jsSchedulingOverhead',
     ];
   }
-
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
-
     // slide animation
     if (visible) {
       Animated.timing(
@@ -70,46 +62,36 @@ class DatePicker extends Component {
       });
     }
   }
-
   onPressCancel() {
     this.setModalVisible(false);
   }
-
   onPressConfirm() {
     this.datePicked();
     this.setModalVisible(false);
   }
-
   getDate(date = this.props.date) {
     // date默认值
     if (!date) {
       let now = new Date();
       if (this.props.minDate) {
         let minDate = this.getDate(this.props.minDate);
-
         if (now < minDate) {
           return minDate;
         }
       }
-
       if (this.props.maxDate) {
         let maxDate = this.getDate(this.props.maxDate);
-
         if (now > maxDate) {
           return maxDate;
         }
       }
-
       return now;
     }
-
     if (date instanceof Date) {
       return date;
     }
-
     return Moment(date, this.format).toDate();
   }
-
   getDateStr(date = this.props.date) {
     if (date instanceof Date) {
       return Moment(date).format(this.format);
@@ -117,13 +99,11 @@ class DatePicker extends Component {
       return Moment(this.getDate(date)).format(this.format);
     }
   }
-
   datePicked() {
     if (typeof this.props.onDateChange === 'function') {
       this.props.onDateChange(this.getDateStr(this.state.date), this.state.date);
     }
   }
-
   getTitleElement() {
     const {date, placeholder} = this.props;
     if (!date && placeholder) {
@@ -131,7 +111,6 @@ class DatePicker extends Component {
     }
     return (<Text style={[Style.dateText, this.props.customStyles.dateText]}>{this.getDateStr()}</Text>);
   }
-
   onDatePicked({action, year, month, day}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       this.setState({
@@ -140,7 +119,6 @@ class DatePicker extends Component {
       this.datePicked();
     }
   }
-
   onTimePicked({action, hour, minute}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       this.setState({
@@ -149,11 +127,9 @@ class DatePicker extends Component {
       this.datePicked();
     }
   }
-
   onDatetimePicked({action, year, month, day}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       let timeMoment = Moment(this.state.date);
-
       TimePickerAndroid.open({
         hour: timeMoment.hour(),
         minute: timeMoment.minutes(),
@@ -161,7 +137,6 @@ class DatePicker extends Component {
       }).then(this.onDatetimeTimePicked.bind(this, year, month, day));
     }
   }
-
   onDatetimeTimePicked(year, month, day, {action, hour, minute}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       this.setState({
@@ -170,21 +145,17 @@ class DatePicker extends Component {
       this.datePicked();
     }
   }
-
   onPressDate() {
     if (this.state.disabled) {
       return true;
     }
-
     // reset state
     this.setState({
       date: this.getDate()
     });
-
     if (Platform.OS === 'ios') {
       this.setModalVisible(true);
     } else {
-
       // 选日期
       if (this.props.mode === 'date') {
         DatePickerAndroid.open({
@@ -194,9 +165,7 @@ class DatePicker extends Component {
         }).then(this.onDatePicked);
       } else if (this.props.mode === 'time') {
         // 选时间
-
         let timeMoment = Moment(this.state.date);
-
         TimePickerAndroid.open({
           hour: timeMoment.hour(),
           minute: timeMoment.minutes(),
@@ -204,7 +173,6 @@ class DatePicker extends Component {
         }).then(this.onTimePicked);
       } else if (this.props.mode === 'datetime') {
         // 选日期和时间
-
         DatePickerAndroid.open({
           date: this.state.date,
           minDate: this.props.minDate && this.getDate(this.props.minDate),
@@ -215,7 +183,6 @@ class DatePicker extends Component {
       }
     }
   }
-
   render() {
     let customStyles = this.props.customStyles;
     this.format = this.props.format || FORMATS[this.props.mode];
@@ -224,7 +191,6 @@ class DatePicker extends Component {
       this.state.disabled && Style.disabled,
       this.state.disabled && customStyles.disabled
     ];
-
     return (
       <TouchableHighlight
         style={[Style.dateTouch, this.props.style]}
@@ -292,7 +258,6 @@ class DatePicker extends Component {
     );
   }
 }
-
 DatePicker.defaultProps = {
   mode: 'date',
   date: '',
