@@ -58,10 +58,11 @@ var AdditemtodayView = React.createClass({
       fetch(url).then(function(response) {  
         return response.json();
       }).then(function(res) { 
+        console.log(res["data"]);
         if (res["data"]!=null) {
-       //get the sport item name from the database
+           //get the sport item name from the database
           var sportobj=res["data"];
-          var arr=[];
+          var arr=new Array();
           for(i in sportobj){   
             arr.push(sportobj[i]["name"]);
           }
@@ -153,11 +154,13 @@ _submit:function(){
                 style={{width:200,color:'#fff',alignItems:'center'}}
                 selectedValue={this.state.sportselected}
                 onValueChange={(value) => this.setState({sportselected: value})}>       
-                  { this.state.sportname.map((s, i) => {
+                   { this.state.sportname.map((v) => {
+                    console.log(i);
+                    console.log(v);
                       return <Picker.Item
                                key={i}
-                               value={s}
-                               label={s} />
+                               value={v}
+                               label={v} />
                    }) }
              
             </Picker>
