@@ -20,6 +20,7 @@ import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
 var ProfileView = React.createClass({
+
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -44,6 +45,15 @@ var ProfileView = React.createClass({
     AsyncStorage.removeItem('password',(err,result)=>{
       console.log(result);   
     });
+  },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('email',(err,result)=>{
+       email=result;
+       _that.setState({
+          email:email
+       })
+    })
   },
   render: function(){
     return(
@@ -74,36 +84,48 @@ var ProfileView = React.createClass({
               </List>
             </TouchableOpacity>
             <List>
-              <ListItem
-                roundAvatar
-                title='Gender'
-                avatar={require('../img/gender.png')}
-              />
-              <ListItem
-                roundAvatar
-                title='Birthday'
-                avatar={require('../img/plan_normal.png')}
-              /> 
-              <ListItem
+              <TouchableOpacity onPress={() => _navigator.push({title:'GenderModifyView',id:'gendermodify',params:{email:this.state.email}})}>
+                <ListItem
                   roundAvatar
-                  title='Height'
-                  avatar={require('../img/height.png')}
+                  title='Gender'
+                  avatar={require('../img/gender.png')}
                 />
-              <ListItem
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'BirthModifyView',id:'birthmodify',params:{email:this.state.email}})}>
+                <ListItem
                   roundAvatar
-                  title='Initial Weight'
-                  avatar={require('../img/weight.png')}
-                />
-              <ListItem
-                  roundAvatar
-                  title='Target Weight'
-                  avatar={require('../img/target.png')}
-                />
-              <ListItem
-                  roundAvatar
-                  title='BMI'
-                  avatar={require('../img/Heart.png')}
-                />
+                  title='Birthday'
+                  avatar={require('../img/plan_normal.png')}
+                /> 
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'HModifyView',id:'hmodify',params:{email:this.state.email}})}>
+                <ListItem
+                    roundAvatar
+                    title='Height'
+                    avatar={require('../img/height.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'IwModifyView',id:'iwmodify',params:{email:this.state.email}})}>
+                <ListItem
+                    roundAvatar
+                    title='Initial Weight'
+                    avatar={require('../img/weight.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'TwModifyView',id:'twmodify',params:{email:this.state.email}})}>
+                <ListItem
+                    roundAvatar
+                    title='Target Weight'
+                    avatar={require('../img/target.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'BModifyView',id:'bmimodify',params:{email:this.state.email}})}>
+                <ListItem
+                    roundAvatar
+                    title='BMI'
+                    avatar={require('../img/Heart.png')}
+                  />
+              </TouchableOpacity>
             </List>         
             <View>
               <TouchableOpacity style={styles.btn}

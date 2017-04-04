@@ -19,15 +19,13 @@ import { FormLabel, FormInput } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var EmailModifyView = React.createClass({
+var TwView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-      newEmail:''
     };
     return {
-      newEmail:this.state.newEmail
     };
 
   },
@@ -66,19 +64,15 @@ var EmailModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel 
-              labelStyle={{color: '#fff',fontSize:18}} 
-            > Origin:{this.props.email}</FormLabel>
-            <FormInput 
-              containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}}
-            onChangeText={(text) => this.setState({newEmail: text})}/>
-          </View>   
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
+            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+          </View> 
           <View>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
               <Text style={styles.text}>Save</Text>
-             </TouchableOpacity>
-          </View> 
+            </TouchableOpacity>
+          </View>   
         </View>       
       </ScrollView>
     );
@@ -132,10 +126,10 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
-     text:{
+   text:{
     fontWeight: 'bold',
     fontSize: 16,
     color: '#FFF'
   },
 });
-module.exports = EmailModifyView;
+module.exports = TwView;

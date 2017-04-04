@@ -19,39 +19,37 @@ import { FormLabel, FormInput } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var EmailModifyView = React.createClass({
+var PhoneModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-      newEmail:''
     };
     return {
-      newEmail:this.state.newEmail
     };
 
   },
   _save:function(){    
-    var newEmail=this.state.newEmail
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var url = URLnetowrk+' '; // get the item data again 
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        if (res["data"]!=null) {
-            console.log(res);
-            _navigator.push({
-              title:'ThomeView',
-              id:'Thome',
-            })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }
+      var newEmail=this.state.newEmail
+      AsyncStorage.getItem('userid',(err, result) => {
+        console.log(result);
+        var trainee_id=result;
+        var url = URLnetowrk+' '; // get the item data again 
+        fetch(url).then(function(response) {  
+          return response.json();
+        }).then(function(res) {
+          if (res["data"]!=null) {
+              console.log(res);
+              _navigator.push({
+                title:'ThomeView',
+                id:'Thome',
+              })
+          }else{
+            Alert.alert('Fail to display','Please check your data'); 
+          }
+        });
       });
-    });
-  },
+    },
   render: function(){
     return(
        <ScrollView 
@@ -66,12 +64,8 @@ var EmailModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel 
-              labelStyle={{color: '#fff',fontSize:18}} 
-            > Origin:{this.props.email}</FormLabel>
-            <FormInput 
-              containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}}
-            onChangeText={(text) => this.setState({newEmail: text})}/>
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
+            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}
@@ -128,7 +122,6 @@ var styles = StyleSheet.create({
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     marginTop:50,
      height: 30,
      borderRadius: 5,
    },
@@ -137,5 +130,13 @@ var styles = StyleSheet.create({
     fontSize: 16,
     color: '#FFF'
   },
+  btn:{
+     alignItems: 'center',
+     justifyContent: 'center',
+     backgroundColor: '#2cb395',
+     marginTop:50,
+     height: 30,
+     borderRadius: 5,
+   },
 });
-module.exports = EmailModifyView;
+module.exports = PhoneModifyView;

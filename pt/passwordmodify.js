@@ -15,19 +15,17 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
-import { FormLabel, FormInput } from 'react-native-elements';
+import { FormLabel, FormInput,FormValidationMessage } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var EmailModifyView = React.createClass({
+var PasswordModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-      newEmail:''
     };
     return {
-      newEmail:this.state.newEmail
     };
 
   },
@@ -66,19 +64,19 @@ var EmailModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel 
-              labelStyle={{color: '#fff',fontSize:18}} 
-            > Origin:{this.props.email}</FormLabel>
-            <FormInput 
-              containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}}
-            onChangeText={(text) => this.setState({newEmail: text})}/>
-          </View>   
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> For Security, please input your original password first:</FormLabel>
+            <FormInput  containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({newEmail: text})}/>
+            <FormValidationMessage>Please input your new password:</FormValidationMessage>
+            <FormInput  containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+            <FormValidationMessage>Please confirm your new password:</FormValidationMessage>
+            <FormInput  containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+          </View> 
           <View>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
               <Text style={styles.text}>Save</Text>
              </TouchableOpacity>
-          </View> 
+          </View>   
         </View>       
       </ScrollView>
     );
@@ -128,7 +126,6 @@ var styles = StyleSheet.create({
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     marginTop:50,
      height: 30,
      borderRadius: 5,
    },
@@ -138,4 +135,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-module.exports = EmailModifyView;
+module.exports = PasswordModifyView;

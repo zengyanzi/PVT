@@ -19,7 +19,7 @@ import { FormLabel, FormInput } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var EmailModifyView = React.createClass({
+var GenderModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -138,4 +138,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-module.exports = EmailModifyView;
+module.exports = GenderModifyView;

@@ -25,10 +25,10 @@ var ProfileModifyView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-     
+     email:this.props.email
     };
     return {
-      
+      email:this.state.email
     };
   },
  render: function(){
@@ -40,6 +40,7 @@ var ProfileModifyView = React.createClass({
         <View style={styles.maincontain}>
           <View style={[styles.Top,styles.Bottomline]}>     
               <View style={styles.Topbar}>
+                <Text  style={styles.text}>  Update your detail information</Text>
               </View>
               <View style={styles.right}>
               </View>
@@ -57,19 +58,23 @@ var ProfileModifyView = React.createClass({
                   }
                 />
               </TouchableOpacity>
-              <ListItem
-                roundAvatar
-                title='Modify Nickname'
-                 subtitle={
-                  <View style={styles.subtitleView}>
-                    <Text style={styles.ratingText}>Jenny bunny</Text>
-                  </View>
-                }
-              />
+              <TouchableOpacity onPress={() => _navigator.push({title:'PhoneModifyView',id:'phonemodify',params:{email:this.state.email}})}>
+                <ListItem
+                  roundAvatar
+                  title='Modify Phone number'
+                   subtitle={
+                    <View style={styles.subtitleView}>
+                      <Text style={styles.ratingText}>0212949281</Text>
+                    </View>
+                  }
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'PasswordModifyView',id:'passwordmodify',params:{email:this.state.email}})}>
               <ListItem
                 roundAvatar
                 title='Modify Password'     
               />
+              </TouchableOpacity>
             </List>
           </View>   
         </View>   
@@ -112,19 +117,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     flexDirection:'column',
   },
-   subtitleView: {
-    flexDirection: 'row',
-    paddingLeft: 10,
-    paddingTop: 5
-  },
-  ratingImage: {
-    height: 19.21,
-    width: 100
-  },
-  ratingText: {
-    paddingLeft: 10,
-    color: 'grey'
-  },
     btn:{
      alignItems: 'center',
      justifyContent: 'center',
@@ -132,5 +124,10 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
+  text:{
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#FFF'
+  },
 });
 module.exports = ProfileModifyView;

@@ -29,6 +29,14 @@ import AddrecordtodayView from'./pt/addrecordtoday';
 import ProfileModifyView from './pt/profilemodify';
 import EmailModifyView from './pt/emailmodify';
 import URLnetowrk from './pt/network';
+import PhoneModifyView from './pt/phonemodify';
+import PasswordModifyView from './pt/passwordmodify';
+import GenderModifyView from './pt/gendermodify';
+import BirthModifyView from './pt/birthmodify';
+import HModifyView from './pt/hmodify';
+import IwView from './pt/iwmodify';
+import TwView from './pt/twmodify';
+import BModifyView from './pt/bmimodify'
 
 export default class PTV extends React.Component {
   constructor(props) {
@@ -222,6 +230,46 @@ export default class PTV extends React.Component {
         <EmailModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }  
+    if(route.id === 'phonemodify'){
+      return (
+        <PhoneModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }  
+    if(route.id === 'passwordmodify'){
+      return (
+        <PasswordModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'birthmodify'){
+      return (
+        <BirthModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'gendermodify'){
+      return (
+        <GenderModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'hmodify'){
+      return (
+        <HModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'iwmodify'){
+      return (
+        <IwView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'twmodify'){
+      return (
+        <TwView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'bmimodify'){
+      return (
+        <BModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
   }
  render(){
     var renderScene = this.renderSceneAndroid;
