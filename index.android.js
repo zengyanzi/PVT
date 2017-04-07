@@ -36,7 +36,8 @@ import BirthModifyView from './pt/birthmodify';
 import HModifyView from './pt/hmodify';
 import IwView from './pt/iwmodify';
 import TwView from './pt/twmodify';
-import BModifyView from './pt/bmimodify'
+import BModifyView from './pt/bmimodify';
+import NewitemView from './pt/newitem';
 
 export default class PTV extends React.Component {
   constructor(props) {
@@ -268,6 +269,11 @@ export default class PTV extends React.Component {
     if(route.id === 'bmimodify'){
       return (
         <BModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'newitem'){
+      return (
+        <NewitemView {...route.params} navigator={navigator} route={route}/>
       );
     }
   }

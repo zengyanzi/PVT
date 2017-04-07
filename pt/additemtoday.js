@@ -154,9 +154,7 @@ _submit:function(){
                 style={{width:200,color:'#fff',alignItems:'center'}}
                 selectedValue={this.state.sportselected}
                 onValueChange={(value) => this.setState({sportselected: value})}>       
-                   { this.state.sportname.map((v) => {
-                    console.log(i);
-                    console.log(v);
+                   { this.state.sportname.map((v,i) => {
                       return <Picker.Item
                                key={i}
                                value={v}
@@ -182,6 +180,12 @@ _submit:function(){
             <TouchableOpacity style={styles.btn}
             onPress={this._submit}>
             <Text style={styles.text}>Save</Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity style={styles.btn}
+            onPress={() => _navigator.push({title:'NewitemView',id:'newitem',params:{email:this.state.email}})}>
+              <Text style={styles.text}>Can't find item,click here</Text>
             </TouchableOpacity>
           </View>
         </View>

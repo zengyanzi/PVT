@@ -178,7 +178,6 @@ var PlanView = React.createClass({
               Alert.alert('Fail to display','Please check your data'); 
             }     
           })
-
         }
       });
     })
@@ -211,8 +210,6 @@ var PlanView = React.createClass({
       </Swipeout>
     );
   },
-
-
   render: function(){
     return(
        <ScrollView 
