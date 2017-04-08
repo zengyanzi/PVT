@@ -14,8 +14,11 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
+import ScrollableTabView , { ScrollableTabBar, }from'react-native-scrollable-tab-view';
 import { SearchBar } from 'react-native-elements'
 import Swiper from 'react-native-swiper';
+import GymmapView from './gymmap';
+import GymlistView from './gymlist';
 import URLnetowrk from './network';
 var width = Dimensions.get('window').width;
 var _navigator ;
@@ -49,20 +52,21 @@ var GymView = React.createClass({
         </View>
         <SearchBar
             placeholder='Find your Gym here' />             
-        <Swiper style={styles.wrapper} showsButtons={true}>
-          <View style={styles.slide1}>
-            <Text style={styles.text}>Join a gym</Text>
-            <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-          </View>
-          <View style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
-            <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-          </View>
-          <View style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
-             <Image resizeMode='stretch' style={styles.image} source={require('../img/gym1.jpg')} />
-          </View>
-        </Swiper>       
+        <ScrollableTabView           
+            initialPage={1}
+            renderTabBar={() => <ScrollableTabBar  />}
+          >
+            <ScrollView tabLabel="Map" style={styles.tabView}>
+              <View style={styles.card}>
+                <GymmapView {...this.props}/>
+              </View>
+            </ScrollView>
+            <ScrollView tabLabel="List" style={styles.tabView}>
+              <View style={styles.card}>
+                <GymlistView {...this.props}/>
+              </View>
+            </ScrollView>
+          </ScrollableTabView>    
       </ScrollView>
     );
   },
@@ -104,33 +108,28 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
-  },
-    wrapper: {
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#70f0d4',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#db84d4',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#4368db',
   },
   text: {
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
-  }
- 
+  },
+  tabView: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: '#38bda0',
+  },
+  card: {
+    borderWidth: 1,
+    backgroundColor: '#fff',
+    borderColor: 'rgba(0,0,0,0.1)',
+    margin: 5,
+    height:400,
+    padding: 15,
+    shadowColor: '#ccc',
+    shadowOffset: { width: 2, height: 2, },
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+  },
 });
 module.exports = GymView;
