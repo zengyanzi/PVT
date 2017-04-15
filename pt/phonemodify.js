@@ -24,22 +24,27 @@ var PhoneModifyView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
+      
     };
     return {
+      
     };
 
   },
   _save:function(){    
-      var newEmail=this.state.newEmail
+      var newPhone=this.state.newPhone
       AsyncStorage.getItem('userid',(err, result) => {
         console.log(result);
         var trainee_id=result;
-        var url = URLnetowrk+' '; // get the item data again 
+        var url = URLnetowrk+'modifyphone.action'; // get the item data again 
+        url += '?phone='+newPhone;
         fetch(url).then(function(response) {  
           return response.json();
         }).then(function(res) {
           if (res["data"]!=null) {
-              console.log(res);
+            console.log(res);
+            var phone=newPhone.toString();
+            AsyncStorage.setItem("phone",phone);
               _navigator.push({
                 title:'ThomeView',
                 id:'Thome',
@@ -64,8 +69,8 @@ var PhoneModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
-            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.phone}</FormLabel>
+            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({newPhone: text})}/>
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}

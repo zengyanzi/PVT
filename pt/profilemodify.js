@@ -25,11 +25,22 @@ var ProfileModifyView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-     email:this.props.email
+     email:this.props.email,
+     phone:''
     };
     return {
-      email:this.state.email
+      email:this.state.email,
+      phone:this.state.phone
     };
+  },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('phone',(err,result)=>{
+       phone=result;
+       _that.setState({
+          phone:phone
+       })
+    })
   },
  render: function(){
     return(
@@ -47,24 +58,13 @@ var ProfileModifyView = React.createClass({
           </View>
           <View >
             <List>
-              <TouchableOpacity onPress={() => _navigator.push({title:'EmailModifyView',id:'emailmodify',params:{email:this.state.email}})}>
-                <ListItem
-                  roundAvatar
-                  title='Modify Email'
-                   subtitle={
-                    <View style={styles.subtitleView}>
-                      <Text style={styles.ratingText}>{this.state.email}</Text>
-                    </View>
-                  }
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'PhoneModifyView',id:'phonemodify',params:{email:this.state.email}})}>
+              <TouchableOpacity onPress={() => _navigator.push({title:'PhoneModifyView',id:'phonemodify',params:{phone:this.state.phone}})}>
                 <ListItem
                   roundAvatar
                   title='Modify Phone number'
                    subtitle={
                     <View style={styles.subtitleView}>
-                      <Text style={styles.ratingText}>0212949281</Text>
+                      <Text style={styles.ratingText}>{this.state.phone}</Text>
                     </View>
                   }
                 />

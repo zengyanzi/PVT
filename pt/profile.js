@@ -119,14 +119,12 @@ var ProfileView = React.createClass({
                     avatar={require('../img/target.png')}
                   />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'BModifyView',id:'bmimodify',params:{email:this.state.email}})}>
-                <ListItem
+              <ListItem
                     roundAvatar
                     title='BMI'
                     avatar={require('../img/Heart.png')}
                   />
-              </TouchableOpacity>
-            </List>         
+              </List>         
             <View>
               <TouchableOpacity style={styles.btn}
               onPress={this._logout}>

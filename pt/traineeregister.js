@@ -26,8 +26,8 @@ t.form.Form.stylesheet.textbox.normal.color = '#2cb395';
 t.form.Form.stylesheet.textbox.normal.backgroundColor = '#ecf0f1';
 var Person = t.struct({
   Name: t.String,              // a required string
-  surname: t.maybe(t.String),  // an optional string
-  phone:t.maybe(t.Number),  
+  surname: t.String,  // an optional string
+  phone:t.Number,  
   email:t.String,             // a required number
   password:t.String,            // a required number
   //rememberMe: t.Boolean        // a boolean

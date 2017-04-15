@@ -15,10 +15,18 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
-import { FormLabel, FormInput } from 'react-native-elements';
+import t from 'tcomb-form-native';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
+var Form =t.form.Form;
+var Gender = t.enums({
+  M: 'Male',
+  F: 'Female'
+});
+var Person = t.struct({
+  gender: Gender // enum
+});
 var GenderModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -66,12 +74,10 @@ var GenderModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel 
-              labelStyle={{color: '#fff',fontSize:18}} 
-            > Origin:{this.props.email}</FormLabel>
-            <FormInput 
-              containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}}
-            onChangeText={(text) => this.setState({newEmail: text})}/>
+            <Form 
+            ref="form"
+            type={Person}
+          />
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}

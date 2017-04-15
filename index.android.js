@@ -38,6 +38,7 @@ import IwView from './pt/iwmodify';
 import TwView from './pt/twmodify';
 import BModifyView from './pt/bmimodify';
 import NewitemView from './pt/newitem';
+import StaticMap from './pt/staticmap'
 
 export default class PTV extends React.Component {
   constructor(props) {
@@ -276,6 +277,12 @@ export default class PTV extends React.Component {
         <NewitemView {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'staticmap'){
+      return (
+        <StaticMap {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+
   }
  render(){
     var renderScene = this.renderSceneAndroid;

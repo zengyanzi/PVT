@@ -42,12 +42,14 @@ var AdditemtodayView = React.createClass({
       sportdate:'10-02-2017',
       sportname:['BB BENCH PRESS', 'DB FLYS', 'INCLINE DB BENCH','Rower','Treadmill'],
       sportselected:'Rower',
+      userdefined:['userdefined']
     };
     return {
       value:this.state.value,
       sportdate:this.state.sportdate,
       sportname:this.state.sportname,
       sportselected:this.state.sportselected,
+      userdefined:this.state.userdefined
     };
   },
   componentWillMount() {
