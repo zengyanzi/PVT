@@ -76,6 +76,8 @@ var TraineeloginView = React.createClass({
           AsyncStorage.setItem("target_weight",target_weight);             
           var userid=res['data']['id'].toString();
           AsyncStorage.setItem('userid',userid);
+          var bmi=res['data']['bmi'].toString();
+          AsyncStorage.setItem('bmi',bmi);
           console.log(userid);
           _navigator.push({
             title:'ThomeView',

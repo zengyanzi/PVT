@@ -19,45 +19,37 @@ import t from 'tcomb-form-native';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var Form =t.form.Form;
-var Gender = t.enums({
-  M: 'Male',
-  F: 'Female'
-});
-var Person = t.struct({
-  gender: Gender // enum
-});
 var GenderModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    this.state = {
-      newEmail:''
+    this.state = { 
+      gender:'Male'
     };
-    return {
-      newEmail:this.state.newEmail
+    return {   
+      gender:this.state.gender
     };
 
   },
   _save:function(){    
-    var newEmail=this.state.newEmail
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var url = URLnetowrk+' '; // get the item data again 
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        if (res["data"]!=null) {
-            console.log(res);
-            _navigator.push({
-              title:'ThomeView',
-              id:'Thome',
-            })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }
-      });
+    var gender=this.state.gender;
+    console.log(this.state.gender);
+    var url = URLnetowrk+'modifygender.action'; // modify the gender
+    url+= '?gender='+gender;
+    console.log(url);
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+      if (res["data"]!=null) {
+          console.log(res);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome',
+          })
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }
+  
     });
   },
   render: function(){
@@ -74,10 +66,14 @@ var GenderModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <Form 
-            ref="form"
-            type={Person}
-          />
+            <Picker 
+                prompt="Please choose sportname"
+                style={{width:200,color:'#fff',alignItems:'center'}}
+                selectedValue={this.state.gender}
+                onValueChange={(value) => this.setState({gender: value})}>       
+                <Picker.Item label="Male" value="Male" />
+                <Picker.Item label="Female" value="Female" />   
+            </Picker>
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}

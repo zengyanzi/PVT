@@ -24,32 +24,64 @@ var IwView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
+      weight:''
     };
     return {
+      weight:this.state.weight
     };
 
   },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('email',(err,result)=>{
+       email=result;
+       _that.setState({
+          email:email
+       })
+    })
+    AsyncStorage.getItem('password',(err,result)=>{
+       password=result;
+       _that.setState({
+          password:password
+       })
+    })
+  },
   _save:function(){    
-    var newEmail=this.state.newEmail
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var url = URLnetowrk+' '; // get the item data again 
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        if (res["data"]!=null) {
-            console.log(res);
-            _navigator.push({
-              title:'ThomeView',
-              id:'Thome',
-            })
-        }else{
+    var weight=this.state.weight;
+    var email=this.state.email;
+    var password=this.state.password
+    console.log(this.state.weight);
+    var url = URLnetowrk+'modifyweight.action'; // modify the height
+    url+= '?weight='+weight;
+    console.log(url);
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+       if (res["data"]!=null) {
+        var url = URLnetowrk+'traineelogin.action';//fresh the BMI
+        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+        url += '?email='+email+'&password='+password;
+        fetch(url).then(function(response) {  
+          return response.json();
+        }).then(function(res){
+          if (res["data"]!=null) {
+          console.log(res);
+          var bmi=res['data']['bmi'].toString();
+          AsyncStorage.setItem('bmi',bmi);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome',
+          })
+          }else{
+            Alert.alert('Fail to display','Please check your data'); 
+          }
+        });
+      }else{
           Alert.alert('Fail to display','Please check your data'); 
-        }
-      });
+      }
     });
   },
+
   render: function(){
     return(
        <ScrollView 
@@ -63,9 +95,15 @@ var IwView = React.createClass({
               <View style={styles.right}>
               </View>
             </View>
-           <View >
-            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
-            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+           <View style={styles.input}>
+              <TextInput
+                style={{height: 40, borderColor: '#2cb395', borderWidth: 2,width:180,color:'#FFF',fontWeight: 'bold',fontSize: 16,}}
+                onChangeText={(text) => this.setState({weight:text})}
+                keyboardType={'numeric'}
+                 placeholder="Enter Weight"
+                value={this.state.text}
+              />
+              <Text style={styles.text}> kg</Text> 
           </View> 
           <View>
             <TouchableOpacity style={styles.btn}
@@ -130,6 +168,11 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     color: '#FFF'
+  },
+  input:{
+
+  flexDirection: 'row',
+
   },
 });
 module.exports = IwView;

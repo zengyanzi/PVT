@@ -9,7 +9,6 @@ import {
   TextInput,
   TouchableOpacity,
   AsyncStorage,
-  Picker,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -24,30 +23,33 @@ var HModifyView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
+      height:''
     };
     return {
+      height:this.state.height
     };
 
   },
   _save:function(){    
-    var newEmail=this.state.newEmail
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var url = URLnetowrk+' '; // get the item data again 
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        if (res["data"]!=null) {
-            console.log(res);
-            _navigator.push({
-              title:'ThomeView',
-              id:'Thome',
-            })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }
-      });
+    var height=this.state.height;
+    console.log(this.state.height);
+    AsyncStorage.setItem("height",height.toString());
+    var url = URLnetowrk+'modifyheight.action'; // modify the height
+    url+= '?height='+height;
+    console.log(url);
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+      if (res["data"]!=null) {
+          console.log(res);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome',
+          })
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }
+  
     });
   },
   render: function(){
@@ -63,11 +65,17 @@ var HModifyView = React.createClass({
               <View style={styles.right}>
               </View>
             </View>
-           <View >
-            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.email}</FormLabel>
-            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({Email: text})}/>
+           <View style={styles.input}>
+              <TextInput
+                style={{height: 40, borderColor: '#2cb395', borderWidth: 2,width:180,color:'#FFF',fontWeight: 'bold',fontSize: 16,}}
+                onChangeText={(text) => this.setState({height:text})}
+                keyboardType={'numeric'}
+                 placeholder="Enter Height"
+                value={this.state.text}
+              />
+              <Text style={styles.text}> meter</Text> 
           </View> 
-          <View>
+          <View style={{flex:1}}>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
               <Text style={styles.text}>Save</Text>
@@ -130,6 +138,11 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     color: '#FFF'
+  },
+  input:{
+
+  flexDirection: 'row',
+
   },
 });
 module.exports = HModifyView;

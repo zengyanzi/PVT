@@ -25,10 +25,12 @@ var ProfileView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-       email:'jenny@gmail.com'
+       email:'jenny@gmail.com',
+       bmi:'16'
     };
     return {      
-      email:this.state.email
+      email:this.state.email,
+      bmi:this.state.bmi
     };
   },
   _logout: function(){
@@ -52,6 +54,13 @@ var ProfileView = React.createClass({
        email=result;
        _that.setState({
           email:email
+       })
+    })
+    AsyncStorage.getItem('bmi',(err,result)=>{
+       bmi=parseFloat(result).toFixed(2);
+       console.log(bmi);
+       _that.setState({
+          bmi:bmi
        })
     })
   },
@@ -122,6 +131,11 @@ var ProfileView = React.createClass({
               <ListItem
                     roundAvatar
                     title='BMI'
+                    subtitle={
+                    <View style={styles.subtitleView}>
+                      <Text style={styles.ratingText}>{this.state.bmi}</Text>
+                    </View>
+                  }
                     avatar={require('../img/Heart.png')}
                   />
               </List>         
