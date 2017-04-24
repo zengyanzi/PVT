@@ -10,35 +10,36 @@ import {
 } from 'react-native';
 
 var _navigator;
-import InstructwelcomeView from'./pt/instructwelcome';
-import InstructregisterView from'./pt/instructregister';
-import InstructloginView from'./pt/instructlogin';
-import TraineewelcomeView from './pt/traineewelcome';
-import TraineeloginView from'./pt/traineelogin';
-import TraineeregisterView from'./pt/traineeregister';
-import ThomeView from './pt/Thome';
-import DetailPlanView from './pt/detailplan';
-import EditPlanView from './pt/editplan';
-import CreateplanView from './pt/createplan';
-import PlanInfoView from './pt/planinfo';
-import EditRecordView from './pt/editrecord';
-import DetailRecordView from './pt/detailrecord';
-import ChartView from './pt/chart';
-import AdditemtodayView from'./pt/additemtoday';
-import AddrecordtodayView from'./pt/addrecordtoday';
-import ProfileModifyView from './pt/profilemodify';
-import EmailModifyView from './pt/emailmodify';
+import InstructwelcomeView from'./pt/instruct/instructwelcome';
+import InstructregisterView from'./pt/instruct/instructregister';
+import InstructloginView from'./pt/instruct/instructlogin';
+import TraineewelcomeView from './pt/trainee/traineewelcome';
+import TraineeloginView from'./pt/trainee/traineelogin';
+import TraineeregisterView from'./pt/trainee/traineeregister';
+import ThomeView from './pt/trainee/Thome';
+import IhomeView from './pt/instruct/Ihome';
+import DetailPlanView from './pt/trainee/detailplan';
+import EditPlanView from './pt/trainee/editplan';
+import CreateplanView from './pt/trainee/createplan';
+import PlanInfoView from './pt/trainee/planinfo';
+import EditRecordView from './pt/trainee/editrecord';
+import DetailRecordView from './pt/trainee/detailrecord';
+import ChartView from './pt/trainee/chart';
+import AdditemtodayView from'./pt/trainee/additemtoday';
+import AddrecordtodayView from'./pt/trainee/addrecordtoday';
+import ProfileModifyView from './pt/trainee/profilemodify';
+import EmailModifyView from './pt/trainee/emailmodify';
 import URLnetowrk from './pt/network';
-import PhoneModifyView from './pt/phonemodify';
-import PasswordModifyView from './pt/passwordmodify';
-import GenderModifyView from './pt/gendermodify';
-import BirthModifyView from './pt/birthmodify';
-import HModifyView from './pt/hmodify';
-import IwView from './pt/iwmodify';
-import TwView from './pt/twmodify';
-import BModifyView from './pt/bmimodify';
-import NewitemView from './pt/newitem';
-import StaticMap from './pt/staticmap'
+import PhoneModifyView from './pt/trainee/phonemodify';
+import PasswordModifyView from './pt/trainee/passwordmodify';
+import GenderModifyView from './pt/trainee/gendermodify';
+import BirthModifyView from './pt/trainee/birthmodify';
+import HModifyView from './pt/trainee/hmodify';
+import IwView from './pt/trainee/iwmodify';
+import TwView from './pt/trainee/twmodify';
+import BModifyView from './pt/trainee/bmimodify';
+import NewitemView from './pt/trainee/newitem';
+import StaticMap from './pt/trainee/staticmap'
 
 export default class PTV extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ export default class PTV extends React.Component {
                 password=result;
                 // var url = 'http://192.168.20.17:8080/pt_server/instructorlogin.action';
                   // var url = 'http://192.168.1.15:8080/pt_server/instructorlogin.action';
-                var url = URLnetowrk+'instructorlogin.action';
+                var url = URLnetowrk+'instructor/login.action';
                 url += '?email='+email+'&password='+password;
                 console.log(url);
                 fetch(url).then(function(response) {  
@@ -70,8 +71,8 @@ export default class PTV extends React.Component {
                   console.log(res);
                   if (res["data"]!=null) {
                     _navigator.push({
-                    title:'ClientInfoView',
-                    id:'clientinfo'
+                    title:'IhomeView',
+                    id:'Ihome'
                     });
                   }
                 });
@@ -175,6 +176,11 @@ export default class PTV extends React.Component {
     if(route.id === 'Thome'){
       return (
         <ThomeView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Ihome'){
+      return (
+        <IhomeView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'detailplan'){
