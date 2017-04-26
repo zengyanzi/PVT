@@ -19,7 +19,7 @@ import { FormLabel, FormInput } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var PhoneModifyView = React.createClass({
+var IPhoneModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -36,7 +36,7 @@ var PhoneModifyView = React.createClass({
       AsyncStorage.getItem('userid',(err, result) => {
         console.log(result);
         var trainee_id=result;
-        var url = URLnetowrk+'modifyphone.action'; // get the item data again 
+        var url = URLnetowrk+'instructor/modifyphone.action'; // get the item data again 
         url += '?phone='+newPhone;
         fetch(url).then(function(response) {  
           return response.json();
@@ -46,8 +46,8 @@ var PhoneModifyView = React.createClass({
             var phone=newPhone.toString();
             AsyncStorage.setItem("phone",phone);
               _navigator.push({
-                title:'ThomeView',
-                id:'Thome',
+            title:'IhomeView',
+            id:'Ihome',
               })
           }else{
             Alert.alert('Fail to display','Please check your data'); 
@@ -144,4 +144,4 @@ var styles = StyleSheet.create({
      borderRadius: 5,
    },
 });
-module.exports = PhoneModifyView;
+module.exports = IPhoneModifyView;

@@ -56,13 +56,6 @@ var InstructProfileView = React.createClass({
           email:email
        })
     })
-    AsyncStorage.getItem('bmi',(err,result)=>{
-       bmi=parseFloat(result).toFixed(2);
-       console.log(bmi);
-       _that.setState({
-          bmi:bmi
-       })
-    })
   },
   render: function(){
     return(
@@ -78,7 +71,7 @@ var InstructProfileView = React.createClass({
             </View>
           </View>
           <View >
-            <TouchableOpacity onPress={() => _navigator.push({title:'ProfileModifyView',id:'profilemodify',params:{email:this.state.email}})}>
+            <TouchableOpacity onPress={() => _navigator.push({title:'IProfileModifyView',id:'iprofilemodify',params:{email:this.state.email}})}>
               <List>
                 <ListItem
                   roundAvatar
@@ -93,51 +86,27 @@ var InstructProfileView = React.createClass({
               </List>
             </TouchableOpacity>
             <List>
-              <TouchableOpacity onPress={() => _navigator.push({title:'GenderModifyView',id:'gendermodify',params:{email:this.state.email}})}>
+              <TouchableOpacity onPress={() => _navigator.push({title:'IGenderModifyView',id:'igendermodify',params:{email:this.state.email}})}>
                 <ListItem
                   roundAvatar
                   title='Gender'
                   avatar={require('../../img/gender.png')}
                 />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'BirthModifyView',id:'birthmodify',params:{email:this.state.email}})}>
+              <TouchableOpacity onPress={() => _navigator.push({title:'Description',id:'description',params:{email:this.state.email}})}>
+                <ListItem
+                  roundAvatar
+                  title='Description'
+                  avatar={require('../../img/Heart.png')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => _navigator.push({title:'IBirthModifyView',id:'ibirthmodify',params:{email:this.state.email}})}>
                 <ListItem
                   roundAvatar
                   title='Birthday'
                   avatar={require('../../img/plan_normal.png')}
                 /> 
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'HModifyView',id:'hmodify',params:{email:this.state.email}})}>
-                <ListItem
-                    roundAvatar
-                    title='Height'
-                    avatar={require('../../img/height.png')}
-                  />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'IwModifyView',id:'iwmodify',params:{email:this.state.email}})}>
-                <ListItem
-                    roundAvatar
-                    title='Initial Weight'
-                    avatar={require('../../img/weight.png')}
-                  />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'TwModifyView',id:'twmodify',params:{email:this.state.email}})}>
-                <ListItem
-                    roundAvatar
-                    title='Target Weight'
-                    avatar={require('../../img/target.png')}
-                  />
-              </TouchableOpacity>
-              <ListItem
-                    roundAvatar
-                    title='BMI'
-                    subtitle={
-                    <View style={styles.subtitleView}>
-                      <Text style={styles.ratingText}>{this.state.bmi}</Text>
-                    </View>
-                  }
-                    avatar={require('../../img/Heart.png')}
-                  />
               </List>         
             <View>
               <TouchableOpacity style={styles.btn}

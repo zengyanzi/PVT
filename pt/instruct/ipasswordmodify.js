@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -19,38 +20,79 @@ import t from 'tcomb-form-native';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var GenderModifyView = React.createClass({
+var Form =t.form.Form;
+var User = t.struct({
+  oldpassword: t.String,              // a required string
+  newpassword:t.String,
+  newpasswordconfirm:t.String,
+  //rememberMe: t.Boolean        // a boolean
+});
+var options = {
+  fields: {
+  oldpassword: {
+    password: true,
+    secureTextEntry: true,
+    },
+  newpassword: {
+    password: true,
+    secureTextEntry: true,
+    },
+  newpasswordconfirm: {
+    password: true,
+    secureTextEntry: true,
+    },
+  }
+};
+var IPasswordModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    this.state = { 
-      gender:'Male'
+    this.state = {
+
     };
-    return {   
-      gender:this.state.gender
+    return {
     };
 
   },
-  _save:function(){    
-    var gender=this.state.gender;
-    console.log(this.state.gender);
-    var url = URLnetowrk+'modifygender.action'; // modify the gender
-    url+= '?gender='+gender;
-    console.log(url);
-    fetch(url).then(function(response) {  
-      return response.json();
-    }).then(function(res) {
-      if (res["data"]!=null) {
-          console.log(res);
-          _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
-          })
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('password',(err,result)=>{
+       var oldpassword=result;
+       _that.setState({
+          oldpassword:oldpassword
+       })
+    })
+  },
+  _save:function(){
+    var value = this.refs.form.getValue();
+    var oldpassword=value["oldpassword"];
+    var newpassword=value["newpassword"];
+    var newpasswordconfirm=value["newpasswordconfirm"]
+    if (this.state.oldpassword==oldpassword) { 
+      if (newpassword == newpasswordconfirm) {
+        AsyncStorage.setItem("password",newpassword);
+        var url = URLnetowrk+'/instructor/modifypassword.action'; // get the item data again 
+          url+= '?oldpassword='+oldpassword+ '?newpassword='+newpassword;
+          fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+            if (res["data"]!=null) {
+                console.log(res);
+                _navigator.push({
+                  title:'ThomeView',
+                  id:'Thome',
+                })
+            }else{
+              Alert.alert('Wrong Password','Please input again'); 
+            }
+        });
       }else{
-        Alert.alert('Fail to display','Please check your data'); 
+        Alert.alert('different new passowrd','Please input the same new passowrd'); 
       }
-  
-    });
+      }else{
+        Alert.alert('Wrong Password','Please input again'); 
+      }
+
   },
   render: function(){
     return(
@@ -66,21 +108,18 @@ var GenderModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <Picker 
-                prompt="Please choose sportname"
-                style={{width:200,color:'#fff',alignItems:'center'}}
-                selectedValue={this.state.gender}
-                onValueChange={(value) => this.setState({gender: value})}>       
-                <Picker.Item label="Male" value="Male" />
-                <Picker.Item label="Female" value="Female" />   
-            </Picker>
-          </View>   
+            <Form 
+              ref="form"
+              type={User}
+              options={options}
+            />
+          </View> 
           <View>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
               <Text style={styles.text}>Save</Text>
              </TouchableOpacity>
-          </View> 
+          </View>   
         </View>       
       </ScrollView>
     );
@@ -130,7 +169,6 @@ var styles = StyleSheet.create({
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     marginTop:50,
      height: 30,
      borderRadius: 5,
    },
@@ -140,4 +178,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-module.exports = GenderModifyView;
+module.exports = IPasswordModifyView;

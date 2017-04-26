@@ -20,7 +20,7 @@ import { List, ListItem } from 'react-native-elements';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var ProfileModifyView = React.createClass({
+var IProfileModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -58,7 +58,7 @@ var ProfileModifyView = React.createClass({
           </View>
           <View >
             <List>
-              <TouchableOpacity onPress={() => _navigator.push({title:'PhoneModifyView',id:'phonemodify',params:{phone:this.state.phone}})}>
+              <TouchableOpacity onPress={() => _navigator.push({title:'IPhoneModifyView',id:'iphonedmodify',params:{phone:this.state.phone}})}>
                 <ListItem
                   roundAvatar
                   title='Modify Phone number'
@@ -69,7 +69,7 @@ var ProfileModifyView = React.createClass({
                   }
                 />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => _navigator.push({title:'PasswordModifyView',id:'passwordmodify',params:{email:this.state.email}})}>
+              <TouchableOpacity onPress={() => _navigator.push({title:'IPasswordModifyView',id:'ipasswordmodify',params:{email:this.state.email}})}>
               <ListItem
                 roundAvatar
                 title='Modify Password'     
@@ -130,4 +130,4 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
 });
-module.exports = ProfileModifyView;
+module.exports = IProfileModifyView;

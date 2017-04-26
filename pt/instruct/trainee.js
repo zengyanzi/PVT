@@ -50,10 +50,10 @@ var TraineeView = React.createClass({
           </View>    
         </View>
         <SearchBar    
-          placeholder='Find your tainer here' />
+          placeholder='Find your Trainee here' />
         <Swiper style={styles.wrapper} showsButtons={true}>
           <View style={styles.slide1}>
-            <Text style={styles.text}>Find a trainer</Text>     
+            <Text style={styles.text}>Find a trainee</Text>     
             <Image resizeMode='stretch' style={styles.image} source={require('../../img/tra1.jpg')} /> 
           </View>
           <View style={styles.slide2}>

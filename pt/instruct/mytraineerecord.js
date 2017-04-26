@@ -32,25 +32,29 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 var _navigator ;
 var rows = [
   {
-    day:"2017-03-03",
+    day:"2017-02-08  ",
+    name:"Vincent",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
     autoClose: true,
   }, {
-    day:"2017-03-04",
+    day:"2017-02-09",
+    name:"Vincent",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
     autoClose: true,
   }, {
-    day:"2017-03-05",
+    day:"2017-02-10",
+    name:"Jenny",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
     autoClose: true,
   }, {
-    day:"2017-03-06",
+    day:"2017-02-11",
+    name:"Jenny",
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-  },
+  },  
 ];
 var MyTraineeRecordView = React.createClass({
   getInitialState: function(){
@@ -65,39 +69,39 @@ var MyTraineeRecordView = React.createClass({
       scrollEnabled: true,
     };
   },
-  componentWillMount() {
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      function format (d) {
-        return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-      }
-      var today =new Date();
-      var end = format(today);
-      var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
-      var start=format(day1);
-      var trainee_id=result;
-      var day=this.props.date;
-      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var url = URLnetowrk+'myrecord.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&start='+start+'&end='+end;
-      console.log(url);
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        console.log(res);        
-        if (res["data"]!=null) { 
-          _that.setState({
-          dataSource: ds.cloneWithRows(res["data"]),
-          rows:res["data"]
-        })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }
-     });      
-    });  
-  },
+  // componentWillMount() {
+  //   let _that=this;
+  //   AsyncStorage.getItem('userid',(err, result) => {
+  //     console.log(result);
+  //     function format (d) {
+  //       return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+  //     }
+  //     var today =new Date();
+  //     var end = format(today);
+  //     var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
+  //     var start=format(day1);
+  //     var trainee_id=result;
+  //     var day=this.props.date;
+  //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+  //     var url = URLnetowrk+'myrecord.action';
+  //     // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  //     url += '?trainee_id='+trainee_id+'&start='+start+'&end='+end;
+  //     console.log(url);
+  //     fetch(url).then(function(response) {  
+  //       return response.json();
+  //     }).then(function(res) {
+  //       console.log(res);        
+  //       if (res["data"]!=null) { 
+  //         _that.setState({
+  //         dataSource: ds.cloneWithRows(res["data"]),
+  //         rows:res["data"]
+  //       })
+  //       }else{
+  //         Alert.alert('Fail to display','Please check your data'); 
+  //       }
+  //    });      
+  //   });  
+  // },
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });
@@ -138,8 +142,8 @@ var MyTraineeRecordView = React.createClass({
                 onPress={() => _navigator.push({title:'DetailRecordView',id:'detailrecord',params:{date:rowData.day}})}>
           <View style={styles.li}>
             <View  style={styles.lidate}>
-              <Image  source={require('../../img/plan_normal.png') }/>
-              <Text>{rowData.day}</Text>
+              <Image  source={require('../../img/profile_normal.png') }/>
+              <Text>{rowData.day}   {rowData.name}</Text>
             </View>            
             <Text style={styles.liText}>Sports: {rowData.text}</Text>           
           </View>

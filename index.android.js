@@ -28,11 +28,16 @@ import ChartView from './pt/trainee/chart';
 import AdditemtodayView from'./pt/trainee/additemtoday';
 import AddrecordtodayView from'./pt/trainee/addrecordtoday';
 import ProfileModifyView from './pt/trainee/profilemodify';
+import IProfileModifyView from './pt/instruct/iprofilemodify';
 import EmailModifyView from './pt/trainee/emailmodify';
 import URLnetowrk from './pt/network';
 import PhoneModifyView from './pt/trainee/phonemodify';
 import PasswordModifyView from './pt/trainee/passwordmodify';
 import GenderModifyView from './pt/trainee/gendermodify';
+import IPhoneModifyView from './pt/instruct/iphonemodify';
+import IPasswordModifyView from './pt/instruct/ipasswordmodify';
+import IGenderModifyView from './pt/instruct/igendermodify';
+import IBirthModifyView from './pt/instruct/ibirthmodify';
 import BirthModifyView from './pt/trainee/birthmodify';
 import HModifyView from './pt/trainee/hmodify';
 import IwView from './pt/trainee/iwmodify';
@@ -40,7 +45,7 @@ import TwView from './pt/trainee/twmodify';
 import BModifyView from './pt/trainee/bmimodify';
 import NewitemView from './pt/trainee/newitem';
 import StaticMap from './pt/trainee/staticmap'
-
+import Description from './pt/instruct/description'
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
@@ -233,19 +238,29 @@ export default class PTV extends React.Component {
         <ProfileModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }
-     if(route.id === 'emailmodify'){
+   if(route.id === 'iprofilemodify'){
       return (
-        <EmailModifyView {...route.params} navigator={navigator} route={route}/>
+        <IProfileModifyView {...route.params} navigator={navigator} route={route}/>
       );
-    }  
+    }
     if(route.id === 'phonemodify'){
       return (
         <PhoneModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }  
+    if(route.id === 'iphonedmodify'){
+      return (
+        <IPhoneModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     if(route.id === 'passwordmodify'){
       return (
         <PasswordModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'ipasswordmodify'){
+      return (
+        <IPasswordModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'birthmodify'){
@@ -256,6 +271,16 @@ export default class PTV extends React.Component {
     if(route.id === 'gendermodify'){
       return (
         <GenderModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'ibirthmodify'){
+      return (
+        <IBirthModifyView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'igendermodify'){
+      return (
+        <IGenderModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'hmodify'){
@@ -288,7 +313,11 @@ export default class PTV extends React.Component {
         <StaticMap {...route.params} navigator={navigator} route={route}/>
       );
     }
-
+    if(route.id === 'description'){
+      return (
+        <Description {...route.params} navigator={navigator} route={route}/>
+      );
+    }
   }
  render(){
     var renderScene = this.renderSceneAndroid;

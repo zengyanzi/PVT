@@ -63,6 +63,12 @@ var InstructloginView = React.createClass({
       if (res["data"]!=null) {
         AsyncStorage.setItem("email",email);
         AsyncStorage.setItem("password",password);
+        AsyncStorage.setItem("name",res["data"]["name"]);
+        AsyncStorage.setItem("surname",res["data"]["surname"]);
+        var phone=res['data']['phone'].toString();
+        AsyncStorage.setItem("phone",phone);
+        AsyncStorage.setItem("gender",res["data"]["gender"]);
+        AsyncStorage.setItem("birthday",res["data"]["birthday"]);
         _navigator.push({
           title:'IhomeView',
           id:'Ihome'

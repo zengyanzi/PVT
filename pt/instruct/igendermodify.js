@@ -15,40 +15,41 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
-import { FormLabel, FormInput } from 'react-native-elements';
+import t from 'tcomb-form-native';
 import URLnetowrk from './network';
-import DatePicker from './date.js';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
-var BirthModifyView = React.createClass({
+var IGenderModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    this.state = {
+    this.state = { 
+      gender:'Male'
     };
-    return {
+    return {   
+      gender:this.state.gender
     };
 
   },
   _save:function(){    
-    var birthday=this.state.date;
-    var url = URLnetowrk+'modifybirthday.action'; // modify the birthday
-    url += '?birthday='+birthday;
+    var gender=this.state.gender;
+    console.log(this.state.gender);
+    var url = URLnetowrk+'instructor/modifygender.action'; // modify the gender
+    url+= '?gender='+gender;
     console.log(url);
     fetch(url).then(function(response) {  
       return response.json();
     }).then(function(res) {
       if (res["data"]!=null) {
           console.log(res);
-          var birthday=birthday.toString();
-          AsyncStorage.setItem("birthday",birthday);
           _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
+            title:'IhomeView',
+            id:'Ihome',
           })
       }else{
         Alert.alert('Fail to display','Please check your data'); 
       }
+  
     });
   },
   render: function(){
@@ -64,24 +65,22 @@ var BirthModifyView = React.createClass({
               <View style={styles.right}>
               </View>
             </View>
-            <View>
-            <Text style={styles.text}>Please Choose the Date</Text>
-            <DatePicker
-              style={styles.datepicker}
-              date={this.state.date}
-              mode="date"
-              placeholder="Date"
-              format="YYYY-MM-DD"
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"
-              onDateChange={(date) => {this.setState({date: date});}}/>
-          </View>
+           <View >
+            <Picker 
+                prompt="Please choose sportname"
+                style={{width:200,color:'#fff',alignItems:'center'}}
+                selectedValue={this.state.gender}
+                onValueChange={(value) => this.setState({gender: value})}>       
+                <Picker.Item label="Male" value="Male" />
+                <Picker.Item label="Female" value="Female" />   
+            </Picker>
+          </View>   
           <View>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
               <Text style={styles.text}>Save</Text>
-            </TouchableOpacity>
-          </View>   
+             </TouchableOpacity>
+          </View> 
         </View>       
       </ScrollView>
     );
@@ -135,10 +134,10 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
-   text:{
+     text:{
     fontWeight: 'bold',
     fontSize: 16,
     color: '#FFF'
   },
 });
-module.exports = BirthModifyView;
+module.exports = IGenderModifyView;
