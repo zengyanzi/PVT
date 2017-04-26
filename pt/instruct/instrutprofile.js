@@ -56,6 +56,12 @@ var InstructProfileView = React.createClass({
           email:email
        })
     })
+    AsyncStorage.getItem('description',(err,result)=>{
+       description=result;
+       _that.setState({
+          description:description
+       })
+    })
   },
   render: function(){
     return(
@@ -97,6 +103,11 @@ var InstructProfileView = React.createClass({
                 <ListItem
                   roundAvatar
                   title='Description'
+                  subtitle={
+                    <View style={styles.subtitleView}>
+                      <Text style={styles.ratingText}>{this.state.description}</Text>
+                    </View>
+                  }
                   avatar={require('../../img/Heart.png')}
                 />
               </TouchableOpacity>
