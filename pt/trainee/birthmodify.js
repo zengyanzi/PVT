@@ -40,7 +40,6 @@ var BirthModifyView = React.createClass({
     }).then(function(res) {
       if (res["data"]!=null) {
           console.log(res);
-          var birthday=birthday.toString();
           AsyncStorage.setItem("birthday",birthday);
           _navigator.push({
             title:'ThomeView',
