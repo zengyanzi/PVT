@@ -19,6 +19,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import URLnetowrk from './network';
+import DetailGymView from './detailgym';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -130,7 +131,7 @@ var GymlistView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan',params:{date:rowData.day}})}>
+                onPress={() => _navigator.push({title:'DetailGymView',id:'detailgym',params:{date:rowData.day}})}>
           <View style={styles.li}>
             <View  style={styles.lidate}><Image  source={require('../../img/gymicon.png') }/><Text>{rowData.Name}</Text></View>
               <Text style={styles.liText}>Slogan:{rowData.text}</Text>

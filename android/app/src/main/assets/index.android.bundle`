@@ -135479,7 +135479,7 @@ _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_top2.default,this.props)),
 
 _react2.default.createElement(_reactNative.View,{style:[styles.header,styles.Bottomline]},
-_react2.default.createElement(_reactNative.Image,{source:require('./../img/plan_normal.png')}),
+_react2.default.createElement(_reactNative.Image,{source:require('../../img/plan_normal.png')}),
 _react2.default.createElement(_reactNative.Text,null,this.state.day,' ')),
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,
@@ -135629,7 +135629,7 @@ tabBarStyle:{height:60}},
 _react2.default.createElement(_reactNativeTabNavigator2.default.Item,{
 selected:this.state.selectedTab==='Plan',
 title:'Plan',
-renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/plan_normal.png')});},
+renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('../../img/plan_normal.png')});},
 renderSelectedIcon:function renderSelectedIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/plan_pressed.png')});},
 onPress:function onPress(){return _this.setState({selectedTab:'Plan'});}},
 _react2.default.createElement(_plan2.default,this.props)),
@@ -135638,7 +135638,7 @@ _react2.default.createElement(_plan2.default,this.props)),
 _react2.default.createElement(_reactNativeTabNavigator2.default.Item,{
 selected:this.state.selectedTab==='Record',
 title:'Record',
-renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/record_normal.png')});},
+renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('../../img/record_normal.png')});},
 renderSelectedIcon:function renderSelectedIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/record_pressed.png')});},
 onPress:function onPress(){return _this.setState({selectedTab:'Record'});}},
 
@@ -135647,7 +135647,7 @@ _react2.default.createElement(_plan2.default,this.props)),
 _react2.default.createElement(_reactNativeTabNavigator2.default.Item,{
 selected:this.state.selectedTab==='Gym',
 title:'Gym',
-renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/gym_normal.png')});},
+renderIcon:function renderIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('../../img/gym_normal.png')});},
 renderSelectedIcon:function renderSelectedIcon(){return _react2.default.createElement(_reactNative.Image,{source:require('./../img/gym_pressed.png')});},
 onPress:function onPress(){return _this.setState({selectedTab:'Gym'});}},
 
@@ -137958,7 +137958,7 @@ _react2.default.createElement(_reactNative.Image,{source:require('./../img/chart
 
 
 _react2.default.createElement(_reactNative.View,{style:[styles.header,styles.Bottomline]},
-_react2.default.createElement(_reactNative.Image,{source:require('./../img/plan_normal.png')}),
+_react2.default.createElement(_reactNative.Image,{source:require('../../img/plan_normal.png')}),
 _react2.default.createElement(_reactNative.Text,{style:{fontSize:20}},this.props.date)),
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,

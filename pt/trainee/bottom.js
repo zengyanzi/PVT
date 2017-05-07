@@ -62,8 +62,8 @@ var BottomView = React.createClass({
             <TabNavigator.Item
                 selected={this.state.selectedTab === 'Plan'}
                 title="Plan"
-                renderIcon={() => <Image  source={require('./../img/plan_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('./../img/plan_pressed.png') }/>}
+                renderIcon={() => <Image  source={require('../../img/plan_normal.png') }/>}
+                renderSelectedIcon={() => <Image  source={require('../../img/plan_pressed.png') }/>}
               onPress={() => this.setState({ selectedTab: 'Plan' })}>
               <PlanView {...this.props}/>
 
@@ -71,8 +71,8 @@ var BottomView = React.createClass({
             <TabNavigator.Item
                 selected={this.state.selectedTab === 'Record'}
                 title="Record"
-                renderIcon={() => <Image  source={require('./../img/record_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('./../img/record_pressed.png') }/>}
+                renderIcon={() => <Image  source={require('../../img/record_normal.png') }/>}
+                renderSelectedIcon={() => <Image  source={require('../../img/record_pressed.png') }/>}
                 onPress={() => this.setState({ selectedTab: 'Record' })}       
                 >
                <PlanView {...this.props}/>
@@ -80,8 +80,8 @@ var BottomView = React.createClass({
             <TabNavigator.Item
                 selected={this.state.selectedTab === 'Gym'}
                 title="Gym"
-                renderIcon={() => <Image  source={require('./../img/gym_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('./../img/gym_pressed.png') }/>}
+                renderIcon={() => <Image  source={require('../../img/gym_normal.png') }/>}
+                renderSelectedIcon={() => <Image  source={require('../../img/gym_pressed.png') }/>}
                 onPress={() => this.setState({ selectedTab: 'Gym' })}       
             >
               <PlanView {...this.props}/>                
@@ -89,8 +89,8 @@ var BottomView = React.createClass({
             <TabNavigator.Item
                 selected={this.state.selectedTab === 'Trainer'}
                 title="Trainer"
-                renderIcon={() => <Image  source={require('./../img/trainer_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('./../img/trainer_pressed.png') }/>}
+                renderIcon={() => <Image  source={require('../../img/trainer_normal.png') }/>}
+                renderSelectedIcon={() => <Image  source={require('../../img/trainer_pressed.png') }/>}
                 onPress={() => this.setState({ selectedTab: 'Trainer' })}       
                 >
                  {TrainerView}
@@ -98,8 +98,8 @@ var BottomView = React.createClass({
             <TabNavigator.Item
                 selected={this.state.selectedTab === 'Profile'}
                 title="Profile"
-                renderIcon={() => <Image  source={require('./../img/profile_normal.png') }/>}
-                renderSelectedIcon={() => <Image source={require('./../img/profile_pressed.png') }/>}
+                renderIcon={() => <Image  source={require('../../img/profile_normal.png') }/>}
+                renderSelectedIcon={() => <Image source={require('../../img/profile_pressed.png') }/>}
                 onPress={() => this.setState({ selectedTab: 'Profile' })}       
                 >
                  {ProfileView}

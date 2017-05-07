@@ -122,16 +122,16 @@ var EditRecordView = React.createClass({
           <View style={[styles.Topbar,styles.Left]}>
               <TouchableOpacity 
                   onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
-                <Image source={require('./../img/setting_normal.png') }/>
+                <Image source={require('../../img/setting_normal.png') }/>
                </TouchableOpacity> 
           </View>
           <View style={styles.Topbar}>
-            <Image source={require('./../img/ptv_sized.png') }/>
+            <Image source={require('../../img/ptv_sized.png') }/>
           </View>
           <View style={[styles.Topbar,styles.Right]}>
             <TouchableOpacity 
                     onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
-              <Image source={require('./../img/chart-pressed.png') }/>
+              <Image source={require('../../img/chart-pressed.png') }/>
             </TouchableOpacity> 
           </View>         
         </View>

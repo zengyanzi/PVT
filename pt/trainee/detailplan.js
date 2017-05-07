@@ -216,7 +216,7 @@ var DetailPlanView = React.createClass({
             <Topview {...this.props}/>
           </View>
           <View style={[styles.header,styles.Bottomline]}>
-            <Image  source={require('./../img/plan_normal.png') }/>
+            <Image  source={require('../../img/plan_normal.png') }/>
             <Text>{this.state.day} </Text>
           </View>
           <ListView style={styles.listview}
