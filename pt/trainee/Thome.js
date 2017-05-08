@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   Image,
@@ -24,6 +23,7 @@ import GymView from './gym.js';
 import TrainerView from './trainer.js';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
+var _navigator ;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
@@ -34,7 +34,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-var _navigator ;
+
 var ThomeView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -50,7 +50,7 @@ var ThomeView = React.createClass({
       <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}
+        keyboardShouldPersistTaps='never'
       >
         <View style={styles.maincontain}>
           <TabNavigator tabBarStyle={{ height: 60 }} >

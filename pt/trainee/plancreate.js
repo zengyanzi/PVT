@@ -154,7 +154,7 @@ _editplan:function(){
       <ScrollView 
           contentContainerStyle={{flex:1}}
           keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps={false}>
+          keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
           <Text style={styles.text}>Your Plan is NO: {this.state.planid}</Text>
           <ListView style={styles.listview}

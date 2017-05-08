@@ -256,12 +256,10 @@ var SportChartView = React.createClass({
                                  label={s} />
                      }) }
         </Picker>
-        <View>
           <TouchableOpacity style={styles.btn}
-          onPress={this.UPDATE}>
-          <Text style={styles.text}>UPDATE</Text>
-          </TouchableOpacity>
-        </View>  
+            onPress={this.UPDATE}>
+            <Text style={styles.text}>UPDATE</Text>
+          </TouchableOpacity> 
         <BarChart
           style={styles.chart}
           data={this.state.data}
@@ -271,7 +269,8 @@ var SportChartView = React.createClass({
           drawBarShadow={false}
           drawValueAboveBar={true}
           drawHighlightArrow={true}
-        />       
+        /> 
+      
       </View>
     );
   } 
@@ -283,7 +282,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   chart: {
-    flex: 20
+    flex: 10
   },
   sportact:{
     marginTop:20,

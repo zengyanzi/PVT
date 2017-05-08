@@ -56,7 +56,7 @@ var BottomView = React.createClass({
       <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}>
+        keyboardShouldPersistTaps='never'>
           <View style={styles.maincontain}>
             <TabNavigator
             tabBarStyle={{ height: 60 }}

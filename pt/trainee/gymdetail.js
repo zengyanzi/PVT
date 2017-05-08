@@ -210,7 +210,7 @@ var DetailGymView = React.createClass({
        <ScrollView 
           contentContainerStyle={{flex:1}}
           keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps={false}>
+          keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
           <View>
             <Topview {...this.props}/>

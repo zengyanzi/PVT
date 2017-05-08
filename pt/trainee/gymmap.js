@@ -60,7 +60,7 @@ class GymmapView extends Component {
   render() {
     return (
       <MapView
-        style={ styles.map }
+        style={styles.map }
         initialRegion={{
           latitude: 37.78825,
           longitude: -122.4324,

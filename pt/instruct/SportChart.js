@@ -243,7 +243,9 @@ var SportChartView = React.createClass({
   },
   render: function(){
     return (
+
       <View style={styles.container}>
+
         <Picker style={styles.sportact}
           prompt="Please choose sportclass"
           style={{width:200}}
@@ -256,12 +258,10 @@ var SportChartView = React.createClass({
                                  label={s} />
                      }) }
         </Picker>
-        <View>
           <TouchableOpacity style={styles.btn}
-          onPress={this.UPDATE}>
-          <Text style={styles.text}>UPDATE</Text>
-          </TouchableOpacity>
-        </View>  
+            onPress={this.UPDATE}>
+            <Text style={styles.text}>UPDATE</Text>
+          </TouchableOpacity> 
         <BarChart
           style={styles.chart}
           data={this.state.data}
@@ -273,6 +273,7 @@ var SportChartView = React.createClass({
           drawHighlightArrow={true}
         />       
       </View>
+
     );
   } 
 });
@@ -283,20 +284,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   chart: {
-    flex: 20
+    flex: 1
   },
   sportact:{
-    marginTop:20,
+    flex:1,
     height:50,
     width:200,
   },
   btn:{
-    flex:1,
+    flex:5,
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     height: 30,
+     height: 50,
      borderRadius: 5,
      width:340,
   },

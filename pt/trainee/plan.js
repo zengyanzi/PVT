@@ -215,9 +215,25 @@ var PlanView = React.createClass({
        <ScrollView 
           contentContainerStyle={{flex:1}}
           keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps={false}>
+          keyboardShouldPersistTaps='never'>
           <View>
-              <Topview {...this.props}/>
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                <TouchableOpacity 
+                        onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
+                  <Image source={require('../../img/setting_normal.png') }/>
+                </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../../img/ptv_sized.png') }/>
+              </View>
+              <View style={[styles.Topbar,styles.Right]}>
+                <TouchableOpacity 
+                    onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
+                  <Image source={require('../../img/add_pressed.png') }/>
+                </TouchableOpacity> 
+              </View>
+            </View> 
           </View>
           <ListView style={styles.listview}
             scrollEnabled={this.state.scrollEnabled}

@@ -151,7 +151,7 @@ var CreateplanView = React.createClass({
       <ScrollView 
           contentContainerStyle={{flex:1}}
           keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps={false}>
+          keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>        
           <View style={[styles.Top,styles.Bottomline]}>
             <View style={[styles.Topbar,styles.Left]}>
@@ -192,11 +192,11 @@ var CreateplanView = React.createClass({
                 onDateChange={(date) => {this.setState({enddate: date});}}/>
             </View>
           </View>
-          <View style={{flex:3}}>
+          <View style={{flex:1}}>
             <Text style={styles.text}>Please Choose attendance</Text>
             {this.renderView()}
           </View>
-          <View style={{height:180,flex:1}}>
+          <View style={{height:120,flex:3}}>
             <Text style={styles.text}>Please Choose Your Plan</Text>
               <PlanCreateView {...this.props}/>
           </View>

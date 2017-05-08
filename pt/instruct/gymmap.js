@@ -56,9 +56,10 @@ var GymmapView = React.createClass({
   },
 
   componentDidMount: function() {
+    console.log(MapView);
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position);
+        
         this.setState({
           region: {
             latitude: position.coords.latitude,

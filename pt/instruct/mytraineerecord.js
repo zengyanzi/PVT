@@ -156,7 +156,7 @@ var MyTraineeRecordView = React.createClass({
      <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps={false}>
+        keyboardShouldPersistTaps='never'>
         <View style={[styles.Top,styles.Bottomline]}>
           <View style={[styles.Topbar,styles.Left]}>
               <TouchableOpacity 
