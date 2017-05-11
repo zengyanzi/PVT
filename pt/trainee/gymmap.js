@@ -21,6 +21,7 @@ import Swipeout from 'react-native-swipeout';
 import URLnetowrk from './network';
 import MapView from 'react-native-maps';
 var screenW = Dimensions.get('window').width;
+var _navigator ;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;

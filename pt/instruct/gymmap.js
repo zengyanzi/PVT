@@ -22,7 +22,7 @@ import URLnetowrk from './network';
 import MapView from 'react-native-maps';
 var screenW = Dimensions.get('window').width;
 var { width, height } = Dimensions.get('window');
-
+var _navigator ;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;
