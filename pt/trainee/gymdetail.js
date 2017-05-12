@@ -8,6 +8,7 @@ import {
   BackAndroid,
   ScrollView,
   Navigator,
+  Linking,
   TextInput,
   TouchableOpacity,
   AsyncStorage,
@@ -43,6 +44,31 @@ var btnsDefault = [ { text: 'Button' } ];
 //       Location:"24 shally rd,Tamaki drive"
 //     }
 //   ];
+class CustomButton extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  propTypes: {
+    url: React.PropTypes.string,
+  }
+  render() {
+    return (
+      <TouchableOpacity
+        style={styles.button}
+        underlayColor="#a5a5a5"
+        onPress={()=>Linking.canOpenURL(this.props.url).then(supported => {
+           if (supported) {
+               Linking.openURL(this.props.url);
+           } else {
+              console.log('无法打开该URI: ' + this.props.url);
+           }
+        })}>
+        <Text style={styles.buttonText}>{this.props.text}</Text>
+      </TouchableOpacity>
+    );
+  }
+}
+
 var DetailGymView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -247,6 +273,13 @@ var DetailGymView = React.createClass({
             </View>                
           </View>
           <View>
+             <CustomButton url={'http://www.lcode.org'}  text="点击打开http网页"/>
+             <CustomButton url={'https://www.baidu.com'} text="点击打开https网页"/>
+             <CustomButton url={'smsto:18352402477'}  text="点击进行发送短信"/> 
+             <CustomButton url={'tel:18352402477'} text="点击进行打电话"/>
+             <CustomButton url={'mailto:jiangqqlmj@163.com'} text="点击进行发邮件"/>
+          </View>
+          <View>
             <BottomView {...this.props}/>
           </View>     
         </View>
@@ -319,6 +352,13 @@ var styles = StyleSheet.create({
     color: '#333',
     fontSize: 16,
     height:50,
+  },
+  button: {
+    margin:5,
+    backgroundColor: 'white',
+    padding: 15,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#cdcdcd',
   },
 });
 module.exports = DetailGymView;
