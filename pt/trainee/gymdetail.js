@@ -80,39 +80,41 @@ var DetailGymView = React.createClass({
       location:"24 shally rd,Tamaki drive"
     };
     return {
-       name:this.state.name,
-       slogan:this.state.slogan,
-       open:this.state.open,
-       contact:this.state.contact,
-       location:this.state.location
+       name:this.props.data.name,
+       slogan:this.props.data.slogan,
+       open:this.props.data.open,
+       contact:this.props.data.contact,
+       location:this.props.data.location
     };
   },
-  // componentWillMount() {
-  //   let _that=this;
-  //   AsyncStorage.getItem('userid',(err, result) => {
-  //     console.log(result);
-  //     var trainee_id=result;
-  //     var day=this.props.date;
-  //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-  //     var url = URLnetowrk+'detailplan.action';
-  //     // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-  //     url += '?trainee_id='+trainee_id+'&day='+day;
-  //     console.log(url);
-  //     fetch(url).then(function(response) {  
-  //       return response.json();
-  //     }).then(function(res) {
-  //       console.log(res); 
-  //       if (res["data"]!=null) {        
-  //         _that.setState({
-  //           dataSource: ds.cloneWithRows(res["data"]),
-  //           detailrows:res["data"]
-  //         })
-  //       }else{
-  //         Alert.alert('Fail to display','Please check your data'); 
-  //       }  
-  //     });       
-  //   });  
-  // },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('userid',(err, result) => {
+      console.log(result);
+      var trainee_id=result;
+      var day=this.props.date;
+      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+      var url = URLnetowrk+'gym.action';
+      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        console.log(res); 
+        if (res["data"]!=null) {        
+          _that.setState({
+           // name:this.state.name,
+           // slogan:this.state.slogan,
+           // open:this.state.open,
+           // contact:this.state.contact,
+           // location:this.state.location
+          })
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }  
+      });       
+    });  
+  },
 //  set scrolling to true/false
   // allowScroll(scrollEnabled) {
   //   this.setState({ scrollEnabled: scrollEnabled });
@@ -135,69 +137,7 @@ var DetailGymView = React.createClass({
   //     dataSource: this.state.dataSource.cloneWithRows(data),
   //   });
   // },
-  delete:function(rowData){
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var plan_id =rowData.id;
-      var url = URLnetowrk+'delplan.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
-      console.log(url);
-      fetch(url).then(function(response) {  
-          return response.json();
-      }).then(function(res) {
-        console.log(res);        
-        if (res["data"]==true) {
-          var day=_that.props.date;
-          console.log(day);
-          var url = URLnetowrk+'detailplan.action';
-          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-          url += '?trainee_id='+trainee_id+'&day='+day;
-          console.log(url);
-          fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-            console.log(res);
-            if (res["data"]!=null) {                 
-              _that.setState({
-                dataSource: ds.cloneWithRows(res["data"]),
-                detailrows:res["data"]
-              })
-            }else{
-              Alert.alert('Fail to display','Please check your data'); 
-            }
-           });   
-          }else{
-            Alert.alert('Fail to display','Please check your data'); 
-          }
-        });
-      }) 
-    },
-  submitrecord:function(rowData){
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var day =rowData.day;
-      var item_id=rowData.item_id;
-      var sportsize=rowData.sportsize;
-      var url = URLnetowrk+'addrecord2day.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
-      console.log(url);
-        fetch(url).then(function(response) {  
-          return response.json();
-        }).then(function(res) {
-          console.log(res);
-          if (res["data"]==true) {
-            Alert.alert('Submit','Successfully!'); 
-          }
-       });
-    })
-  },
+  
   // renderRow(rowData: string, sectionID: number, rowID: number) {
   //   var btnsTypes = [
   //     { text: 'Edit', onPress: function(){ _navigator.push({
@@ -263,6 +203,9 @@ var DetailGymView = React.createClass({
               <Image source={require('../../img/phone.png') }/>
               <Text style={styles.liText}>   Contact: {this.state.contact} </Text>
             </View>
+            <View>
+                  <CustomButton url={'tel:'+this.state.contact} text="Call the Gym right now"/>
+            </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../../img/open.png') }/>
               <Text style={styles.liText}>  open: {this.state.open} </Text>
@@ -272,13 +215,7 @@ var DetailGymView = React.createClass({
               <Text style={styles.liText}>  Location: {this.state.location} </Text>
             </View>                
           </View>
-          <View>
-             <CustomButton url={'http://www.lcode.org'}  text="点击打开http网页"/>
-             <CustomButton url={'https://www.baidu.com'} text="点击打开https网页"/>
-             <CustomButton url={'smsto:18352402477'}  text="点击进行发送短信"/> 
-             <CustomButton url={'tel:18352402477'} text="点击进行打电话"/>
-             <CustomButton url={'mailto:jiangqqlmj@163.com'} text="点击进行发邮件"/>
-          </View>
+
           <View>
             <BottomView {...this.props}/>
           </View>     
