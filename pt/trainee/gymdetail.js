@@ -87,34 +87,34 @@ var DetailGymView = React.createClass({
        location:this.props.data.location
     };
   },
-  componentWillMount() {
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var day=this.props.date;
-      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var url = URLnetowrk+'gym.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      console.log(url);
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        console.log(res); 
-        if (res["data"]!=null) {        
-          _that.setState({
-           // name:this.state.name,
-           // slogan:this.state.slogan,
-           // open:this.state.open,
-           // contact:this.state.contact,
-           // location:this.state.location
-          })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }  
-      });       
-    });  
-  },
+  // componentWillMount() {
+  //   let _that=this;
+  //   AsyncStorage.getItem('userid',(err, result) => {
+  //     console.log(result);
+  //     var trainee_id=result;
+  //     var day=this.props.date;
+  //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+  //     var url = URLnetowrk+'gym.action';
+  //     // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  //     console.log(url);
+  //     fetch(url).then(function(response) {  
+  //       return response.json();
+  //     }).then(function(res) {
+  //       console.log(res); 
+  //       if (res["data"]!=null) {        
+  //         _that.setState({
+  //          // name:this.state.name,
+  //          // slogan:this.state.slogan,
+  //          // open:this.state.open,
+  //          // contact:this.state.contact,
+  //          // location:this.state.location
+  //         })
+  //       }else{
+  //         Alert.alert('Fail to display','Please check your data'); 
+  //       }  
+  //     });       
+  //   });  
+  // },
 //  set scrolling to true/false
   // allowScroll(scrollEnabled) {
   //   this.setState({ scrollEnabled: scrollEnabled });

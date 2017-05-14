@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   ListView
 } from 'react-native';
 import { Icon } from 'react-native-elements';
@@ -29,6 +30,26 @@ var GymView = React.createClass({
     };
     return {
     };
+  },
+  _search:function(text){
+    var query=this.state.keyword;
+    var url = URLnetowrk+'search_gym.action'; // get the item data again
+    url+= '?query='+query;
+    console.log(url);
+    fetch(url).then(function(response) {  
+       return response.json();
+    }).then(function(res) {
+      if (res["data"]!=[]]) {
+        console.log(res);
+        // _navigator.push({
+        //   title:'DetailGymView',
+        //   id:'gymdetail',
+        //   params:{data:res["data"]}
+        // })
+      }else{
+        Alert.alert('Could not find this Gym','Create one?'); 
+      }
+    });
   },
   render: function(){
     return(
@@ -51,6 +72,9 @@ var GymView = React.createClass({
           </View>
         </View>
         <SearchBar
+            round
+            onSubmitEditing={() => this._search()}
+            onChangeText={(text) => this.setState({keyword: text})}
             placeholder='Find your Gym here' />             
         <ScrollableTabView           
             initialPage={1}
