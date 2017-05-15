@@ -39,13 +39,14 @@ var GymView = React.createClass({
     fetch(url).then(function(response) {  
        return response.json();
     }).then(function(res) {
-      if (res["data"]!=[]]) {
+      console.log(res);
+      if (res["data"].length!=0) {
         console.log(res);
-        // _navigator.push({
-        //   title:'DetailGymView',
-        //   id:'gymdetail',
-        //   params:{data:res["data"]}
-        // })
+        _navigator.push({
+          title:'DetailGymView',
+          id:'gymdetail',
+          params:{data:res["data"][0]}
+        })
       }else{
         Alert.alert('Could not find this Gym','Create one?'); 
       }
