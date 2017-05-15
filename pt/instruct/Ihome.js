@@ -20,7 +20,7 @@ import Dimensions from 'Dimensions';
 import MytraineePlanView from './mytraineeplan.js';
 import MyTraineeRecordView from './mytraineerecord.js';
 import InstructProfileView from './instrutprofile.js';
-import GymView from './gym.js';
+import GymView from '../gym.js';
 import TraineeView from './trainee.js';
 import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;

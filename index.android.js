@@ -46,7 +46,7 @@ import BModifyView from './pt/trainee/bmimodify';
 import NewitemView from './pt/trainee/newitem';
 import StaticMap from './pt/trainee/staticmap'
 import Description from './pt/instruct/description'
-import DetailGymView from './pt/trainee/gymdetail';
+import DetailGymView from './pt/detailgym';
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
@@ -319,7 +319,7 @@ export default class PTV extends React.Component {
         <Description {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'gymdetail'){
+    if(route.id === 'detailgym'){
       return (
         <DetailGymView {...route.params} navigator={navigator} route={route}/>
       );

@@ -19,6 +19,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import URLnetowrk from './network';
+import DetailGymView from './detailgym';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -55,40 +56,25 @@ var GymlistView = React.createClass({
       scrollEnabled: true,
     };
   },
-  // componentWillMount() {
-  //   let _that=this;
-  //   AsyncStorage.getItem('userid',(err, result) => {
-  //     console.log(URLnetowrk);
-  //     console.log(result);
-  //     function format (d) {
-  //       return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-  //     }
-  //     var today =new Date();
-  //     var start = format(today);
-  //     var day1=new Date(today.getTime() + (1000* 60 * 60 * 24)*6);
-  //     var end=format(day1);
-  //     var trainee_id=result;
-  //     var day=this.props.date;
-  //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-  //     var url = URLnetowrk+'';// load gym list
- 
-  //     url += '?trainee_id='+trainee_id+'&start='+start+'&end='+end;
-  //     console.log(url);
-  //     fetch(url).then(function(response) {  
-  //       return response.json();
-  //     }).then(function(res) {
-  //       console.log(res);
-  //       if (res["data"]!=null) {
-  //         _that.setState({
-  //           dataSource: ds.cloneWithRows(res["data"]),
-  //           rows:res["data"]
-  //         });
-  //       }else{
-  //         Alert.alert('Fail to display','Please check your data'); 
-  //       }    
-  //     });
-  //   });  
-  // },
+  componentWillMount() {
+    let _that=this;
+    var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+    var url = URLnetowrk+'gym.action';// load gym list
+    console.log(url);
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+      console.log(res);
+      if (res["data"]!=null) {
+        _that.setState({
+          dataSource: ds.cloneWithRows(res["data"]),
+          rows:res["data"]
+        });
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }    
+    });
+  },
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
     this.setState({ scrollEnabled: scrollEnabled });
@@ -113,12 +99,7 @@ var GymlistView = React.createClass({
  
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
-    var btnsTypes = [
-        { text: 'Submit',onPress: () => { this.submitrecord(rowData) },type:'secondary'},
-    ];
-    var backgroundColor:'#fc8d00'
     return (
-
       <Swipeout
         left={rowData.left}
         right={btnsTypes}
@@ -130,10 +111,10 @@ var GymlistView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailPlanView',id:'detailplan',params:{date:rowData.day}})}>
+                onPress={() => _navigator.push({title:'DetailGymView',id:'gymdetail',params:{data:rowData}})}>
           <View style={styles.li}>
-            <View  style={styles.lidate}><Image  source={require('../../img/gymicon.png') }/><Text>{rowData.Name}</Text></View>
-              <Text style={styles.liText}>Slogan:{rowData.text}</Text>
+            <View  style={styles.lidate}><Image  source={require('../../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
+              <Text style={styles.liText}>Slogan:{rowData.slogan}</Text>
           </View>
         </TouchableOpacity>
       </Swipeout>

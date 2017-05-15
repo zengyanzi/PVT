@@ -118,7 +118,7 @@ var GymlistView = React.createClass({
         <TouchableOpacity style={styles.btn}
                 onPress={() => _navigator.push({title:'DetailGymView',id:'gymdetail',params:{data:rowData}})}>
           <View style={styles.li}>
-            <View  style={styles.lidate}><Image  source={require('../../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
+            <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
               <Text style={styles.liText}>Slogan:{rowData.slogan}</Text>
           </View>
         </TouchableOpacity>
