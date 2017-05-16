@@ -48,7 +48,10 @@ var GymView = React.createClass({
           params:{data:res["data"][0]}
         })
       }else{
-        Alert.alert('Could not find this Gym','Create one?'); 
+        _navigator.push({
+          title:'Gymcreate',
+          id:'gymcreate',
+        })
       }
     });
   },

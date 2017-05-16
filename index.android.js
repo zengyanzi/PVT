@@ -47,6 +47,7 @@ import NewitemView from './pt/trainee/newitem';
 import StaticMap from './pt/trainee/staticmap'
 import Description from './pt/instruct/description'
 import DetailGymView from './pt/detailgym';
+import Gymcreate from './pt/gymcreate';
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
@@ -322,6 +323,11 @@ export default class PTV extends React.Component {
     if(route.id === 'detailgym'){
       return (
         <DetailGymView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'gymcreate'){
+      return (
+        <Gymcreate {...route.params} navigator={navigator} route={route}/>
       );
     }
   }
