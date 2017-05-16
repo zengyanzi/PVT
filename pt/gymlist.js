@@ -116,7 +116,7 @@ var GymlistView = React.createClass({
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'DetailGymView',id:'gymdetail',params:{data:rowData}})}>
+                onPress={() => _navigator.push({title:'DetailGymView',id:'detailgym',params:{data:rowData}})}>
           <View style={styles.li}>
             <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
               <Text style={styles.liText}>Slogan:{rowData.slogan}</Text>

@@ -19,6 +19,7 @@ import {
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
 import URLnetowrk from './network';
+import StarRating from 'react-native-star-rating';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -75,14 +76,16 @@ var DetailGymView = React.createClass({
       slogan:"Enjoy your everyday with Jetts",  
       open:"7x24 membership",
       contact:"0800-0201-023",
-      location:"24 shally rd,Tamaki drive"
+      location:"24 shally rd,Tamaki drive",
+      starCount: 3
     };
     return {
        name:this.props.data.name,
        slogan:this.props.data.slogan,
        open:this.props.data.open,
        contact:this.props.data.contact,
-       location:this.props.data.location
+       location:this.props.data.location,
+       starCount:this.state.starCount
     };
   },
   // componentWillMount() {
@@ -168,6 +171,11 @@ var DetailGymView = React.createClass({
   //     </Swipeout>
   //   );
   // },
+  onStarRatingPress(rating) {
+    this.setState({
+      starCount: rating,
+    });
+  },
   render: function(){
     return(
        <ScrollView 
@@ -211,12 +219,22 @@ var DetailGymView = React.createClass({
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/location.png') }/>
               <Text style={styles.liText}>  Location: {this.state.location} </Text>
-            </View>                
+            </View>  
+            <View style={{flexDirection:'row'}}>  
+              <Image source={require('../img/location.png') }/>
+              <Text style={styles.liText}>  Location: {this.state.location} </Text>
+            </View>  
+            <View style={{flexDirection:'column'}}> 
+              <Text style={styles.liText}>Write your rating  </Text>
+              <StarRating
+              disabled={false}
+              maxStars={5}
+              starColor={'#38bda0'}
+              rating={this.state.starCount}
+              selectedStar={(rating) => this.onStarRatingPress(rating)}
+              />
+            </View>                 
           </View>
-
-          <View>
-            
-          </View>     
         </View>
       </ScrollView>
     );
