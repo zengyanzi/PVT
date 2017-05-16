@@ -14,7 +14,8 @@ import {
   AsyncStorage,
   Picker,
   ListView,
-  Alert
+  Alert,
+  WebView 
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
@@ -60,15 +61,11 @@ class GymmapView extends Component {
   }
   render() {
     return (
-      <MapView
-        style={styles.map }
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+    <WebView
+            source={{uri: 'https://www.google.co.nz/maps/search/gym'}}
+            style={{marginTop: 20}}
+          />
+
     );
   }
 
