@@ -212,9 +212,8 @@ var DetailPlanView = React.createClass({
           keyboardDismissMode='on-drag'
           keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
-          <View>
-            <Topview {...this.props}/>
-          </View>
+          <Topview {...this.props}/>
+
           <View style={[styles.header,styles.Bottomline]}>
             <Image  source={require('../../img/plan_normal.png') }/>
             <Text>{this.state.day} </Text>
@@ -225,9 +224,8 @@ var DetailPlanView = React.createClass({
             enableEmptySections={true}
             renderRow={this.renderRow}
             />
-          <View>
-            <BottomView {...this.props}/>
-          </View>     
+
+
         </View>
       </ScrollView>
     );

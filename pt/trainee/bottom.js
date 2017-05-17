@@ -17,6 +17,11 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 import Dimensions from 'Dimensions';
 import PlanView from './plan.js';
+import RecordView from './record.js';
+import ProfileView from './profile.js';
+import GymView from '../gym.js';
+import TrainerView from './trainer.js';
+import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -39,70 +44,59 @@ var BottomView = React.createClass({
        selectedTab:this.state.selectedTab,
     };
   },
-  render: function(){ 
-    var TrainerView =(
-      <View style={styles.container}>
-        <Text>find your trainer here</Text>
-      </View>    
-    );
-    var ProfileView =(
-      <View style={styles.container}>
-        <Text>here is the profile</Text>
-      </View>    
-    );
+ render: function(){ 
     return (
       <ScrollView 
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
-        keyboardShouldPersistTaps='never'>
-          <View style={styles.maincontain}>
-            <TabNavigator
-            tabBarStyle={{ height: 60 }}
-            >
+        keyboardShouldPersistTaps='never'
+      >
+        <View style={styles.maincontain}>
+          <TabNavigator tabBarStyle={{ height: 60 }} >
             <TabNavigator.Item
-                selected={this.state.selectedTab === 'Plan'}
-                title="Plan"
-                renderIcon={() => <Image  source={require('../../img/plan_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('../../img/plan_pressed.png') }/>}
-              onPress={() => this.setState({ selectedTab: 'Plan' })}>
+              selected={this.state.selectedTab === 'Plan'}
+              title="Plan"
+              renderIcon={() => <Image  source={require('../../img/plan_normal.png') }/>}
+              renderSelectedIcon={() => <Image  source={require('../../img/plan_pressed.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Plan' })}
+            >
               <PlanView {...this.props}/>
-
             </TabNavigator.Item>
             <TabNavigator.Item
-                selected={this.state.selectedTab === 'Record'}
-                title="Record"
-                renderIcon={() => <Image  source={require('../../img/record_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('../../img/record_pressed.png') }/>}
-                onPress={() => this.setState({ selectedTab: 'Record' })}       
-                >
-               <PlanView {...this.props}/>
-            </TabNavigator.Item>
-            <TabNavigator.Item
-                selected={this.state.selectedTab === 'Gym'}
-                title="Gym"
-                renderIcon={() => <Image  source={require('../../img/gym_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('../../img/gym_pressed.png') }/>}
-                onPress={() => this.setState({ selectedTab: 'Gym' })}       
+              selected={this.state.selectedTab === 'Record'}
+              title="Record"
+              renderIcon={() => <Image  source={require('../../img/record_normal.png') }/>}
+              renderSelectedIcon={() => <Image  source={require('../../img/record_pressed.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Record' })}       
             >
-              <PlanView {...this.props}/>                
+              <RecordView {...this.props}/>
             </TabNavigator.Item>
             <TabNavigator.Item
-                selected={this.state.selectedTab === 'Trainer'}
-                title="Trainer"
-                renderIcon={() => <Image  source={require('../../img/trainer_normal.png') }/>}
-                renderSelectedIcon={() => <Image  source={require('../../img/trainer_pressed.png') }/>}
-                onPress={() => this.setState({ selectedTab: 'Trainer' })}       
-                >
-                 {TrainerView}
+              selected={this.state.selectedTab === 'Gym'}
+              title="Gym"
+              renderIcon={() => <Image  source={require('../../img/gym_normal.png') }/>}
+              renderSelectedIcon={() => <Image  source={require('../../img/gym_pressed.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Gym' })}       
+            >
+              <GymView {...this.props}/>                       
             </TabNavigator.Item>
             <TabNavigator.Item
-                selected={this.state.selectedTab === 'Profile'}
-                title="Profile"
-                renderIcon={() => <Image  source={require('../../img/profile_normal.png') }/>}
-                renderSelectedIcon={() => <Image source={require('../../img/profile_pressed.png') }/>}
-                onPress={() => this.setState({ selectedTab: 'Profile' })}       
-                >
-                 {ProfileView}
+              selected={this.state.selectedTab === 'Trainer'}
+              title="Trainer"
+              renderIcon={() => <Image  source={require('../../img/trainer_normal.png') }/>}
+              renderSelectedIcon={() => <Image  source={require('../../img/trainer_pressed.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Trainer' })}       
+            >
+              <TrainerView {...this.props}/>
+            </TabNavigator.Item>
+            <TabNavigator.Item
+              selected={this.state.selectedTab === 'Profile'}
+              title="Profile"
+              renderIcon={() => <Image  source={require('../../img/profile_normal.png') }/>}
+              renderSelectedIcon={() => <Image source={require('../../img/profile_pressed.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Profile' })}       
+            >
+              <ProfileView {...this.props}/>
             </TabNavigator.Item>
           </TabNavigator>
         </View>
