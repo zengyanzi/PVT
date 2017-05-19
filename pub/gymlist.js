@@ -99,19 +99,13 @@ var GymlistView = React.createClass({
  
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
-    var btnsTypes = [
-        { text: 'Submit',onPress: () => { this.submitrecord(rowData) },type:'secondary'},
-    ];
-    var backgroundColor:'#fc8d00'
     return (
 
       <Swipeout
         left={rowData.left}
-        right={btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
-        backgroundColor={backgroundColor}
         close={!rowData.active}
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
