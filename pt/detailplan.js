@@ -49,7 +49,7 @@ detailrows = [
       text: "Bike Fast  3min  Moderate  15  60Sec",      
     },   
   ];
-var DetailGymView = React.createClass({
+var DetailPlanView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -212,9 +212,9 @@ var DetailGymView = React.createClass({
           keyboardDismissMode='on-drag'
           keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
-          <View>
-            <Topview {...this.props}/>
-          </View>
+        
+          <Topview {...this.props}/>
+
           <View style={[styles.header,styles.Bottomline]}>
             <Image  source={require('../img/plan_normal.png') }/>
             <Text>{this.state.day} </Text>
@@ -225,9 +225,8 @@ var DetailGymView = React.createClass({
             enableEmptySections={true}
             renderRow={this.renderRow}
             />
-          <View>
-            <BottomView {...this.props}/>
-          </View>     
+
+
         </View>
       </ScrollView>
     );
@@ -300,4 +299,4 @@ var styles = StyleSheet.create({
     height:50,
   },
 });
-module.exports = DetailGymView;
+module.exports = DetailPlanView;

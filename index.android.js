@@ -10,44 +10,44 @@ import {
 } from 'react-native';
 
 var _navigator;
-import InstructwelcomeView from'./pt/instruct/instructwelcome';
-import InstructregisterView from'./pt/instruct/instructregister';
-import InstructloginView from'./pt/instruct/instructlogin';
-import TraineewelcomeView from './pt/trainee/traineewelcome';
-import TraineeloginView from'./pt/trainee/traineelogin';
-import TraineeregisterView from'./pt/trainee/traineeregister';
-import ThomeView from './pt/trainee/Thome';
-import IhomeView from './pt/instruct/Ihome';
-import DetailPlanView from './pt/trainee/detailplan';
-import EditPlanView from './pt/trainee/editplan';
-import CreateplanView from './pt/trainee/createplan';
-import PlanInfoView from './pt/trainee/planinfo';
-import EditRecordView from './pt/trainee/editrecord';
-import DetailRecordView from './pt/trainee/detailrecord';
-import ChartView from './pt/trainee/chart';
-import AdditemtodayView from'./pt/trainee/additemtoday';
-import AddrecordtodayView from'./pt/trainee/addrecordtoday';
-import ProfileModifyView from './pt/trainee/profilemodify';
-import IProfileModifyView from './pt/instruct/iprofilemodify';
-import EmailModifyView from './pt/trainee/emailmodify';
-import URLnetowrk from './pt/network';
-import PhoneModifyView from './pt/trainee/phonemodify';
-import PasswordModifyView from './pt/trainee/passwordmodify';
-import GenderModifyView from './pt/trainee/gendermodify';
-import IPhoneModifyView from './pt/instruct/iphonemodify';
-import IPasswordModifyView from './pt/instruct/ipasswordmodify';
-import IGenderModifyView from './pt/instruct/igendermodify';
-import IBirthModifyView from './pt/instruct/ibirthmodify';
-import BirthModifyView from './pt/trainee/birthmodify';
-import HModifyView from './pt/trainee/hmodify';
-import IwView from './pt/trainee/iwmodify';
-import TwView from './pt/trainee/twmodify';
-import BModifyView from './pt/trainee/bmimodify';
-import NewitemView from './pt/trainee/newitem';
-import StaticMap from './pt/trainee/staticmap'
-import Description from './pt/instruct/description'
-import DetailGymView from './pt/detailgym';
-import Gymcreate from './pt/gymcreate';
+import InstructwelcomeView from'./in/instructwelcome';
+import InstructregisterView from'./in/instructregister';
+import InstructloginView from'./in/instructlogin';
+import TraineewelcomeView from './pt/traineewelcome';
+import TraineeloginView from'./pt/traineelogin';
+import TraineeregisterView from'./pt/traineeregister';
+import ThomeView from './pt/Thome';
+import IhomeView from './in/Ihome';
+import DetailPlanView from './pt/detailplan';
+import EditPlanView from './pt/editplan';
+import CreateplanView from './pt/createplan';
+import PlanInfoView from './pt/planinfo';
+import EditRecordView from './pt/editrecord';
+import DetailRecordView from './pt/detailrecord';
+import ChartView from './pt/chart';
+import AdditemtodayView from'./pt/additemtoday';
+import AddrecordtodayView from'./pt/addrecordtoday';
+import ProfileModifyView from './pt/profilemodify';
+import IProfileModifyView from './in/iprofilemodify';
+import EmailModifyView from './pt/emailmodify';
+import URLnetowrk from './pub/network';
+import PhoneModifyView from './pt/phonemodify';
+import PasswordModifyView from './pt/passwordmodify';
+import GenderModifyView from './pt/gendermodify';
+import IPhoneModifyView from './in/iphonemodify';
+import IPasswordModifyView from './in/ipasswordmodify';
+import IGenderModifyView from './in/igendermodify';
+import IBirthModifyView from './in/ibirthmodify';
+import BirthModifyView from './pt/birthmodify';
+import HModifyView from './pt/hmodify';
+import IwView from './in/iwmodify';
+import TwView from './pt/twmodify';
+import BModifyView from './pt/bmimodify';
+import NewitemView from './pt/newitem';
+import StaticMap from './pt/staticmap'
+import Description from './in/description'
+import DetailGymView from './pub/detailgym';
+import Gymcreate from './pub/gymcreate';
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
