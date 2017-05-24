@@ -8,16 +8,15 @@ import {
   BackAndroid,
   ScrollView,
   Navigator,
-  Linking,
   TextInput,
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Linking,
   ListView,
   Alert
 } from 'react-native';
 import Dimensions from 'Dimensions';
-import Swipeout from 'react-native-swipeout';
 import URLnetowrk from './network';
 import StarRating from 'react-native-star-rating';
 var screenW = Dimensions.get('window').width;
@@ -43,7 +42,8 @@ var btnsDefault = [ { text: 'Button' } ];
 //       Location:"24 shally rd,Tamaki drive"
 //     }
 //   ];
-class CustomButton extends React.Component {
+
+ class CustomButton extends React.Component {
   constructor(props){
     super(props);
   }
@@ -72,20 +72,11 @@ var DetailGymView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     this.state = {
-      name :"Jetts",
-      slogan:"Enjoy your everyday with Jetts",  
-      open:"7x24 membership",
-      contact:"0800-0201-023",
-      location:"24 shally rd,Tamaki drive",
       starCount: 3
     };
     return {
-       name:this.props.data.name,
-       slogan:this.props.data.slogan,
-       open:this.props.data.open,
-       contact:this.props.data.contact,
-       location:this.props.data.location,
        starCount:this.state.starCount
+
     };
   },
   // componentWillMount() {
@@ -95,8 +86,9 @@ var DetailGymView = React.createClass({
   //     var trainee_id=result;
   //     var day=this.props.date;
   //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-  //     var url = URLnetowrk+'gym.action';
+  //     var url = URLnetowrk+'detailplan.action';
   //     // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  //     url += '?trainee_id='+trainee_id+'&day='+day;
   //     console.log(url);
   //     fetch(url).then(function(response) {  
   //       return response.json();
@@ -104,11 +96,8 @@ var DetailGymView = React.createClass({
   //       console.log(res); 
   //       if (res["data"]!=null) {        
   //         _that.setState({
-  //          // name:this.state.name,
-  //          // slogan:this.state.slogan,
-  //          // open:this.state.open,
-  //          // contact:this.state.contact,
-  //          // location:this.state.location
+  //           dataSource: ds.cloneWithRows(res["data"]),
+  //           detailrows:res["data"]
   //         })
   //       }else{
   //         Alert.alert('Fail to display','Please check your data'); 
@@ -138,7 +127,7 @@ var DetailGymView = React.createClass({
   //     dataSource: this.state.dataSource.cloneWithRows(data),
   //   });
   // },
-  
+
   // renderRow(rowData: string, sectionID: number, rowID: number) {
   //   var btnsTypes = [
   //     { text: 'Edit', onPress: function(){ _navigator.push({
@@ -171,6 +160,63 @@ var DetailGymView = React.createClass({
   //     </Swipeout>
   //   );
   // },
+  _rating:function(){
+    var type;
+    var gym_id=this.props.data.id;
+    var score= this.state.starCount;
+    console.log(gym_id);
+    AsyncStorage.getItem('type',(err, result) => {
+      console.log(result);
+      type=result;
+      if (type!==null) {
+        if (type=="instructor") {
+        AsyncStorage.getItem('instructorid',(err, result) => {
+        var instructor_id=result;
+        var url=URLnetowrk+'instructor/rate_gym.action'; 
+        url += '?gym_id='+gym_id+'&instructor_id='+instructor_id+'&score='+score;
+        console.log(url);
+        fetch(url).then(function(response) {  
+          return response.json();
+        }).then(function(res) {
+          if (res["data"]!=null) {
+            console.log(res);
+              _navigator.push({
+              title:'IhomeView',
+              id:'Ihome',
+              })
+            }else{
+              Alert.alert('Fail to display','Please check your data'); 
+            }
+          }) 
+        })         
+        }else{
+          AsyncStorage.getItem('userid',(err, result) => {
+            console.log(result);
+            var trainee_id=result;
+            var url=URLnetowrk+'rate_gym.action'; 
+            url += '?gym_id='+gym_id+'&trainee_id='+trainee_id+'&score='+score;
+            console.log(url);
+            fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+              if (res["data"]!=null) {
+                console.log(res);
+                  _navigator.push({
+                  title:'ThomeView',
+                  id:'Thome',
+                  })
+                }else{
+                  Alert.alert('Fail to display','Please check your data'); 
+                }
+            })    
+          })  
+        }
+      }
+    });
+  },
+   
+ 
+
   onStarRatingPress(rating) {
     this.setState({
       starCount: rating,
@@ -184,12 +230,6 @@ var DetailGymView = React.createClass({
           keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
           <View style={[styles.Top,styles.Bottomline]}>
-            <View style={[styles.Topbar,styles.Left]}>
-              <TouchableOpacity 
-                  onPress={() => _navigator.jumpBack()}>
-                <Image source={require('../img/back.png') }/>
-              </TouchableOpacity> 
-            </View>
             <View style={styles.Topbar}>
               <Image source={require('../img/ptv_sized.png') }/>
             </View>
@@ -199,33 +239,29 @@ var DetailGymView = React.createClass({
           <View style={styles.li}>
             <View style={{flexDirection:'row'}}>
               <Image source={require('../img/gymname.png') }/>
-              <Text style={styles.liText}>  Name:{this.state.name}</Text> 
+              <Text style={styles.liText}>  Name:{this.props.data.name}</Text> 
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/slogan.png') }/>   
-              <Text style={styles.liText}>  Slogan: {this.state.slogan} </Text>
+              <Text style={styles.liText}>  Slogan: {this.props.data.description} </Text>
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/phone.png') }/>
-              <Text style={styles.liText}>   Contact: {this.state.contact} </Text>
+              <Text style={styles.liText}>   Contact: {this.props.data.contact} </Text>
             </View>
             <View>
-                  <CustomButton url={'tel:'+this.state.contact} text="Call the Gym right now"/>
+              <CustomButton url={'tel:'+this.props.data.contact} text="Call the Gym right now"/>
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/open.png') }/>
-              <Text style={styles.liText}>  open: {this.state.open} </Text>
+              <Text style={styles.liText}>  open: {this.props.data.opendate} </Text>
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/location.png') }/>
-              <Text style={styles.liText}>  Location: {this.state.location} </Text>
-            </View>  
-            <View style={{flexDirection:'row'}}>  
-              <Image source={require('../img/location.png') }/>
-              <Text style={styles.liText}>  Location: {this.state.location} </Text>
-            </View>  
+              <Text style={styles.liText}>  Location: {this.props.data.location} </Text>
+            </View> 
             <View style={{flexDirection:'column'}}> 
-              <Text style={styles.liText}>Write your rating  </Text>
+              <Text style={styles.liText}>Reviews</Text>
               <StarRating
               disabled={false}
               maxStars={5}
@@ -233,8 +269,20 @@ var DetailGymView = React.createClass({
               rating={this.state.starCount}
               selectedStar={(rating) => this.onStarRatingPress(rating)}
               />
-            </View>                 
+            </View>   
+            <View>
+              <TouchableOpacity style={styles.btn}
+                onPress={this._rating}>
+                <Text style={{color:"white",fontSize:18}}>Submit your rating</Text>
+              </TouchableOpacity> 
+            </View>           
           </View>
+          <View>
+            <TouchableOpacity style={styles.btn}
+             onPress={() =>_navigator.jumpBack()}>
+              <Text style={{color:"white",fontSize:18}}>Back</Text>
+            </TouchableOpacity> 
+          </View>     
         </View>
       </ScrollView>
     );
@@ -306,12 +354,12 @@ var styles = StyleSheet.create({
     fontSize: 16,
     height:50,
   },
-  button: {
-    margin:5,
-    backgroundColor: 'white',
-    padding: 15,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#cdcdcd',
-  },
+  btn:{
+     alignItems: 'center',
+     justifyContent: 'center',
+     backgroundColor: '#2cb395',
+     height: 30,
+     borderRadius: 5,
+   },
 });
 module.exports = DetailGymView;

@@ -99,7 +99,7 @@ _submit:function(){
           }
         }
         console.log(item_id);
-        var urlsave=URLnetowrk+'/additem2day.action'; 
+        var urlsave=URLnetowrk+'additem2day.action'; 
         urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
         console.log(urlsave);
         fetch(urlsave).then(function(response) {  
@@ -182,12 +182,6 @@ _submit:function(){
             <TouchableOpacity style={styles.btn}
             onPress={this._submit}>
             <Text style={styles.text}>Save</Text>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity style={styles.btn}
-            onPress={() => _navigator.push({title:'NewitemView',id:'newitem',params:{email:this.state.email}})}>
-              <Text style={styles.text}>Can't find item,click here</Text>
             </TouchableOpacity>
           </View>
         </View>
