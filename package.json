@@ -24,7 +24,7 @@
     "react-native-swipeout": "^2.0.12",
     "react-native-swiper": "^1.5.4",
     "react-native-tab-navigator": "^0.3.3",
-    "react-native-vector-icons": "^4.1.1"
+    "react-native-vector-icons": "^4.2.0"
   },
   "jest": {
     "preset": "jest-react-native"

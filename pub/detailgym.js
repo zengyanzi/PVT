@@ -79,32 +79,27 @@ var DetailGymView = React.createClass({
 
     };
   },
-  // componentWillMount() {
-  //   let _that=this;
-  //   AsyncStorage.getItem('userid',(err, result) => {
-  //     console.log(result);
-  //     var trainee_id=result;
-  //     var day=this.props.date;
-  //     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-  //     var url = URLnetowrk+'detailplan.action';
-  //     // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-  //     url += '?trainee_id='+trainee_id+'&day='+day;
-  //     console.log(url);
-  //     fetch(url).then(function(response) {  
-  //       return response.json();
-  //     }).then(function(res) {
-  //       console.log(res); 
-  //       if (res["data"]!=null) {        
-  //         _that.setState({
-  //           dataSource: ds.cloneWithRows(res["data"]),
-  //           detailrows:res["data"]
-  //         })
-  //       }else{
-  //         Alert.alert('Fail to display','Please check your data'); 
-  //       }  
-  //     });       
-  //   });  
-  // },
+  componentWillMount() {
+    let _that=this;
+    var gym_id=this.props.data.id;
+    var url = URLnetowrk+'gym_score.action';
+    // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+    url += '?gym_id='+gym_id;
+    console.log(url);
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+      console.log(res); 
+      if (res["data"]!=null) { 
+      var star =res["data"];     
+        _that.setState({
+          starCount:star
+        })
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }  
+    });       
+  },
 //  set scrolling to true/false
   // allowScroll(scrollEnabled) {
   //   this.setState({ scrollEnabled: scrollEnabled });
