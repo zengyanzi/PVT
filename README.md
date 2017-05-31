@@ -24,5 +24,14 @@ version
     "react-native-tab-navigator": "^0.3.3",
     "react-native-vector-icons": "^4.2.0"
 ## Demonstration ##
-To provide functions of managing work out plan, view by chart
+
 ![image](https://github.com/zengyanzi/PVT/blob/master/gif/09022017.gif )   
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/28042017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/03022017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/05052017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/07042017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/13042017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/17052017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/19052017.gif )  
+![image](https://github.com/zengyanzi/PVT/blob/master/gif/26052017.gif )  
+
