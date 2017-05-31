@@ -63,7 +63,7 @@ var btnsDefault = [ { text: 'Button' } ];
               console.log('could not open URI: ' + this.props.url);
            }
         })}>
-        <Text style={styles.buttonText}>{this.props.text}</Text>
+        <Text style={{color:'#38bda0',fontSize:18}}>{this.props.text}</Text>
       </TouchableOpacity>
     );
   }
@@ -178,10 +178,9 @@ var DetailGymView = React.createClass({
  
 
   onStarRatingPress(rating) {
-    this.refs.modal3.open()
+    this.refs.modal1.open()
   },
   onStarRatingsubmit(rating) {
-    this.refs.modal3.open()
     this.setState({
       starCount: rating,
     });
@@ -211,10 +210,10 @@ var DetailGymView = React.createClass({
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/phone.png') }/>
+              <TouchableOpacity 
+                onPress={() =>this.refs.modal2.open()}>
               <Text style={styles.liText}>   Contact: {this.props.data.contact} </Text>
-            </View>
-            <View>
-              <CustomButton url={'tel:'+this.props.data.contact} text="Call the Gym right now"/>
+              </TouchableOpacity>
             </View>
             <View style={{flexDirection:'row'}}>  
               <Image source={require('../img/open.png') }/>
@@ -242,7 +241,7 @@ var DetailGymView = React.createClass({
             </TouchableOpacity> 
           </View>
           <Modal style={[styles.modal, styles.modal3]} 
-          position={"center"} ref={"modal3"} 
+          position={"center"} ref={"modal1"} 
           isDisabled={this.state.isDisabled}>
               <StarRating
               disabled={false}
@@ -264,7 +263,14 @@ var DetailGymView = React.createClass({
                 <Text style={{color:"white",fontSize:18}}>Submit your rating</Text>
               </TouchableOpacity> 
           </Modal>
-     
+          <Modal style={[styles.modal, styles.modal3]} 
+            position={"center"} ref={"modal2"} 
+            isDisabled={this.state.isDisabled}>
+            <View>
+              <CustomButton  url={'tel:'+this.props.data.contact} text="Call the Gym right now"/>
+            </View>
+                
+            </Modal>
         </View>
       </ScrollView>
     );
