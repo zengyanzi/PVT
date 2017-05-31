@@ -19,6 +19,7 @@ import {
 import Dimensions from 'Dimensions';
 import URLnetowrk from './network';
 import StarRating from 'react-native-star-rating';
+import Modal from 'react-native-modalbox';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -59,7 +60,7 @@ var btnsDefault = [ { text: 'Button' } ];
            if (supported) {
                Linking.openURL(this.props.url);
            } else {
-              console.log('无法打开该URI: ' + this.props.url);
+              console.log('could not open URI: ' + this.props.url);
            }
         })}>
         <Text style={styles.buttonText}>{this.props.text}</Text>
@@ -72,10 +73,18 @@ var DetailGymView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     this.state = {
-      starCount: 3
+      starCount: 3,
+      isOpen: false,
+      isDisabled: false,
+      swipeToClose: true,
+      sliderValue: 0.3
     };
     return {
-       starCount:this.state.starCount
+      starCount:this.state.starCount,
+      isOpen: this.state.isOpen,
+      isDisabled: this.state.isDisabled,
+      swipeToClose: this.state.swipeToClose,
+      sliderValue: this.state.sliderValue
 
     };
   },
@@ -100,61 +109,17 @@ var DetailGymView = React.createClass({
       }  
     });       
   },
-//  set scrolling to true/false
-  // allowScroll(scrollEnabled) {
-  //   this.setState({ scrollEnabled: scrollEnabled });
-  // },
-  // //  set active swipeout item
-  // handleSwipeout(sectionID,rowID) {
-  //   for (var i = 0; i < this.state.detailrows.length; i++) {
-      
-  //     if (i != rowID){
-  //       this.state.detailrows[i].active = false;
-  //     } 
-  //     else{
-  //       this.state.detailrows[i].active = true;
-  //     } 
-  //   }
-  //   this.updateDataSource(this.state.detailrows);
-  // },
-  // updateDataSource(data) {
-  //   this.setState({
-  //     dataSource: this.state.dataSource.cloneWithRows(data),
-  //   });
-  // },
+    onClose() {
+    console.log('Modal just closed');
+  },
 
-  // renderRow(rowData: string, sectionID: number, rowID: number) {
-  //   var btnsTypes = [
-  //     { text: 'Edit', onPress: function(){ _navigator.push({
-  //               title:'EditplanView',
-  //               id:'editplan',
-  //               params:{date:rowData.day,
-  //                 itemname:rowData.item_name,
-  //                 dayplan_id:rowData.id
-  //               }
-  //             })},type: 'primary',},
-  //       { text: 'Submit',onPress:  () => { this.submitrecord(rowData) },type:'secondary'},
-  //       { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
-  //   ];
-  //   return (
-  //     <Swipeout
-  //       left={rowData.left}
-  //       right={btnsTypes}
-  //       rowID={rowID}
-  //       sectionID={sectionID}
-  //       autoClose={rowData.autoClose}
-  //       backgroundColor={rowData.backgroundColor}
-  //       close={!rowData.active}
-  //       onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
-  //       scroll={event => this.allowScroll(event)}>
-  //       <View style={styles.li}>
-  //             <Text style={styles.liText}>Name:{rowData.Name}</Text>  
-  //             <Text style={styles.liText}>slogan: {rowData.slogan} </Text>
-  //             <Text style={styles.liText}>slogan: {rowData.slogan} </Text>           
-  //       </View>
-  //     </Swipeout>
-  //   );
-  // },
+  onOpen() {
+    console.log('Modal just openned');
+  },
+
+  onClosingState(state) {
+    console.log('the open/close of the swipeToClose just changed');
+  },
   _rating:function(){
     var type;
     var gym_id=this.props.data.id;
@@ -213,6 +178,10 @@ var DetailGymView = React.createClass({
  
 
   onStarRatingPress(rating) {
+    this.refs.modal3.open()
+  },
+  onStarRatingsubmit(rating) {
+    this.refs.modal3.open()
     this.setState({
       starCount: rating,
     });
@@ -264,20 +233,38 @@ var DetailGymView = React.createClass({
               rating={this.state.starCount}
               selectedStar={(rating) => this.onStarRatingPress(rating)}
               />
-            </View>   
-            <View>
-              <TouchableOpacity style={styles.btn}
-                onPress={this._rating}>
-                <Text style={{color:"white",fontSize:18}}>Submit your rating</Text>
-              </TouchableOpacity> 
-            </View>           
+            </View>            
           </View>
           <View>
             <TouchableOpacity style={styles.btn}
              onPress={() =>_navigator.jumpBack()}>
               <Text style={{color:"white",fontSize:18}}>Back</Text>
             </TouchableOpacity> 
-          </View>     
+          </View>
+          <Modal style={[styles.modal, styles.modal3]} 
+          position={"center"} ref={"modal3"} 
+          isDisabled={this.state.isDisabled}>
+              <StarRating
+              disabled={false}
+              maxStars={5}
+              starColor={'#38bda0'}
+              rating={this.state.starCount}
+              selectedStar={(rating) => this.onStarRatingsubmit(rating)}
+              />
+               <TouchableOpacity style={{     
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 backgroundColor: '#2cb395',
+                 height: 30,
+                 width:180,
+                 borderRadius: 5,
+                 marginTop:10
+               }}
+                onPress={this._rating}>
+                <Text style={{color:"white",fontSize:18}}>Submit your rating</Text>
+              </TouchableOpacity> 
+          </Modal>
+     
         </View>
       </ScrollView>
     );
@@ -356,5 +343,18 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
+  modal: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  modal3: {
+    height: 160,
+    width: 260,
+    borderRadius:25
+  },
+    text: {
+    color: "black",
+    fontSize: 22
+  }
 });
 module.exports = DetailGymView;
