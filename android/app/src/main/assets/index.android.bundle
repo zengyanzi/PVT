@@ -1619,33 +1619,28 @@ var _Ihome=require(795         );var _Ihome2=babelHelpers.interopRequireDefault(
 var _detailplan=require(801              );var _detailplan2=babelHelpers.interopRequireDefault(_detailplan); // 801 = ./pt/detailplan
 var _editplan=require(803            );var _editplan2=babelHelpers.interopRequireDefault(_editplan); // 803 = ./pt/editplan
 var _createplan=require(807              );var _createplan2=babelHelpers.interopRequireDefault(_createplan); // 807 = ./pt/createplan
-var _planinfo=require(813            );var _planinfo2=babelHelpers.interopRequireDefault(_planinfo); // 813 = ./pt/planinfo
-var _editrecord=require(814              );var _editrecord2=babelHelpers.interopRequireDefault(_editrecord); // 814 = ./pt/editrecord
-var _detailrecord=require(815                );var _detailrecord2=babelHelpers.interopRequireDefault(_detailrecord); // 815 = ./pt/detailrecord
-var _chart=require(816         );var _chart2=babelHelpers.interopRequireDefault(_chart); // 816 = ./pt/chart
-var _additemtoday=require(831                );var _additemtoday2=babelHelpers.interopRequireDefault(_additemtoday); // 831 = ./pt/additemtoday
-var _addrecordtoday=require(832                  );var _addrecordtoday2=babelHelpers.interopRequireDefault(_addrecordtoday); // 832 = ./pt/addrecordtoday
-var _profilemodify=require(833                 );var _profilemodify2=babelHelpers.interopRequireDefault(_profilemodify); // 833 = ./pt/profilemodify
-var _iprofilemodify=require(834                  );var _iprofilemodify2=babelHelpers.interopRequireDefault(_iprofilemodify); // 834 = ./in/iprofilemodify
-var _emailmodify=require(835               );var _emailmodify2=babelHelpers.interopRequireDefault(_emailmodify); // 835 = ./pt/emailmodify
+var _planinfo=require(814            );var _planinfo2=babelHelpers.interopRequireDefault(_planinfo); // 814 = ./pt/planinfo
+var _editrecord=require(815              );var _editrecord2=babelHelpers.interopRequireDefault(_editrecord); // 815 = ./pt/editrecord
+var _detailrecord=require(816                );var _detailrecord2=babelHelpers.interopRequireDefault(_detailrecord); // 816 = ./pt/detailrecord
+var _chart=require(817         );var _chart2=babelHelpers.interopRequireDefault(_chart); // 817 = ./pt/chart
+var _additemtoday=require(832                );var _additemtoday2=babelHelpers.interopRequireDefault(_additemtoday); // 832 = ./pt/additemtoday
+var _addrecordtoday=require(833                  );var _addrecordtoday2=babelHelpers.interopRequireDefault(_addrecordtoday); // 833 = ./pt/addrecordtoday
+var _profilemodify=require(834                 );var _profilemodify2=babelHelpers.interopRequireDefault(_profilemodify); // 834 = ./pt/profilemodify
+var _iprofilemodify=require(835                  );var _iprofilemodify2=babelHelpers.interopRequireDefault(_iprofilemodify); // 835 = ./in/iprofilemodify
+var _emailmodify=require(836               );var _emailmodify2=babelHelpers.interopRequireDefault(_emailmodify); // 836 = ./pt/emailmodify
 var _network=require(476            );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ./pub/network
-var _phonemodify=require(836               );var _phonemodify2=babelHelpers.interopRequireDefault(_phonemodify); // 836 = ./pt/phonemodify
-var _passwordmodify=require(837                  );var _passwordmodify2=babelHelpers.interopRequireDefault(_passwordmodify); // 837 = ./pt/passwordmodify
-var _gendermodify=require(838                );var _gendermodify2=babelHelpers.interopRequireDefault(_gendermodify); // 838 = ./pt/gendermodify
-var _iphonemodify=require(839                );var _iphonemodify2=babelHelpers.interopRequireDefault(_iphonemodify); // 839 = ./in/iphonemodify
-var _ipasswordmodify=require(840                   );var _ipasswordmodify2=babelHelpers.interopRequireDefault(_ipasswordmodify); // 840 = ./in/ipasswordmodify
-var _igendermodify=require(841                 );var _igendermodify2=babelHelpers.interopRequireDefault(_igendermodify); // 841 = ./in/igendermodify
-var _ibirthmodify=require(842                );var _ibirthmodify2=babelHelpers.interopRequireDefault(_ibirthmodify); // 842 = ./in/ibirthmodify
-var _birthmodify=require(843               );var _birthmodify2=babelHelpers.interopRequireDefault(_birthmodify); // 843 = ./pt/birthmodify
-var _hmodify=require(844           );var _hmodify2=babelHelpers.interopRequireDefault(_hmodify); // 844 = ./pt/hmodify
-var _iwmodify=require(845            );var _iwmodify2=babelHelpers.interopRequireDefault(_iwmodify); // 845 = ./in/iwmodify
-var _twmodify=require(846            );var _twmodify2=babelHelpers.interopRequireDefault(_twmodify); // 846 = ./pt/twmodify
-var _bmimodify=require(847             );var _bmimodify2=babelHelpers.interopRequireDefault(_bmimodify); // 847 = ./pt/bmimodify
-var _newitem=require(848           );var _newitem2=babelHelpers.interopRequireDefault(_newitem); // 848 = ./pt/newitem
-var _staticmap=require(849             );var _staticmap2=babelHelpers.interopRequireDefault(_staticmap); // 849 = ./pt/staticmap
-var _description=require(850               );var _description2=babelHelpers.interopRequireDefault(_description); // 850 = ./in/description
+var _phonemodify=require(837               );var _phonemodify2=babelHelpers.interopRequireDefault(_phonemodify); // 837 = ./pt/phonemodify
+var _passwordmodify=require(838                  );var _passwordmodify2=babelHelpers.interopRequireDefault(_passwordmodify); // 838 = ./pt/passwordmodify
+var _iphonemodify=require(840                );var _iphonemodify2=babelHelpers.interopRequireDefault(_iphonemodify); // 840 = ./in/iphonemodify
+var _ipasswordmodify=require(841                   );var _ipasswordmodify2=babelHelpers.interopRequireDefault(_ipasswordmodify); // 841 = ./in/ipasswordmodify
+var _igendermodify=require(842                 );var _igendermodify2=babelHelpers.interopRequireDefault(_igendermodify); // 842 = ./in/igendermodify
+var _ibirthmodify=require(843                );var _ibirthmodify2=babelHelpers.interopRequireDefault(_ibirthmodify); // 843 = ./in/ibirthmodify
+var _iwmodify=require(846            );var _iwmodify2=babelHelpers.interopRequireDefault(_iwmodify); // 846 = ./in/iwmodify
+var _newitem=require(849           );var _newitem2=babelHelpers.interopRequireDefault(_newitem); // 849 = ./pt/newitem
+var _staticmap=require(850             );var _staticmap2=babelHelpers.interopRequireDefault(_staticmap); // 850 = ./pt/staticmap
+var _description=require(851               );var _description2=babelHelpers.interopRequireDefault(_description); // 851 = ./in/description
 var _detailgym=require(759              );var _detailgym2=babelHelpers.interopRequireDefault(_detailgym); // 759 = ./pub/detailgym
-var _gymcreate=require(851              );var _gymcreate2=babelHelpers.interopRequireDefault(_gymcreate);var _navigator;var // 851 = ./pub/gymcreate
+var _gymcreate=require(852              );var _gymcreate2=babelHelpers.interopRequireDefault(_gymcreate);var _navigator;var // 852 = ./pub/gymcreate
 PTV=function(_React$Component){babelHelpers.inherits(PTV,_React$Component);
 function PTV(props){babelHelpers.classCallCheck(this,PTV);var _this=babelHelpers.possibleConstructorReturn(this,(PTV.__proto__||Object.getPrototypeOf(PTV)).call(this,
 props));
@@ -1728,7 +1723,7 @@ keyboardShouldPersistTaps:'never'},
 _react2.default.createElement(_reactNative.View,{style:styles.container}),
 
 _react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.Image,{source:require(852            ),style:{width:280,height:140}}), // 852 = ./img/ptv.png
+_react2.default.createElement(_reactNative.Image,{source:require(853            ),style:{width:280,height:140}}), // 853 = ./img/ptv.png
 _react2.default.createElement(_reactNative.View,{style:styles.choose},
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:function onPress(){return _navigator.push({title:'InstructwelcomeView',id:'instructwelcome'});}},
@@ -1863,16 +1858,6 @@ return(
 _react2.default.createElement(_ipasswordmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
 
 }
-if(route.id==='birthmodify'){
-return(
-_react2.default.createElement(_birthmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
-
-}
-if(route.id==='gendermodify'){
-return(
-_react2.default.createElement(_gendermodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
-
-}
 if(route.id==='ibirthmodify'){
 return(
 _react2.default.createElement(_ibirthmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
@@ -1883,24 +1868,10 @@ return(
 _react2.default.createElement(_igendermodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
 
 }
-if(route.id==='hmodify'){
-return(
-_react2.default.createElement(_hmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
 
-}
-if(route.id==='iwmodify'){
-return(
-_react2.default.createElement(_iwmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
-
-}
-if(route.id==='twmodify'){
-return(
-_react2.default.createElement(_twmodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
-
-}
 if(route.id==='bmimodify'){
 return(
-_react2.default.createElement(_bmimodify2.default,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
+_react2.default.createElement(BModifyView,babelHelpers.extends({},route.params,{navigator:navigator,route:route})));
 
 }
 if(route.id==='newitem'){
@@ -77424,6 +77395,8 @@ _reactNative.AsyncStorage.setItem("password",password);
 _reactNative.AsyncStorage.setItem("name",res["data"]["name"]);
 _reactNative.AsyncStorage.setItem("surname",res["data"]["surname"]);
 var phone=res['data']['phone'].toString();
+var instructorid=res['data']['id'].toString();
+_reactNative.AsyncStorage.setItem('instructorid',instructorid);
 _reactNative.AsyncStorage.setItem("phone",phone);
 _reactNative.AsyncStorage.setItem("gender",res["data"]["gender"]);
 _reactNative.AsyncStorage.setItem("birthday",res["data"]["birthday"]);
@@ -102167,11 +102140,17 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-
 var _reactNativeElements=require(507                    ); // 507 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _reactNativeModalbox=require(778                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 778 = react-native-modalbox
+var _gendermodify=require(839             );var _gendermodify2=babelHelpers.interopRequireDefault(_gendermodify); // 839 = ./gendermodify
+var _birthmodify=require(844            );var _birthmodify2=babelHelpers.interopRequireDefault(_birthmodify); // 844 = ./birthmodify
+var _hmodify=require(845        );var _hmodify2=babelHelpers.interopRequireDefault(_hmodify); // 845 = ./hmodify
+var _twmodify=require(847         );var _twmodify2=babelHelpers.interopRequireDefault(_twmodify); // 847 = ./twmodify
+var _iwmodify=require(854         );var _iwmodify2=babelHelpers.interopRequireDefault(_iwmodify); // 854 = ./iwmodify
+
 var screenW=_Dimensions2.default.get('window').width;
 var _navigator;
 var ProfileView=_react2.default.createClass({displayName:'ProfileView',
@@ -102181,12 +102160,28 @@ _navigator=this.props.navigator;
 var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
 this.state={
 email:'jenny@gmail.com',
-bmi:'16'};
-
+bmi:'16',
+isOpen:false,
+isDisabled:false,
+swipeToClose:true};
 return{
 email:this.state.email,
-bmi:this.state.bmi};
+bmi:this.state.bmi,
+isOpen:false,
+isDisabled:false,
+swipeToClose:true};
 
+},
+onClose:function onClose(){
+console.log('Modal just closed');
+},
+
+onOpen:function onOpen(){
+console.log('Modal just openned');
+},
+
+onClosingState:function onClosingState(state){
+console.log('the open/close of the swipeToClose just changed');
 },
 _logout:function _logout(){
 _navigator.push({
@@ -102248,35 +102243,35 @@ avatar:require(731                        )}))), // 731 = ../img/profile_normal.
 
 
 _react2.default.createElement(_reactNativeElements.List,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'GenderModifyView',id:'gendermodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal1.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Gender',
 avatar:require(732                )})), // 732 = ../img/gender.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'BirthModifyView',id:'birthmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal2.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Birthday',
 avatar:require(503                     )})), // 503 = ../img/plan_normal.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'HModifyView',id:'hmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal3.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Height',
 avatar:require(733                )})), // 733 = ../img/height.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'IwModifyView',id:'iwmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal4.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Initial Weight',
 avatar:require(734                )})), // 734 = ../img/weight.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'TwModifyView',id:'twmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal5.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Target Weight',
@@ -102297,9 +102292,34 @@ avatar:require(736               )})), // 736 = ../img/Heart.png
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:this._logout},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Logout')))))));
+_react2.default.createElement(_reactNative.Text,{style:{color:'#fff'}},'Logout')))),
 
 
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal1",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_gendermodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal2",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_birthmodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal3",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_hmodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal4",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_iwmodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal5",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_twmodify2.default,this.props)))));
 
 
 
@@ -102360,7 +102380,19 @@ alignItems:'center',
 justifyContent:'center',
 backgroundColor:'#2cb395',
 height:50,
-borderRadius:5}});
+borderRadius:5},
+
+modal:{
+justifyContent:'center',
+alignItems:'center'},
+
+modal3:{
+height:160,
+borderRadius:25},
+
+text:{
+color:"black",
+fontSize:22}});
 
 
 module.exports=ProfileView;
@@ -102920,7 +102952,7 @@ _this.root=ref;
 {var _props=
 this.props;var name=_props.name;var size=_props.size;var color=_props.color;var style=_props.style;var props=babelHelpers.objectWithoutProperties(_props,['name','size','color','style']);
 
-var glyph=glyphMap[name]||'?';
+var glyph=name?glyphMap[name]||'?':'';
 if(typeof glyph==='number'){
 glyph=String.fromCharCode(glyph);
 }
@@ -102940,26 +102972,30 @@ props.style=[styleDefaults,style,styleOverrides];
 props.ref=this.handleRef;
 
 return _react2.default.createElement(_reactNative.Text,props,glyph,this.props.children);
-}}]);return Icon;}(_react.Component);Icon.propTypes={name:IconNamePropType.isRequired,size:_propTypes2.default.number,color:_propTypes2.default.string,children:_propTypes2.default.node,style:_propTypes2.default.any};Icon.defaultProps={size:DEFAULT_ICON_SIZE,allowFontScaling:false};
+}}]);return Icon;}(_react.Component);Icon.propTypes={name:IconNamePropType,size:_propTypes2.default.number,color:_propTypes2.default.string,children:_propTypes2.default.node,style:_propTypes2.default.any};Icon.defaultProps={size:DEFAULT_ICON_SIZE,allowFontScaling:false};
 
 
 var imageSourceCache={};
+
+function ensureNativeModuleAvailable(){
+if(!NativeIconAPI){
+if(_reactNative.Platform.OS==='android'){
+throw new Error(
+'RNVectorIconsModule not available, did you properly integrate the module? Try running `react-native link react-native-vector-icons` and recompiling.');
+
+}
+throw new Error(
+'RNVectorIconsManager not available, did you add the library to your project and link with libRNVectorIcons.a? Try running `react-native link react-native-vector-icons` and recompiling.');
+
+}
+}
 
 function getImageSource(
 name)
 
 
 {var size=arguments.length>1&&arguments[1]!==undefined?arguments[1]:DEFAULT_ICON_SIZE;var color=arguments.length>2&&arguments[2]!==undefined?arguments[2]:DEFAULT_ICON_COLOR;
-if(!NativeIconAPI){
-if(_reactNative.Platform.OS==='android'){
-throw new Error(
-'RNVectorIconsModule not available, did you properly integrate the module?');
-
-}
-throw new Error(
-'RNVectorIconsManager not available, did you add the library to your project and link with libRNVectorIcons.a?');
-
-}
+ensureNativeModuleAvailable();
 
 var glyph=glyphMap[name]||'?';
 if(typeof glyph==='number'){
@@ -102998,6 +103034,19 @@ reject(error);
 });
 }
 
+function loadFont(){var file=arguments.length>0&&arguments[0]!==undefined?arguments[0]:fontFile;
+if(_reactNative.Platform.OS==='ios'){
+ensureNativeModuleAvailable();
+if(!file){
+return Promise.reject(
+new Error('Unable to load font, because no file was specified. '));
+
+}
+return NativeIconAPI.loadFontWithFileName.apply(NativeIconAPI,babelHelpers.toConsumableArray(file.split('.')));
+}
+return Promise.resolve();
+}
+
 Icon.Button=(0,_iconButton2.default)(Icon);
 Icon.TabBarItem=(0,_tabBarItemIos2.default)(
 IconNamePropType,
@@ -103009,6 +103058,7 @@ IconNamePropType,
 getImageSource);
 
 Icon.getImageSource=getImageSource;
+Icon.loadFont=loadFont;
 
 return Icon;
 }
@@ -117608,6 +117658,1149 @@ iconStyle:_react.PropTypes.any};exports.default=
 
 Avatar;
 }, 730, null, "react-native-elements/src/avatar/Avatar.js");
+__d(/* react-native-modalbox/index.js */function(global, require, module, exports) {'use strict';
+
+var React=require(12     );var _require= // 12 = react
+
+
+
+
+
+
+
+
+
+
+require(42            );var View=_require.View;var StyleSheet=_require.StyleSheet;var PanResponder=_require.PanResponder;var Animated=_require.Animated;var TouchableWithoutFeedback=_require.TouchableWithoutFeedback;var Dimensions=_require.Dimensions;var Easing=_require.Easing;var BackAndroid=_require.BackAndroid;var Platform=_require.Platform; // 42 = react-native
+
+var screen=Dimensions.get('window');
+
+var styles=StyleSheet.create({
+
+wrapper:{
+backgroundColor:"white"},
+
+
+transparent:{
+backgroundColor:'rgba(0,0,0,0)'},
+
+
+absolute:{
+position:"absolute",
+top:0,
+bottom:0,
+left:0,
+right:0}});
+
+
+
+
+var ModalBox=React.createClass({displayName:'ModalBox',
+
+propTypes:{
+isOpen:React.PropTypes.bool,
+isDisabled:React.PropTypes.bool,
+startOpen:React.PropTypes.bool,
+backdropPressToClose:React.PropTypes.bool,
+swipeToClose:React.PropTypes.bool,
+swipeThreshold:React.PropTypes.number,
+swipeArea:React.PropTypes.number,
+position:React.PropTypes.string,
+entry:React.PropTypes.string,
+backdrop:React.PropTypes.bool,
+backdropOpacity:React.PropTypes.number,
+backdropColor:React.PropTypes.string,
+backdropContent:React.PropTypes.element,
+animationDuration:React.PropTypes.number,
+backButtonClose:React.PropTypes.bool,
+
+onClosed:React.PropTypes.func,
+onOpened:React.PropTypes.func,
+onClosingState:React.PropTypes.func},
+
+
+getDefaultProps:function getDefaultProps(){
+return{
+startOpen:false,
+backdropPressToClose:true,
+swipeToClose:true,
+swipeThreshold:50,
+position:"center",
+backdrop:true,
+backdropOpacity:0.5,
+backdropColor:"black",
+backdropContent:null,
+animationDuration:400,
+backButtonClose:false};
+
+},
+
+getInitialState:function getInitialState(){
+var position=this.props.entry==='top'?-screen.height:screen.height;
+return{
+position:this.props.startOpen?new Animated.Value(0):new Animated.Value(position),
+backdropOpacity:new Animated.Value(0),
+isOpen:this.props.startOpen,
+isAnimateClose:false,
+isAnimateOpen:false,
+swipeToClose:false,
+height:screen.height,
+width:screen.width,
+containerHeight:screen.height,
+containerWidth:screen.width,
+isInitialized:false};
+
+},
+
+onBackPress:function onBackPress(){
+this.close();
+return true;
+},
+
+componentWillMount:function componentWillMount(){
+this.createPanResponder();
+this.handleOpenning(this.props);
+
+},
+
+componentWillReceiveProps:function componentWillReceiveProps(props){
+this.handleOpenning(props);
+},
+
+handleOpenning:function handleOpenning(props){
+if(typeof props.isOpen=="undefined")return;
+if(props.isOpen)
+this.open();else
+
+this.close();
+},
+
+
+
+
+
+
+animateBackdropOpen:function animateBackdropOpen(){var _this=this;
+if(this.state.isAnimateBackdrop){
+this.state.animBackdrop.stop();
+this.state.isAnimateBackdrop=false;
+}
+
+this.state.isAnimateBackdrop=true;
+this.state.animBackdrop=Animated.timing(
+this.state.backdropOpacity,
+{
+toValue:1,
+duration:this.props.animationDuration});
+
+
+this.state.animBackdrop.start(function(){
+_this.state.isAnimateBackdrop=false;
+});
+},
+
+
+
+
+animateBackdropClose:function animateBackdropClose(){var _this2=this;
+if(this.state.isAnimateBackdrop){
+this.state.animBackdrop.stop();
+this.state.isAnimateBackdrop=false;
+}
+
+this.state.isAnimateBackdrop=true;
+this.state.animBackdrop=Animated.timing(
+this.state.backdropOpacity,
+{
+toValue:0,
+duration:this.props.animationDuration});
+
+
+this.state.animBackdrop.start(function(){
+_this2.state.isAnimateBackdrop=false;
+});
+},
+
+
+
+
+stopAnimateOpen:function stopAnimateOpen(){
+if(this.state.isAnimateOpen){
+if(this.state.animOpen)this.state.animOpen.stop();
+this.state.isAnimateOpen=false;
+}
+},
+
+
+
+
+animateOpen:function animateOpen(){var _this3=this;
+this.stopAnimateClose();
+
+
+if(this.props.backdrop)
+this.animateBackdropOpen();
+
+this.state.isAnimateOpen=true;
+
+requestAnimationFrame(function(){
+
+_this3.state.positionDest=_this3.calculateModalPosition(_this3.state.containerHeight,_this3.state.containerWidth);
+
+_this3.state.animOpen=Animated.timing(
+_this3.state.position,
+{
+toValue:_this3.state.positionDest,
+duration:_this3.props.animationDuration,
+easing:Easing.elastic(0.8)});
+
+
+_this3.state.animOpen.start(function(){
+_this3.state.isAnimateOpen=false;
+_this3.state.isOpen=true;
+if(_this3.props.onOpened)_this3.props.onOpened();
+});
+});
+
+},
+
+
+
+
+stopAnimateClose:function stopAnimateClose(){
+if(this.state.isAnimateClose){
+if(this.state.animClose)this.state.animClose.stop();
+this.state.isAnimateClose=false;
+}
+},
+
+
+
+
+animateClose:function animateClose(){var _this4=this;
+this.stopAnimateOpen();
+
+
+if(this.props.backdrop)
+this.animateBackdropClose();
+
+this.state.isAnimateClose=true;
+this.state.animClose=Animated.timing(
+this.state.position,
+{
+toValue:this.props.entry==='top'?-this.state.containerHeight:this.state.containerHeight,
+duration:this.props.animationDuration});
+
+
+this.state.animClose.start(function(){
+_this4.state.isAnimateClose=false;
+_this4.state.isOpen=false;
+_this4.setState({});
+if(_this4.props.onClosed)_this4.props.onClosed();
+});
+},
+
+
+
+
+calculateModalPosition:function calculateModalPosition(containerHeight,containerWidth){
+var position=0;
+
+if(this.props.position=="bottom"){
+position=containerHeight-this.state.height;
+}else
+if(this.props.position=="center"){
+position=containerHeight/2-this.state.height/2;
+}
+
+if(position<0)position=0;
+return position;
+},
+
+
+
+
+
+createPanResponder:function createPanResponder(){var _this5=this;
+var closingState=false;
+var inSwipeArea=false;
+
+var onPanRelease=function onPanRelease(evt,state){
+if(!inSwipeArea)return;
+inSwipeArea=false;
+if(_this5.props.entry==='top'?-state.dy>_this5.props.swipeThreshold:state.dy>_this5.props.swipeThreshold)
+_this5.animateClose();else
+
+_this5.animateOpen();
+};
+
+var animEvt=Animated.event([null,{customY:this.state.position}]);
+
+var onPanMove=function onPanMove(evt,state){
+var newClosingState=_this5.props.entry==='top'?-state.dy>_this5.props.swipeThreshold:state.dy>_this5.props.swipeThreshold;
+if(_this5.props.entry==='top'?state.dy>0:state.dy<0)return;
+if(newClosingState!=closingState&&_this5.props.onClosingState)
+_this5.props.onClosingState(newClosingState);
+closingState=newClosingState;
+state.customY=state.dy+_this5.state.positionDest;
+
+animEvt(evt,state);
+};
+
+var onPanStart=function onPanStart(evt,state){
+if(!_this5.props.swipeToClose||_this5.props.isDisabled||_this5.props.swipeArea&&evt.nativeEvent.pageY-_this5.state.positionDest>_this5.props.swipeArea){
+inSwipeArea=false;
+return false;
+}
+inSwipeArea=true;
+return true;
+};
+
+this.state.pan=PanResponder.create({
+onStartShouldSetPanResponder:onPanStart,
+onPanResponderMove:onPanMove,
+onPanResponderRelease:onPanRelease,
+onPanResponderTerminate:onPanRelease});
+
+},
+
+
+
+
+onViewLayout:function onViewLayout(evt){
+var height=evt.nativeEvent.layout.height;
+var width=evt.nativeEvent.layout.width;
+
+
+if(height!==this.state.height)this.state.height=height;
+if(width!==this.state.width)this.state.width=width;
+
+if(this.onViewLayoutCalculated)this.onViewLayoutCalculated();
+},
+
+
+
+
+onContainerLayout:function onContainerLayout(evt){
+var height=evt.nativeEvent.layout.height;
+var width=evt.nativeEvent.layout.width;
+
+
+if(height==this.state.containerHeight&&width==this.state.containerWidth){
+this.setState({isInitialized:true});
+return;
+}
+
+var modalPosition=this.calculateModalPosition(height,width);
+var coords={};
+
+
+if(this.state.isInitialized&&(this.state.isOpen||this.state.isAnimateOpen||this.state.isAnimateClose)){
+var position=this.state.isOpen?modalPosition:this.state.containerHeight;
+
+
+if(this.state.isAnimateOpen){
+position=modalPosition;
+this.stopAnimateOpen();
+}else if(this.state.isAnimateClose){
+position=this.state.containerHeight;
+this.stopAnimateClose();
+}
+this.state.position.setValue(position);
+coords={positionDest:position};
+}
+
+this.setState(babelHelpers.extends({
+isInitialized:true,
+containerHeight:height,
+containerWidth:width},
+coords));
+
+},
+
+
+
+
+renderBackdrop:function renderBackdrop(size){
+var backdrop=[];
+
+if(this.props.backdrop){
+backdrop=
+React.createElement(TouchableWithoutFeedback,{onPress:this.props.backdropPressToClose?this.close:null},
+React.createElement(Animated.View,{style:[styles.absolute,size,{opacity:this.state.backdropOpacity}]},
+React.createElement(View,{style:[styles.absolute,{backgroundColor:this.props.backdropColor,opacity:this.props.backdropOpacity}]}),
+this.props.backdropContent||[]));
+
+
+
+}
+
+return backdrop;
+},
+
+
+
+
+render:function render(){
+var visible=this.state.isOpen||this.state.isAnimateOpen||this.state.isAnimateClose;
+var size={height:this.state.containerHeight,width:this.state.containerWidth};
+var offsetX=(this.state.containerWidth-this.state.width)/2;
+var backdrop=this.renderBackdrop(size);
+
+if(!visible)return React.createElement(View,null);
+
+return(
+React.createElement(View,{style:[styles.transparent,styles.absolute],pointerEvents:'box-none',onLayout:this.onContainerLayout},
+backdrop,
+React.createElement(Animated.View,babelHelpers.extends({
+onLayout:this.onViewLayout,
+style:[styles.wrapper,size,this.props.style,{transform:[{translateY:this.state.position},{translateX:offsetX}]}]},
+this.state.pan.panHandlers),
+this.props.children)));
+
+
+
+},
+
+
+
+open:function open(){var _this6=this;
+if(this.props.isDisabled)return;
+if(!this.state.isAnimateOpen&&(!this.state.isOpen||this.state.isAnimateClose)){
+this.onViewLayoutCalculated=function(){
+_this6.setState({});
+_this6.animateOpen();
+if(_this6.props.backButtonClose&&Platform.OS==='android')BackAndroid.addEventListener('hardwareBackPress',_this6.onBackPress);
+delete _this6.onViewLayoutCalculated;
+};
+this.setState({isAnimateOpen:true});
+}
+},
+
+close:function close(){
+if(this.props.isDisabled)return;
+if(!this.state.isAnimateClose&&(this.state.isOpen||this.state.isAnimateOpen)){
+this.animateClose();
+if(this.props.backButtonClose&&Platform.OS==='android')BackAndroid.removeEventListener('hardwareBackPress',this.onBackPress);
+}
+}});
+
+
+
+
+module.exports=ModalBox;
+}, 778, null, "react-native-modalbox/index.js");
+__d(/* PTV/pt/gendermodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(507                    ); // 507 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+var _tcombFormNative=require(403                );var _tcombFormNative2=babelHelpers.interopRequireDefault(_tcombFormNative); // 403 = tcomb-form-native
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var GenderModifyView=_react2.default.createClass({displayName:'GenderModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+gender:'Male'};
+
+return{
+gender:this.state.gender};
+
+
+},
+_save:function _save(){
+var gender=this.state.gender;
+console.log(this.state.gender);
+var url=_network2.default+'modifygender.action';
+url+='?gender='+gender;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+
+});
+},
+render:function render(){var _this=this;
+return(
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.Picker,{
+prompt:'Please choose sportname',
+style:{width:200,color:'#38bda0',alignItems:'center'},
+selectedValue:this.state.gender,
+onValueChange:function onValueChange(value){return _this.setState({gender:value});}},
+_react2.default.createElement(_reactNative.Picker.Item,{label:'Male',value:'Male'}),
+_react2.default.createElement(_reactNative.Picker.Item,{label:'Female',value:'Female'})),
+
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))));
+
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column',
+justifyContent:'center'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:10,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'}});
+
+
+module.exports=GenderModifyView;
+}, 839, null, "PTV/pt/gendermodify.js");
+__d(/* PTV/pt/birthmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(507                    ); // 507 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var BirthModifyView=_react2.default.createClass({displayName:'BirthModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={};
+
+return{};
+
+
+},
+_save:function _save(){
+var birthday=this.state.date;
+var url=_network2.default+'modifybirthday.action';
+url+='?birthday='+birthday;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_reactNative.AsyncStorage.setItem("birthday",birthday);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+},
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.Text,{style:{color:'#38bda0'}},'Please Choose the Date'),
+_react2.default.createElement(_date2.default,{
+style:styles.datepicker,
+date:this.state.date,
+mode:'date',
+placeholder:'Date',
+format:'YYYY-MM-DD',
+confirmBtnText:'Confirm',
+cancelBtnText:'Cancel',
+onDateChange:function onDateChange(date){_this.setState({date:date});}}),
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:{color:'#fff'}},'Save'))));
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:20,
+height:40,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'}});
+
+
+module.exports=BirthModifyView;
+}, 844, null, "PTV/pt/birthmodify.js");
+__d(/* PTV/pt/hmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(507                    ); // 507 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var HModifyView=_react2.default.createClass({displayName:'HModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+height:''};
+
+return{
+height:this.state.height};
+
+
+},
+_save:function _save(){
+var height=this.state.height;
+console.log(this.state.height);
+_reactNative.AsyncStorage.setItem("height",height.toString());
+var url=_network2.default+'modifyheight.action';
+url+='?height='+height;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+
+});
+},
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
+_react2.default.createElement(_reactNative.TextInput,{
+style:{height:40,borderColor:'#2cb395',borderWidth:2,width:180,color:'#38bda0',fontWeight:'bold',fontSize:16},
+onChangeText:function onChangeText(text){return _this.setState({height:text});},
+keyboardType:'numeric',
+placeholder:'Enter Height',
+value:this.state.text}),
+
+_react2.default.createElement(_reactNative.Text,{style:styles.text},' meter')),
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:{color:'#fff'}},'Save'))));
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#38bda0'},
+
+input:{
+
+flexDirection:'row'}});
+
+
+
+module.exports=HModifyView;
+}, 845, null, "PTV/pt/hmodify.js");
+__d(/* PTV/pt/twmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(507                    ); // 507 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var TwView=_react2.default.createClass({displayName:'TwView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+weight:''};
+
+return{
+weight:this.state.weight};
+
+
+},
+componentWillMount:function componentWillMount(){
+var _that=this;
+_reactNative.AsyncStorage.getItem('email',function(err,result){
+email=result;
+_that.setState({
+email:email});
+
+});
+_reactNative.AsyncStorage.getItem('password',function(err,result){
+password=result;
+_that.setState({
+password:password});
+
+});
+},
+_save:function _save(){
+var weight=this.state.weight;
+console.log(this.state.weight);
+var url=_network2.default+'modifyweight.action';
+url+='?weight='+weight;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+},
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
+_react2.default.createElement(_reactNative.TextInput,{
+style:{height:40,borderColor:'#2cb395',borderWidth:2,width:180,color:'#2cb395',fontWeight:'bold',fontSize:16},
+onChangeText:function onChangeText(text){return _this.setState({weight:text});},
+keyboardType:'numeric',
+placeholder:'Enter Weight',
+value:this.state.text}),
+
+_react2.default.createElement(_reactNative.Text,{style:{color:'#2cb395'}},' kg')),
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))));
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'},
+
+input:{
+
+flexDirection:'row'}});
+
+
+
+module.exports=TwView;
+}, 847, null, "PTV/pt/twmodify.js");
+__d(/* PTV/pt/iwmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(507                    ); // 507 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var IwView=_react2.default.createClass({displayName:'IwView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+weight:''};
+
+return{
+weight:this.state.weight};
+
+
+},
+componentWillMount:function componentWillMount(){
+var _that=this;
+_reactNative.AsyncStorage.getItem('email',function(err,result){
+email=result;
+_that.setState({
+email:email});
+
+});
+_reactNative.AsyncStorage.getItem('password',function(err,result){
+password=result;
+_that.setState({
+password:password});
+
+});
+},
+_save:function _save(){
+var weight=this.state.weight;
+var email=this.state.email;
+var password=this.state.password;
+console.log(this.state.weight);
+var url=_network2.default+'modifyweight.action';
+url+='?weight='+weight;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null)d:{
+var url=_network2.default+'traineelogin.action';
+
+url+='?email='+email+'&password='+password;
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+var bmi=res['data']['bmi'].toString();
+_reactNative.AsyncStorage.setItem('bmi',bmi);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+},
+
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
+_react2.default.createElement(_reactNative.TextInput,{
+style:{height:40,borderColor:'#2cb395',borderWidth:2,width:180,color:'#2cb395',fontWeight:'bold',fontSize:16},
+onChangeText:function onChangeText(text){return _this.setState({weight:text});},
+keyboardType:'numeric',
+placeholder:'Enter Weight',
+value:this.state.text}),
+
+_react2.default.createElement(_reactNative.Text,{style:{color:'#2cb395'}},' kg')),
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))));
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'},
+
+input:{
+
+flexDirection:'row'}});
+
+
+
+module.exports=IwView;
+}, 854, null, "PTV/pt/iwmodify.js");
 __d(/* PTV/img/profile_normal.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":44,"height":33,"scales":[1],"hash":"2117841bfae283ff5377490b1617897c","name":"profile_normal","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
 }, 731, null, "PTV/img/profile_normal.png");
 __d(/* PTV/img/gender.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":50,"height":50,"scales":[1],"hash":"e974f77b04efd006bdcadd254a0e388f","name":"gender","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
@@ -121100,29 +122293,13 @@ dataSource:this.state.dataSource.cloneWithRows(data)});
 },
 
 
-renderRow:function renderRow(rowData,sectionID,rowID){var _this=this;
-var btnsTypes=[
-{text:'Submit',onPress:function onPress(){_this.submitrecord(rowData);},type:'secondary'}];
-
-var backgroundColor;
+renderRow:function renderRow(rowData,sectionID,rowID){
 return(
-
-_react2.default.createElement(_reactNativeSwipeout2.default,{
-left:rowData.left,
-right:btnsTypes,
-rowID:rowID,
-sectionID:sectionID,
-autoClose:rowData.autoClose,
-backgroundColor:backgroundColor,
-close:!rowData.active,
-onOpen:function onOpen(sectionID,rowID){return _this.handleSwipeout(sectionID,rowID);},
-scroll:function scroll(event){return _this.allowScroll(event);}},
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:function onPress(){return _navigator.push({title:'DetailGymView',id:'detailgym',params:{data:rowData}});}},
 _react2.default.createElement(_reactNative.View,{style:styles.li},
 _react2.default.createElement(_reactNative.View,{style:styles.lidate},_react2.default.createElement(_reactNative.Image,{source:require(784                 )}),_react2.default.createElement(_reactNative.Text,null,rowData.name)), // 784 = ../img/gymicon.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Slogan:',rowData.slogan)))));
-
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Slogan:',rowData.slogan))));
 
 
 
@@ -121137,6 +122314,7 @@ _react2.default.createElement(_reactNative.ListView,{style:styles.listview,
 scrollEnabled:this.state.scrollEnabled,
 dataSource:this.state.dataSource,
 renderRow:this.renderRow,
+initialListSize:6,
 enableEmptySections:true})));
 
 
@@ -121229,9 +122407,10 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _reactNativeSwipeout=require(496                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 496 = react-native-swipeout
 var _network=require(476        );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ./network
 var _reactNativeStarRating=require(760                       );var _reactNativeStarRating2=babelHelpers.interopRequireDefault(_reactNativeStarRating); // 760 = react-native-star-rating
+var _reactNativeModalbox=require(778                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 778 = react-native-modalbox
+
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -121245,6 +122424,7 @@ return true;
 });
 var _navigator;
 var btnsDefault=[{text:'Button'}];var
+
 
 
 
@@ -121271,10 +122451,10 @@ onPress:function onPress(){return _reactNative.Linking.canOpenURL(_this2.props.u
 if(supported){
 _reactNative.Linking.openURL(_this2.props.url);
 }else{
-console.log('无法打开该URI: '+_this2.props.url);
+console.log('could not open URI: '+_this2.props.url);
 }
 });}},
-_react2.default.createElement(_reactNative.Text,{style:styles.buttonText},this.props.text)));
+_react2.default.createElement(_reactNative.Text,{style:{color:'#38bda0',fontSize:18}},this.props.text)));
 
 
 }}]);return CustomButton;}(_react2.default.Component);
@@ -121284,106 +122464,114 @@ var DetailGymView=_react2.default.createClass({displayName:'DetailGymView',
 getInitialState:function getInitialState(){
 _navigator=this.props.navigator;
 this.state={
-name:"Jetts",
-slogan:"Enjoy your everyday with Jetts",
-open:"7x24 membership",
-contact:"0800-0201-023",
-location:"24 shally rd,Tamaki drive",
-starCount:3};
+starCount:3,
+isOpen:false,
+isDisabled:false,
+swipeToClose:true,
+sliderValue:0.3};
 
 return{
-name:this.props.data.name,
-slogan:this.props.data.slogan,
-open:this.props.data.open,
-contact:this.props.data.contact,
-location:this.props.data.location,
-starCount:this.state.starCount};
+starCount:this.state.starCount,
+isOpen:this.state.isOpen,
+isDisabled:this.state.isDisabled,
+swipeToClose:this.state.swipeToClose,
+sliderValue:this.state.sliderValue};
 
+
+},
+componentWillMount:function componentWillMount(){
+var _that=this;
+var gym_id=this.props.data.id;
+var url=_network2.default+'gym_score.action';
+
+url+='?gym_id='+gym_id;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+console.log(res);
+if(res["data"]!=null){
+var star=res["data"];
+_that.setState({
+starCount:star});
+
+}else{
+_reactNative.Alert.alert('Fail to display','Please check your data');
+}
+});
+},
+onClose:function onClose(){
+console.log('Modal just closed');
+},
+
+onOpen:function onOpen(){
+console.log('Modal just openned');
+},
+
+onClosingState:function onClosingState(state){
+console.log('the open/close of the swipeToClose just changed');
+},
+_rating:function _rating(){
+var type;
+var gym_id=this.props.data.id;
+var score=this.state.starCount;
+console.log(gym_id);
+_reactNative.AsyncStorage.getItem('type',function(err,result){
+console.log(result);
+type=result;
+if(type!==null){
+if(type=="instructor"){
+_reactNative.AsyncStorage.getItem('instructorid',function(err,result){
+var instructor_id=result;
+var url=_network2.default+'instructor/rate_gym.action';
+url+='?gym_id='+gym_id+'&instructor_id='+instructor_id+'&score='+score;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'IhomeView',
+id:'Ihome'});
+
+}else{
+_reactNative.Alert.alert('Fail to display','Please check your data');
+}
+});
+});
+}else{
+_reactNative.AsyncStorage.getItem('userid',function(err,result){
+console.log(result);
+var trainee_id=result;
+var url=_network2.default+'rate_gym.action';
+url+='?gym_id='+gym_id+'&trainee_id='+trainee_id+'&score='+score;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else{
+_reactNative.Alert.alert('Fail to display','Please check your data');
+}
+});
+});
+}
+}
+});
 },
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 onStarRatingPress:function onStarRatingPress(rating){
+this.refs.modal1.open();
+},
+onStarRatingsubmit:function onStarRatingsubmit(rating){
 this.setState({
 starCount:rating});
 
@@ -121396,12 +122584,6 @@ keyboardDismissMode:'on-drag',
 keyboardShouldPersistTaps:'never'},
 _react2.default.createElement(_reactNative.View,{style:styles.maincontain},
 _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
-_react2.default.createElement(_reactNative.TouchableOpacity,{
-onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
-
-
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
 _react2.default.createElement(_reactNative.Image,{source:require(501                   )})), // 501 = ../img/ptv_sized.png
 
@@ -121411,39 +122593,72 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Rig
 _react2.default.createElement(_reactNative.View,{style:styles.li},
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
 _react2.default.createElement(_reactNative.Image,{source:require(779                 )}), // 779 = ../img/gymname.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Name:',this.state.name)),
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Name:',this.props.data.name)),
 
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
 _react2.default.createElement(_reactNative.Image,{source:require(780                )}), // 780 = ../img/slogan.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Slogan: ',this.state.slogan,' ')),
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Slogan: ',this.props.data.description,' ')),
 
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
 _react2.default.createElement(_reactNative.Image,{source:require(781               )}), // 781 = ../img/phone.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'   Contact: ',this.state.contact,' ')),
+_react2.default.createElement(_reactNative.TouchableOpacity,{
+onPress:function onPress(){return _this3.refs.modal2.open();}},
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'   Contact: ',this.props.data.contact,' '))),
 
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(CustomButton,{url:'tel:'+this.state.contact,text:'Call the Gym right now'})),
 
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
 _react2.default.createElement(_reactNative.Image,{source:require(782              )}), // 782 = ../img/open.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  open: ',this.state.open,' ')),
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  open: ',this.props.data.opendate,' ')),
 
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
 _react2.default.createElement(_reactNative.Image,{source:require(783                  )}), // 783 = ../img/location.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Location: ',this.state.location,' ')),
-
-_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row'}},
-_react2.default.createElement(_reactNative.Image,{source:require(783                  )}), // 783 = ../img/location.png
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Location: ',this.state.location,' ')),
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'  Location: ',this.props.data.location,' ')),
 
 _react2.default.createElement(_reactNative.View,{style:{flexDirection:'column'}},
-_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Write your rating  '),
+_react2.default.createElement(_reactNative.Text,{style:styles.liText},'Reviews'),
 _react2.default.createElement(_reactNativeStarRating2.default,{
 disabled:false,
 maxStars:5,
 starColor:'#38bda0',
 rating:this.state.starCount,
-selectedStar:function selectedStar(rating){return _this3.onStarRatingPress(rating);}}))))));
+selectedStar:function selectedStar(rating){return _this3.onStarRatingPress(rating);}}))),
+
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:function onPress(){return _navigator.jumpBack();}},
+_react2.default.createElement(_reactNative.Text,{style:{color:"white",fontSize:18}},'Back'))),
+
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal1",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_reactNativeStarRating2.default,{
+disabled:false,
+maxStars:5,
+starColor:'#38bda0',
+rating:this.state.starCount,
+selectedStar:function selectedStar(rating){return _this3.onStarRatingsubmit(rating);}}),
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+height:30,
+width:180,
+borderRadius:5,
+marginTop:10},
+
+onPress:this._rating},
+_react2.default.createElement(_reactNative.Text,{style:{color:"white",fontSize:18}},'Submit your rating'))),
+
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal2",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(CustomButton,{url:'tel:'+this.props.data.contact,text:'Call the Gym right now'}))))));
 
 
 
@@ -121518,12 +122733,25 @@ color:'#333',
 fontSize:16,
 height:50},
 
-button:{
-margin:5,
-backgroundColor:'white',
-padding:15,
-borderBottomWidth:_reactNative.StyleSheet.hairlineWidth,
-borderBottomColor:'#cdcdcd'}});
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+height:30,
+borderRadius:5},
+
+modal:{
+justifyContent:'center',
+alignItems:'center'},
+
+modal3:{
+height:160,
+width:260,
+borderRadius:25},
+
+text:{
+color:"black",
+fontSize:22}});
 
 
 module.exports=DetailGymView;
@@ -125980,8 +127208,6 @@ var Zocial=(0,_createIconSet2.default)(glyphMap,'zocial','Zocial.ttf');
 module.exports=Zocial;
 module.exports.glyphMap=glyphMap;
 }, 777, null, "react-native-vector-icons/Zocial.js");
-__d(/* PTV/img/back.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":40,"height":33,"scales":[1],"hash":"1cc0b8b2f893be2eb6c55f2cd173a579","name":"back","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
-}, 778, null, "PTV/img/back.png");
 __d(/* PTV/img/gymname.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":40,"height":40,"scales":[1],"hash":"ed10389521ab5c7b0b502057cad9f2dc","name":"gymname","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
 }, 779, null, "PTV/img/gymname.png");
 __d(/* PTV/img/slogan.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":40,"height":40,"scales":[1],"hash":"305df64c4b09c353e38d612ccabf1ba4","name":"slogan","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
@@ -128804,7 +130030,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(813              )}))), // 813 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -129329,6 +130555,8 @@ color:'#fff'}});
 
 module.exports=PlanCreateView;
 }, 812, null, "PTV/pt/plancreate.js");
+__d(/* PTV/img/back.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":40,"height":33,"scales":[1],"hash":"1cc0b8b2f893be2eb6c55f2cd173a579","name":"back","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
+}, 813, null, "PTV/img/back.png");
 __d(/* PTV/pt/planinfo.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -129585,7 +130813,7 @@ height:50}});
 
 
 module.exports=PlanInfoView;
-}, 813, null, "PTV/pt/planinfo.js");
+}, 814, null, "PTV/pt/planinfo.js");
 __d(/* PTV/pt/editrecord.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129847,7 +131075,7 @@ marginLeft:80}});
 
 
 module.exports=EditRecordView;
-}, 814, null, "PTV/pt/editrecord.js");
+}, 815, null, "PTV/pt/editrecord.js");
 __d(/* PTV/pt/detailrecord.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130151,7 +131379,7 @@ height:50}});
 
 
 module.exports=DetailRecordView;
-}, 815, null, "PTV/pt/detailrecord.js");
+}, 816, null, "PTV/pt/detailrecord.js");
 __d(/* PTV/pt/chart.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -130172,8 +131400,8 @@ var _reactNative=require(42            ); // 42 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(496                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 496 = react-native-swipeout
 var _reactNativeScrollableTabView=require(738                               );var _reactNativeScrollableTabView2=babelHelpers.interopRequireDefault(_reactNativeScrollableTabView); // 738 = react-native-scrollable-tab-view
-var _SportChart=require(817           );var _SportChart2=babelHelpers.interopRequireDefault(_SportChart); // 817 = ./SportChart
-var _TimeChart=require(830          );var _TimeChart2=babelHelpers.interopRequireDefault(_TimeChart); // 830 = ./TimeChart
+var _SportChart=require(818           );var _SportChart2=babelHelpers.interopRequireDefault(_SportChart); // 818 = ./SportChart
+var _TimeChart=require(831          );var _TimeChart2=babelHelpers.interopRequireDefault(_TimeChart); // 831 = ./TimeChart
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -130314,7 +131542,7 @@ shadowRadius:3}});
 
 
 module.exports=ChartView;
-}, 816, null, "PTV/pt/chart.js");
+}, 817, null, "PTV/pt/chart.js");
 __d(/* PTV/pt/SportChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130330,7 +131558,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(818                            ); // 818 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(819                            ); // 819 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -130622,14 +131850,14 @@ color:'#fff'}});exports.default=
 
 
 SportChartView;
-}, 817, null, "PTV/pt/SportChart.js");
-__d(/* react-native-mp-android-chart/index.android.js */function(global, require, module, exports) {var _BarChart=require(819             );var _BarChart2=babelHelpers.interopRequireDefault(_BarChart); // 819 = ./lib/BarChart
-var _BubbleChart=require(824                );var _BubbleChart2=babelHelpers.interopRequireDefault(_BubbleChart); // 824 = ./lib/BubbleChart
-var _CandleStickChart=require(825                     );var _CandleStickChart2=babelHelpers.interopRequireDefault(_CandleStickChart); // 825 = ./lib/CandleStickChart
-var _LineChart=require(826              );var _LineChart2=babelHelpers.interopRequireDefault(_LineChart); // 826 = ./lib/LineChart
-var _PieChart=require(827             );var _PieChart2=babelHelpers.interopRequireDefault(_PieChart); // 827 = ./lib/PieChart
-var _RadarChart=require(828               );var _RadarChart2=babelHelpers.interopRequireDefault(_RadarChart); // 828 = ./lib/RadarChart
-var _ScatterChart=require(829                 );var _ScatterChart2=babelHelpers.interopRequireDefault(_ScatterChart); // 829 = ./lib/ScatterChart
+}, 818, null, "PTV/pt/SportChart.js");
+__d(/* react-native-mp-android-chart/index.android.js */function(global, require, module, exports) {var _BarChart=require(820             );var _BarChart2=babelHelpers.interopRequireDefault(_BarChart); // 820 = ./lib/BarChart
+var _BubbleChart=require(825                );var _BubbleChart2=babelHelpers.interopRequireDefault(_BubbleChart); // 825 = ./lib/BubbleChart
+var _CandleStickChart=require(826                     );var _CandleStickChart2=babelHelpers.interopRequireDefault(_CandleStickChart); // 826 = ./lib/CandleStickChart
+var _LineChart=require(827              );var _LineChart2=babelHelpers.interopRequireDefault(_LineChart); // 827 = ./lib/LineChart
+var _PieChart=require(828             );var _PieChart2=babelHelpers.interopRequireDefault(_PieChart); // 828 = ./lib/PieChart
+var _RadarChart=require(829               );var _RadarChart2=babelHelpers.interopRequireDefault(_RadarChart); // 829 = ./lib/RadarChart
+var _ScatterChart=require(830                 );var _ScatterChart2=babelHelpers.interopRequireDefault(_ScatterChart); // 830 = ./lib/ScatterChart
 
 module.exports={
 BarChart:_BarChart2.default,
@@ -130639,15 +131867,15 @@ LineChart:_LineChart2.default,
 PieChart:_PieChart2.default,
 RadarChart:_RadarChart2.default,
 ScatterChart:_ScatterChart2.default};
-}, 818, null, "react-native-mp-android-chart/index.android.js");
+}, 819, null, "react-native-mp-android-chart/index.android.js");
 __d(/* react-native-mp-android-chart/lib/BarChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(820                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 820 = ./BarLineChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _BarLineChartBase=require(821                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 821 = ./BarLineChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'BarChart',
@@ -130683,14 +131911,14 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidBarChart',iface);
-}, 819, null, "react-native-mp-android-chart/lib/BarChart.js");
+}, 820, null, "react-native-mp-android-chart/lib/BarChart.js");
 __d(/* react-native-mp-android-chart/lib/BarLineChartBase.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _ChartBase=require(821          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 821 = ./ChartBase
-var _YAxisIface=require(822           ); // 822 = ./YAxisIface
+var _ChartBase=require(822          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 822 = ./ChartBase
+var _YAxisIface=require(823           ); // 823 = ./YAxisIface
 
 var iface={
 propTypes:babelHelpers.extends({},
@@ -130722,7 +131950,7 @@ right:_react.PropTypes.shape(_YAxisIface.yAxisIface)})})};exports.default=
 
 
 iface;
-}, 820, null, "react-native-mp-android-chart/lib/BarLineChartBase.js");
+}, 821, null, "react-native-mp-android-chart/lib/BarLineChartBase.js");
 __d(/* react-native-mp-android-chart/lib/ChartBase.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.axisIface=undefined;var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130843,13 +132071,13 @@ position:_react.PropTypes.string}))})};exports.default=
 
 
 chartIface;
-}, 821, null, "react-native-mp-android-chart/lib/ChartBase.js");
+}, 822, null, "react-native-mp-android-chart/lib/ChartBase.js");
 __d(/* react-native-mp-android-chart/lib/YAxisIface.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _ChartBase=require(821          ); // 821 = ./ChartBase
+var _ChartBase=require(822          ); // 822 = ./ChartBase
 
 var yAxisIface=babelHelpers.extends({},_ChartBase.axisIface,{
 
@@ -130878,7 +132106,7 @@ lineColor:_react.PropTypes.string})});exports.default=
 
 
 yAxisIface;
-}, 822, null, "react-native-mp-android-chart/lib/YAxisIface.js");
+}, 823, null, "react-native-mp-android-chart/lib/YAxisIface.js");
 __d(/* react-native-mp-android-chart/lib/ChartDataSetConfig.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130921,15 +132149,15 @@ propName+' supplied to \''+componentName+'\'. Value must be number and between 0
 
 
 chartDataSetConfig;
-}, 823, null, "react-native-mp-android-chart/lib/ChartDataSetConfig.js");
+}, 824, null, "react-native-mp-android-chart/lib/ChartDataSetConfig.js");
 __d(/* react-native-mp-android-chart/lib/BubbleChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(821          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 821 = ./ChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _ChartBase=require(822          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 822 = ./ChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'BubbleChart',
@@ -130957,15 +132185,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidBubbleChart',iface);
-}, 824, null, "react-native-mp-android-chart/lib/BubbleChart.js");
+}, 825, null, "react-native-mp-android-chart/lib/BubbleChart.js");
 __d(/* react-native-mp-android-chart/lib/CandleStickChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(820                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 820 = ./BarLineChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _BarLineChartBase=require(821                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 821 = ./BarLineChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'CandleStickChart',
@@ -131003,15 +132231,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidCandleStickChart',iface);
-}, 825, null, "react-native-mp-android-chart/lib/CandleStickChart.js");
+}, 826, null, "react-native-mp-android-chart/lib/CandleStickChart.js");
 __d(/* react-native-mp-android-chart/lib/LineChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(820                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 820 = ./BarLineChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _BarLineChartBase=require(821                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 821 = ./BarLineChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'LineChart',
@@ -131050,15 +132278,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidLineChart',iface);
-}, 826, null, "react-native-mp-android-chart/lib/LineChart.js");
+}, 827, null, "react-native-mp-android-chart/lib/LineChart.js");
 __d(/* react-native-mp-android-chart/lib/PieChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(821          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 821 = ./ChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _ChartBase=require(822          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 822 = ./ChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'PieChart',
@@ -131094,16 +132322,16 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidPieChart',iface);
-}, 827, null, "react-native-mp-android-chart/lib/PieChart.js");
+}, 828, null, "react-native-mp-android-chart/lib/PieChart.js");
 __d(/* react-native-mp-android-chart/lib/RadarChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(821          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 821 = ./ChartBase
-var _YAxisIface=require(822           ); // 822 = ./YAxisIface
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _ChartBase=require(822          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 822 = ./ChartBase
+var _YAxisIface=require(823           ); // 823 = ./YAxisIface
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'RadarChart',
@@ -131131,15 +132359,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidRadarChart',iface);
-}, 828, null, "react-native-mp-android-chart/lib/RadarChart.js");
+}, 829, null, "react-native-mp-android-chart/lib/RadarChart.js");
 __d(/* react-native-mp-android-chart/lib/ScatterChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(820                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 820 = ./BarLineChartBase
-var _ChartDataSetConfig=require(823                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 823 = ./ChartDataSetConfig
+var _BarLineChartBase=require(821                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 821 = ./BarLineChartBase
+var _ChartDataSetConfig=require(824                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 824 = ./ChartDataSetConfig
 
 var iface={
 name:'ScatterChart',
@@ -131167,7 +132395,7 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidScatterChart',iface);
-}, 829, null, "react-native-mp-android-chart/lib/ScatterChart.js");
+}, 830, null, "react-native-mp-android-chart/lib/ScatterChart.js");
 __d(/* PTV/pt/TimeChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -131181,7 +132409,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(818                            ); // 818 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(819                            ); // 819 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -131315,7 +132543,7 @@ flex:1}});exports.default=
 
 
 TimeChartView;
-}, 830, null, "PTV/pt/TimeChart.js");
+}, 831, null, "PTV/pt/TimeChart.js");
 __d(/* PTV/pt/additemtoday.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -131417,7 +132645,7 @@ item_id=res["data"][i]["id"];
 }
 }
 console.log(item_id);
-var urlsave=_network2.default+'/additem2day.action';
+var urlsave=_network2.default+'additem2day.action';
 urlsave+='?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
 console.log(urlsave);
 fetch(urlsave).then(function(response){
@@ -131446,7 +132674,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(813              )}))), // 813 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -131499,13 +132727,7 @@ _react2.default.createElement(_reactNative.Text,{style:styles.text},'Value:',thi
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:this._submit},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:function onPress(){return _navigator.push({title:'NewitemView',id:'newitem',params:{email:_this.state.email}});}},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Can\'t find item,click here'))))));
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
 
 
 
@@ -131607,7 +132829,7 @@ marginLeft:80}});
 
 
 module.exports=AdditemtodayView;
-}, 831, null, "PTV/pt/additemtoday.js");
+}, 832, null, "PTV/pt/additemtoday.js");
 __d(/* PTV/pt/addrecordtoday.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -131736,7 +132958,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(813              )}))), // 813 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -131892,7 +133114,7 @@ marginLeft:80}});
 
 
 module.exports=AddrecordtodayView;
-}, 832, null, "PTV/pt/addrecordtoday.js");
+}, 833, null, "PTV/pt/addrecordtoday.js");
 __d(/* PTV/pt/profilemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132030,7 +133252,7 @@ color:'#FFF'}});
 
 
 module.exports=ProfileModifyView;
-}, 833, null, "PTV/pt/profilemodify.js");
+}, 834, null, "PTV/pt/profilemodify.js");
 __d(/* PTV/in/iprofilemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132164,7 +133386,7 @@ color:'#FFF'}});
 
 
 module.exports=IProfileModifyView;
-}, 834, null, "PTV/in/iprofilemodify.js");
+}, 835, null, "PTV/in/iprofilemodify.js");
 __d(/* PTV/pt/emailmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132306,7 +133528,7 @@ color:'#FFF'}});
 
 
 module.exports=EmailModifyView;
-}, 835, null, "PTV/pt/emailmodify.js");
+}, 836, null, "PTV/pt/emailmodify.js");
 __d(/* PTV/pt/phonemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132454,7 +133676,7 @@ borderRadius:5}});
 
 
 module.exports=PhoneModifyView;
-}, 836, null, "PTV/pt/phonemodify.js");
+}, 837, null, "PTV/pt/phonemodify.js");
 __d(/* PTV/pt/passwordmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132636,151 +133858,7 @@ color:'#FFF'}});
 
 
 module.exports=PasswordModifyView;
-}, 837, null, "PTV/pt/passwordmodify.js");
-__d(/* PTV/pt/gendermodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(507                    ); // 507 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _tcombFormNative=require(403                );var _tcombFormNative2=babelHelpers.interopRequireDefault(_tcombFormNative); // 403 = tcomb-form-native
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var GenderModifyView=_react2.default.createClass({displayName:'GenderModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={
-gender:'Male'};
-
-return{
-gender:this.state.gender};
-
-
-},
-_save:function _save(){
-var gender=this.state.gender;
-console.log(this.state.gender);
-var url=_network2.default+'modifygender.action';
-url+='?gender='+gender;
-console.log(url);
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Picker,{
-prompt:'Please choose sportname',
-style:{width:200,color:'#fff',alignItems:'center'},
-selectedValue:this.state.gender,
-onValueChange:function onValueChange(value){return _this.setState({gender:value});}},
-_react2.default.createElement(_reactNative.Picker.Item,{label:'Male',value:'Male'}),
-_react2.default.createElement(_reactNative.Picker.Item,{label:'Female',value:'Female'}))),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=GenderModifyView;
-}, 838, null, "PTV/pt/gendermodify.js");
+}, 838, null, "PTV/pt/passwordmodify.js");
 __d(/* PTV/in/iphonemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -132928,7 +134006,7 @@ borderRadius:5}});
 
 
 module.exports=IPhoneModifyView;
-}, 839, null, "PTV/in/iphonemodify.js");
+}, 840, null, "PTV/in/iphonemodify.js");
 __d(/* PTV/in/ipasswordmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133110,7 +134188,7 @@ color:'#FFF'}});
 
 
 module.exports=IPasswordModifyView;
-}, 840, null, "PTV/in/ipasswordmodify.js");
+}, 841, null, "PTV/in/ipasswordmodify.js");
 __d(/* PTV/in/igendermodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133254,7 +134332,7 @@ color:'#FFF'}});
 
 
 module.exports=IGenderModifyView;
-}, 841, null, "PTV/in/igendermodify.js");
+}, 842, null, "PTV/in/igendermodify.js");
 __d(/* PTV/in/ibirthmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133398,300 +134476,7 @@ color:'#FFF'}});
 
 
 module.exports=IBirthModifyView;
-}, 842, null, "PTV/in/ibirthmodify.js");
-__d(/* PTV/pt/birthmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(507                    ); // 507 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var BirthModifyView=_react2.default.createClass({displayName:'BirthModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={};
-
-return{};
-
-
-},
-_save:function _save(){
-var birthday=this.state.date;
-var url=_network2.default+'modifybirthday.action';
-url+='?birthday='+birthday;
-console.log(url);
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_reactNative.AsyncStorage.setItem("birthday",birthday);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Please Choose the Date'),
-_react2.default.createElement(_date2.default,{
-style:styles.datepicker,
-date:this.state.date,
-mode:'date',
-placeholder:'Date',
-format:'YYYY-MM-DD',
-confirmBtnText:'Confirm',
-cancelBtnText:'Cancel',
-onDateChange:function onDateChange(date){_this.setState({date:date});}})),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=BirthModifyView;
-}, 843, null, "PTV/pt/birthmodify.js");
-__d(/* PTV/pt/hmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(507                    ); // 507 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var HModifyView=_react2.default.createClass({displayName:'HModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={
-height:''};
-
-return{
-height:this.state.height};
-
-
-},
-_save:function _save(){
-var height=this.state.height;
-console.log(this.state.height);
-_reactNative.AsyncStorage.setItem("height",height.toString());
-var url=_network2.default+'modifyheight.action';
-url+='?height='+height;
-console.log(url);
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,{style:styles.input},
-_react2.default.createElement(_reactNative.TextInput,{
-style:{height:40,borderColor:'#2cb395',borderWidth:2,width:180,color:'#FFF',fontWeight:'bold',fontSize:16},
-onChangeText:function onChangeText(text){return _this.setState({height:text});},
-keyboardType:'numeric',
-placeholder:'Enter Height',
-value:this.state.text}),
-
-_react2.default.createElement(_reactNative.Text,{style:styles.text},' meter')),
-
-_react2.default.createElement(_reactNative.View,{style:{flex:1}},
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'},
-
-input:{
-
-flexDirection:'row'}});
-
-
-
-module.exports=HModifyView;
-}, 844, null, "PTV/pt/hmodify.js");
+}, 843, null, "PTV/in/ibirthmodify.js");
 __d(/* PTV/in/iwmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133870,306 +134655,7 @@ flexDirection:'row'}});
 
 
 module.exports=IwView;
-}, 845, null, "PTV/in/iwmodify.js");
-__d(/* PTV/pt/twmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(507                    ); // 507 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var TwView=_react2.default.createClass({displayName:'TwView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={
-weight:''};
-
-return{
-weight:this.state.weight};
-
-
-},
-componentWillMount:function componentWillMount(){
-var _that=this;
-_reactNative.AsyncStorage.getItem('email',function(err,result){
-email=result;
-_that.setState({
-email:email});
-
-});
-_reactNative.AsyncStorage.getItem('password',function(err,result){
-password=result;
-_that.setState({
-password:password});
-
-});
-},
-_save:function _save(){
-var weight=this.state.weight;
-console.log(this.state.weight);
-var url=_network2.default+'modifyweight.action';
-url+='?weight='+weight;
-console.log(url);
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,{style:styles.input},
-_react2.default.createElement(_reactNative.TextInput,{
-style:{height:40,borderColor:'#2cb395',borderWidth:2,width:180,color:'#FFF',fontWeight:'bold',fontSize:16},
-onChangeText:function onChangeText(text){return _this.setState({weight:text});},
-keyboardType:'numeric',
-placeholder:'Enter Weight',
-value:this.state.text}),
-
-_react2.default.createElement(_reactNative.Text,{style:styles.text},' kg')),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'},
-
-input:{
-
-flexDirection:'row'}});
-
-
-
-module.exports=TwView;
-}, 846, null, "PTV/pt/twmodify.js");
-__d(/* PTV/pt/bmimodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(507                    ); // 507 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var BModifyView=_react2.default.createClass({displayName:'BModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={};
-
-return{};
-
-
-},
-_save:function _save(){
-var newEmail=this.state.newEmail;
-_reactNative.AsyncStorage.getItem('userid',function(err,result){
-console.log(result);
-var trainee_id=result;
-var url=_network2.default+' ';
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.props.email),
-_react2.default.createElement(_reactNativeElements.FormInput,{containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({Email:text});}})),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=BModifyView;
-}, 847, null, "PTV/pt/bmimodify.js");
+}, 846, null, "PTV/in/iwmodify.js");
 __d(/* PTV/pt/newitem.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134274,7 +134760,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(813              )}))), // 813 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -134429,7 +134915,7 @@ marginLeft:80}});
 
 
 module.exports=NewitemView;
-}, 848, null, "PTV/pt/newitem.js");
+}, 849, null, "PTV/pt/newitem.js");
 __d(/* PTV/pt/staticmap.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134548,7 +135034,7 @@ height:250}});
 
 
 module.exports=StaticMap;
-}, 849, null, "PTV/pt/staticmap.js");
+}, 850, null, "PTV/pt/staticmap.js");
 __d(/* PTV/in/description.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134695,7 +135181,7 @@ borderRadius:5}});
 
 
 module.exports=Description;
-}, 850, null, "PTV/in/description.js");
+}, 851, null, "PTV/in/description.js");
 __d(/* PTV/pub/gymcreate.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134716,7 +135202,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(496                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 496 = react-native-swipeout
-var _network=require(476        );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ./network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var _reactNativeStarRating=require(760                       );var _reactNativeStarRating2=babelHelpers.interopRequireDefault(_reactNativeStarRating); // 760 = react-native-star-rating
 var _tcombFormNative=require(403                );var _tcombFormNative2=babelHelpers.interopRequireDefault(_tcombFormNative); // 403 = tcomb-form-native
 var screenW=_Dimensions2.default.get('window').width;
@@ -134726,7 +135212,8 @@ name:_tcombFormNative2.default.String,
 slogan:_tcombFormNative2.default.String,
 open:_tcombFormNative2.default.String,
 contact:_tcombFormNative2.default.Number,
-location:_tcombFormNative2.default.String});
+location:_tcombFormNative2.default.String,
+description:_tcombFormNative2.default.String});
 
 
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -134748,6 +135235,32 @@ this.state={};
 return{};
 
 },
+_save:function _save(){
+var value=this.refs.form.getValue();
+var name=value["name"];
+var opendate=value["open"];
+var slogan=value["slogan"];
+var location=value["location"];
+var contact=value["contact"];
+var description=value["description"];
+var url=_network2.default+'create_gym.action';
+url+='?name='+name+'&location='+location+'&opendate='+opendate+'&description='+description+'&contact='+contact+'&slogan='+slogan;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'ThomeView',
+id:'Thome'});
+
+}else
+{
+_reactNative.Alert.alert('Fail to display','Please check your data');
+}
+});
+},
 render:function render(){
 return(
 _react2.default.createElement(_reactNative.ScrollView,{
@@ -134759,7 +135272,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(778              )}))), // 778 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(813              )}))), // 813 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -134777,7 +135290,13 @@ type:Gym})),
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))),
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:function onPress(){return _navigator.jumpBack();}},
+_react2.default.createElement(_reactNative.Text,{style:{color:"white",fontSize:18}},'Back'))))));
 
 
 
@@ -134867,9 +135386,9 @@ borderRadius:5}});
 
 
 module.exports=Gymcreate;
-}, 851, null, "PTV/pub/gymcreate.js");
+}, 852, null, "PTV/pub/gymcreate.js");
 __d(/* PTV/img/ptv.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":934,"height":356,"scales":[1],"hash":"015d904d9ec5effd4d0ce8120e7c9a4c","name":"ptv","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
-}, 852, null, "PTV/img/ptv.png");
+}, 853, null, "PTV/img/ptv.png");
 ;require(194);
 ;require(0);
 //# sourceMappingURL=/index.android.map

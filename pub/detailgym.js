@@ -20,6 +20,7 @@ import Dimensions from 'Dimensions';
 import URLnetowrk from './network';
 import StarRating from 'react-native-star-rating';
 import Modal from 'react-native-modalbox';
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){

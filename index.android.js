@@ -33,16 +33,11 @@ import EmailModifyView from './pt/emailmodify';
 import URLnetowrk from './pub/network';
 import PhoneModifyView from './pt/phonemodify';
 import PasswordModifyView from './pt/passwordmodify';
-import GenderModifyView from './pt/gendermodify';
 import IPhoneModifyView from './in/iphonemodify';
 import IPasswordModifyView from './in/ipasswordmodify';
 import IGenderModifyView from './in/igendermodify';
 import IBirthModifyView from './in/ibirthmodify';
-import BirthModifyView from './pt/birthmodify';
-import HModifyView from './pt/hmodify';
 import IwView from './in/iwmodify';
-import TwView from './pt/twmodify';
-import BModifyView from './pt/bmimodify';
 import NewitemView from './pt/newitem';
 import StaticMap from './pt/staticmap'
 import Description from './in/description'
@@ -265,16 +260,6 @@ export default class PTV extends React.Component {
         <IPasswordModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'birthmodify'){
-      return (
-        <BirthModifyView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'gendermodify'){
-      return (
-        <GenderModifyView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
     if(route.id === 'ibirthmodify'){
       return (
         <IBirthModifyView {...route.params} navigator={navigator} route={route}/>
@@ -285,21 +270,7 @@ export default class PTV extends React.Component {
         <IGenderModifyView {...route.params} navigator={navigator} route={route}/>
       );
     }
-    if(route.id === 'hmodify'){
-      return (
-        <HModifyView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'iwmodify'){
-      return (
-        <IwView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
-    if(route.id === 'twmodify'){
-      return (
-        <TwView {...route.params} navigator={navigator} route={route}/>
-      );
-    }
+
     if(route.id === 'bmimodify'){
       return (
         <BModifyView {...route.params} navigator={navigator} route={route}/>
