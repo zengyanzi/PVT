@@ -61,7 +61,8 @@ var SearchTrainee = React.createClass({
   renderRow(rowData: string, sectionID: number, rowID: number) {
     return (
       <TouchableOpacity
-              onPress={() =>this.refs.modal1.open()}>
+              onPressIn={() => this.setState({id: rowData.id})}
+              onPress={()=>this.refs.modal1.open()} >
         <View style={styles.li}>
           <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
             <Text style={styles.liText}>Email:{rowData.email}</Text>
@@ -84,14 +85,14 @@ var SearchTrainee = React.createClass({
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
           enableEmptySections={true}
-        />               
+        />                 
       </View> 
       <Modal style={[styles.modal, styles.modal3]} 
         position={"center"} ref={"modal1"} 
         isDisabled={this.state.isDisabled}>
         <View>
           <TouchableOpacity>
-            <Text>Request</Text>
+            <Text>Request {this.state.id}</Text>
           </TouchableOpacity>
         </View>    
       </Modal>  
