@@ -34,9 +34,9 @@ var TraineeView = React.createClass({
     };
   },   
 _search:function(text){
-    var query=this.state.keyword;
-    var url = URLnetowrk+'search_gym.action'; // get the Trainee 
-    url+= '?query='+query;
+    var name=this.state.keyword;
+    var url = URLnetowrk+'search.action'; // get the Trainee 
+    url+='?name='+name+'&'+'email='+name;
     console.log(url);
     fetch(url).then(function(response) {  
        return response.json();
@@ -46,8 +46,8 @@ _search:function(text){
         console.log(res);
         _navigator.push({
           title:'SearchTrainee',
-          id:'SearchTrainee',
-          params:{data:res["data"][0]}
+          id:'searchtrainee',
+          params:{data:res["data"]}
         })
       }else{
          Alert.alert (

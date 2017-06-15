@@ -10,28 +10,64 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
-  Modal,
   ListView
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
 import { List, ListItem } from 'react-native-elements';
 import URLnetowrk from '../pub/network';
+import Modal from 'react-native-modalbox';
+
 var screenW = Dimensions.get('window').width;
 var _navigator ;
+
 var SearchTrainee = React.createClass({
 
   getInitialState: function(){
     _navigator = this.props.navigator;
+    var rows =this.props.data;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-       email:'jenny@gmail.com',
-       bmi:'16'
+      dataSource: ds.cloneWithRows(rows),
+      scrollEnabled: true,
     };
-    return {      
-      email:this.state.email,
-      bmi:this.state.bmi
+    return {
+      dataSource: this.state.dataSource,
+      scrollEnabled: true,
     };
+  },
+//  set scrolling to true/false
+  allowScroll(scrollEnabled) {
+    this.setState({ scrollEnabled: scrollEnabled });
+  },
+  //  set active swipeout item
+  handleSwipeout(sectionID,rowID) {
+    for (var i = 0; i < this.state.rows.length; i++) {
+      if (i != rowID) {
+        this.state.rows[i].active = false;
+      }else{
+        this.state.rows[i].active = true;
+      }
+    }
+    this.updateDataSource(this.state.rows);
+  },
+
+  updateDataSource(data) {
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(data),
+    });
+  },
+
+  renderRow(rowData: string, sectionID: number, rowID: number) {
+    return (
+      <TouchableOpacity
+              onPress={() =>this.refs.modal1.open()}>
+        <View style={styles.li}>
+          <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
+            <Text style={styles.liText}>Email:{rowData.email}</Text>
+        </View>
+      </TouchableOpacity>
+    );
   },
   _logout: function(){
 
@@ -42,36 +78,24 @@ var SearchTrainee = React.createClass({
         contentContainerStyle={{flex:1}}
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps='never'>
-        <View style={styles.maincontain}>
-          <View style={[styles.Top,styles.Bottomline]}>
-            <View style={styles.Topbar}>
-            </View>        
-            <View style={styles.right}>
-            </View>
-          </View>
-          <View >
-            <List>
-              <ListItem
-                roundAvatar
-                title='Zeng Jenny'
-                subtitle={
-                  <View style={styles.subtitleView}>
-                    <Text style={styles.ratingText}>{this.state.email}</Text>
-                  </View>
-                }
-                avatar={require('../img/profile_normal.png')}
-              />
-            </List>
-                 
-            <View>
-              <TouchableOpacity style={styles.btn}
-              onPress={this._logout}>
-                <Text style={styles.text}>Request</Text>
-              </TouchableOpacity>
-            </View>       
-          </View> 
-        </View>   
-      </ScrollView>
+      <View style={styles.maincontain}>
+        <ListView style={styles.listview}
+          scrollEnabled={this.state.scrollEnabled}
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow}
+          enableEmptySections={true}
+        />               
+      </View> 
+      <Modal style={[styles.modal, styles.modal3]} 
+        position={"center"} ref={"modal1"} 
+        isDisabled={this.state.isDisabled}>
+        <View>
+          <TouchableOpacity>
+            <Text>Request</Text>
+          </TouchableOpacity>
+        </View>    
+      </Modal>  
+    </ScrollView>
     );
   },
 });
@@ -81,55 +105,53 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
   },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
 
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-    flex:1,
-    flexDirection: 'row',
-  },
   maincontain:
   {
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
   },
-   subtitleView: {
-    flexDirection: 'row',
-    paddingLeft: 10,
-    paddingTop: 5
+listview: {
+    flex: 1,
   },
-  ratingImage: {
-    height: 19.21,
-    width: 100
+  li: {
+    backgroundColor: '#fff',
+    borderBottomColor: '#38bda0',
+    borderColor: 'transparent',
+    borderWidth: 1,
+    paddingLeft: 16,
+    paddingTop: 14,
+    height:120,
+    paddingBottom: 16,
   },
-  ratingText: {
-    paddingLeft: 10,
-    color: 'grey'
+  liContainer: {
+    flex: 2,
   },
-    btn:{
+  liText: {
+    color: '#333',
+    fontSize: 18,
+  },
+  lidate:{
+    flex: 1,
+    flexDirection:'row',
+    alignItems: 'center',
+  },
+    modal: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  modal3: {
+    height: 60,
+    width: 260,
+    borderRadius:25
+  },
+  btn:{
      alignItems: 'center',
      justifyContent: 'center',
      backgroundColor: '#2cb395',
-     height: 50,
+     height: 30,
      borderRadius: 5,
-   }
+   },
 });
 module.exports = SearchTrainee;
