@@ -44,6 +44,7 @@ import Description from './in/description'
 import DetailGymView from './pub/detailgym';
 import Gymcreate from './pub/gymcreate';
 import SearchTrainee from './in/searchtrainee';
+import SearchTrainer from './pt/searchtrainer';
 
 export default class PTV extends React.Component {
   constructor(props) {
@@ -306,6 +307,11 @@ export default class PTV extends React.Component {
     if(route.id === 'searchtrainee'){
       return (
         <SearchTrainee {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'searchtrainer'){
+      return (
+        <SearchTrainer {...route.params} navigator={navigator} route={route}/>
       );
     }
   }
