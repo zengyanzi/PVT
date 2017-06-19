@@ -86,6 +86,7 @@ var IhomeView = React.createClass({
               title="Trainee"
               renderIcon={() => <Image  source={require('../img/trainer_normal.png') }/>}
               renderSelectedIcon={() => <Image  source={require('../img/trainer_pressed.png') }/>}
+               badgeText="1"
               onPress={() => this.setState({ selectedTab: 'Trainee' })}       
             >
               <TraineeView {...this.props}/>

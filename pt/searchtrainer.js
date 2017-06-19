@@ -70,8 +70,29 @@ var SearchTrainer = React.createClass({
       </TouchableOpacity>
     );
   },
-  _logout: function(){
-
+  _request: function(){
+    AsyncStorage.getItem('userid',(err, result) => {
+      var trainee_id=result;
+      var instructor_id=this.state.id;
+      var url = URLnetowrk+'mapping.action'; // get the Trainee 
+      url+='?trainee_id='+trainee_id+'&'+'instructor_id='+instructor_id+'&'+'status='+11;
+      console.log(url);
+      fetch(url).then(function(response) {  
+         return response.json();
+      }).then(function(res) {
+        console.log(res);
+        if (res["data"]==true) {
+          console.log(res);
+          _navigator.jumpBack();
+       
+        }else{
+           Alert.alert (
+            'Sorry',
+            'Try Again'
+          )
+        }
+      });
+    });
   },
   render: function(){
     return(
@@ -91,7 +112,7 @@ var SearchTrainer = React.createClass({
         position={"center"} ref={"modal1"} 
         isDisabled={this.state.isDisabled}>
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this._request} >
             <Text>Request {this.state.id}</Text>
           </TouchableOpacity>
         </View>    

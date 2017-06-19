@@ -64,14 +64,35 @@ var SearchTrainee = React.createClass({
               onPressIn={() => this.setState({id: rowData.id})}
               onPress={()=>this.refs.modal1.open()} >
         <View style={styles.li}>
-          <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
+          <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text> {rowData.name}</Text></View>
             <Text style={styles.liText}>Email:{rowData.email}</Text>
         </View>
       </TouchableOpacity>
     );
   },
-  _logout: function(){
-
+  _request: function(){
+    AsyncStorage.getItem('userid',(err, result) => {
+      var trainee_id=result;
+      var instructor_id=this.state.id;
+      var url = URLnetowrk+'mapping.action'; // get the Trainee 
+      url+='?trainee_id='+trainee_id+'&'+'instructor_id='+instructor_id+'&'+'status='+21;
+      console.log(url);
+      fetch(url).then(function(response) {  
+         return response.json();
+      }).then(function(res) {
+        console.log(res);
+        if (res["data"]==true) {
+          console.log(res);
+          _navigator.jumpBack();
+       
+        }else{
+           Alert.alert (
+            'Sorry',
+            'Try Again'
+          )
+        }
+      });
+    });
   },
   render: function(){
     return(
@@ -91,7 +112,7 @@ var SearchTrainee = React.createClass({
         position={"center"} ref={"modal1"} 
         isDisabled={this.state.isDisabled}>
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this._request} >
             <Text>Request {this.state.id}</Text>
           </TouchableOpacity>
         </View>    

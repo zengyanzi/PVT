@@ -56,11 +56,11 @@ var TrainerlistView = React.createClass({
   },
   componentWillMount() {
     let _that=this;
-     AsyncStorage.getItem('instructorid',(err,result)=>{
-      var instructor_id=result;
+     AsyncStorage.getItem('userid',(err,result)=>{
+      var trainee_id=result;
       var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-       var url = URLnetowrk+'instructor/mytrainees.action';// load gym list
-       url+= '?instructor_id='+instructor_id;
+       var url = URLnetowrk+'';// load gym list
+       url+= '?trainee_id='+trainee_id;
        console.log(url);
        fetch(url).then(function(response) {  
          return response.json();
