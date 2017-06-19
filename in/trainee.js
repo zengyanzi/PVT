@@ -35,7 +35,7 @@ var TraineeView = React.createClass({
   },   
 _search:function(text){
     var name=this.state.keyword;
-    var url = URLnetowrk+'search.action'; // get the Trainee 
+    var url = URLnetowrk+'instructor/search.action'; // get the Trainee 
     url+='?name='+name+'&'+'email='+name;
     console.log(url);
     fetch(url).then(function(response) {  

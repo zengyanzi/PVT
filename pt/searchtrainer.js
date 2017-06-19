@@ -64,22 +64,14 @@ var SearchTrainer = React.createClass({
               onPressIn={() => this.setState({id: rowData.id})}
               onPress={()=>this.refs.modal1.open()} >
         <View style={styles.li}>
-          <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text>{rowData.name}</Text></View>
+          <View  style={styles.lidate}><Image  source={require('../img/gymicon.png') }/><Text> {rowData.name}</Text></View>
             <Text style={styles.liText}>Email:{rowData.email}</Text>
         </View>
       </TouchableOpacity>
     );
   },
-  _requestt: function(){
-    var id= this.state.id;
-    var url = URLnetowrk+'search.action'; // get the Trainee 
-    url+='?name='+name+'&'+'email='+name;
-    console.log(url);
-    fetch(url).then(function(response) {  
-       return response.json();
-    }).then(function(res) {
-      console.log(res);
-    });
+  _logout: function(){
+
   },
   render: function(){
     return(
@@ -99,7 +91,7 @@ var SearchTrainer = React.createClass({
         position={"center"} ref={"modal1"} 
         isDisabled={this.state.isDisabled}>
         <View>
-          <TouchableOpacity  onPress={this._request} >>
+          <TouchableOpacity>
             <Text>Request {this.state.id}</Text>
           </TouchableOpacity>
         </View>    

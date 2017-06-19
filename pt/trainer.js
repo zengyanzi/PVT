@@ -44,8 +44,8 @@ _search:function(text){
       if (res["data"].length!=0) {
         console.log(res);
         _navigator.push({
-          title:'SearchTrainee',
-          id:'searchtrainee',
+          title:'SearchTrainer',
+          id:'searchtrainer',
           params:{data:res["data"]}
         })
       }else{
@@ -68,7 +68,7 @@ _search:function(text){
             round
             onSubmitEditing={() => this._search()}
             onChangeText={(text) => this.setState({keyword: text})}
-            placeholder='Add your Trainee here' />                          
+            placeholder='Add your Trainer here' />                          
         <TrainerlistView {...this.props}/> 
       </ScrollView>
     );
