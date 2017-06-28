@@ -45,6 +45,19 @@ var IhomeView = React.createClass({
        selectedTab:this.state.selectedTab,
     };
   },
+  componentWillMount() {
+    let _that=this;
+     AsyncStorage.getItem('instructorid',(err,result)=>{
+      var instructor_id=result;
+      var urlmap =URLnetowrk+'/instructor/find_mapping.action';//FIND TRAINEES MAPPING STATUS;
+      urlmap+= '?instructor_id='+instructor_id;
+      fetch(urlmap).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        console.log(res);   
+      }); 
+    });
+  },
  render: function(){ 
     return (
       <ScrollView 

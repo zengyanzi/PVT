@@ -45,6 +45,19 @@ var ThomeView = React.createClass({
        selectedTab:this.state.selectedTab,
     };
   },
+  componentWillMount() {
+    let _that=this;
+     AsyncStorage.getItem('userid',(err,result)=>{
+      var trainee_id=result;
+      var urlmap =URLnetowrk+'/find_mapping.action';//FIND TRAINEES MAPPING STATUS;
+      urlmap+= '?trainee_id='+trainee_id;
+      fetch(urlmap).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        console.log(res);   
+      }); 
+    });
+  },
  render: function(){ 
     return (
       <ScrollView 
