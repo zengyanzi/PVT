@@ -21,6 +21,7 @@ import { SearchBar } from 'react-native-elements'
 import Swiper from 'react-native-swiper';
 import AddtraineeView from './addtrainee';
 import TrainneelistView from './traineelist';
+import TraineenewView from './traineenew';
 import URLnetowrk from '../pub/network';
 
 var width = Dimensions.get('window').width;
@@ -69,8 +70,23 @@ _search:function(text){
             round
             onSubmitEditing={() => this._search()}
             onChangeText={(text) => this.setState({keyword: text})}
-            placeholder='Add your Trainee here' />                          
-        <TrainneelistView {...this.props}/> 
+            placeholder='Add your Trainee here' />
+        <ScrollableTabView           
+            initialPage={1}
+            renderTabBar={() => <ScrollableTabBar  />}
+          >
+            <ScrollView tabLabel="List" style={styles.tabView}>
+              <View style={styles.card}>
+                <TrainneelistView {...this.props}/> 
+              </View>
+            </ScrollView>
+            <ScrollView tabLabel="New" style={styles.tabView}>
+              <View style={styles.card}>
+                <TraineenewView {...this.props}/>
+              </View>
+            </ScrollView>
+          </ScrollableTabView>                              
+        
       </ScrollView>
     );
   },

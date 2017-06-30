@@ -49,8 +49,9 @@ var ThomeView = React.createClass({
     let _that=this;
      AsyncStorage.getItem('userid',(err,result)=>{
       var trainee_id=result;
-      var urlmap =URLnetowrk+'/find_mapping.action';//FIND TRAINEES MAPPING STATUS;
+      var urlmap =URLnetowrk+'find_mapping.action';//FIND TRAINEES MAPPING STATUS;
       urlmap+= '?trainee_id='+trainee_id;
+      console.log(urlmap);
       fetch(urlmap).then(function(response) {  
         return response.json();
       }).then(function(res) {

@@ -70,7 +70,7 @@ var TrainneelistView = React.createClass({
          if (res["data"]!=null) {
            _that.setState({
              dataSource: ds.cloneWithRows(res["data"]),
-             rows:res["data"][0]
+             rows:res["data"]
            });
          }else{
            Alert.alert('Fail to display','Please check your data'); 

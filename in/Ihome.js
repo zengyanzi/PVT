@@ -49,12 +49,23 @@ var IhomeView = React.createClass({
     let _that=this;
      AsyncStorage.getItem('instructorid',(err,result)=>{
       var instructor_id=result;
-      var urlmap =URLnetowrk+'/instructor/find_mapping.action';//FIND TRAINEES MAPPING STATUS;
+      var urlmap =URLnetowrk+'instructor/find_mapping.action';//FIND TRAINEES MAPPING STATUS;
       urlmap+= '?instructor_id='+instructor_id;
+      console.log(urlmap);
       fetch(urlmap).then(function(response) {  
         return response.json();
       }).then(function(res) {
-        console.log(res);   
+        console.log(res);
+        if (res["data"]!=null) {
+          for (var i = 0; i < res["data"].length; i++) {
+            if (res["data"][i]["status"]=true) {
+              _that.setState({
+                notification:1
+              })
+            };
+            
+          };
+        };   
       }); 
     });
   },
@@ -99,8 +110,8 @@ var IhomeView = React.createClass({
               title="Trainee"
               renderIcon={() => <Image  source={require('../img/trainer_normal.png') }/>}
               renderSelectedIcon={() => <Image  source={require('../img/trainer_pressed.png') }/>}
-               badgeText="1"
-              onPress={() => this.setState({ selectedTab: 'Trainee' })}       
+              badgeText={this.state.notification}
+              onPress={() => this.setState({ selectedTab: 'Trainee', notification: ''})}       
             >
               <TraineeView {...this.props}/>
             </TabNavigator.Item>
