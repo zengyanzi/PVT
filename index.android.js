@@ -45,13 +45,18 @@ import DetailGymView from './pub/detailgym';
 import Gymcreate from './pub/gymcreate';
 import SearchTrainee from './in/searchtrainee';
 import SearchTrainer from './pt/searchtrainer';
-
+import GuideView from './Guide';
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
       this.state = {};
       // var type =  AsyncStorage.getItem('type');
-      var type;
+   AsyncStorage.getItem('isFirst',(error,result)=>{
+
+      if (result == 'false') {
+        console.log('not first');
+
+             var type;
       AsyncStorage.getItem('type',(err, result) => {
         console.log(result);
         type=result;
@@ -111,11 +116,31 @@ export default class PTV extends React.Component {
             });
           }
         };
-      });   
+      }); 
+
+      } else  {
+
+          console.log('is first');
+
+          // 存储
+          AsyncStorage.setItem('isFirst','false',(error)=>{
+              if (error) {
+                  alert(error);
+              }
+          });
+
+         _navigator.push({
+        title:'GuideView',
+        id:'Guide'
+        });
+      }
+    });
+  
     }
   configureScenceAndroid(){
     return Navigator.SceneConfigs.FadeAndroid;
   }
+
   renderSceneAndroid(route,navigator){
     _navigator = navigator;
     if(route.id === 'main'){
@@ -314,7 +339,13 @@ export default class PTV extends React.Component {
         <SearchTrainer {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'Guide'){
+      return (
+        <GuideView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
   }
+
  render(){
     var renderScene = this.renderSceneAndroid;
     var configureScence = this.configureScenceAndroid;
@@ -326,6 +357,9 @@ export default class PTV extends React.Component {
       renderScene={renderScene}/>
    );
   }
+ 
+
+
 }
 var styles = StyleSheet.create({
   container:{
