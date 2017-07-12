@@ -17,8 +17,6 @@ import {
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import Topview from './top.js';
-import BottomView from './bottom.js'
 import URLnetowrk from '../pub/network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -49,7 +47,7 @@ detailrows = [
       text: "Bike Fast  3min  Moderate  15  60Sec",      
     },   
   ];
-var DetailPlanView = React.createClass({
+var TDetailPlanView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -217,12 +215,26 @@ var DetailPlanView = React.createClass({
           keyboardDismissMode='on-drag'
           keyboardShouldPersistTaps='never'>
         <View style={styles.maincontain}>
-        
-          <Topview {...this.props}/>
-
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                <TouchableOpacity 
+                        onPress={() => _navigator.push({title:'TCreateplanView',id:'Tcreateplan',params:{trainee_id:this.props.trainee_id}})}>
+                  <Image source={require('../img/setting_normal.png') }/>
+                </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              <View style={[styles.Topbar,styles.Right]}>
+                <TouchableOpacity 
+                    onPress={() => _navigator.push({title:'TAdditemtoday',id:'Tadditemtoday',params:{trainee_id:this.props.trainee_id}})}>
+                  <Image source={require('../img/add_pressed.png') }/>
+                </TouchableOpacity> 
+              </View>
+            </View>  
           <View style={[styles.header,styles.Bottomline]}>
             <Image  source={require('../img/plan_normal.png') }/>
-            <Text>{this.state.day} </Text>
+            <Text>{this.props.trainee_name}   {this.state.day} </Text>
           </View>
           <ListView style={styles.listview}
             scrollEnabled={this.state.scrollEnabled}
@@ -304,4 +316,4 @@ var styles = StyleSheet.create({
     height:50,
   },
 });
-module.exports = DetailPlanView;
+module.exports = TDetailPlanView;

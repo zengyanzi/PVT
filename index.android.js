@@ -19,13 +19,18 @@ import TraineeregisterView from'./pt/traineeregister';
 import ThomeView from './pt/Thome';
 import IhomeView from './in/Ihome';
 import DetailPlanView from './pt/detailplan';
+import TDetailPlanView from './in/Tdetailplan';
 import EditPlanView from './pt/editplan';
+import TPlanView from './in/Tplan';
+import TRecordView from './in/Trecord';
+import TCreateplanView from './in/Tcreateplan';
 import CreateplanView from './pt/createplan';
 import PlanInfoView from './pt/planinfo';
 import EditRecordView from './pt/editrecord';
 import DetailRecordView from './pt/detailrecord';
 import ChartView from './pt/chart';
 import AdditemtodayView from'./pt/additemtoday';
+import TAdditemtodayView from'./in/Tadditemtoday';
 import AddrecordtodayView from'./pt/addrecordtoday';
 import ProfileModifyView from './pt/profilemodify';
 import IProfileModifyView from './in/iprofilemodify';
@@ -203,6 +208,16 @@ export default class PTV extends React.Component {
         <PlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'Tplan'){
+      return (
+        <TPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Trecord'){
+      return (
+        <TRecordView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     if(route.id === 'Thome'){
       return (
         <ThomeView {...route.params} navigator={navigator} route={route}/>
@@ -218,6 +233,11 @@ export default class PTV extends React.Component {
         <DetailPlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'Tdetailplan'){
+      return (
+        <TDetailPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     if(route.id === 'editplan'){
       return (
         <EditPlanView {...route.params} navigator={navigator} route={route}/>
@@ -226,6 +246,11 @@ export default class PTV extends React.Component {
     if(route.id === 'createplan'){
       return (
         <CreateplanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Tcreateplan'){
+      return (
+        <TCreateplanView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'planinfo'){
@@ -251,6 +276,11 @@ export default class PTV extends React.Component {
     if(route.id === 'additemtoday'){
       return (
         <AdditemtodayView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Tadditemtoday'){
+      return (
+        <TAdditemtodayView {...route.params} navigator={navigator} route={route}/>
       );
     }
    if(route.id === 'addrecordtoday'){

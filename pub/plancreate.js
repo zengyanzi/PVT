@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import URLnetowrk from '../pub/network';
+import URLnetowrk from './network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -134,7 +134,7 @@ var PlanCreateView = React.createClass({
         sectionID={sectionID}
         autoClose={rowData.autoClose}
         backgroundColor='transparent'
-        close={!rowData.active}
+        onClose={() => console.log('===close') }
         onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
         scroll={event => this.allowScroll(event)}>
           <TouchableHighlight style={styles.li} activeOpacity={0.5} underlayColor = '#2cb395'  onPress={() =>this.setState({planid:rowData.id})}>
@@ -143,12 +143,7 @@ var PlanCreateView = React.createClass({
       </Swipeout>
     );
   },
-_editplan:function(){
-   _navigator.push({
-    title:'TraineeloinView',
-    id:'traineelogin'
-  })
-},
+
   render: function(){
     return(
       <ScrollView 

@@ -31,7 +31,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   return true;
 });
 var _navigator ;
-var AdditemtodayView = React.createClass({
+var TAdditemtodayView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     function floor (d) {
@@ -84,9 +84,10 @@ _submit:function(){
     var item_id;
     var sportsize=this.state.value;
     var day=this.state.date;
-    AsyncStorage.getItem('userid',(err, result) => {
+    AsyncStorage.getItem('instructorid',(err, result) => {
       console.log(result);
-      var trainee_id=result;
+      var instructor_id=result;
+      var trainee_id=this.props.trainee_id;
       var url = URLnetowrk+'item.action'; // get the item data again 
       fetch(url).then(function(response) {  
          return response.json();
@@ -99,16 +100,16 @@ _submit:function(){
           }
         }
         console.log(item_id);
-        var urlsave=URLnetowrk+'/additem2day.action'; 
-        urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
+        var urlsave=URLnetowrk+'instructor/additem2day.action'; 
+        urlsave += '?trainee_id='+trainee_id+'&instructor_id='+instructor_id+'&item_id='+item_id+'&day='+day+'&sportsize='+sportsize;
         console.log(urlsave);
         fetch(urlsave).then(function(response) {  
           return response.json();
         }).then(function(res) {
           console.log(res);
           _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
+            title:'IhomeView',
+            id:'Ihome',
           })
         });
       }else{
@@ -127,7 +128,7 @@ _submit:function(){
           <View style={[styles.Top,styles.Bottomline]}>
             <View style={[styles.Topbar,styles.Left]}>
               <TouchableOpacity 
-                  onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
+                  onPress={() =>  _navigator.jumpBack()}>
                 <Image source={require('../img/back.png') }/>
               </TouchableOpacity> 
             </View>
@@ -185,10 +186,7 @@ _submit:function(){
             </TouchableOpacity>
           </View>
           <View>
-            <TouchableOpacity style={styles.btn}
-            onPress={() => _navigator.push({title:'NewitemView',id:'newitem',params:{email:this.state.email}})}>
-              <Text style={styles.text}>Can't find item,click here</Text>
-            </TouchableOpacity>
+
           </View>
         </View>
       </ScrollView>
@@ -288,4 +286,4 @@ var styles = StyleSheet.create({
   },
 
 });
-module.exports = AdditemtodayView;
+module.exports = TAdditemtodayView;

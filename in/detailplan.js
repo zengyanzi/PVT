@@ -49,7 +49,7 @@ detailrows = [
       text: "Bike Fast  3min  Moderate  15  60Sec",      
     },   
   ];
-var DetailPlanView = React.createClass({
+var TDetailPlanView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
@@ -300,4 +300,4 @@ var styles = StyleSheet.create({
     height:50,
   },
 });
-module.exports = DetailPlanView;
+module.exports = TDetailPlanView;

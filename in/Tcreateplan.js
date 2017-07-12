@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import {
   Image,
@@ -16,12 +17,11 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Dimensions from 'Dimensions';
-import PlanView from './plan.js';
 import DatePicker from './date.js';
 import CheckBox from 'react-native-check-box';
 import keys from './keys.json';
-import PlanCreateView from './plancreate';
-import URLnetowrk from './network';
+import PlanCreateView from '../pub/plancreate';
+import URLnetowrk from '../pub/network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -111,8 +111,9 @@ var TCreateplanView = React.createClass({
     var start=this.state.startdate;
     var end=this.state.enddate; 
     let _that=this;     
-      AsyncStorage.getItem('userid',(err, result) => {
-        var traineeid=result;
+      AsyncStorage.getItem('instructorid',(err, result) => {
+        var instructor_id=result;
+        var traineeid=this.props.trainee_id;
         AsyncStorage.getItem('planid',(err, result) => {
         console.log(result);//check the planid
         var optionplanid=result;
@@ -129,7 +130,8 @@ var TCreateplanView = React.createClass({
           }
         } 
         var attendanceday=attendance.join();// join the addendance number
-        var url = URLnetowrk+'createplan.action';
+   
+        var url = URLnetowrk+'instructor/createplan.action';
       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
         url += '?traineeid='+traineeid+'&start='+start+'&end='+end+'&attendance='+attendance+'&optionplanid='+optionplanid;
         fetch(url).then(function(response) {  
@@ -138,8 +140,8 @@ var TCreateplanView = React.createClass({
             console.log(res);
             if (res["data"]!=null) {
                _navigator.push({
-                  title:'ThomeView',
-                  id:'Thome',
+                  title:'IhomeView',
+                  id:'Ihome',
               })
             };
           })
@@ -156,12 +158,12 @@ var TCreateplanView = React.createClass({
           <View style={[styles.Top,styles.Bottomline]}>
             <View style={[styles.Topbar,styles.Left]}>
               <TouchableOpacity 
-                 onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
-                <Image source={require('../../img/back.png') }/>
+                 onPress={() =>  _navigator.jumpBack()}>
+                <Image source={require('../img/back.png') }/>
               </TouchableOpacity> 
             </View>
             <View style={styles.Topbar}>
-              <Image source={require('../../img/ptv_sized.png') }/>
+              <Image source={require('../img/ptv_sized.png') }/>
             </View>
             <View style={[styles.Topbar,styles.Right]}>          
             </View>
@@ -192,11 +194,11 @@ var TCreateplanView = React.createClass({
                 onDateChange={(date) => {this.setState({enddate: date});}}/>
             </View>
           </View>
-          <View style={{flex:1}}>
+          <View style={{flex:2}}>
             <Text style={styles.text}>Please Choose attendance</Text>
             {this.renderView()}
           </View>
-          <View style={{height:120,flex:3}}>
+          <View style={{height:180,flex:2}}>
             <Text style={styles.text}>Please Choose Your Plan</Text>
               <PlanCreateView {...this.props}/>
           </View>
