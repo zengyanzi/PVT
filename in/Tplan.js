@@ -159,21 +159,9 @@ var TPlanView = React.createClass({
     },
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
-    var btnsTypes = [
-      { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan',
-                params:{date:rowData.day,
-                  itemname:rowData.item_name,
-                  dayplan_id:rowData.id
-                }
-              })},type: 'primary',},
-        { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
-    ];
     return (
       <Swipeout
         left={rowData.left}
-        right={btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
@@ -215,10 +203,6 @@ var TPlanView = React.createClass({
                 <Image source={require('../img/ptv_sized.png') }/>
               </View>
               <View style={[styles.Topbar,styles.Right]}>
-                <TouchableOpacity 
-                    onPress={() => _navigator.push({title:'TAdditemtoday',id:'Tadditemtoday',params:{trainee_id:this.props.trainee_id}})}>
-                  <Image source={require('../img/add_pressed.png') }/>
-                </TouchableOpacity> 
               </View>
             </View>  
           <View style={[styles.header,styles.Bottomline]}>

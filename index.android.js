@@ -21,6 +21,7 @@ import IhomeView from './in/Ihome';
 import DetailPlanView from './pt/detailplan';
 import TDetailPlanView from './in/Tdetailplan';
 import EditPlanView from './pt/editplan';
+import TEditPlanView from './in/Teditplan';
 import TPlanView from './in/Tplan';
 import TRecordView from './in/Trecord';
 import TCreateplanView from './in/Tcreateplan';
@@ -241,6 +242,11 @@ export default class PTV extends React.Component {
     if(route.id === 'editplan'){
       return (
         <EditPlanView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Teditplan'){
+      return (
+        <TEditPlanView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'createplan'){

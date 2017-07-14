@@ -176,8 +176,8 @@ var TDetailPlanView = React.createClass({
   renderRow(rowData: string, sectionID: number, rowID: number) {
     var btnsTypes = [
       { text: 'Edit', onPress: function(){ _navigator.push({
-                title:'EditplanView',
-                id:'editplan',
+                title:'TEditplanView',
+                id:'Teditplan',
                 params:{date:rowData.day,
                   itemname:rowData.item_name,
                   dayplan_id:rowData.id

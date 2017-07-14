@@ -17,7 +17,6 @@ import {
 } from 'react-native';
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
-import Topview from './top.js';
 import URLnetowrk from '../pub/network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -31,7 +30,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   return true;
 });
 var _navigator ;
-var EditPlanView = React.createClass({
+var TEditPlanView = React.createClass({
 //set the original data
   getInitialState: function(){
     _navigator = this.props.navigator;
@@ -78,8 +77,8 @@ var EditPlanView = React.createClass({
         }).then(function(res) {
           console.log(res);
           _navigator.push({
-            title:'ThomeView',
-            id:'Thome',       
+            title:'IhomeView',
+            id:'Ihome',       
           })
         });
       }else{
@@ -96,7 +95,23 @@ var EditPlanView = React.createClass({
         keyboardShouldPersistTaps='never'>
       <View style={styles.maincontain}>
         <View>
-          <Topview {...this.props}/>
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+                <TouchableOpacity 
+                        onPress={() => _navigator.push({title:'TCreateplanView',id:'Tcreateplan',params:{trainee_id:this.props.trainee_id}})}>
+                  <Image source={require('../img/setting_normal.png') }/>
+                </TouchableOpacity> 
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              <View style={[styles.Topbar,styles.Right]}>
+                <TouchableOpacity 
+                    onPress={() => _navigator.push({title:'TAdditemtoday',id:'Tadditemtoday',params:{trainee_id:this.props.trainee_id}})}>
+                  <Image source={require('../img/add_pressed.png') }/>
+                </TouchableOpacity> 
+              </View>
+            </View>  
         </View>
         <View>
           <Text style={styles.text}>Sport Date {this.props.date}</Text>
@@ -221,4 +236,4 @@ var styles = StyleSheet.create({
   },
 
 });
-module.exports = EditPlanView;
+module.exports = TEditPlanView;
