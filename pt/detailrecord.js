@@ -118,7 +118,8 @@ var DetailRecordView = React.createClass({
                   title:'EditrecordView',
                   id:'editrecord',
                   params:{date:rowData.day,
-                    itemname:rowData.itemname
+                  itemname:rowData.itemname,
+                  record_id:rowData.id
                   }
                 })},type: 'primary',},
           { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
