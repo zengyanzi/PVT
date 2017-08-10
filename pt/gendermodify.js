@@ -24,10 +24,10 @@ var GenderModifyView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = { 
-      gender:'Male'
+    
     };
     return {   
-      gender:this.state.gender
+     
     };
 
   },
@@ -80,6 +80,7 @@ var GenderModifyView = React.createClass({
     fetch(url).then(function(response) {  
       return response.json();
     }).then(function(res) {
+      AsyncStorage.setItem("gender",gender);
       if (res["data"]!=null) {
           console.log(res);
           _navigator.push({

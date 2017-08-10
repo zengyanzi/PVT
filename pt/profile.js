@@ -95,6 +95,7 @@ var ProfileView = React.createClass({
     })
     AsyncStorage.getItem('gender',(err,result)=>{
       gender=result;
+      console.log(result);   
       _that.setState({
         gender:gender
       })

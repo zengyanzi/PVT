@@ -91,8 +91,7 @@ var IwView = React.createClass({
         }).then(function(res){
           if (res["data"]!=null) {
           console.log(res);
-          var bmi=res['data']['bmi'].toString();
-          AsyncStorage.setItem('bmi',bmi);
+          AsyncStorage.setItem('initial_weight',weight);
           _navigator.push({
             title:'ThomeView',
             id:'Thome',

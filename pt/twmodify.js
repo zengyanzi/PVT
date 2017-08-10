@@ -24,10 +24,10 @@ var TwView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-       target_weight:30
+   
     };
     return {
-      target_weight:this.state.target_weight
+    
     };
 
   },
@@ -75,13 +75,14 @@ var TwView = React.createClass({
     var weight=this.state.weight;
     console.log(this.state.weight);
     var url = URLnetowrk+'modifytarget.action'; // modify the height
-    url+= '?weight='+weight;
+    url+= '?target='+weight;
     console.log(url);
     fetch(url).then(function(response) {  
       return response.json();
     }).then(function(res) {
       if (res["data"]!=null) {
         console.log(res);
+      AsyncStorage.setItem("target_weight",weight);
         _navigator.push({
           title:'ThomeView',
           id:'Thome',
