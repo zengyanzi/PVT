@@ -24,10 +24,10 @@ var TwView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-       weight:''
+       target_weight:30
     };
     return {
-      weight:this.state.weight
+      target_weight:this.state.target_weight
     };
 
   },
@@ -39,17 +39,42 @@ var TwView = React.createClass({
           email:email
        })
     })
-    AsyncStorage.getItem('password',(err,result)=>{
-       password=result;
+    AsyncStorage.getItem('bmi',(err,result)=>{
+       bmi=parseFloat(result).toFixed(2);
+       console.log(bmi);
        _that.setState({
-          password:password
+          bmi:bmi
+       })
+    })
+    AsyncStorage.getItem('gender',(err,result)=>{
+      gender=result;
+      _that.setState({
+        gender:gender
+      })
+    })
+    AsyncStorage.getItem('birthday',(err,result)=>{
+      birthday=result;
+      _that.setState({
+        birthday:birthday
+      })
+    })
+    AsyncStorage.getItem('height',(err,result)=>{
+      height=result;
+      _that.setState({
+        height:height
+      })
+    })
+    AsyncStorage.getItem('target_weight',(err,result)=>{
+      target_weight=parseFloat(result).toFixed(2);
+       _that.setState({
+          target_weight:target_weight
        })
     })
   },
   _save:function(){    
     var weight=this.state.weight;
     console.log(this.state.weight);
-    var url = URLnetowrk+'modifyweight.action'; // modify the height
+    var url = URLnetowrk+'modifytarget.action'; // modify the height
     url+= '?weight='+weight;
     console.log(url);
     fetch(url).then(function(response) {  

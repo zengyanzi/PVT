@@ -39,10 +39,35 @@ var IwView = React.createClass({
           email:email
        })
     })
-    AsyncStorage.getItem('password',(err,result)=>{
-       password=result;
+    AsyncStorage.getItem('bmi',(err,result)=>{
+       bmi=parseFloat(result).toFixed(2);
+       console.log(bmi);
        _that.setState({
-          password:password
+          bmi:bmi
+       })
+    })
+    AsyncStorage.getItem('gender',(err,result)=>{
+      gender=result;
+      _that.setState({
+        gender:gender
+      })
+    })
+    AsyncStorage.getItem('birthday',(err,result)=>{
+      birthday=result;
+      _that.setState({
+        birthday:birthday
+      })
+    })
+    AsyncStorage.getItem('height',(err,result)=>{
+      height=result;
+      _that.setState({
+        height:height
+      })
+    })
+    AsyncStorage.getItem('target_weight',(err,result)=>{
+      target_weight=parseFloat(result).toFixed(2);
+             _that.setState({
+          target_weight:target_weight
        })
     })
   },

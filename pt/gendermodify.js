@@ -31,6 +31,46 @@ var GenderModifyView = React.createClass({
     };
 
   },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('email',(err,result)=>{
+       email=result;
+       _that.setState({
+          email:email
+       })
+    })
+    AsyncStorage.getItem('bmi',(err,result)=>{
+       bmi=parseFloat(result).toFixed(2);
+       console.log(bmi);
+       _that.setState({
+          bmi:bmi
+       })
+    })
+    AsyncStorage.getItem('gender',(err,result)=>{
+      gender=result;
+      _that.setState({
+        gender:gender
+      })
+    })
+    AsyncStorage.getItem('birthday',(err,result)=>{
+      birthday=result;
+      _that.setState({
+        birthday:birthday
+      })
+    })
+    AsyncStorage.getItem('height',(err,result)=>{
+      height=result;
+      _that.setState({
+        height:height
+      })
+    })
+    AsyncStorage.getItem('target_weight',(err,result)=>{
+      target_weight=parseFloat(result).toFixed(2);
+             _that.setState({
+          target_weight:target_weight
+       })
+    })
+  },
   _save:function(){    
     var gender=this.state.gender;
     console.log(this.state.gender);
