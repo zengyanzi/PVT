@@ -61,20 +61,17 @@ var GymView = React.createClass({
           contentContainerStyle={{flex:1}}
           keyboardDismissMode='on-drag'
           keyboardShouldPersistTaps='never'>
-        <View style={[styles.Top,styles.Bottomline]}>
-          <TouchableOpacity 
-              onPress={() => _navigator.push({title:'Additemtoday',id:'additemtoday'})}>
-            <Image source={require('../img/add_pressed.png') }/>
-          </TouchableOpacity> 
-          <View style={styles.Topbar}>
-          </View>
-          <View style={styles.right}>
-            <TouchableOpacity 
-                      onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
-              <Image source={require('../img/chart-pressed.png') }/>
-            </TouchableOpacity> 
-          </View>
-        </View>
+            <View style={[styles.Top,styles.Bottomline]}>
+              <View style={[styles.Topbar,styles.Left]}>
+
+              </View>
+              <View style={styles.Topbar}>
+                <Image source={require('../img/ptv_sized.png') }/>
+              </View>
+              <View style={[styles.Topbar,styles.Right]}>
+
+              </View>
+            </View>
         <SearchBar
             round
             onSubmitEditing={() => this._search()}
@@ -105,12 +102,12 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
   },
-  Top:{
+    Top:{
     flexDirection: 'row',
     height:50,
     alignItems: 'center',
     backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   Bottomline:{
     borderBottomWidth:2,
@@ -118,18 +115,18 @@ var styles = StyleSheet.create({
   },
 
   Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
     flex:1,
-    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  Left:{
+    position: 'absolute', 
+    top: 5, 
+    left: 5
   },
   Right:{
-  flex:1,
-  flexDirection: 'row',
-
+    position: 'absolute', 
+    top: 5, 
+    right: 5,
   },
   maincontain:
   {

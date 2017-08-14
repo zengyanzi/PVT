@@ -116,47 +116,44 @@ var TPlanView = React.createClass({
       dataSource: this.state.dataSource.cloneWithRows(data),
     });
   },
-  delete:function(rowData){
-    let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
-      var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var plan_id =rowData.id;
-      var url = URLnetowrk+'delplan.action';
-      // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
-      console.log(url);
-      fetch(url).then(function(response) {  
-          return response.json();
-      }).then(function(res) {
-        console.log(res);        
-        if (res["data"]==true) {
-          var day=_that.props.date;
-          console.log(day);
-          var url = URLnetowrk+'detailplan.action';
-          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-          url += '?trainee_id='+trainee_id+'&day='+day;
-          console.log(url);
-          fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-            console.log(res);
-            if (res["data"]!=null) {                 
-              _that.setState({
-                dataSource: ds.cloneWithRows(res["data"]),
-                detailrows:res["data"]
-              })
-            }else{
-              Alert.alert('Fail to display','Please check your data'); 
-            }
-           });   
-          }else{
-            Alert.alert('Fail to display','Please check your data'); 
-          }
-        });
-      }) 
-    },
+  // delete:function(rowData){
+  //   let _that=this;
+  //   var trainee_id=this.props.trainee_id;
+  //   var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
+  //   var plan_id =rowData.id;
+  //   var url = URLnetowrk+'delplan.action';
+  //   // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  //   url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
+  //   console.log(url);
+  //   fetch(url).then(function(response) {  
+  //       return response.json();
+  //   }).then(function(res) {
+  //     console.log(res);        
+  //     if (res["data"]==true) {
+  //       var day=_that.props.date;
+  //       console.log(day);
+  //       var url = URLnetowrk+'detailplan.action';
+  //       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+  //       url += '?trainee_id='+trainee_id+'&day='+day;
+  //       console.log(url);
+  //       fetch(url).then(function(response) {  
+  //         return response.json();
+  //       }).then(function(res) {
+  //         console.log(res);
+  //         if (res["data"]!=null) {                 
+  //           _that.setState({
+  //             dataSource: ds.cloneWithRows(res["data"]),
+  //             detailrows:res["data"]
+  //           })
+  //         }else{
+  //           Alert.alert('Fail to display','Please check your data'); 
+  //         }
+  //        });   
+  //       }else{
+  //         Alert.alert('Fail to display','Please check your data'); 
+  //       }
+  //     });
+  //   },
 
   renderRow(rowData: string, sectionID: number, rowID: number) {
     return (
@@ -175,7 +172,7 @@ var TPlanView = React.createClass({
         onClose={() => console.log('===close') }
         scroll={event => this.allowScroll(event)}>
         <TouchableOpacity style={styles.btn}
-                onPress={() => _navigator.push({title:'TDetailPlanView',id:'Tdetailplan',params:{date:rowData.day,trainee_name:this.props.trainee_name}})}>
+                onPress={() => _navigator.push({title:'TDetailPlanView',id:'Tdetailplan',params:{date:rowData.day,trainee_name:this.props.trainee_name,trainee_id:this.props.trainee_id}})}>
           <View style={styles.li}>
                 <Text style={styles.liText}>{rowData.item_name}Date: {rowData.day} </Text>    
                 <Text style={styles.liText}>{rowData.item_name}Sportsize: {rowData.text} </Text>
@@ -203,6 +200,10 @@ var TPlanView = React.createClass({
                 <Image source={require('../img/ptv_sized.png') }/>
               </View>
               <View style={[styles.Topbar,styles.Right]}>
+                <TouchableOpacity 
+                    onPress={() => _navigator.push({title:'TAdditemtoday',id:'Tadditemtoday',params:{trainee_id:this.props.trainee_id}})}>
+                  <Image source={require('../img/add_pressed.png') }/>
+                </TouchableOpacity> 
               </View>
             </View>  
           <View style={[styles.header,styles.Bottomline]}>

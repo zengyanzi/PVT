@@ -54,8 +54,6 @@ var TEditPlanView = React.createClass({
     var sportsize=this.state.value;
     var day=this.props.date;
     var dayplan_id=this.props.dayplan_id;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
     var trainee_id=result;
     var url = URLnetowrk+'item.action'; // get the item data again 
     fetch(url).then(function(response) {  
@@ -85,7 +83,6 @@ var TEditPlanView = React.createClass({
         Alert.alert('Fail to display','Please check your data'); 
       }         
     });
-  });
  },
  render: function(){
   return(
@@ -97,19 +94,11 @@ var TEditPlanView = React.createClass({
         <View>
             <View style={[styles.Top,styles.Bottomline]}>
               <View style={[styles.Topbar,styles.Left]}>
-                <TouchableOpacity 
-                        onPress={() => _navigator.push({title:'TCreateplanView',id:'Tcreateplan',params:{trainee_id:this.props.trainee_id}})}>
-                  <Image source={require('../img/setting_normal.png') }/>
-                </TouchableOpacity> 
               </View>
               <View style={styles.Topbar}>
                 <Image source={require('../img/ptv_sized.png') }/>
               </View>
               <View style={[styles.Topbar,styles.Right]}>
-                <TouchableOpacity 
-                    onPress={() => _navigator.push({title:'TAdditemtoday',id:'Tadditemtoday',params:{trainee_id:this.props.trainee_id}})}>
-                  <Image source={require('../img/add_pressed.png') }/>
-                </TouchableOpacity> 
               </View>
             </View>  
         </View>

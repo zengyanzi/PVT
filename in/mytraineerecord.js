@@ -156,8 +156,16 @@ var MyTraineeRecordView = React.createClass({
         keyboardDismissMode='on-drag'
         keyboardShouldPersistTaps='never'>
         <View style={[styles.Top,styles.Bottomline]}>
-          
-        </View>
+          <View style={[styles.Topbar,styles.Left]}>
+
+          </View>
+          <View style={styles.Topbar}>
+            <Image source={require('../img/ptv_sized.png') }/>
+          </View>
+          <View style={[styles.Topbar,styles.Right]}>
+
+          </View>
+        </View>  
         <ListView style={styles.listview}
           scrollEnabled={this.state.scrollEnabled}
           dataSource={this.state.dataSource}
