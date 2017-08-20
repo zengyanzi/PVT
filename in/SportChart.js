@@ -14,7 +14,7 @@ import {
   Alert
 } from 'react-native';
 import {BarChart} from 'react-native-mp-android-chart';
-import URLnetowrk from './network';
+import URLnetowrk from '../pub/network';
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
     return false;

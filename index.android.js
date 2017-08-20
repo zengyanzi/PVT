@@ -52,6 +52,10 @@ import Gymcreate from './pub/gymcreate';
 import SearchTrainee from './in/searchtrainee';
 import SearchTrainer from './pt/searchtrainer';
 import GuideView from './Guide';
+import TEditRecordView from './in/Teditrecord';
+import TDetailRecordView from './in/Tdetailrecord';
+import TChartView from './in/Tchart';
+import TAddrecordtodayView from'./in/Taddrecordtoday';
 export default class PTV extends React.Component {
   constructor(props) {
       super(props);
@@ -269,14 +273,29 @@ export default class PTV extends React.Component {
         <EditRecordView {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'Teditrecord'){
+      return (
+        <TEditRecordView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     if(route.id === 'detailrecord'){
       return (
         <DetailRecordView {...route.params} navigator={navigator} route={route}/>
       );
     }
+    if(route.id === 'Tdetailrecord'){
+      return (
+        <TDetailRecordView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
     if(route.id === 'chart'){
       return (
         <ChartView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'Tchart'){
+      return (
+        <TChartView {...route.params} navigator={navigator} route={route}/>
       );
     }
     if(route.id === 'additemtoday'){
@@ -292,6 +311,11 @@ export default class PTV extends React.Component {
    if(route.id === 'addrecordtoday'){
       return (
         <AddrecordtodayView {...route.params} navigator={navigator} route={route}/>
+      );
+    }
+   if(route.id === 'Taddrecordtoday'){
+      return (
+        <TAddrecordtodayView {...route.params} navigator={navigator} route={route}/>
       );
     }
    if(route.id === 'profilemodify'){

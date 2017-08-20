@@ -158,10 +158,10 @@ delete:function(rowData){
       console.log(result);
       var trainee_id=result;
       var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-      var plan_id =rowData.id;
-      var url = URLnetowrk+'delplan.action';
+      var record_id =rowData.id;
+       var url = URLnetowrk+'delrecord.action';
       // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-      url += '?trainee_id='+trainee_id+'&plan_id='+plan_id;
+      url += '?trainee_id='+trainee_id+'&record_id='+record_id;
       console.log(url);
       fetch(url).then(function(response) {  
           return response.json();

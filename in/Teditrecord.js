@@ -30,7 +30,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   return true;
 });
 var _navigator ;
-var EditRecordView = React.createClass({
+var TEditRecordView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     function floor (d) {
@@ -48,69 +48,47 @@ var EditRecordView = React.createClass({
   //get the item 
   componentWillMount() {
     let _that=this;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var url = URLnetowrk+'item.action';  
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {          
-        if (res["data"]!=null) {
-          //get the sport item name from the database
-          var sportobj=res["data"];
-          var arr=[];
-          for(i in sportobj){               
-              arr.push(sportobj[i]["name"]);
-          }
-          console.log(arr);
-          _that.setState({
-            sportname:arr
-          })
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
-        }             
-      });      
-    });  
+    var url = URLnetowrk+'item.action';  
+    fetch(url).then(function(response) {  
+      return response.json();
+    }).then(function(res) {          
+      if (res["data"]!=null) {
+        //get the sport item name from the database
+        var sportobj=res["data"];
+        var arr=[];
+        for(i in sportobj){               
+            arr.push(sportobj[i]["name"]);
+        }
+        console.log(arr);
+        _that.setState({
+          sportname:arr
+        })
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }             
+    });      
   },
   //save the modify item to database
   _save:function(){
-    console.log(this.props.itemname);
-    var itemname=this.props.itemname;
-    var item_id;
+    var record_id=this.props.record_id;
     var sportsize=this.state.value;
-    var day=this.props.date;
-    AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-      var trainee_id=result;
-      var url = URLnetowrk+'item.action'; // get the item data again 
-      fetch(url).then(function(response) {  
-        return response.json();
-      }).then(function(res) {
-        if (res["data"]!=null) {
-        //find the id of selected item
-          for(i in res["data"]){
-            if(itemname==res["data"][i]["name"]){
-               item_id=res["data"][i]["id"];
-            }                 
-          }
-          console.log(item_id);
-          var urlsave=URLnetowrk+'addrecord2day.action'; 
-          urlsave += '?trainee_id='+trainee_id+'&day='+day+'&item_id='+item_id+'&sportsize='+sportsize;
-          console.log(urlsave);
-          fetch(urlsave).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-            console.log(res);
-            _navigator.push({
-              title:'ThomeView',
-              id:'Thome',                  
-            })
-          });
-       }else{
-         Alert.alert('Fail to display','Please check your data'); 
-       }     
-    });
-  });
- },
+    var urlsave=URLnetowrk+'adjustrecord.action'; 
+    urlsave += '?record_id='+record_id+'&size='+sportsize;
+    console.log(urlsave);
+    fetch(urlsave).then(function(response) {  
+      return response.json();
+    }).then(function(res) {
+      console.log(res);
+      if (res["data"]!=null) { 
+        _navigator.push({
+          title:'IhomeView',
+          id:'Ihome',                  
+        })
+      }else{
+        Alert.alert('Fail to display','Please check your data');  
+      }
+    });  
+  },
  render: function(){
   return(
     <ScrollView 
@@ -120,19 +98,13 @@ var EditRecordView = React.createClass({
       <View style={styles.maincontain}>
         <View style={[styles.Top,styles.Bottomline]}>
           <View style={[styles.Topbar,styles.Left]}>
-              <TouchableOpacity 
-                  onPress={() => _navigator.push({title:'CreateplanView',id:'createplan'})}>
-                <Image source={require('../img/setting_normal.png') }/>
-               </TouchableOpacity> 
+
           </View>
           <View style={styles.Topbar}>
             <Image source={require('../img/ptv_sized.png') }/>
           </View>
           <View style={[styles.Topbar,styles.Right]}>
-            <TouchableOpacity 
-                    onPress={() => _navigator.push({title:'ChartView',id:'chart'})}>
-              <Image source={require('../img/chart-pressed.png') }/>
-            </TouchableOpacity> 
+
           </View>         
         </View>
         <View>
@@ -258,4 +230,4 @@ var styles = StyleSheet.create({
   },
 
 });
-module.exports = EditRecordView;
+module.exports = TEditRecordView;

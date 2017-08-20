@@ -122,13 +122,12 @@ var MyTraineeRecordView = React.createClass({
     });
   },
   renderRow(rowData: string, sectionID: number, rowID: number) {
-    var btnsTypes = [
-        { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
-      ];
+    // var btnsTypes = [
+    //     { text: 'Delete',onPress: () => { this.delete(rowData) },type: 'delete'},
+    //   ];
     return (
       <Swipeout
         left={rowData.left}
-        right={btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
