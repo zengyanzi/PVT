@@ -64,10 +64,7 @@ componentWillMount() {
         var end = format(today);
         var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
         var startday=format(day1);
-
-       AsyncStorage.getItem('userid',(err, result) => {
-          console.log(result); 
-        var trainee_id=result;
+        var trainee_id=this.props.trainee_id;
         console.log(trainee_id);
         console.log(end);
         var url = URLnetowrk+'stat.action';
@@ -111,8 +108,6 @@ componentWillMount() {
                 Alert.alert('Fail to display','Please check your data'); 
               }
         });
-      });
-
   }
   render() {
     return (

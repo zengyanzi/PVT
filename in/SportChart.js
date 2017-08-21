@@ -90,82 +90,79 @@ var SportChartView = React.createClass({
     console.log(this.state.sportselected);
     var itemname=this.state.sportselected;
     var item_id;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result); 
-      var trainee_id=result;
-      function format (d) {
-        return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-      }
-      var today =new Date();
-      var end = format(today);
-      var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
-      var startday=format(day1);
-      console.log(trainee_id);
-      console.log(startday);
-      console.log(end);
-      var urlitem = URLnetowrk+'item.action';  
-      fetch(urlitem).then(function(response) {  
-          return response.json();
-      }).then(function(res) { 
-        if (res["data"]!=null) {
-          //get the sport item name from the database
-          var sportobj=res["data"];
-          var arr=[];
-          for(i in sportobj){
-             arr.push(sportobj[i]["name"]);
-          }
-          console.log(arr);
-          for(i in res["data"]){
-            if(itemname==res["data"][i]["name"]){
-                 item_id=res["data"][i]["id"];
-            }                       
-          }
-          console.log(item_id);
-          _that.setState({
-            sportname:arr
-          })
-          var url = URLnetowrk+'statsport.action';
-          url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
-          console.log(url);
-          fetch(url).then(function(response) { 
-            return response.json();
-          }).then(function(res) {
-            console.log(res);
-            if (res["data"]!=null) {
-              var energy=[];
-              var date=[];
-              for (var i = 0; i < res["data"].length; i++) {
-                energy.push(res["data"][i]["energy"]);
-                date.push(res["data"][i]["day"]);
-              };
-              console.log(energy);
-              console.log(date);
-              _that.setState(
-                {
-                  data: {
-                      datasets: [{
-                        yValues: energy,
-                        label: 'rower',
-                        config: {
-                          color: '#2cb395',
-                          barSpacePercent: 40,
-                          barShadowColor: 'lightgrey',
-                          highlightAlpha: 90,
-                          highlightColor: 'red'
-                        }
-                      }],
-                      xValues: date
-                    }
-                  }
-                );
-            }else{
-              Alert.alert('Fail to display','Please check your data'); 
-            }
-          });
-        }else{
-          Alert.alert('Fail to display','Please check your data'); 
+    var trainee_id=this.props.trainee_id;
+    function format (d) {
+      return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+    }
+    var today =new Date();
+    var end = format(today);
+    var day1=new Date(today.getTime() - (1000* 60 * 60 * 24)*6);
+    var startday=format(day1);
+    console.log(trainee_id);
+    console.log(startday);
+    console.log(end);
+    var urlitem = URLnetowrk+'item.action';  
+    fetch(urlitem).then(function(response) {  
+        return response.json();
+    }).then(function(res) { 
+      if (res["data"]!=null) {
+        //get the sport item name from the database
+        var sportobj=res["data"];
+        var arr=[];
+        for(i in sportobj){
+           arr.push(sportobj[i]["name"]);
         }
-      });
+        console.log(arr);
+        for(i in res["data"]){
+          if(itemname==res["data"][i]["name"]){
+               item_id=res["data"][i]["id"];
+          }                       
+        }
+        console.log(item_id);
+        _that.setState({
+          sportname:arr
+        })
+        var url = URLnetowrk+'statsport.action';
+        url += '?trainee_id='+trainee_id+'&start='+startday+'&end='+end+'&item_id='+item_id;
+        console.log(url);
+        fetch(url).then(function(response) { 
+          return response.json();
+        }).then(function(res) {
+          console.log(res);
+          if (res["data"]!=null) {
+            var energy=[];
+            var date=[];
+            for (var i = 0; i < res["data"].length; i++) {
+              energy.push(res["data"][i]["energy"]);
+              date.push(res["data"][i]["day"]);
+            };
+            console.log(energy);
+            console.log(date);
+            _that.setState(
+              {
+                data: {
+                    datasets: [{
+                      yValues: energy,
+                      label: 'rower',
+                      config: {
+                        color: '#2cb395',
+                        barSpacePercent: 40,
+                        barShadowColor: 'lightgrey',
+                        highlightAlpha: 90,
+                        highlightColor: 'red'
+                      }
+                    }],
+                    xValues: date
+                  }
+                }
+              );
+          }else{
+            Alert.alert('Fail to display','Please check your data'); 
+          }
+        });
+      }else{
+        Alert.alert('Fail to display','Please check your data'); 
+      }
     });
   },
   //UPDATE the CHART 
@@ -182,9 +179,7 @@ var SportChartView = React.createClass({
     console.log(this.state.sportselected);
     var itemname=this.state.sportselected;
     var item_id;
-    AsyncStorage.getItem('userid',(err, result) => {
-      console.log(result);
-      var trainee_id=result;
+      var trainee_id=this.props.trainee_id;
       var url = URLnetowrk+'item.action'; // get the item data again 
       fetch(url).then(function(response) {  
         return response.json();
@@ -239,7 +234,6 @@ var SportChartView = React.createClass({
         Alert.alert('Fail to display','Please check your data'); 
         }
       });
-    });
   },
   render: function(){
     return (
@@ -292,7 +286,6 @@ const styles = StyleSheet.create({
     width:200,
   },
   btn:{
-    flex:5,
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',

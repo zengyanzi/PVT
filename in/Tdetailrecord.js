@@ -198,7 +198,7 @@ delete:function(rowData){
             </View>          
             <View style={[styles.Topbar,styles.Right]}>
               <TouchableOpacity 
-                      onPress={() => _navigator.push({title:'TChartView',id:'chart'})}>
+                      onPress={() => _navigator.push({title:'TChartView',id:'Tchart',params:{trainee_id:this.props.trainee_id}})}>
                 <Image source={require('../img/chart-pressed.png') }/>
               </TouchableOpacity> 
             </View>         
