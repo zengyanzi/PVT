@@ -58,7 +58,8 @@ var TraineeregisterView = React.createClass({
   },
   _register: function () {
     var value = this.refs.form.getValue();
-    var name = value["name"];
+    var name = value["Name"];
+    console.log(name);
     var surname = value["surname"];
     var phone = value["phone"];
     var password = value["password"];
