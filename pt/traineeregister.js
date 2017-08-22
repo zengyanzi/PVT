@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   navigator,
+  Alert
 } from 'react-native';
 import t from 'tcomb-form-native';
 import DatePicker from './date.js';
@@ -58,29 +59,33 @@ var TraineeregisterView = React.createClass({
   },
   _register: function () {
     var value = this.refs.form.getValue();
-    var name = value["Name"];
-    console.log(name);
-    var surname = value["surname"];
-    var phone = value["phone"];
-    var password = value["password"];
-    var email = value["email"];
-    var url = URLnetowrk+'traineeregister.action';
-    url += '?name='+name+'&surname='+surname+'&email='+email+'&phone='+phone+'&password='+password;
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then(function(res){
-      console.log(res);
-    }).catch((error)=>{
-      console.log(error);
-    });
-    _navigator.push({
-      title:'TraineeloinView',
-      id:'traineelogin'
-    })
+    if (value!=null) {
+      var name = value["Name"];
+      console.log(name);
+      var surname = value["surname"];
+      var phone = value["phone"];
+      var password = value["password"];
+      var email = value["email"];
+      var url = URLnetowrk+'traineeregister.action';
+      url += '?name='+name+'&surname='+surname+'&email='+email+'&phone='+phone+'&password='+password;
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(function(res){
+        console.log(res);
+      }).catch((error)=>{
+        Alert.alert('Sorry','Please input your information '); 
+      });
+      _navigator.push({
+        title:'TraineeloinView',
+        id:'traineelogin'
+      })
+    }else{
+      Alert.alert('Sorry','Please input your information '); 
+    }
   },
   render: function(){
     return (

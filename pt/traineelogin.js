@@ -49,7 +49,8 @@ var TraineeloginView = React.createClass({
     };
   },
   _login:function(){
-      var value = this.refs.form.getValue();
+    var value = this.refs.form.getValue();
+    if (value!=null) {
       var email = value["email"];
       var password=value["password"];
       var url = URLnetowrk+'traineelogin.action';
@@ -86,7 +87,10 @@ var TraineeloginView = React.createClass({
         }else{
           Alert.alert('Fail to login','Please check your password');  
         }
-    });
+      });        
+    }else{
+      Alert.alert('Sorry','Please input your information '); 
+    }
   },
   render: function(){
     return (
