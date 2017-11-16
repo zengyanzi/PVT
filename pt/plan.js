@@ -232,17 +232,12 @@ var PlanView = React.createClass({
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
    Top:{
     flexDirection: 'row',
     height:50,
     alignItems: 'center',
     backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   Bottomline:{
     borderBottomWidth:2,
@@ -252,22 +247,14 @@ var styles = StyleSheet.create({
   Topbar:{
     flex:2,
     flexDirection: 'row',
-
   },
    Left:{
     flexDirection: 'row',
   },
   Right:{
- position: 'absolute', 
+   position: 'absolute', 
     top: 5, 
     right: 5,
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-
   },
   listview: {
     flex: 1,

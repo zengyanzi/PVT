@@ -61,12 +61,10 @@ export default class PTV extends React.Component {
       super(props);
       this.state = {};
       // var type =  AsyncStorage.getItem('type');
-   AsyncStorage.getItem('isFirst',(error,result)=>{
-
+    AsyncStorage.getItem('isFirst',(error,result)=>{
       if (result == 'false') {
-        console.log('not first');
-
-             var type;
+      console.log('not first');
+      var type;
       AsyncStorage.getItem('type',(err, result) => {
         console.log(result);
         type=result;
@@ -127,30 +125,24 @@ export default class PTV extends React.Component {
           }
         };
       }); 
-
-      } else  {
-
-          console.log('is first');
-
-          // 存储
-          AsyncStorage.setItem('isFirst','false',(error)=>{
-              if (error) {
-                  alert(error);
-              }
-          });
-
-         _navigator.push({
-        title:'GuideView',
-        id:'Guide'
+      }else{
+        console.log('is first');
+        // 存储
+        AsyncStorage.setItem('isFirst','false',(error)=>{
+            if (error) {
+                alert(error);
+            }
+        });
+        _navigator.push({
+          title:'GuideView',
+          id:'Guide'
         });
       }
     });
-  
-    }
+  }
   configureScenceAndroid(){
     return Navigator.SceneConfigs.FadeAndroid;
   }
-
   renderSceneAndroid(route,navigator){
     _navigator = navigator;
     if(route.id === 'main'){
@@ -405,7 +397,6 @@ export default class PTV extends React.Component {
       );
     }
   }
-
  render(){
     var renderScene = this.renderSceneAndroid;
     var configureScence = this.configureScenceAndroid;
@@ -417,25 +408,11 @@ export default class PTV extends React.Component {
       renderScene={renderScene}/>
    );
   }
- 
-
-
 }
 var styles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor: '#38bda0',
-  },
-  Top:{
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#f5f2f0',
-    justifyContent: 'center',
-  },
-  WelcomeText:{
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#d7499a',
   },
   maincontain:
   {
@@ -445,10 +422,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-   logo:{
-    width:160,
-    height:160,
   },
   choose:{
     flexDirection:'row'

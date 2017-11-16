@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-
-
 import {
   Image,
   View,
@@ -29,10 +27,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
   _navigator.pop();
   return true;
 });
-
-
 var TraineewelcomeView = React.createClass({
-
   getInitialState: function(){
     _navigator = this.props.navigator;
     AsyncStorage.setItem("type",'trainee');
@@ -73,17 +68,6 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
   },
-  Top:{
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-    justifyContent: 'center',
-  },
-  WelcomeText:{
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#d7499a', 
-  },
   maincontain:
   {
     flex: 10,
@@ -92,10 +76,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-   logo:{
-    width:160,
-    height:160,
   },
   choose:{
     flexDirection:'row'
