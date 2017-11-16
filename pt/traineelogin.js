@@ -149,20 +149,8 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
   },
-   logo:{
-    width:160,
-    height:160,
-  },
   choose:{
     flexDirection:'row'
-  },
-   input: {
-   height: 40,
-   width:200,
-   marginTop: 10, //间隔
-   borderWidth: 1, 
-   borderRadius: 5, //圆角
-   borderColor: 'lightblue'
   },
   btn:{
      alignSelf: 'stretch',

@@ -116,11 +116,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
  },
-  text:{
-    fontWeight: 'bold',
-    fontSize: 14,
-    color: '#241003',
-  },
    buttonText: {
     fontSize: 18,
     color: 'white',
@@ -142,4 +137,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = TraineeregisterView;
+module.exports = TraineeregisterView;  

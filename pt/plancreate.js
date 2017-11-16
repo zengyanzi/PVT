@@ -134,8 +134,13 @@ var PlanCreateView = React.createClass({
         sectionID={sectionID}
         autoClose={rowData.autoClose}
         backgroundColor='transparent'
-        close={!rowData.active}
-        onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
+        onOpen={(sectionID, rowID) => {
+          this.setState({
+            sectionID,
+            rowID,
+          })
+        }}
+        onClose={() => console.log('===close') }
         scroll={event => this.allowScroll(event)}>
           <TouchableHighlight style={styles.li} activeOpacity={0.5} underlayColor = '#2cb395'  onPress={() =>this.setState({planid:rowData.id})}>
             <Text style={styles.liText}>Plan NO: {rowData.id} {rowData.title}</Text>        
@@ -143,12 +148,12 @@ var PlanCreateView = React.createClass({
       </Swipeout>
     );
   },
-_editplan:function(){
-   _navigator.push({
-    title:'TraineeloinView',
-    id:'traineelogin'
-  })
-},
+  _editplan:function(){
+     _navigator.push({
+      title:'TraineeloinView',
+      id:'traineelogin'
+    })
+  },
   render: function(){
     return(
       <ScrollView 
@@ -173,48 +178,11 @@ _editplan:function(){
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-    justifyContent: 'center',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-  Topbar:{
-    flex:1,
-    alignItems: 'center',
-  },
-  Left:{
-    position: 'absolute', 
-    top: 5, 
-    left: 5
-  },
-  Right:{
-    position: 'absolute', 
-    top: 5, 
-    right: 5,
-  },
   maincontain:
   {
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-  },
-  header:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#fff',
-    justifyContent: 'center',
   },
   listview: {
     flex: 1,
@@ -234,9 +202,6 @@ var styles = StyleSheet.create({
   liText: {
     color: '#333',
     fontSize: 18,
-  },
-  choosestyle:{
-    borderColor:'red'
   },
  text:{
     fontSize:18,

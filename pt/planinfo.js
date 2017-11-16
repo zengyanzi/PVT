@@ -44,21 +44,7 @@ var btnsTypes = [
        Calories :"457",
        text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
        autoClose: true,
-    }, {
-
-      Calories :"457",
-       text: "Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-      autoClose: true,
-    }, {
-
-        Calories :"457",
-        text: "Upper Back 18,29 30-60 sec 1 1",
-      autoClose: true,
-    }, {
-
-      Calories :"457",
-      text: "Bike Fast  3min  Moderate  15  60Sec",
-    },    
+    }   
   ];
 var PlanInfoView = React.createClass({
   getInitialState: function(){
@@ -149,13 +135,17 @@ componentWillMount() {
     return (
       <Swipeout
         left={rowData.left}
-        right={btnsTypes}
         rowID={rowID}
         sectionID={sectionID}
         autoClose={rowData.autoClose}
         backgroundColor={rowData.backgroundColor}
-        close={!rowData.active}
-        onOpen={(sectionID, rowID) => this.handleSwipeout(sectionID, rowID) }
+        onOpen={(sectionID, rowID) => {
+            this.setState({
+              sectionID,
+              rowID,
+            })
+          }}
+        onClose={() => console.log('===close') }
         scroll={event => this.allowScroll(event)}>
         <View style={styles.li}>
               <Text style={styles.liText}>{rowData.itemname} sportsize: {rowData.sportsize}</Text>        
@@ -188,11 +178,6 @@ componentWillMount() {
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,

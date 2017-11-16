@@ -24,21 +24,7 @@ var rows = [
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
     autoClose: true,
-  }, {
-    Pdate:"2017-02-09",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    autoClose: true,
-  }, {
-    Pdate:"2017-02-10",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    autoClose: true,
-  }, {
-    Pdate:"2017-02-11",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-  },
+  }
 ];
 var PlanView = React.createClass({
   getInitialState: function(){
@@ -243,7 +229,6 @@ var styles = StyleSheet.create({
     borderBottomWidth:2,
     borderColor:'gray'
   },
-
   Topbar:{
     flex:2,
     flexDirection: 'row',
