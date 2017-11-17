@@ -48,10 +48,19 @@ var GymView = React.createClass({
           params:{data:res["data"][0]}
         })
       }else{
-        _navigator.push({
-          title:'Gymcreate',
-          id:'gymcreate',
-        })
+        Alert.alert(
+        'No gym for you?',
+        'Submit your gym',
+          [
+            {text: 'Creat', onPress: () => _navigator.push({
+              title:'Gymcreate',
+              id:'gymcreate',
+            })
+          },
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          ],
+          { cancelable: false }
+        )
       }
     });
   },
@@ -69,7 +78,6 @@ var GymView = React.createClass({
                 <Image source={require('../img/ptv_sized.png') }/>
               </View>
               <View style={[styles.Topbar,styles.Right]}>
-
               </View>
             </View>
         <SearchBar
@@ -97,11 +105,6 @@ var GymView = React.createClass({
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
     Top:{
     flexDirection: 'row',
     height:50,
@@ -133,11 +136,6 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
   },
   tabView: {
     flex: 1,

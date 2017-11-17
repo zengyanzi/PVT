@@ -128,37 +128,6 @@ var GymlistView = React.createClass({
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-    justifyContent: 'center',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:1,
-    alignItems: 'center',
-  },
-  Left:{
-    position: 'absolute', 
-    top: 5, 
-    left: 5
-  },
-  Right:{
-    position: 'absolute', 
-    top: 5, 
-    right: 5,
-  },
   maincontain:
   {
     flex: 1,

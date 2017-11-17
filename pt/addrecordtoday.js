@@ -203,11 +203,6 @@ var customStyles2 = StyleSheet.create({
   }
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -219,11 +214,9 @@ var styles = StyleSheet.create({
     borderBottomWidth:2,
     borderColor:'gray'
   },
-
   Topbar:{
     flex:1,
     alignItems: 'center',
-
   },
   Left:{
     position: 'absolute', 
@@ -240,7 +233,6 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },
   listview: {
     flex: 1,
@@ -268,7 +260,7 @@ var styles = StyleSheet.create({
   datepicker:{
     width:200,
   },
-    btn:{
+  btn:{
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',

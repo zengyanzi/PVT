@@ -161,8 +161,8 @@ _submit:function(){
                                key={i}
                                value={v}
                                label={v} />
-                   }) }
-             
+                      })
+                    }         
             </Picker>
           </View>
           <View style={styles.slider}>
@@ -204,11 +204,6 @@ var customStyles2 = StyleSheet.create({
   }
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -220,11 +215,9 @@ var styles = StyleSheet.create({
     borderBottomWidth:2,
     borderColor:'gray'
   },
-
   Topbar:{
     flex:1,
     alignItems: 'center',
-
   },
   Left:{
     position: 'absolute', 
@@ -243,25 +236,6 @@ var styles = StyleSheet.create({
     flexDirection:'column',
 
   },
-  listview: {
-    flex: 1,
-  },
-  li: {
-    backgroundColor: '#fff',
-    borderBottomColor: '#38bda0',
-    borderColor: 'transparent',
-    borderWidth: 1,
-    paddingLeft: 16,
-    paddingTop: 14,
-    paddingBottom: 16,
-  },
-  liContainer: {
-    flex: 2,
-  },
-  liText: {
-    color: '#333',
-    fontSize: 16,
-  },
   text:{
     fontSize:18,
     color:'#fff',
@@ -269,7 +243,7 @@ var styles = StyleSheet.create({
   datepicker:{
     width:200,
   },
-    btn:{
+  btn:{
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',
@@ -280,6 +254,5 @@ var styles = StyleSheet.create({
      marginTop: 50,
      marginLeft:80,
   },
-
 });
 module.exports = AdditemtodayView;

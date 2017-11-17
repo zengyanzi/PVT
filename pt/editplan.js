@@ -143,11 +143,6 @@ var customStyles2 = StyleSheet.create({
   }
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -159,47 +154,15 @@ var styles = StyleSheet.create({
     borderBottomWidth:2,
     borderColor:'gray'
   },
-
   Topbar:{
     flex:1,
     alignItems: 'center',
-
-  },
-  Left:{
-    position: 'absolute', 
-    top: 5, 
-    left: 5
-  },
-  Right:{
-    position: 'absolute', 
-    top: 5, 
-    right: 5,
   },
   maincontain:
   {
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
-  },
-  listview: {
-    flex: 1,
-  },
-  li: {
-    backgroundColor: '#fff',
-    borderBottomColor: '#38bda0',
-    borderColor: 'transparent',
-    borderWidth: 1,
-    paddingLeft: 16,
-    paddingTop: 14,
-    paddingBottom: 16,
-  },
-  liContainer: {
-    flex: 2,
-  },
-  liText: {
-    color: '#333',
-    fontSize: 16,
   },
   text:{
     fontSize:18,

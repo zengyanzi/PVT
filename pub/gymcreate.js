@@ -52,30 +52,35 @@ var Gymcreate = React.createClass({
     };
   },
  _save:function(){
-  var value = this.refs.form.getValue();
-  var name = value["name"];
-  var opendate=value["open"];
-  var slogan = value["slogan"];
-  var location = value["location"];
-  var contact =value["contact"];
-  var description=value["description"];
-  var url=URLnetowrk+'create_gym.action'; 
-  url += '?name='+name+'&location='+location+'&opendate='+opendate+'&description='+description+'&contact='+contact+'&slogan='+slogan;
-  console.log(url);
-  fetch(url).then(function(response) {  
-    return response.json();
-  }).then(function(res) {
-    if (res["data"]!=null) {
-    console.log(res);
-      _navigator.push({
-      title:'ThomeView',
-      id:'Thome',
-    })
+    var value = this.refs.form.getValue();
+    if (value!=null) {
+      var name = value["name"];
+      var opendate=value["open"];
+      var slogan = value["slogan"];
+      var location = value["location"];
+      var contact =value["contact"];
+      var description=value["description"];
+      var url=URLnetowrk+'create_gym.action';
+      url += '?name='+name+'&location='+location+'&opendate='+opendate+'&description='+description+'&contact='+contact+'&slogan='+slogan;
+      console.log(url);
+      fetch(url).then(function(response) {
+        return response.json();
+      }).then(function(res) {
+        if (res["data"]!=null) {
+          console.log(res);
+            _navigator.push({
+            title:'ThomeView',
+            id:'Thome',
+          })
+        }
+        else{
+           Alert.alert('Fail to display','Please check your data');
+        }
+      })
+    }else{
+        Alert.alert('Sorry','Please input your information ');
     }
-    else{
-       Alert.alert('Fail to display','Please check your data'); 
-    }
-  })          
+
   },
   render: function(){
     return(
@@ -109,12 +114,6 @@ var Gymcreate = React.createClass({
               <Text style={styles.text}>Save</Text>
              </TouchableOpacity>
           </View> 
-          <View>
-            <TouchableOpacity style={styles.btn}
-             onPress={() =>_navigator.jumpBack()}>
-              <Text style={{color:"white",fontSize:18}}>Back</Text>
-            </TouchableOpacity> 
-          </View>     
         </View>
       </ScrollView>
     );
@@ -200,5 +199,9 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
+   text:{
+      fontSize:18,
+      color:'#fff',
+    },
 });
 module.exports = Gymcreate;

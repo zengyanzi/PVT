@@ -104,9 +104,7 @@ componentWillMount() {
                       xValues: date
                     }
                   }
-                );
-                
-
+                );         
               }else{
                 Alert.alert('Fail to display','Please check your data'); 
               }

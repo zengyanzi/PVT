@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   Image,
@@ -96,11 +95,6 @@ var ChartView = React.createClass({
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -131,15 +125,6 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-  },
-  header:{
-
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#fff',
-    justifyContent: 'center',
-
   },
   tabView: {
     flex: 1,
