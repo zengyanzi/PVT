@@ -75,11 +75,6 @@ _search:function(text){
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -90,49 +85,6 @@ var styles = StyleSheet.create({
   Bottomline:{
     borderBottomWidth:2,
     borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  tabView: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: '#38bda0',
-  },
-  card: {
-    borderWidth: 1,
-    backgroundColor: '#fff',
-    borderColor: 'rgba(0,0,0,0.1)',
-    margin: 5,
-    height:400,
-    padding: 15,
-    shadowColor: '#ccc',
-    shadowOffset: { width: 2, height: 2, },
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
   },
 });
 module.exports = TrainerView;
