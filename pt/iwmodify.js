@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -29,7 +30,6 @@ var IwView = React.createClass({
     return {
       weight:this.state.weight
     };
-
   },
   componentWillMount() {
     let _that=this;
@@ -76,36 +76,39 @@ var IwView = React.createClass({
     var email=this.state.email;
     var password=this.state.password
     console.log(this.state.weight);
-    var url = URLnetowrk+'modifyweight.action'; // modify the height
-    url+= '?weight='+weight;
-    console.log(url);
-    fetch(url).then(function(response) {  
-      return response.json();
-    }).then(function(res) {
-       if (res["data"]!=null)d: {
-        var url = URLnetowrk+'traineelogin.action';//fresh the BMI
-        // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
-        url += '?email='+email+'&password='+password;
-        fetch(url).then(function(response) {  
-          return response.json();
-        }).then(function(res){
-          if (res["data"]!=null) {
-          console.log(res);
-          AsyncStorage.setItem('initial_weight',weight);
-          _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
-          })
-          }else{
+    if (weight !=null) {
+      var url = URLnetowrk+'modifyweight.action'; // modify the height
+      url+= '?weight='+weight;
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+         if (res["data"]!=null)d: {
+          var url = URLnetowrk+'traineelogin.action';//fresh the BMI
+          // var url = 'http://192.168.20.12:8080/pt_server/traineelogin.action';
+          url += '?email='+email+'&password='+password;
+          fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res){
+            if (res["data"]!=null) {
+            console.log(res);
+            AsyncStorage.setItem('initial_weight',weight);
+            _navigator.push({
+              title:'ThomeView',
+              id:'Thome',
+            })
+            }else{
+              Alert.alert('Fail to display','Please check your data'); 
+            }
+          });
+        }else{
             Alert.alert('Fail to display','Please check your data'); 
-          }
-        });
-      }else{
-          Alert.alert('Fail to display','Please check your data'); 
-      }
-    });
+        }
+      });     
+    }else{
+      Alert.alert('Sorry','Please check your information'); 
+    };
   },
-
   render: function(){
     return(
        <View>
@@ -127,46 +130,7 @@ var IwView = React.createClass({
     );
   },
 });
-
-var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-
-  },   
+var styles = StyleSheet.create({  
   btn:{
      alignItems: 'center',
      justifyContent: 'center',
@@ -181,9 +145,7 @@ var styles = StyleSheet.create({
     color: '#FFF'
   },
   input:{
-
-  flexDirection: 'row',
-
+    flexDirection: 'row',
   },
 });
 module.exports = IwView;

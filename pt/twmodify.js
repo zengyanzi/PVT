@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -24,12 +25,10 @@ var TwView = React.createClass({
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
     this.state = {
-   
+ 
     };
-    return {
-    
+    return { 
     };
-
   },
   componentWillMount() {
     let _that=this;
@@ -74,23 +73,27 @@ var TwView = React.createClass({
   _save:function(){    
     var weight=this.state.weight;
     console.log(this.state.weight);
-    var url = URLnetowrk+'modifytarget.action'; // modify the height
-    url+= '?target='+weight;
-    console.log(url);
-    fetch(url).then(function(response) {  
-      return response.json();
-    }).then(function(res) {
-      if (res["data"]!=null) {
-        console.log(res);
-      AsyncStorage.setItem("target_weight",weight);
-        _navigator.push({
-          title:'ThomeView',
-          id:'Thome',
-        })
-      }else{
-        Alert.alert('Fail to display','Please check your data'); 
-      }
-    });
+    if (weight !=null) {
+      var url = URLnetowrk+'modifytarget.action'; // modify the height
+      url+= '?target='+weight;
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        if (res["data"]!=null) {
+          console.log(res);
+        AsyncStorage.setItem("target_weight",weight);
+          _navigator.push({
+            title:'ThomeView',
+            id:'Thome',
+          })
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }
+      });
+    }else{
+      Alert.alert('Sorry','Please check your data'); 
+    };
   },
    render: function(){
     return(

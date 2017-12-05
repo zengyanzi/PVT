@@ -27,7 +27,6 @@ var BModifyView = React.createClass({
     };
     return {
     };
-
   },
   _save:function(){    
     var newEmail=this.state.newEmail
@@ -78,13 +77,8 @@ var BModifyView = React.createClass({
     );
   },
 });
-
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
+
   Top:{
     flexDirection: 'row',
     height:50,
@@ -109,14 +103,12 @@ var styles = StyleSheet.create({
   Right:{
   flex:1,
   flexDirection: 'row',
-
   },
   maincontain:
   {
     flex: 1,
     backgroundColor: '#38bda0',
     flexDirection:'column',
-
   },   
   btn:{
      alignItems: 'center',

@@ -119,14 +119,7 @@ var PasswordModifyView = React.createClass({
   },
 });
 
-var styles = StyleSheet.create({
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-
-  },   
+var styles = StyleSheet.create({   
   btn:{
      alignItems: 'center',
      justifyContent: 'center',
@@ -134,7 +127,7 @@ var styles = StyleSheet.create({
      height: 30,
      borderRadius: 5,
    },
-     text:{
+  text:{
     fontWeight: 'bold',
     fontSize: 16,
     color: '#FFF'

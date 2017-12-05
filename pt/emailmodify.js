@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';

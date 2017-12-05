@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
   Picker,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -28,27 +29,31 @@ var BirthModifyView = React.createClass({
     };
     return {
     };
-
   },
   _save:function(){    
     var birthday=this.state.date;
-    var url = URLnetowrk+'modifybirthday.action'; // modify the birthday
-    url += '?birthday='+birthday;
-    console.log(url);
-    fetch(url).then(function(response) {  
-      return response.json();
-    }).then(function(res) {
-      if (res["data"]!=null) {
-          console.log(res);
-          AsyncStorage.setItem("birthday",birthday);
-          _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
-          })
-      }else{
-        Alert.alert('Fail to display','Please check your data'); 
-      }
-    });
+    if (birthday !=null) {
+      var url = URLnetowrk+'modifybirthday.action'; // modify the birthday
+      url += '?birthday='+birthday;
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        if (res["data"]!=null) {
+            console.log(res);
+            AsyncStorage.setItem("birthday",birthday);
+            _navigator.push({
+              title:'ThomeView',
+              id:'Thome',
+            })
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }
+      });
+    }else{
+      Alert.alert('Sorry','Please input your information '); 
+    }
+  
   },
   render: function(){
     return(
@@ -73,44 +78,6 @@ var BirthModifyView = React.createClass({
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-
-  },   
   btn:{
      alignItems: 'center',
      justifyContent: 'center',

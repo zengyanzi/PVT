@@ -95,63 +95,26 @@ var GenderModifyView = React.createClass({
   },
   render: function(){
     return(
+       <View >
+        <Picker 
+            prompt="Please choose sportname"
+            style={{width:200,color:'#38bda0',alignItems:'center'}}
+            selectedValue={this.state.gender}
+            onValueChange={(value) => this.setState({gender: value})}>       
+            <Picker.Item label="Male" value="Male" />
+            <Picker.Item label="Female" value="Female" />   
+        </Picker>
 
-           <View >
-            <Picker 
-                prompt="Please choose sportname"
-                style={{width:200,color:'#38bda0',alignItems:'center'}}
-                selectedValue={this.state.gender}
-                onValueChange={(value) => this.setState({gender: value})}>       
-                <Picker.Item label="Male" value="Male" />
-                <Picker.Item label="Female" value="Female" />   
-            </Picker>
-
-            <TouchableOpacity style={styles.btn}
-              onPress={this._save}>
-              <Text style={styles.text}>Save</Text>
-             </TouchableOpacity>
-          </View> 
-
-
+        <TouchableOpacity style={styles.btn}
+          onPress={this._save}>
+          <Text style={styles.text}>Save</Text>
+         </TouchableOpacity>
+      </View> 
     );
   },
 });
 
 var styles = StyleSheet.create({
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-         justifyContent: 'center',
-
-  },   
   btn:{
      alignItems: 'center',
      justifyContent: 'center',

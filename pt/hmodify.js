@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   AsyncStorage,
+  Alert,
   TouchableHighlight,
   ListView
 } from 'react-native';
@@ -26,31 +27,32 @@ var HModifyView = React.createClass({
       height:''
     };
     return {
-      height:this.state.height
     };
 
   },
   _save:function(){    
     var height=this.state.height;
-    console.log(this.state.height);
-    AsyncStorage.setItem("height",height.toString());
-    var url = URLnetowrk+'modifyheight.action'; // modify the height
-    url+= '?height='+height;
-    console.log(url);
-    fetch(url).then(function(response) {  
-      return response.json();
-    }).then(function(res) {
-      if (res["data"]!=null) {
-          console.log(res);
-          _navigator.push({
-            title:'ThomeView',
-            id:'Thome',
-          })
-      }else{
-        Alert.alert('Fail to display','Please check your data'); 
-      }
-  
-    });
+    if (height!=null) {
+      var url = URLnetowrk+'modifyheight.action'; // modify the height
+      url+= '?height='+height;
+      console.log(url);
+      fetch(url).then(function(response) {  
+        return response.json();
+      }).then(function(res) {
+        if (res["data"]!=null) {
+            console.log(res);
+            _navigator.push({
+              title:'ThomeView',
+              id:'Thome',
+            })
+        }else{
+          Alert.alert('Fail to display','Please check your data'); 
+        }
+    
+      });
+    }else{
+      Alert.alert('Sorry','Please check your information'); 
+    };
   },
   render: function(){
     return(
@@ -75,45 +77,7 @@ var HModifyView = React.createClass({
   },
 });
 
-var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
-  maincontain:
-  {
-    flex: 1,
-    backgroundColor: '#38bda0',
-    flexDirection:'column',
-
-  },   
+var styles = StyleSheet.create({ 
   btn:{
      alignItems: 'center',
      justifyContent: 'center',
@@ -128,9 +92,7 @@ var styles = StyleSheet.create({
     color: '#38bda0'
   },
   input:{
-
-  flexDirection: 'row',
-
+    flexDirection: 'row',
   },
 });
 module.exports = HModifyView;
