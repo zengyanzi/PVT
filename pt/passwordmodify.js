@@ -65,55 +65,49 @@ var PasswordModifyView = React.createClass({
   },
   _save:function(){
     var value = this.refs.form.getValue();
-    var oldpassword=value["oldpassword"];
-    var newpassword=value["newpassword"];
-    var newpasswordconfirm=value["newpasswordconfirm"]
-    if (this.state.oldpassword==oldpassword) { 
-      if (newpassword == newpasswordconfirm) {
-        AsyncStorage.setItem("password",newpassword);
-        var url = URLnetowrk+'modifypassword.action'; // get the item data again 
-          url+= '?oldpassword='+oldpassword+ '?newpassword='+newpassword;
-          fetch(url).then(function(response) {  
-            return response.json();
-          }).then(function(res) {
-            if (res["data"]!=null) {
-                console.log(res);
-                _navigator.push({
-                  title:'ThomeView',
-                  id:'Thome',
-                })
-            }else{
-              Alert.alert('Wrong Password','Please input again'); 
-            }
-        });
+    if (value!=null) {
+      var oldpassword=value["oldpassword"];
+      var newpassword=value["newpassword"];
+      var newpasswordconfirm=value["newpasswordconfirm"]
+      if (this.state.oldpassword==oldpassword) { 
+        if (newpassword == newpasswordconfirm) {
+          AsyncStorage.setItem("password",newpassword);
+          var url = URLnetowrk+'modifypassword.action'; // get the item data again 
+            url+= '?oldpassword='+oldpassword+ '?newpassword='+newpassword;
+            fetch(url).then(function(response) {  
+              return response.json();
+            }).then(function(res) {
+              if (res["data"]!=null) {
+                  console.log(res);
+                  _navigator.push({
+                    title:'ThomeView',
+                    id:'Thome',
+                  })
+              }else{
+                Alert.alert('Wrong Password','Please input again'); 
+              }
+          });
+        }else{
+          Alert.alert('different new passowrd','Please input the same new passowrd'); 
+        }
+        }else{
+          Alert.alert('Wrong Password','Please input again'); 
+        }
       }else{
-        Alert.alert('different new passowrd','Please input the same new passowrd'); 
+        Alert.alert('Sorry','Please input your information '); 
       }
-      }else{
-        Alert.alert('Wrong Password','Please input again'); 
-      }
-
-  },
+    },
   render: function(){
     return(
-       <ScrollView 
-          contentContainerStyle={{flex:1}}
-          keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps='never'>
-          <View style={styles.maincontain}>
-            <View style={[styles.Top,styles.Bottomline]}>      
-              <View style={styles.Topbar}>
-              </View>
-              <View style={styles.right}>
-              </View>
-            </View>
-           <View >
+  
+  
+           <View style={{backgroundColor: '#38bda0'}}>
             <Form 
               ref="form"
               type={User}
               options={options}
             />
-          </View> 
+       
           <View>
             <TouchableOpacity style={styles.btn}
               onPress={this._save}>
@@ -121,43 +115,11 @@ var PasswordModifyView = React.createClass({
              </TouchableOpacity>
           </View>   
         </View>       
-      </ScrollView>
     );
   },
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
-  Top:{
-    flexDirection: 'row',
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-     justifyContent: 'space-between',
-  },
-  Bottomline:{
-    borderBottomWidth:2,
-    borderColor:'gray'
-  },
-
-  Topbar:{
-    flex:2,
-    flexDirection: 'row',
-
-  },
-   Left:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  Right:{
-  flex:1,
-  flexDirection: 'row',
-
-  },
   maincontain:
   {
     flex: 1,

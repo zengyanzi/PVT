@@ -232,6 +232,7 @@ var styles = StyleSheet.create({
   Topbar:{
     flex:2,
     flexDirection: 'row',
+    marginBottom:10
   },
    Left:{
     flexDirection: 'row',

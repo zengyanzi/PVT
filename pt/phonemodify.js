@@ -6,12 +6,12 @@ import {
   StyleSheet,
   ScrollView,
   Navigator,
-  TextInput,
   TouchableOpacity,
   AsyncStorage,
   Picker,
   TouchableHighlight,
-  ListView
+  ListView,
+  Alert
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
@@ -31,29 +31,42 @@ var PhoneModifyView = React.createClass({
     };
 
   },
+  componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('phone',(err,result)=>{
+       phone=result;
+       _that.setState({
+          phone:phone
+       })
+    })
+  },
   _save:function(){    
-      var newPhone=this.state.newPhone
-      AsyncStorage.getItem('userid',(err, result) => {
-        console.log(result);
-        var trainee_id=result;
-        var url = URLnetowrk+'modifyphone.action'; // get the item data again 
-        url += '?phone='+newPhone;
-        fetch(url).then(function(response) {  
-          return response.json();
-        }).then(function(res) {
-          if (res["data"]!=null) {
-            console.log(res);
-            var phone=newPhone.toString();
-            AsyncStorage.setItem("phone",phone);
-              _navigator.push({
-                title:'ThomeView',
-                id:'Thome',
-              })
-          }else{
-            Alert.alert('Fail to display','Please check your data'); 
-          }
+      var newPhone=this.state.newPhone;
+      if (newPhone!=null) {
+        AsyncStorage.getItem('userid',(err, result) => {
+          console.log(result);
+          var trainee_id=result;
+          var url = URLnetowrk+'modifyphone.action'; // get the item data again 
+          url += '?phone='+newPhone;
+          fetch(url).then(function(response) {  
+            return response.json();
+          }).then(function(res) {
+            if (res["data"]!=null) {
+              console.log(res);
+              var phone=newPhone.toString();
+              AsyncStorage.setItem("phone",phone);
+                _navigator.push({
+                  title:'ThomeView',
+                  id:'Thome',
+                })
+            }else{
+              Alert.alert('Fail to display','Please check your data'); 
+            }
+          });
         });
-      });
+      }else{
+        Alert.alert('Sorry','Please input your information '); 
+      }
     },
   render: function(){
     return(
@@ -69,8 +82,8 @@ var PhoneModifyView = React.createClass({
               </View>
             </View>
            <View >
-            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.phone}</FormLabel>
-            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({newPhone: text})}/>
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.state.phone}</FormLabel>
+            <FormInput  inputStyle={{color: '#fff',fontSize:18,borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({newPhone: text})}/>
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}
