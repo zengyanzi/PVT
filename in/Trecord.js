@@ -197,7 +197,10 @@ var TRecordView = React.createClass({
         keyboardShouldPersistTaps='never'>
         <View style={[styles.Top,styles.Bottomline]}>
           <View style={[styles.Topbar,styles.Left]}>
-
+              <TouchableOpacity 
+                  onPress={() => _navigator.push({title:'TAddrecordtodayView',id:'Taddrecordtoday',params:{trainee_id:this.props.trainee_id}})}>
+                <Image source={require('../img/add_pressed.png') }/>
+               </TouchableOpacity> 
           </View>
           <View style={styles.Topbar}>
             <Image source={require('../img/ptv_sized.png') }/>

@@ -260,9 +260,7 @@ var TDetailPlanView = React.createClass({
             dataSource={this.state.dataSource}
             enableEmptySections={true}
             renderRow={this.renderRow}
-            />
-
-
+          />
         </View>
       </ScrollView>
     );
@@ -270,11 +268,6 @@ var TDetailPlanView = React.createClass({
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,

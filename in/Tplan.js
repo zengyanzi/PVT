@@ -18,7 +18,6 @@ import {
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import Topview from './top.js';
 import URLnetowrk from '../pub/network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -92,7 +91,6 @@ var TPlanView = React.createClass({
           Alert.alert('Fail to display','Please check your data'); 
         }  
       });       
-
   },
 //  set scrolling to true/false
   allowScroll(scrollEnabled) {
@@ -224,11 +222,6 @@ var TPlanView = React.createClass({
 });
 
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,

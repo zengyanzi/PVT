@@ -17,7 +17,6 @@ import {
 var Slider = require('react-native-slider');
 import Dimensions from 'Dimensions';
 import DatePicker from './date.js';
-import Topview from './top.js';
 import URLnetowrk from '../pub/network';
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -160,8 +159,7 @@ _submit:function(){
                                key={i}
                                value={v}
                                label={v} />
-                   }) }
-             
+                   }) }         
             </Picker>
           </View>
           <View style={styles.slider}>
@@ -206,11 +204,6 @@ var customStyles2 = StyleSheet.create({
   }
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,
@@ -271,7 +264,7 @@ var styles = StyleSheet.create({
   datepicker:{
     width:200,
   },
-    btn:{
+  btn:{
      alignSelf: 'stretch',
      alignItems: 'center',
      justifyContent: 'center',

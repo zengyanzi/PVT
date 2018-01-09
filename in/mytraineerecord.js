@@ -37,24 +37,7 @@ var rows = [
     Calories :"457",
     text: "Row:5min;Treadmill:6min;Xtrainer:5min",
     autoClose: true,
-  }, {
-    day:"2017-02-09",
-    name:"Vincent",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    autoClose: true,
-  }, {
-    day:"2017-02-10",
-    name:"Jenny",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-    autoClose: true,
-  }, {
-    day:"2017-02-11",
-    name:"Jenny",
-    Calories :"457",
-    text: "Row:5min;Treadmill:6min;Xtrainer:5min",
-  },  
+  } 
 ];
 var MyTraineeRecordView = React.createClass({
   getInitialState: function(){
@@ -176,11 +159,6 @@ var MyTraineeRecordView = React.createClass({
   },
 });
 var styles = StyleSheet.create({
-   container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-    justifyContent: 'center',
-  },
   Top:{
     flexDirection: 'row',
     height:50,

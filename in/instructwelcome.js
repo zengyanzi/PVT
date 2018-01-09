@@ -65,21 +65,6 @@ var InstructwelcomeView = React.createClass({
   }
 });
 var styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    backgroundColor: '#38bda0',
-  },
-  Top:{
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-    justifyContent: 'center',
-  },
-  WelcomeText:{
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#d7499a', 
-  },
   maincontain:
   {
     flex: 10,
@@ -88,10 +73,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-   logo:{
-    width:160,
-    height:160,
   },
   choose:{
     flexDirection:'row'

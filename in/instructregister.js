@@ -107,23 +107,6 @@ var InstructregisterView = React.createClass({
   }
 });
 var styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    backgroundColor: '#F4FCFF',
-  },
-  Top:{
-    height:50,
-    alignItems: 'center',
-    backgroundColor:'#38bda0',
-    justifyContent: 'center',
-  },
-  WelcomeText:{
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#d7499a', 
-    borderWidth: 2,
-    borderBottomColor:'#b8a6b0',
-  },
   maincontain:
   {
     flex: 10,
@@ -132,20 +115,6 @@ var styles = StyleSheet.create({
     backgroundColor: '#38bda0',
     justifyContent: 'center',
  },
- birthday:{
-    fontWeight: 'bold',
-    fontSize: 16,
-    color: 'black',
- },
-   logo:{
-    width:160,
-    height:160,
-  },
-  text:{
-    fontWeight: 'bold',
-    fontSize: 14,
-    color: '#241003',
-  },
    buttonText: {
     fontSize: 18,
     color: 'white',
