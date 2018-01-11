@@ -32,18 +32,18 @@ var Description = React.createClass({
 
   },
   _save:function(){    
-      var description=this.state.description
+      var newdescription=this.state.newdescription
       AsyncStorage.getItem('userid',(err, result) => {
         console.log(result);
         var trainee_id=result;
         var url = URLnetowrk+'instructor/modifydescription.action'; // get the item data again 
-        url += '?description='+description;
+        url += '?description='+newdescription;
         fetch(url).then(function(response) {  
           return response.json();
         }).then(function(res) {
           if (res["data"]!=null) {
             console.log(res);
-            AsyncStorage.setItem("description",description);
+            AsyncStorage.setItem("description",newdescription);
               _navigator.push({
             title:'IhomeView',
             id:'Ihome',
@@ -54,22 +54,28 @@ var Description = React.createClass({
         });
       });
     },
+    componentWillMount() {
+    let _that=this;
+    AsyncStorage.getItem('email',(err,result)=>{
+       email=result;
+       _that.setState({
+          email:email
+       })
+    })
+    AsyncStorage.getItem('description',(err,result)=>{
+       description=result;
+       _that.setState({
+          description:description
+       })
+    })
+  },
   render: function(){
     return(
-       <ScrollView 
-          contentContainerStyle={{flex:1}}
-          keyboardDismissMode='on-drag'
-          keyboardShouldPersistTaps='never'>
-          <View style={styles.maincontain}>
-            <View style={[styles.Top,styles.Bottomline]}>      
-              <View style={styles.Topbar}>
-              </View>
-              <View style={styles.right}>
-              </View>
-            </View>
+
+          <View>
            <View >
-            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.props.phone}</FormLabel>
-            <FormInput containerStyle={{borderBottomColor: '#fff',borderBottomWidth:2}} onChangeText={(text) => this.setState({description: text})}/>
+            <FormLabel labelStyle={{color: '#fff',fontSize:18}}> Origin:{this.state.description}</FormLabel>
+            <FormInput inputStyle={{color: '#fff',fontSize:18,borderBottomColor: '#fff',borderBottomWidth:2}}  onChangeText={(text) => this.setState({newdescription: text})}/>
           </View>   
           <View>
             <TouchableOpacity style={styles.btn}
@@ -78,7 +84,7 @@ var Description = React.createClass({
              </TouchableOpacity>
           </View> 
         </View>       
-      </ScrollView>
+
     );
   },
 });
