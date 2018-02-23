@@ -1616,35 +1616,35 @@ var _traineelogin=require(484                );var _traineelogin2=babelHelpers.i
 var _traineeregister=require(480                   );var _traineeregister2=babelHelpers.interopRequireDefault(_traineeregister); // 480 = ./pt/traineeregister
 var _Thome=require(486         );var _Thome2=babelHelpers.interopRequireDefault(_Thome); // 486 = ./pt/Thome
 var _Ihome=require(800         );var _Ihome2=babelHelpers.interopRequireDefault(_Ihome); // 800 = ./in/Ihome
-var _detailplan=require(811              );var _detailplan2=babelHelpers.interopRequireDefault(_detailplan); // 811 = ./pt/detailplan
-var _Tdetailplan=require(814               );var _Tdetailplan2=babelHelpers.interopRequireDefault(_Tdetailplan); // 814 = ./in/Tdetailplan
-var _editplan=require(815            );var _editplan2=babelHelpers.interopRequireDefault(_editplan); // 815 = ./pt/editplan
-var _Teditplan=require(819             );var _Teditplan2=babelHelpers.interopRequireDefault(_Teditplan); // 819 = ./in/Teditplan
-var _Tplan=require(820         );var _Tplan2=babelHelpers.interopRequireDefault(_Tplan); // 820 = ./in/Tplan
-var _Trecord=require(821           );var _Trecord2=babelHelpers.interopRequireDefault(_Trecord); // 821 = ./in/Trecord
-var _Tcreateplan=require(822               );var _Tcreateplan2=babelHelpers.interopRequireDefault(_Tcreateplan); // 822 = ./in/Tcreateplan
-var _createplan=require(829              );var _createplan2=babelHelpers.interopRequireDefault(_createplan); // 829 = ./pt/createplan
-var _planinfo=require(832            );var _planinfo2=babelHelpers.interopRequireDefault(_planinfo); // 832 = ./pt/planinfo
-var _editrecord=require(833              );var _editrecord2=babelHelpers.interopRequireDefault(_editrecord); // 833 = ./pt/editrecord
-var _detailrecord=require(834                );var _detailrecord2=babelHelpers.interopRequireDefault(_detailrecord); // 834 = ./pt/detailrecord
-var _chart=require(835         );var _chart2=babelHelpers.interopRequireDefault(_chart); // 835 = ./pt/chart
-var _additemtoday=require(850                );var _additemtoday2=babelHelpers.interopRequireDefault(_additemtoday); // 850 = ./pt/additemtoday
-var _Tadditemtoday=require(851                 );var _Tadditemtoday2=babelHelpers.interopRequireDefault(_Tadditemtoday); // 851 = ./in/Tadditemtoday
-var _addrecordtoday=require(852                  );var _addrecordtoday2=babelHelpers.interopRequireDefault(_addrecordtoday); // 852 = ./pt/addrecordtoday
-var _profilemodify=require(853                 );var _profilemodify2=babelHelpers.interopRequireDefault(_profilemodify); // 853 = ./pt/profilemodify
-var _iprofilemodify=require(854                  );var _iprofilemodify2=babelHelpers.interopRequireDefault(_iprofilemodify); // 854 = ./in/iprofilemodify
-var _emailmodify=require(855               );var _emailmodify2=babelHelpers.interopRequireDefault(_emailmodify); // 855 = ./pt/emailmodify
+var _detailplan=require(814              );var _detailplan2=babelHelpers.interopRequireDefault(_detailplan); // 814 = ./pt/detailplan
+var _Tdetailplan=require(817               );var _Tdetailplan2=babelHelpers.interopRequireDefault(_Tdetailplan); // 817 = ./in/Tdetailplan
+var _editplan=require(818            );var _editplan2=babelHelpers.interopRequireDefault(_editplan); // 818 = ./pt/editplan
+var _Teditplan=require(822             );var _Teditplan2=babelHelpers.interopRequireDefault(_Teditplan); // 822 = ./in/Teditplan
+var _Tplan=require(823         );var _Tplan2=babelHelpers.interopRequireDefault(_Tplan); // 823 = ./in/Tplan
+var _Trecord=require(824           );var _Trecord2=babelHelpers.interopRequireDefault(_Trecord); // 824 = ./in/Trecord
+var _Tcreateplan=require(825               );var _Tcreateplan2=babelHelpers.interopRequireDefault(_Tcreateplan); // 825 = ./in/Tcreateplan
+var _createplan=require(832              );var _createplan2=babelHelpers.interopRequireDefault(_createplan); // 832 = ./pt/createplan
+var _planinfo=require(835            );var _planinfo2=babelHelpers.interopRequireDefault(_planinfo); // 835 = ./pt/planinfo
+var _editrecord=require(836              );var _editrecord2=babelHelpers.interopRequireDefault(_editrecord); // 836 = ./pt/editrecord
+var _detailrecord=require(837                );var _detailrecord2=babelHelpers.interopRequireDefault(_detailrecord); // 837 = ./pt/detailrecord
+var _chart=require(838         );var _chart2=babelHelpers.interopRequireDefault(_chart); // 838 = ./pt/chart
+var _additemtoday=require(853                );var _additemtoday2=babelHelpers.interopRequireDefault(_additemtoday); // 853 = ./pt/additemtoday
+var _Tadditemtoday=require(854                 );var _Tadditemtoday2=babelHelpers.interopRequireDefault(_Tadditemtoday); // 854 = ./in/Tadditemtoday
+var _addrecordtoday=require(855                  );var _addrecordtoday2=babelHelpers.interopRequireDefault(_addrecordtoday); // 855 = ./pt/addrecordtoday
+var _profilemodify=require(856                 );var _profilemodify2=babelHelpers.interopRequireDefault(_profilemodify); // 856 = ./pt/profilemodify
+var _iprofilemodify=require(859                  );var _iprofilemodify2=babelHelpers.interopRequireDefault(_iprofilemodify); // 859 = ./in/iprofilemodify
+var _emailmodify=require(862               );var _emailmodify2=babelHelpers.interopRequireDefault(_emailmodify); // 862 = ./pt/emailmodify
 var _network=require(476            );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ./pub/network
-var _phonemodify=require(856               );var _phonemodify2=babelHelpers.interopRequireDefault(_phonemodify); // 856 = ./pt/phonemodify
-var _passwordmodify=require(857                  );var _passwordmodify2=babelHelpers.interopRequireDefault(_passwordmodify); // 857 = ./pt/passwordmodify
-var _iphonemodify=require(858                );var _iphonemodify2=babelHelpers.interopRequireDefault(_iphonemodify); // 858 = ./in/iphonemodify
-var _ipasswordmodify=require(859                   );var _ipasswordmodify2=babelHelpers.interopRequireDefault(_ipasswordmodify); // 859 = ./in/ipasswordmodify
-var _igendermodify=require(860                 );var _igendermodify2=babelHelpers.interopRequireDefault(_igendermodify); // 860 = ./in/igendermodify
-var _ibirthmodify=require(861                );var _ibirthmodify2=babelHelpers.interopRequireDefault(_ibirthmodify); // 861 = ./in/ibirthmodify
-var _iwmodify=require(862            );var _iwmodify2=babelHelpers.interopRequireDefault(_iwmodify); // 862 = ./in/iwmodify
-var _newitem=require(863           );var _newitem2=babelHelpers.interopRequireDefault(_newitem); // 863 = ./pt/newitem
-var _staticmap=require(864             );var _staticmap2=babelHelpers.interopRequireDefault(_staticmap); // 864 = ./pt/staticmap
-var _description=require(865               );var _description2=babelHelpers.interopRequireDefault(_description); // 865 = ./in/description
+var _phonemodify=require(857               );var _phonemodify2=babelHelpers.interopRequireDefault(_phonemodify); // 857 = ./pt/phonemodify
+var _passwordmodify=require(858                  );var _passwordmodify2=babelHelpers.interopRequireDefault(_passwordmodify); // 858 = ./pt/passwordmodify
+var _iphonemodify=require(860                );var _iphonemodify2=babelHelpers.interopRequireDefault(_iphonemodify); // 860 = ./in/iphonemodify
+var _ipasswordmodify=require(861                   );var _ipasswordmodify2=babelHelpers.interopRequireDefault(_ipasswordmodify); // 861 = ./in/ipasswordmodify
+var _igendermodify=require(807                 );var _igendermodify2=babelHelpers.interopRequireDefault(_igendermodify); // 807 = ./in/igendermodify
+var _ibirthmodify=require(808                );var _ibirthmodify2=babelHelpers.interopRequireDefault(_ibirthmodify); // 808 = ./in/ibirthmodify
+var _iwmodify=require(863            );var _iwmodify2=babelHelpers.interopRequireDefault(_iwmodify); // 863 = ./in/iwmodify
+var _newitem=require(864           );var _newitem2=babelHelpers.interopRequireDefault(_newitem); // 864 = ./pt/newitem
+var _staticmap=require(865             );var _staticmap2=babelHelpers.interopRequireDefault(_staticmap); // 865 = ./pt/staticmap
+var _description=require(806               );var _description2=babelHelpers.interopRequireDefault(_description); // 806 = ./in/description
 var _detailgym=require(765              );var _detailgym2=babelHelpers.interopRequireDefault(_detailgym); // 765 = ./pub/detailgym
 var _gymcreate=require(866              );var _gymcreate2=babelHelpers.interopRequireDefault(_gymcreate); // 866 = ./pub/gymcreate
 var _searchtrainee=require(867                 );var _searchtrainee2=babelHelpers.interopRequireDefault(_searchtrainee); // 867 = ./in/searchtrainee
@@ -1660,10 +1660,8 @@ props));
 _this.state={};
 
 _reactNative.AsyncStorage.getItem('isFirst',function(error,result){
-
 if(result=='false'){
 console.log('not first');
-
 var type;
 _reactNative.AsyncStorage.getItem('type',function(err,result){
 console.log(result);
@@ -1725,30 +1723,24 @@ id:'Thome'});
 }
 };
 });
-
 }else{
-
 console.log('is first');
-
 
 _reactNative.AsyncStorage.setItem('isFirst','false',function(error){
 if(error){
 alert(error);
 }
 });
-
 _navigator.push({
 title:'GuideView',
 id:'Guide'});
 
 }
 });return _this;
-
 }babelHelpers.createClass(PTV,[{key:'configureScenceAndroid',value:function configureScenceAndroid()
 {
 return _reactNative.Navigator.SceneConfigs.FadeAndroid;
 }},{key:'renderSceneAndroid',value:function renderSceneAndroid(
-
 route,navigator){
 _navigator=navigator;
 if(route.id==='main'){
@@ -2003,7 +1995,6 @@ _react2.default.createElement(_Guide2.default,babelHelpers.extends({},route.para
 
 }
 }},{key:'render',value:function render()
-
 {
 var renderScene=this.renderSceneAndroid;
 var configureScence=this.configureScenceAndroid;
@@ -2016,24 +2007,10 @@ renderScene:renderScene}));
 
 }}]);return PTV;}(_react2.default.Component);exports.default=PTV;
 
-
-
-
 var styles=_reactNative.StyleSheet.create({
 container:{
 flex:1,
 backgroundColor:'#38bda0'},
-
-Top:{
-height:50,
-alignItems:'center',
-backgroundColor:'#f5f2f0',
-justifyContent:'center'},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
 
 maincontain:
 {
@@ -2043,10 +2020,6 @@ paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center',
 alignItems:'center'},
-
-logo:{
-width:160,
-height:160},
 
 choose:{
 flexDirection:'row'},
@@ -68775,21 +68748,6 @@ _react2.default.createElement(_reactNative.Text,{style:styles.text},' Login'))))
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0'},
-
-Top:{
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
-
 maincontain:
 {
 flex:10,
@@ -68798,10 +68756,6 @@ paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center',
 alignItems:'center'},
-
-logo:{
-width:160,
-height:160},
 
 choose:{
 flexDirection:'row'},
@@ -68935,23 +68889,6 @@ _react2.default.createElement(_reactNative.Text,{style:styles.buttonText},'Save'
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#F4FCFF'},
-
-Top:{
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a',
-borderWidth:2,
-borderBottomColor:'#b8a6b0'},
-
 maincontain:
 {
 flex:10,
@@ -68959,20 +68896,6 @@ paddingLeft:10,
 paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center'},
-
-birthday:{
-fontWeight:'bold',
-fontSize:16,
-color:'black'},
-
-logo:{
-width:160,
-height:160},
-
-text:{
-fontWeight:'bold',
-fontSize:14,
-color:'#241003'},
 
 buttonText:{
 fontSize:18,
@@ -77617,8 +77540,6 @@ __d(/* PTV/img/welcomeinstruct.png */function(global, require, module, exports) 
 }, 478, null, "PTV/img/welcomeinstruct.png");
 __d(/* PTV/pt/traineewelcome.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-
-
 var _reactNative=require(42            ); // 42 = react-native
 
 
@@ -77646,10 +77567,7 @@ return false;
 _navigator.pop();
 return true;
 });
-
-
 var TraineewelcomeView=_react2.default.createClass({displayName:'TraineewelcomeView',
-
 getInitialState:function getInitialState(){
 _navigator=this.props.navigator;
 _reactNative.AsyncStorage.setItem("type",'trainee');
@@ -77690,17 +77608,6 @@ container:{
 flex:1,
 backgroundColor:'#38bda0'},
 
-Top:{
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
-
 maincontain:
 {
 flex:10,
@@ -77709,10 +77616,6 @@ paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center',
 alignItems:'center'},
-
-logo:{
-width:160,
-height:160},
 
 choose:{
 flexDirection:'row'},
@@ -77738,8 +77641,6 @@ module.exports=TraineewelcomeView;
 }, 479, null, "PTV/pt/traineewelcome.js");
 __d(/* PTV/pt/traineeregister.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-
-
 var _reactNative=require(42            ); // 42 = react-native
 
 
@@ -77848,21 +77749,6 @@ _react2.default.createElement(_reactNative.Text,{style:styles.buttonText},'Save'
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0'},
-
-Top:{
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
-
 maincontain:
 {
 flex:10,
@@ -77870,20 +77756,6 @@ paddingLeft:10,
 paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center'},
-
-birthday:{
-fontWeight:'bold',
-fontSize:16,
-color:'black'},
-
-logo:{
-width:160,
-height:160},
-
-text:{
-fontWeight:'bold',
-fontSize:14,
-color:'#241003'},
 
 buttonText:{
 fontSize:18,
@@ -95517,20 +95389,8 @@ paddingRight:10,
 backgroundColor:'#38bda0',
 justifyContent:'center'},
 
-logo:{
-width:160,
-height:160},
-
 choose:{
 flexDirection:'row'},
-
-input:{
-height:40,
-width:200,
-marginTop:10,
-borderWidth:1,
-borderRadius:5,
-borderColor:'lightblue'},
 
 btn:{
 alignSelf:'stretch',
@@ -95675,41 +95535,6 @@ _react2.default.createElement(_profile2.default,this.props))))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
-
 maincontain:
 {
 flex:1,
@@ -101209,21 +101034,7 @@ var rows=[
 Pdate:"2017-02-08",
 Calories:"457",
 text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-Pdate:"2017-02-09",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-Pdate:"2017-02-10",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-Pdate:"2017-02-11",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min"}];
+autoClose:true}];
 
 
 var PlanView=_react2.default.createClass({displayName:'PlanView',
@@ -101418,11 +101229,6 @@ enableEmptySections:true})));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -101434,11 +101240,10 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:2,
-flexDirection:'row'},
-
+flexDirection:'row',
+marginBottom:10},
 
 Left:{
 flexDirection:'row'},
@@ -101447,13 +101252,6 @@ Right:{
 position:'absolute',
 top:5,
 right:5},
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
 
 listview:{
 flex:1},
@@ -117530,11 +117328,6 @@ enableEmptySections:true})));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -117559,12 +117352,6 @@ Right:{
 position:'absolute',
 top:5,
 right:5},
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
 
 listview:{
 flex:1},
@@ -117852,11 +117639,6 @@ _react2.default.createElement(_twmodify2.default,this.props)))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -117867,7 +117649,6 @@ justifyContent:'space-between'},
 Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
-
 
 Topbar:{
 flex:2,
@@ -118451,7 +118232,6 @@ Alert.alert('Fail to display','Please check your data');
 },
 render:function render(){var _this=this;
 return(
-
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.Picker,{
 prompt:'Please choose sportname',
@@ -118468,46 +118248,10 @@ _react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))));
 
 
 
-
-
 }});
 
 
 var styles=_reactNative.StyleSheet.create({
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column',
-justifyContent:'center'},
-
-
 btn:{
 alignItems:'center',
 justifyContent:'center',
@@ -118539,6 +118283,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
+
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 
@@ -118554,10 +118299,10 @@ this.state={};
 
 return{};
 
-
 },
 _save:function _save(){
 var birthday=this.state.date;
+if(birthday!=null){
 var url=_network2.default+'modifybirthday.action';
 url+='?birthday='+birthday;
 console.log(url);
@@ -118572,9 +118317,13 @@ title:'ThomeView',
 id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please input your information ');
+}
+
 },
 render:function render(){var _this=this;
 return(
@@ -118599,44 +118348,6 @@ _react2.default.createElement(_reactNative.Text,{style:{color:'#fff'}},'Save')))
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
 btn:{
 alignItems:'center',
 justifyContent:'center',
@@ -118667,6 +118378,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
+
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 
@@ -118680,15 +118392,13 @@ var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChange
 this.state={
 height:''};
 
-return{
-height:this.state.height};
+return{};
 
 
 },
 _save:function _save(){
 var height=this.state.height;
-console.log(this.state.height);
-_reactNative.AsyncStorage.setItem("height",height.toString());
+if(height!=null){
 var url=_network2.default+'modifyheight.action';
 url+='?height='+height;
 console.log(url);
@@ -118702,10 +118412,13 @@ title:'ThomeView',
 id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please check your information');
+};
 },
 render:function render(){var _this=this;
 return(
@@ -118731,44 +118444,6 @@ _react2.default.createElement(_reactNative.Text,{style:{color:'#fff'}},'Save')))
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
 btn:{
 alignItems:'center',
 justifyContent:'center',
@@ -118783,15 +118458,14 @@ fontSize:16,
 color:'#38bda0'},
 
 input:{
-
 flexDirection:'row'}});
-
 
 
 module.exports=HModifyView;
 }, 733, null, "PTV/pt/hmodify.js");
 __d(/* PTV/pt/twmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
+
 
 
 
@@ -118819,8 +118493,6 @@ this.state={};
 
 
 return{};
-
-
 
 },
 componentWillMount:function componentWillMount(){
@@ -118866,6 +118538,7 @@ target_weight:target_weight});
 _save:function _save(){
 var weight=this.state.weight;
 console.log(this.state.weight);
+if(weight!=null){
 var url=_network2.default+'modifytarget.action';
 url+='?target='+weight;
 console.log(url);
@@ -118880,9 +118553,12 @@ title:'ThomeView',
 id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please check your data');
+};
 },
 render:function render(){var _this=this;
 return(
@@ -118981,6 +118657,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
+
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 
@@ -118996,7 +118673,6 @@ weight:''};
 
 return{
 weight:this.state.weight};
-
 
 },
 componentWillMount:function componentWillMount(){
@@ -119044,6 +118720,7 @@ var weight=this.state.weight;
 var email=this.state.email;
 var password=this.state.password;
 console.log(this.state.weight);
+if(weight!=null){
 var url=_network2.default+'modifyweight.action';
 url+='?weight='+weight;
 console.log(url);
@@ -119065,15 +118742,17 @@ title:'ThomeView',
 id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please check your information');
+};
 },
-
 render:function render(){var _this=this;
 return(
 _react2.default.createElement(_reactNative.View,null,
@@ -119095,46 +118774,7 @@ _react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))));
 
 }});
 
-
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
 btn:{
 alignItems:'center',
 justifyContent:'center',
@@ -119149,9 +118789,7 @@ fontSize:16,
 color:'#FFF'},
 
 input:{
-
 flexDirection:'row'}});
-
 
 
 module.exports=IwView;
@@ -119218,9 +118856,18 @@ id:'detailgym',
 params:{data:res["data"][0]}});
 
 }else{
-_navigator.push({
+_reactNative.Alert.alert(
+'No gym for you?',
+'Submit your gym',
+[
+{text:'Creat',onPress:function onPress(){return _navigator.push({
 title:'Gymcreate',
-id:'gymcreate'});
+id:'gymcreate'});}},
+
+
+{text:'Cancel',onPress:function onPress(){return console.log('Cancel Pressed');},style:'cancel'}],
+
+{cancelable:false});
 
 }
 });
@@ -119239,7 +118886,6 @@ _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
 _react2.default.createElement(_reactNative.Image,{source:require(727                   )})), // 727 = ../img/ptv_sized.png
 
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Right]})),
-
 
 
 _react2.default.createElement(_reactNativeElements.SearchBar,{
@@ -119267,11 +118913,6 @@ _react2.default.createElement(_gymlist2.default,this.props))))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -119303,11 +118944,6 @@ maincontain:
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
-text:{
-color:'#fff',
-fontSize:30,
-fontWeight:'bold'},
 
 tabView:{
 flex:1,
@@ -120762,24 +120398,7 @@ return false;
 }
 _navigator.pop();
 return true;
-});
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-position:'absolute',
-top:0,
-left:0,
-right:0,
-bottom:0,
-justifyContent:'flex-end',
-alignItems:'center'},
-
-map:{
-position:'absolute',
-top:0,
-left:0,
-right:0,
-bottom:0}});var
+});var
 
 
 
@@ -122723,37 +122342,6 @@ enableEmptySections:true})));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
-
 maincontain:
 {
 flex:1,
@@ -127697,11 +127285,6 @@ _react2.default.createElement(_trainerlist2.default,this.props)));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -127711,50 +127294,7 @@ justifyContent:'space-between'},
 
 Bottomline:{
 borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-text:{
-color:'#fff',
-fontSize:30,
-fontWeight:'bold'},
-
-tabView:{
-flex:1,
-padding:10,
-backgroundColor:'#38bda0'},
-
-card:{
-borderWidth:1,
-backgroundColor:'#fff',
-borderColor:'rgba(0,0,0,0.1)',
-margin:5,
-height:400,
-padding:15,
-shadowColor:'#ccc',
-shadowOffset:{width:2,height:2},
-shadowOpacity:0.5,
-shadowRadius:3}});
+borderColor:'gray'}});
 
 
 module.exports=TrainerView;
@@ -127890,45 +127430,7 @@ enableEmptySections:true})));
 
 }});
 
-
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
 listview:{
 flex:1},
 
@@ -127994,7 +127496,7 @@ var _mytraineeplan=require(801                 );var _mytraineeplan2=babelHelper
 var _mytraineerecord=require(804                   );var _mytraineerecord2=babelHelpers.interopRequireDefault(_mytraineerecord); // 804 = ./mytraineerecord.js
 var _instrutprofile=require(805                  );var _instrutprofile2=babelHelpers.interopRequireDefault(_instrutprofile); // 805 = ./instrutprofile.js
 var _gym=require(742            );var _gym2=babelHelpers.interopRequireDefault(_gym); // 742 = ../pub/gym.js
-var _trainee=require(806           );var _trainee2=babelHelpers.interopRequireDefault(_trainee); // 806 = ./trainee.js
+var _trainee=require(809           );var _trainee2=babelHelpers.interopRequireDefault(_trainee); // 809 = ./trainee.js
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -128112,41 +127614,6 @@ _react2.default.createElement(_instrutprofile2.default,this.props))))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
-
-WelcomeText:{
-fontWeight:'bold',
-fontSize:18,
-color:'#d7499a'},
-
 maincontain:
 {
 flex:1,
@@ -128304,12 +127771,10 @@ keyboardShouldPersistTaps:'never'},
 _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]}),
 
-
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
 _react2.default.createElement(_reactNative.Image,{source:require(727                   )})), // 727 = ../img/ptv_sized.png
 
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Right]})),
-
 
 
 _react2.default.createElement(_reactNative.ListView,{style:styles.listview,
@@ -128324,11 +127789,6 @@ enableEmptySections:true})));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -128550,24 +128010,7 @@ day:"2017-02-08  ",
 name:"Vincent",
 Calories:"457",
 text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-02-09",
-name:"Vincent",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-02-10",
-name:"Jenny",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-02-11",
-name:"Jenny",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min"}];
+autoClose:true}];
 
 
 var MyTraineeRecordView=_react2.default.createClass({displayName:'MyTraineeRecordView',
@@ -128690,11 +128133,6 @@ enableEmptySections:true})));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -128768,11 +128206,14 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+var _reactNativeModalbox=require(730                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 730 = react-native-modalbox
 
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _description=require(806            );var _description2=babelHelpers.interopRequireDefault(_description); // 806 = ./description
+var _igendermodify=require(807              );var _igendermodify2=babelHelpers.interopRequireDefault(_igendermodify); // 807 = ./igendermodify
+var _ibirthmodify=require(808             );var _ibirthmodify2=babelHelpers.interopRequireDefault(_ibirthmodify); // 808 = ./ibirthmodify
 var screenW=_Dimensions2.default.get('window').width;
 var _navigator;
 var InstructProfileView=_react2.default.createClass({displayName:'InstructProfileView',
@@ -128847,14 +128288,14 @@ avatar:require(736                        )}))), // 736 = ../img/profile_normal.
 
 
 _react2.default.createElement(_reactNativeElements.List,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'IGenderModifyView',id:'igendermodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal2.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Gender',
 avatar:require(737                )})), // 737 = ../img/gender.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'Description',id:'description',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal1.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Description',
@@ -128866,7 +128307,7 @@ _react2.default.createElement(_reactNative.Text,{style:styles.ratingText},this.s
 avatar:require(741               )})), // 741 = ../img/Heart.png
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'IBirthModifyView',id:'ibirthmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal3.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Birthday',
@@ -128877,21 +128318,31 @@ avatar:require(724                     )}))), // 724 = ../img/plan_normal.png
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:this._logout},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Logout')))))));
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Logout'))))),
 
 
 
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal4],
+position:"center",ref:"modal1",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_description2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal4],
+position:"center",ref:"modal2",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_igendermodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal4],
+position:"center",ref:"modal3",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_ibirthmodify2.default,this.props))));
 
 
 
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -128902,7 +128353,6 @@ justifyContent:'space-between'},
 Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
-
 
 Topbar:{
 flex:2,
@@ -128940,11 +128390,469 @@ alignItems:'center',
 justifyContent:'center',
 backgroundColor:'#2cb395',
 height:50,
-borderRadius:5}});
+borderRadius:5},
+
+modal:{
+justifyContent:'center',
+alignItems:'center'},
+
+modal3:{
+height:160,
+borderRadius:25},
+
+modal4:{
+height:220,
+backgroundColor:'#38bda0',
+borderRadius:25},
+
+text:{
+color:"black",
+fontSize:22}});
 
 
 module.exports=InstructProfileView;
 }, 805, null, "PTV/in/instrutprofile.js");
+__d(/* PTV/in/description.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(496                    ); // 496 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var Description=_react2.default.createClass({displayName:'Description',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={};
+
+
+return{};
+
+
+
+},
+_save:function _save(){
+var newdescription=this.state.newdescription;
+_reactNative.AsyncStorage.getItem('userid',function(err,result){
+console.log(result);
+var trainee_id=result;
+var url=_network2.default+'instructor/modifydescription.action';
+url+='?description='+newdescription;
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_reactNative.AsyncStorage.setItem("description",newdescription);
+_navigator.push({
+title:'IhomeView',
+id:'Ihome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+});
+},
+componentWillMount:function componentWillMount(){
+var _that=this;
+_reactNative.AsyncStorage.getItem('email',function(err,result){
+email=result;
+_that.setState({
+email:email});
+
+});
+_reactNative.AsyncStorage.getItem('description',function(err,result){
+description=result;
+_that.setState({
+description:description});
+
+});
+},
+render:function render(){var _this=this;
+return(
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.state.description),
+_react2.default.createElement(_reactNativeElements.FormInput,{inputStyle:{color:'#fff',fontSize:18,borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({newdescription:text});}})),
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save')))));
+
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'},
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5}});
+
+
+module.exports=Description;
+}, 806, null, "PTV/in/description.js");
+__d(/* PTV/in/igendermodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(496                    ); // 496 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+var _tcombFormNative=require(403                );var _tcombFormNative2=babelHelpers.interopRequireDefault(_tcombFormNative); // 403 = tcomb-form-native
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var IGenderModifyView=_react2.default.createClass({displayName:'IGenderModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+gender:'Male'};
+
+return{
+gender:this.state.gender};
+
+
+},
+_save:function _save(){
+var gender=this.state.gender;
+console.log(this.state.gender);
+var url=_network2.default+'instructor/modifygender.action';
+url+='?gender='+gender;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_navigator.push({
+title:'IhomeView',
+id:'Ihome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+
+});
+},
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.ScrollView,{
+contentContainerStyle:{flex:1},
+keyboardDismissMode:'on-drag',
+keyboardShouldPersistTaps:'never'},
+_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
+_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
+_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
+
+_react2.default.createElement(_reactNative.View,{style:styles.right})),
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.Picker,{
+prompt:'Please choose sportname',
+style:{width:200,color:'#fff',alignItems:'center'},
+selectedValue:this.state.gender,
+onValueChange:function onValueChange(value){return _this.setState({gender:value});}},
+_react2.default.createElement(_reactNative.Picker.Item,{label:'Male',value:'Male'}),
+_react2.default.createElement(_reactNative.Picker.Item,{label:'Female',value:'Female'}))),
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
+
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'}});
+
+
+module.exports=IGenderModifyView;
+}, 807, null, "PTV/in/igendermodify.js");
+__d(/* PTV/in/ibirthmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(496                    ); // 496 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _date=require(473        );var _date2=babelHelpers.interopRequireDefault(_date); // 473 = ./date.js
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var IBirthModifyView=_react2.default.createClass({displayName:'IBirthModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={};
+
+return{};
+
+
+},
+_save:function _save(){
+var birthday=this.state.date;
+var url=_network2.default+'instructor/modifybirthday.action';
+url+='?birthday='+birthday;
+console.log(url);
+fetch(url).then(function(response){
+return response.json();
+}).then(function(res){
+if(res["data"]!=null){
+console.log(res);
+_reactNative.AsyncStorage.setItem("birthday",birthday);
+_navigator.push({
+title:'IhomeView',
+id:'Ihome'});
+
+}else{
+Alert.alert('Fail to display','Please check your data');
+}
+});
+},
+render:function render(){var _this=this;
+return(
+_react2.default.createElement(_reactNative.ScrollView,{
+contentContainerStyle:{flex:1},
+keyboardDismissMode:'on-drag',
+keyboardShouldPersistTaps:'never'},
+_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
+_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
+_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
+
+_react2.default.createElement(_reactNative.View,{style:styles.right})),
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Please Choose the Date'),
+_react2.default.createElement(_date2.default,{
+style:styles.datepicker,
+date:this.state.date,
+mode:'date',
+placeholder:'Date',
+format:'YYYY-MM-DD',
+confirmBtnText:'Confirm',
+cancelBtnText:'Cancel',
+onDateChange:function onDateChange(date){_this.setState({date:date});}})),
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
+
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+backgroundColor:'#38bda0',
+justifyContent:'center'},
+
+Top:{
+flexDirection:'row',
+height:50,
+alignItems:'center',
+backgroundColor:'#38bda0',
+justifyContent:'space-between'},
+
+Bottomline:{
+borderBottomWidth:2,
+borderColor:'gray'},
+
+
+Topbar:{
+flex:2,
+flexDirection:'row'},
+
+
+Left:{
+flex:1,
+flexDirection:'row'},
+
+Right:{
+flex:1,
+flexDirection:'row'},
+
+
+maincontain:
+{
+flex:1,
+backgroundColor:'#38bda0',
+flexDirection:'column'},
+
+
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+marginTop:50,
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'}});
+
+
+module.exports=IBirthModifyView;
+}, 808, null, "PTV/in/ibirthmodify.js");
 __d(/* PTV/in/trainee.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -128966,9 +128874,9 @@ var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequi
 var _reactNativeScrollableTabView=require(743                               );var _reactNativeScrollableTabView2=babelHelpers.interopRequireDefault(_reactNativeScrollableTabView); // 743 = react-native-scrollable-tab-view
 
 var _reactNativeSwiper=require(750                  );var _reactNativeSwiper2=babelHelpers.interopRequireDefault(_reactNativeSwiper); // 750 = react-native-swiper
-var _addtrainee=require(807           );var _addtrainee2=babelHelpers.interopRequireDefault(_addtrainee); // 807 = ./addtrainee
-var _traineelist=require(808            );var _traineelist2=babelHelpers.interopRequireDefault(_traineelist); // 808 = ./traineelist
-var _traineenew=require(810           );var _traineenew2=babelHelpers.interopRequireDefault(_traineenew); // 810 = ./traineenew
+var _addtrainee=require(810           );var _addtrainee2=babelHelpers.interopRequireDefault(_addtrainee); // 810 = ./addtrainee
+var _traineelist=require(811            );var _traineelist2=babelHelpers.interopRequireDefault(_traineelist); // 811 = ./traineelist
+var _traineenew=require(813           );var _traineenew2=babelHelpers.interopRequireDefault(_traineenew); // 813 = ./traineenew
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 
 var width=_Dimensions2.default.get('window').width;
@@ -129100,7 +129008,7 @@ shadowRadius:3}});
 
 
 module.exports=TraineeView;
-}, 806, null, "PTV/in/trainee.js");
+}, 809, null, "PTV/in/trainee.js");
 __d(/* PTV/in/addtrainee.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129287,7 +129195,7 @@ borderRadius:5}});
 
 
 module.exports=AddtraineeView;
-}, 807, null, "PTV/in/addtrainee.js");
+}, 810, null, "PTV/in/addtrainee.js");
 __d(/* PTV/in/traineelist.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129308,7 +129216,7 @@ var _reactNative=require(42            ); // 42 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var _detailtrainee=require(809              );var _detailtrainee2=babelHelpers.interopRequireDefault(_detailtrainee); // 809 = ./detailtrainee
+var _detailtrainee=require(812              );var _detailtrainee2=babelHelpers.interopRequireDefault(_detailtrainee); // 812 = ./detailtrainee
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -129491,7 +129399,7 @@ alignItems:'center'}});
 
 
 module.exports=TrainneelistView;
-}, 808, null, "PTV/in/traineelist.js");
+}, 811, null, "PTV/in/traineelist.js");
 __d(/* PTV/in/detailtrainee.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129620,7 +129528,7 @@ color:'#FFF'}});
 
 
 module.exports=DetailTrainee;
-}, 809, null, "PTV/in/detailtrainee.js");
+}, 812, null, "PTV/in/detailtrainee.js");
 __d(/* PTV/in/traineenew.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129641,7 +129549,7 @@ var _reactNative=require(42            ); // 42 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var _detailtrainee=require(809              );var _detailtrainee2=babelHelpers.interopRequireDefault(_detailtrainee); // 809 = ./detailtrainee
+var _detailtrainee=require(812              );var _detailtrainee2=babelHelpers.interopRequireDefault(_detailtrainee); // 812 = ./detailtrainee
 var _reactNativeModalbox=require(730                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 730 = react-native-modalbox
 
 var screenW=_Dimensions2.default.get('window').width;
@@ -129862,7 +129770,7 @@ borderRadius:25}});
 
 
 module.exports=TraineenewView;
-}, 810, null, "PTV/in/traineenew.js");
+}, 813, null, "PTV/in/traineenew.js");
 __d(/* PTV/pt/detailplan.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -129882,8 +129790,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _bottom=require(813          );var _bottom2=babelHelpers.interopRequireDefault(_bottom); // 813 = ./bottom.js
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _bottom=require(816          );var _bottom2=babelHelpers.interopRequireDefault(_bottom); // 816 = ./bottom.js
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -130104,36 +130012,9 @@ renderRow:this.renderRow}))));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
-
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
 
 maincontain:
 {
@@ -130170,7 +130051,7 @@ height:50}});
 
 
 module.exports=DetailPlanView;
-}, 811, null, "PTV/pt/detailplan.js");
+}, 814, null, "PTV/pt/detailplan.js");
 __d(/* PTV/pt/top.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -130284,7 +130165,7 @@ justifyContent:'center'}});
 
 
 module.exports=TopView;
-}, 812, null, "PTV/pt/top.js");
+}, 815, null, "PTV/pt/top.js");
 __d(/* PTV/pt/bottom.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130441,7 +130322,7 @@ flexDirection:'column'}});
 
 
 module.exports=BottomView;
-}, 813, null, "PTV/pt/bottom.js");
+}, 816, null, "PTV/pt/bottom.js");
 __d(/* PTV/in/Tdetailplan.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130708,17 +130589,10 @@ renderRow:this.renderRow}))));
 
 
 
-
-
 }});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -130780,7 +130654,7 @@ height:50}});
 
 
 module.exports=TDetailPlanView;
-}, 814, null, "PTV/in/Tdetailplan.js");
+}, 817, null, "PTV/in/Tdetailplan.js");
 __d(/* PTV/pt/editplan.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -130800,8 +130674,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -130926,11 +130800,6 @@ borderWidth:2}});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -130942,47 +130811,15 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:1,
 alignItems:'center'},
-
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
 
 maincontain:
 {
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
-
-listview:{
-flex:1},
-
-li:{
-backgroundColor:'#fff',
-borderBottomColor:'#38bda0',
-borderColor:'transparent',
-borderWidth:1,
-paddingLeft:16,
-paddingTop:14,
-paddingBottom:16},
-
-liContainer:{
-flex:2},
-
-liText:{
-color:'#333',
-fontSize:16},
 
 text:{
 fontSize:18,
@@ -131005,7 +130842,7 @@ marginLeft:80}});
 
 
 module.exports=EditPlanView;
-}, 815, null, "PTV/pt/editplan.js");
+}, 818, null, "PTV/pt/editplan.js");
 __d(/* react-native-slider/lib/Slider.js */function(global, require, module, exports) {'use strict';var _jsxFileName="src/Slider.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};
 
 var _react=require(12     );var _react2=_interopRequireDefault(_react); // 12 = react
@@ -131021,8 +130858,8 @@ var _reactNative=require(42            );function _interopRequireDefault(obj){re
 
 
 
-var shallowCompare=require(817                           ), // 817 = react-addons-shallow-compare
-styleEqual=require(818          ); // 818 = style-equal
+var shallowCompare=require(820                           ), // 820 = react-addons-shallow-compare
+styleEqual=require(821          ); // 821 = style-equal
 
 var TRACK_SIZE=4;
 var THUMB_SIZE=20;
@@ -131539,9 +131376,9 @@ opacity:0.5}});
 
 
 module.exports=Slider;
-}, 816, null, "react-native-slider/lib/Slider.js");
+}, 819, null, "react-native-slider/lib/Slider.js");
 __d(/* react-addons-shallow-compare/index.js */function(global, require, module, exports) {module.exports=require(385                       ); // 385 = react/lib/shallowCompare
-}, 817, null, "react-addons-shallow-compare/index.js");
+}, 820, null, "react-addons-shallow-compare/index.js");
 __d(/* style-equal/index.js */function(global, require, module, exports) {var hasOwnProperty=Object.prototype.hasOwnProperty;
 
 function transformEntryEqual(a,b){
@@ -131632,7 +131469,7 @@ return a===b;}
 }
 
 module.exports=styleEqual;
-}, 818, null, "style-equal/index.js");
+}, 821, null, "style-equal/index.js");
 __d(/* PTV/in/Teditplan.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -131652,7 +131489,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -131861,7 +131698,7 @@ marginLeft:80}});
 
 
 module.exports=TEditPlanView;
-}, 819, null, "PTV/in/Teditplan.js");
+}, 822, null, "PTV/in/Teditplan.js");
 __d(/* PTV/in/Tplan.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -131882,7 +131719,6 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
-var _top=require(802       );var _top2=babelHelpers.interopRequireDefault(_top); // 802 = ./top.js
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -131956,7 +131792,6 @@ detailrows:res["data"]});
 _reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
-
 },
 
 allowScroll:function allowScroll(scrollEnabled){
@@ -132088,11 +131923,6 @@ renderRow:this.renderRow}))));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -132154,7 +131984,7 @@ height:50}});
 
 
 module.exports=TPlanView;
-}, 820, null, "PTV/in/Tplan.js");
+}, 823, null, "PTV/in/Tplan.js");
 __d(/* PTV/in/Trecord.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -132192,21 +132022,7 @@ var rows=[
 day:"2017-03-03",
 Calories:"457",
 text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-03-04",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-03-05",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min",
-autoClose:true},
-{
-day:"2017-03-06",
-Calories:"457",
-text:"Row:5min;Treadmill:6min;Xtrainer:5min"}];
+autoClose:true}];
 
 
 var TRecordView=_react2.default.createClass({displayName:'TRecordView',
@@ -132346,14 +132162,17 @@ _react2.default.createElement(_reactNative.Text,{style:styles.liText},'Sports: '
 
 
 },
-render:function render(){
+render:function render(){var _this2=this;
 return(
 _react2.default.createElement(_reactNative.ScrollView,{
 contentContainerStyle:{flex:1},
 keyboardDismissMode:'on-drag',
 keyboardShouldPersistTaps:'never'},
 _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]}),
+_react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
+_react2.default.createElement(_reactNative.TouchableOpacity,{
+onPress:function onPress(){return _navigator.push({title:'TAddrecordtodayView',id:'Taddrecordtoday',params:{trainee_id:_this2.props.trainee_id}});}},
+_react2.default.createElement(_reactNative.Image,{source:require(725                     )}))), // 725 = ../img/add_pressed.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -132378,11 +132197,6 @@ enableEmptySections:true})));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -132448,7 +132262,7 @@ justifyContent:'center'}});
 
 
 module.exports=TRecordView;
-}, 821, null, "PTV/in/Trecord.js");
+}, 824, null, "PTV/in/Trecord.js");
 __d(/* PTV/in/Tcreateplan.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -132469,9 +132283,9 @@ var _reactNative=require(42            ); // 42 = react-native
 var _reactNativeTabNavigator=require(487                         );var _reactNativeTabNavigator2=babelHelpers.interopRequireDefault(_reactNativeTabNavigator); // 487 = react-native-tab-navigator
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _date=require(473        );var _date2=babelHelpers.interopRequireDefault(_date); // 473 = ./date.js
-var _reactNativeCheckBox=require(823                     );var _reactNativeCheckBox2=babelHelpers.interopRequireDefault(_reactNativeCheckBox); // 823 = react-native-check-box
-var _keys=require(826          );var _keys2=babelHelpers.interopRequireDefault(_keys); // 826 = ./keys.json
-var _plancreate=require(827                );var _plancreate2=babelHelpers.interopRequireDefault(_plancreate); // 827 = ../pub/plancreate
+var _reactNativeCheckBox=require(826                     );var _reactNativeCheckBox2=babelHelpers.interopRequireDefault(_reactNativeCheckBox); // 826 = react-native-check-box
+var _keys=require(829          );var _keys2=babelHelpers.interopRequireDefault(_keys); // 829 = ./keys.json
+var _plancreate=require(830                );var _plancreate2=babelHelpers.interopRequireDefault(_plancreate); // 830 = ../pub/plancreate
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -132610,7 +132424,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -132668,11 +132482,6 @@ this.loadData();
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -132722,8 +132531,6 @@ backgroundColor:'#2cb395',
 height:50,
 borderRadius:5},
 
-
-
 item:{
 flexDirection:'row'},
 
@@ -132734,7 +132541,7 @@ backgroundColor:'#fff'}});
 
 
 module.exports=TCreateplanView;
-}, 822, null, "PTV/in/Tcreateplan.js");
+}, 825, null, "PTV/in/Tcreateplan.js");
 __d(/* react-native-check-box/index.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
@@ -132806,7 +132613,7 @@ return this.props.unCheckedImage?this.props.unCheckedImage:this.genCheckedImage(
 }},{key:'genCheckedImage',value:function genCheckedImage()
 
 {
-var source=this.state.isChecked?require(824                     ):require(825                                   ); // 825 = ./img/ic_check_box_outline_blank.png // 824 = ./img/ic_check_box.png
+var source=this.state.isChecked?require(827                     ):require(828                                   ); // 828 = ./img/ic_check_box_outline_blank.png // 827 = ./img/ic_check_box.png
 
 return(
 _react2.default.createElement(_reactNative.Image,{source:source}));
@@ -132847,11 +132654,11 @@ flex:1},
 rightText:{
 flex:1,
 marginLeft:10}});
-}, 823, null, "react-native-check-box/index.js");
+}, 826, null, "react-native-check-box/index.js");
 __d(/* react-native-check-box/img/ic_check_box.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-check-box/img","width":24,"height":24,"scales":[1,2,3],"hash":"5d3b135d5214e780d63b968d2ade7240","name":"ic_check_box","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
-}, 824, null, "react-native-check-box/img/ic_check_box.png");
+}, 827, null, "react-native-check-box/img/ic_check_box.png");
 __d(/* react-native-check-box/img/ic_check_box_outline_blank.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-check-box/img","width":24,"height":24,"scales":[1,2,3],"hash":"a254967b747795d2bc7217850e45291a","name":"ic_check_box_outline_blank","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
-}, 825, null, "react-native-check-box/img/ic_check_box_outline_blank.png");
+}, 828, null, "react-native-check-box/img/ic_check_box_outline_blank.png");
 __d(/* PTV/in/keys.json */function(global, require, module, exports) {module.exports = [
 {
 "name":"Monday",
@@ -132887,7 +132694,7 @@ __d(/* PTV/in/keys.json */function(global, require, module, exports) {module.exp
 "name":" Sunday",
 "value":"7",
 "checked":false}];
-}, 826, null, "PTV/in/keys.json");
+}, 829, null, "PTV/in/keys.json");
 __d(/* PTV/pub/plancreate.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -133058,11 +132865,6 @@ _reactNative.AsyncStorage.setItem("planid",planid);
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -133129,9 +132931,9 @@ color:'#fff'}});
 
 
 module.exports=PlanCreateView;
-}, 827, null, "PTV/pub/plancreate.js");
+}, 830, null, "PTV/pub/plancreate.js");
 __d(/* PTV/img/back.png */function(global, require, module, exports) {module.exports = require(173                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/img","width":40,"height":33,"scales":[1],"hash":"1cc0b8b2f893be2eb6c55f2cd173a579","name":"back","type":"png"}); // 173 = react-native/Libraries/Image/AssetRegistry
-}, 828, null, "PTV/img/back.png");
+}, 831, null, "PTV/img/back.png");
 __d(/* PTV/pt/createplan.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133152,9 +132954,9 @@ var _reactNativeTabNavigator=require(487                         );var _reactNat
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _plan=require(495        );var _plan2=babelHelpers.interopRequireDefault(_plan); // 495 = ./plan.js
 var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
-var _reactNativeCheckBox=require(823                     );var _reactNativeCheckBox2=babelHelpers.interopRequireDefault(_reactNativeCheckBox); // 823 = react-native-check-box
-var _keys=require(830          );var _keys2=babelHelpers.interopRequireDefault(_keys); // 830 = ./keys.json
-var _plancreate=require(831           );var _plancreate2=babelHelpers.interopRequireDefault(_plancreate); // 831 = ./plancreate
+var _reactNativeCheckBox=require(826                     );var _reactNativeCheckBox2=babelHelpers.interopRequireDefault(_reactNativeCheckBox); // 826 = react-native-check-box
+var _keys=require(833          );var _keys2=babelHelpers.interopRequireDefault(_keys); // 833 = ./keys.json
+var _plancreate=require(834           );var _plancreate2=babelHelpers.interopRequireDefault(_plancreate); // 834 = ./plancreate
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -133291,7 +133093,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -133349,11 +133151,6 @@ this.loadData();
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -133364,7 +133161,6 @@ justifyContent:'center'},
 Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
-
 
 Topbar:{
 flex:1,
@@ -133387,7 +133183,6 @@ flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
 
-
 text:{
 fontSize:18,
 color:'#fff'},
@@ -133403,8 +133198,6 @@ backgroundColor:'#2cb395',
 height:50,
 borderRadius:5},
 
-
-
 item:{
 flexDirection:'row'},
 
@@ -133415,7 +133208,7 @@ backgroundColor:'#fff'}});
 
 
 module.exports=CreateplanView;
-}, 829, null, "PTV/pt/createplan.js");
+}, 832, null, "PTV/pt/createplan.js");
 __d(/* PTV/pt/keys.json */function(global, require, module, exports) {module.exports = [
 {
 "name":"Monday",
@@ -133451,7 +133244,7 @@ __d(/* PTV/pt/keys.json */function(global, require, module, exports) {module.exp
 "name":" Sunday",
 "value":"7",
 "checked":false}];
-}, 830, null, "PTV/pt/keys.json");
+}, 833, null, "PTV/pt/keys.json");
 __d(/* PTV/pt/plancreate.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -133588,8 +133381,13 @@ rowID:rowID,
 sectionID:sectionID,
 autoClose:rowData.autoClose,
 backgroundColor:'transparent',
-close:!rowData.active,
-onOpen:function onOpen(sectionID,rowID){return _this.handleSwipeout(sectionID,rowID);},
+onOpen:function onOpen(sectionID,rowID){
+_this.setState({
+sectionID:sectionID,
+rowID:rowID});
+
+},
+onClose:function onClose(){return console.log('===close');},
 scroll:function scroll(event){return _this.allowScroll(event);}},
 _react2.default.createElement(_reactNative.TouchableHighlight,{style:styles.li,activeOpacity:0.5,underlayColor:'#2cb395',onPress:function onPress(){return _this.setState({planid:rowData.id});}},
 _react2.default.createElement(_reactNative.Text,{style:styles.liText},'Plan NO: ',rowData.id,' ',rowData.title))));
@@ -133627,48 +133425,11 @@ _reactNative.AsyncStorage.setItem("planid",planid);
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-Topbar:{
-flex:1,
-alignItems:'center'},
-
-Left:{
-position:'absolute',
-top:5,
-left:5},
-
-Right:{
-position:'absolute',
-top:5,
-right:5},
-
 maincontain:
 {
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
-header:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#fff',
-justifyContent:'center'},
 
 listview:{
 flex:1},
@@ -133689,16 +133450,13 @@ liText:{
 color:'#333',
 fontSize:18},
 
-choosestyle:{
-borderColor:'red'},
-
 text:{
 fontSize:18,
 color:'#fff'}});
 
 
 module.exports=PlanCreateView;
-}, 831, null, "PTV/pt/plancreate.js");
+}, 834, null, "PTV/pt/plancreate.js");
 __d(/* PTV/pt/planinfo.js */function(global, require, module, exports) {
 var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
@@ -133718,7 +133476,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -133744,21 +133502,7 @@ var detailrows=[
 {
 Calories:"457",
 text:"Rower Moderate  5 min 30 sec fast:60 sec slow",
-autoClose:true},
-{
-
-Calories:"457",
-text:"Walking Weighted Lunge  Controlled  Light 3 15  60Sec",
-autoClose:true},
-{
-
-Calories:"457",
-text:"Upper Back 18,29 30-60 sec 1 1",
-autoClose:true},
-{
-
-Calories:"457",
-text:"Bike Fast  3min  Moderate  15  60Sec"}];
+autoClose:true}];
 
 
 var PlanInfoView=_react2.default.createClass({displayName:'PlanInfoView',
@@ -133850,13 +133594,17 @@ renderRow:function renderRow(rowData,sectionID,rowID){var _this=this;
 return(
 _react2.default.createElement(_reactNativeSwipeout2.default,{
 left:rowData.left,
-right:btnsTypes,
 rowID:rowID,
 sectionID:sectionID,
 autoClose:rowData.autoClose,
 backgroundColor:rowData.backgroundColor,
-close:!rowData.active,
-onOpen:function onOpen(sectionID,rowID){return _this.handleSwipeout(sectionID,rowID);},
+onOpen:function onOpen(sectionID,rowID){
+_this.setState({
+sectionID:sectionID,
+rowID:rowID});
+
+},
+onClose:function onClose(){return console.log('===close');},
 scroll:function scroll(event){return _this.allowScroll(event);}},
 _react2.default.createElement(_reactNative.View,{style:styles.li},
 _react2.default.createElement(_reactNative.Text,{style:styles.liText},rowData.itemname,' sportsize: ',rowData.sportsize))));
@@ -133889,11 +133637,6 @@ renderRow:this.renderRow}))));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -133955,7 +133698,7 @@ height:50}});
 
 
 module.exports=PlanInfoView;
-}, 832, null, "PTV/pt/planinfo.js");
+}, 835, null, "PTV/pt/planinfo.js");
 __d(/* PTV/pt/editrecord.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -133974,8 +133717,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -134198,7 +133941,7 @@ marginLeft:80}});
 
 
 module.exports=EditRecordView;
-}, 833, null, "PTV/pt/editrecord.js");
+}, 836, null, "PTV/pt/editrecord.js");
 __d(/* PTV/pt/detailrecord.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134217,8 +133960,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _bottom=require(813          );var _bottom2=babelHelpers.interopRequireDefault(_bottom); // 813 = ./bottom.js
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _bottom=require(816          );var _bottom2=babelHelpers.interopRequireDefault(_bottom); // 816 = ./bottom.js
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
@@ -134508,9 +134251,8 @@ height:50}});
 
 
 module.exports=DetailRecordView;
-}, 834, null, "PTV/pt/detailrecord.js");
-__d(/* PTV/pt/chart.js */function(global, require, module, exports) {
-var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+}, 837, null, "PTV/pt/detailrecord.js");
+__d(/* PTV/pt/chart.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
@@ -134529,8 +134271,8 @@ var _reactNative=require(42            ); // 42 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _reactNativeSwipeout=require(720                    );var _reactNativeSwipeout2=babelHelpers.interopRequireDefault(_reactNativeSwipeout); // 720 = react-native-swipeout
 var _reactNativeScrollableTabView=require(743                               );var _reactNativeScrollableTabView2=babelHelpers.interopRequireDefault(_reactNativeScrollableTabView); // 743 = react-native-scrollable-tab-view
-var _SportChart=require(836           );var _SportChart2=babelHelpers.interopRequireDefault(_SportChart); // 836 = ./SportChart
-var _TimeChart=require(849          );var _TimeChart2=babelHelpers.interopRequireDefault(_TimeChart); // 849 = ./TimeChart
+var _SportChart=require(839           );var _SportChart2=babelHelpers.interopRequireDefault(_SportChart); // 839 = ./SportChart
+var _TimeChart=require(852          );var _TimeChart2=babelHelpers.interopRequireDefault(_TimeChart); // 852 = ./TimeChart
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -134607,11 +134349,6 @@ _react2.default.createElement(_TimeChart2.default,this.props)))))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -134643,15 +134380,6 @@ flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
 
-header:{
-
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#fff',
-justifyContent:'center'},
-
-
 tabView:{
 flex:1,
 padding:10,
@@ -134671,7 +134399,7 @@ shadowRadius:3}});
 
 
 module.exports=ChartView;
-}, 835, null, "PTV/pt/chart.js");
+}, 838, null, "PTV/pt/chart.js");
 __d(/* PTV/pt/SportChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -134687,7 +134415,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(837                            ); // 837 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(840                            ); // 840 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -134979,14 +134707,14 @@ color:'#fff'}});exports.default=
 
 
 SportChartView;
-}, 836, null, "PTV/pt/SportChart.js");
-__d(/* react-native-mp-android-chart/index.android.js */function(global, require, module, exports) {var _BarChart=require(838             );var _BarChart2=babelHelpers.interopRequireDefault(_BarChart); // 838 = ./lib/BarChart
-var _BubbleChart=require(843                );var _BubbleChart2=babelHelpers.interopRequireDefault(_BubbleChart); // 843 = ./lib/BubbleChart
-var _CandleStickChart=require(844                     );var _CandleStickChart2=babelHelpers.interopRequireDefault(_CandleStickChart); // 844 = ./lib/CandleStickChart
-var _LineChart=require(845              );var _LineChart2=babelHelpers.interopRequireDefault(_LineChart); // 845 = ./lib/LineChart
-var _PieChart=require(846             );var _PieChart2=babelHelpers.interopRequireDefault(_PieChart); // 846 = ./lib/PieChart
-var _RadarChart=require(847               );var _RadarChart2=babelHelpers.interopRequireDefault(_RadarChart); // 847 = ./lib/RadarChart
-var _ScatterChart=require(848                 );var _ScatterChart2=babelHelpers.interopRequireDefault(_ScatterChart); // 848 = ./lib/ScatterChart
+}, 839, null, "PTV/pt/SportChart.js");
+__d(/* react-native-mp-android-chart/index.android.js */function(global, require, module, exports) {var _BarChart=require(841             );var _BarChart2=babelHelpers.interopRequireDefault(_BarChart); // 841 = ./lib/BarChart
+var _BubbleChart=require(846                );var _BubbleChart2=babelHelpers.interopRequireDefault(_BubbleChart); // 846 = ./lib/BubbleChart
+var _CandleStickChart=require(847                     );var _CandleStickChart2=babelHelpers.interopRequireDefault(_CandleStickChart); // 847 = ./lib/CandleStickChart
+var _LineChart=require(848              );var _LineChart2=babelHelpers.interopRequireDefault(_LineChart); // 848 = ./lib/LineChart
+var _PieChart=require(849             );var _PieChart2=babelHelpers.interopRequireDefault(_PieChart); // 849 = ./lib/PieChart
+var _RadarChart=require(850               );var _RadarChart2=babelHelpers.interopRequireDefault(_RadarChart); // 850 = ./lib/RadarChart
+var _ScatterChart=require(851                 );var _ScatterChart2=babelHelpers.interopRequireDefault(_ScatterChart); // 851 = ./lib/ScatterChart
 
 module.exports={
 BarChart:_BarChart2.default,
@@ -134996,15 +134724,15 @@ LineChart:_LineChart2.default,
 PieChart:_PieChart2.default,
 RadarChart:_RadarChart2.default,
 ScatterChart:_ScatterChart2.default};
-}, 837, null, "react-native-mp-android-chart/index.android.js");
+}, 840, null, "react-native-mp-android-chart/index.android.js");
 __d(/* react-native-mp-android-chart/lib/BarChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(839                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 839 = ./BarLineChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _BarLineChartBase=require(842                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 842 = ./BarLineChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'BarChart',
@@ -135040,14 +134768,14 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidBarChart',iface);
-}, 838, null, "react-native-mp-android-chart/lib/BarChart.js");
+}, 841, null, "react-native-mp-android-chart/lib/BarChart.js");
 __d(/* react-native-mp-android-chart/lib/BarLineChartBase.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _ChartBase=require(840          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 840 = ./ChartBase
-var _YAxisIface=require(841           ); // 841 = ./YAxisIface
+var _ChartBase=require(843          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 843 = ./ChartBase
+var _YAxisIface=require(844           ); // 844 = ./YAxisIface
 
 var iface={
 propTypes:babelHelpers.extends({},
@@ -135079,7 +134807,7 @@ right:_react.PropTypes.shape(_YAxisIface.yAxisIface)})})};exports.default=
 
 
 iface;
-}, 839, null, "react-native-mp-android-chart/lib/BarLineChartBase.js");
+}, 842, null, "react-native-mp-android-chart/lib/BarLineChartBase.js");
 __d(/* react-native-mp-android-chart/lib/ChartBase.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.axisIface=undefined;var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -135200,13 +134928,13 @@ position:_react.PropTypes.string}))})};exports.default=
 
 
 chartIface;
-}, 840, null, "react-native-mp-android-chart/lib/ChartBase.js");
+}, 843, null, "react-native-mp-android-chart/lib/ChartBase.js");
 __d(/* react-native-mp-android-chart/lib/YAxisIface.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _ChartBase=require(840          ); // 840 = ./ChartBase
+var _ChartBase=require(843          ); // 843 = ./ChartBase
 
 var yAxisIface=babelHelpers.extends({},_ChartBase.axisIface,{
 
@@ -135235,7 +134963,7 @@ lineColor:_react.PropTypes.string})});exports.default=
 
 
 yAxisIface;
-}, 841, null, "react-native-mp-android-chart/lib/YAxisIface.js");
+}, 844, null, "react-native-mp-android-chart/lib/YAxisIface.js");
 __d(/* react-native-mp-android-chart/lib/ChartDataSetConfig.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -135278,15 +135006,15 @@ propName+' supplied to \''+componentName+'\'. Value must be number and between 0
 
 
 chartDataSetConfig;
-}, 842, null, "react-native-mp-android-chart/lib/ChartDataSetConfig.js");
+}, 845, null, "react-native-mp-android-chart/lib/ChartDataSetConfig.js");
 __d(/* react-native-mp-android-chart/lib/BubbleChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(840          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 840 = ./ChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _ChartBase=require(843          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 843 = ./ChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'BubbleChart',
@@ -135314,15 +135042,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidBubbleChart',iface);
-}, 843, null, "react-native-mp-android-chart/lib/BubbleChart.js");
+}, 846, null, "react-native-mp-android-chart/lib/BubbleChart.js");
 __d(/* react-native-mp-android-chart/lib/CandleStickChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(839                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 839 = ./BarLineChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _BarLineChartBase=require(842                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 842 = ./BarLineChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'CandleStickChart',
@@ -135360,15 +135088,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidCandleStickChart',iface);
-}, 844, null, "react-native-mp-android-chart/lib/CandleStickChart.js");
+}, 847, null, "react-native-mp-android-chart/lib/CandleStickChart.js");
 __d(/* react-native-mp-android-chart/lib/LineChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(839                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 839 = ./BarLineChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _BarLineChartBase=require(842                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 842 = ./BarLineChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'LineChart',
@@ -135407,15 +135135,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidLineChart',iface);
-}, 845, null, "react-native-mp-android-chart/lib/LineChart.js");
+}, 848, null, "react-native-mp-android-chart/lib/LineChart.js");
 __d(/* react-native-mp-android-chart/lib/PieChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(840          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 840 = ./ChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _ChartBase=require(843          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 843 = ./ChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'PieChart',
@@ -135451,16 +135179,16 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidPieChart',iface);
-}, 846, null, "react-native-mp-android-chart/lib/PieChart.js");
+}, 849, null, "react-native-mp-android-chart/lib/PieChart.js");
 __d(/* react-native-mp-android-chart/lib/RadarChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _ChartBase=require(840          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 840 = ./ChartBase
-var _YAxisIface=require(841           ); // 841 = ./YAxisIface
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _ChartBase=require(843          );var _ChartBase2=babelHelpers.interopRequireDefault(_ChartBase); // 843 = ./ChartBase
+var _YAxisIface=require(844           ); // 844 = ./YAxisIface
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'RadarChart',
@@ -135488,15 +135216,15 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidRadarChart',iface);
-}, 847, null, "react-native-mp-android-chart/lib/RadarChart.js");
+}, 850, null, "react-native-mp-android-chart/lib/RadarChart.js");
 __d(/* react-native-mp-android-chart/lib/ScatterChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     ); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
 
 
 
-var _BarLineChartBase=require(839                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 839 = ./BarLineChartBase
-var _ChartDataSetConfig=require(842                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 842 = ./ChartDataSetConfig
+var _BarLineChartBase=require(842                 );var _BarLineChartBase2=babelHelpers.interopRequireDefault(_BarLineChartBase); // 842 = ./BarLineChartBase
+var _ChartDataSetConfig=require(845                   );var _ChartDataSetConfig2=babelHelpers.interopRequireDefault(_ChartDataSetConfig); // 845 = ./ChartDataSetConfig
 
 var iface={
 name:'ScatterChart',
@@ -135524,7 +135252,7 @@ xValues:_react.PropTypes.arrayOf(_react.PropTypes.string)})})};exports.default=
 
 
 (0,_reactNative.requireNativeComponent)('MPAndroidScatterChart',iface);
-}, 848, null, "react-native-mp-android-chart/lib/ScatterChart.js");
+}, 851, null, "react-native-mp-android-chart/lib/ScatterChart.js");
 __d(/* PTV/pt/TimeChart.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -135538,7 +135266,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(837                            ); // 837 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(840                            ); // 840 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -135632,8 +135360,6 @@ xValues:date}});
 
 
 
-
-
 }else{
 _reactNative.Alert.alert('Fail to display','Please check your data');
 }
@@ -135672,7 +135398,7 @@ flex:1}});exports.default=
 
 
 TimeChartView;
-}, 849, null, "PTV/pt/TimeChart.js");
+}, 852, null, "PTV/pt/TimeChart.js");
 __d(/* PTV/pt/additemtoday.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -135692,8 +135418,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -135803,7 +135529,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -135879,11 +135605,6 @@ borderWidth:2}});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -135895,11 +135616,9 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:1,
 alignItems:'center'},
-
 
 Left:{
 position:'absolute',
@@ -135917,25 +135636,6 @@ flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
 
-
-listview:{
-flex:1},
-
-li:{
-backgroundColor:'#fff',
-borderBottomColor:'#38bda0',
-borderColor:'transparent',
-borderWidth:1,
-paddingLeft:16,
-paddingTop:14,
-paddingBottom:16},
-
-liContainer:{
-flex:2},
-
-liText:{
-color:'#333',
-fontSize:16},
 
 text:{
 fontSize:18,
@@ -135956,9 +135656,8 @@ marginTop:50,
 marginLeft:80}});
 
 
-
 module.exports=AdditemtodayView;
-}, 850, null, "PTV/pt/additemtoday.js");
+}, 853, null, "PTV/pt/additemtoday.js");
 __d(/* PTV/in/Tadditemtoday.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -135978,8 +135677,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _date=require(473        );var _date2=babelHelpers.interopRequireDefault(_date); // 473 = ./date.js
-var _top=require(802       );var _top2=babelHelpers.interopRequireDefault(_top); // 802 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -136088,7 +135786,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -136122,7 +135820,6 @@ key:i,
 value:v,
 label:v});
 }))),
-
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.slider},
@@ -136167,11 +135864,6 @@ borderWidth:2}});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -136246,7 +135938,7 @@ marginLeft:80}});
 
 
 module.exports=TAdditemtodayView;
-}, 851, null, "PTV/in/Tadditemtoday.js");
+}, 854, null, "PTV/in/Tadditemtoday.js");
 __d(/* PTV/pt/addrecordtoday.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -136266,8 +135958,8 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
-var _top=require(812       );var _top2=babelHelpers.interopRequireDefault(_top); // 812 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _top=require(815       );var _top2=babelHelpers.interopRequireDefault(_top); // 815 = ./top.js
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -136375,7 +136067,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -136452,11 +136144,6 @@ borderWidth:2}});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -136468,11 +136155,9 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:1,
 alignItems:'center'},
-
 
 Left:{
 position:'absolute',
@@ -136489,7 +136174,6 @@ maincontain:
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
 
 listview:{
 flex:1},
@@ -136531,10 +136215,9 @@ marginLeft:80}});
 
 
 module.exports=AddrecordtodayView;
-}, 852, null, "PTV/pt/addrecordtoday.js");
+}, 855, null, "PTV/pt/addrecordtoday.js");
 __d(/* PTV/pt/profilemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
-
 
 
 
@@ -136552,6 +136235,9 @@ var _reactNativeElements=require(496                    ); // 496 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _reactNativeModalbox=require(730                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 730 = react-native-modalbox
+var _phonemodify=require(857            );var _phonemodify2=babelHelpers.interopRequireDefault(_phonemodify); // 857 = ./phonemodify
+var _passwordmodify=require(858               );var _passwordmodify2=babelHelpers.interopRequireDefault(_passwordmodify); // 858 = ./passwordmodify
 var screenW=_Dimensions2.default.get('window').width;
 var _navigator;
 var ProfileModifyView=_react2.default.createClass({displayName:'ProfileModifyView',
@@ -136596,7 +136282,7 @@ _react2.default.createElement(_reactNative.View,{style:styles.right})),
 
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNativeElements.List,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'PhoneModifyView',id:'phonemodify',params:{phone:_this.state.phone}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal1.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
 title:'Modify Phone number',
@@ -136607,13 +136293,23 @@ _react2.default.createElement(_reactNative.Text,{style:styles.ratingText},this.s
 
 
 
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'PasswordModifyView',id:'passwordmodify',params:{email:_this.state.email}});}},
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal2.open();}},
 _react2.default.createElement(_reactNativeElements.ListItem,{
 roundAvatar:true,
-title:'Modify Password'})))))));
+title:'Modify Password'})))),
 
 
 
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal1",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_phonemodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal2",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_passwordmodify2.default,this.props)))));
 
 
 
@@ -136621,11 +136317,6 @@ title:'Modify Password'})))))));
 }});
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -136665,287 +136356,18 @@ borderRadius:5},
 text:{
 fontWeight:'bold',
 fontSize:16,
-color:'#FFF'}});
+color:'#FFF'},
+
+modal:{
+padding:20},
+
+modal3:{
+height:320,
+borderRadius:25}});
 
 
 module.exports=ProfileModifyView;
-}, 853, null, "PTV/pt/profilemodify.js");
-__d(/* PTV/in/iprofilemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(496                    ); // 496 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var IProfileModifyView=_react2.default.createClass({displayName:'IProfileModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={
-email:this.props.email,
-phone:''};
-
-return{
-email:this.state.email,
-phone:this.state.phone};
-
-},
-componentWillMount:function componentWillMount(){
-var _that=this;
-_reactNative.AsyncStorage.getItem('phone',function(err,result){
-phone=result;
-_that.setState({
-phone:phone});
-
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'  Update your detail information')),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNativeElements.List,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'IPhoneModifyView',id:'iphonedmodify',params:{phone:_this.state.phone}});}},
-_react2.default.createElement(_reactNativeElements.ListItem,{
-roundAvatar:true,
-title:'Modify Phone number',
-subtitle:
-_react2.default.createElement(_reactNative.View,{style:styles.subtitleView},
-_react2.default.createElement(_reactNative.Text,{style:styles.ratingText},this.state.phone))})),
-
-
-
-
-_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _navigator.push({title:'IPasswordModifyView',id:'ipasswordmodify',params:{email:_this.state.email}});}},
-_react2.default.createElement(_reactNativeElements.ListItem,{
-roundAvatar:true,
-title:'Modify Password'})))))));
-
-
-
-
-
-
-
-}});
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=IProfileModifyView;
-}, 854, null, "PTV/in/iprofilemodify.js");
-__d(/* PTV/pt/emailmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(496                    ); // 496 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var EmailModifyView=_react2.default.createClass({displayName:'EmailModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={
-newEmail:''};
-
-return{
-newEmail:this.state.newEmail};
-
-
-},
-_save:function _save(){
-var newEmail=this.state.newEmail;
-_reactNative.AsyncStorage.getItem('userid',function(err,result){
-console.log(result);
-var trainee_id=result;
-var url=_network2.default+' ';
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_navigator.push({
-title:'ThomeView',
-id:'Thome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNativeElements.FormLabel,{
-labelStyle:{color:'#fff',fontSize:18}},' Origin:',
-this.props.email),
-_react2.default.createElement(_reactNativeElements.FormInput,{
-containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},
-onChangeText:function onChangeText(text){return _this.setState({newEmail:text});}})),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=EmailModifyView;
-}, 855, null, "PTV/pt/emailmodify.js");
+}, 856, null, "PTV/pt/profilemodify.js");
 __d(/* PTV/pt/phonemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -136979,8 +136401,18 @@ return{};
 
 
 },
+componentWillMount:function componentWillMount(){
+var _that=this;
+_reactNative.AsyncStorage.getItem('phone',function(err,result){
+phone=result;
+_that.setState({
+phone:phone});
+
+});
+},
 _save:function _save(){
 var newPhone=this.state.newPhone;
+if(newPhone!=null){
 _reactNative.AsyncStorage.getItem('userid',function(err,result){
 console.log(result);
 var trainee_id=result;
@@ -136998,10 +136430,13 @@ title:'ThomeView',
 id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please input your information ');
+}
 },
 render:function render(){var _this=this;
 return(
@@ -137017,8 +136452,8 @@ _react2.default.createElement(_reactNative.View,{style:styles.right})),
 
 
 _react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.props.phone),
-_react2.default.createElement(_reactNativeElements.FormInput,{containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({newPhone:text});}})),
+_react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.state.phone),
+_react2.default.createElement(_reactNativeElements.FormInput,{inputStyle:{color:'#fff',fontSize:18,borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({newPhone:text});}})),
 
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
@@ -137093,7 +136528,7 @@ borderRadius:5}});
 
 
 module.exports=PhoneModifyView;
-}, 856, null, "PTV/pt/phonemodify.js");
+}, 857, null, "PTV/pt/phonemodify.js");
 __d(/* PTV/pt/passwordmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -137161,6 +136596,7 @@ oldpassword:oldpassword});
 },
 _save:function _save(){
 var value=this.refs.form.getValue();
+if(value!=null){
 var oldpassword=value["oldpassword"];
 var newpassword=value["newpassword"];
 var newpasswordconfirm=value["newpasswordconfirm"];
@@ -137188,9 +136624,95 @@ _reactNative.Alert.alert('different new passowrd','Please input the same new pas
 }else{
 _reactNative.Alert.alert('Wrong Password','Please input again');
 }
-
+}else{
+_reactNative.Alert.alert('Sorry','Please input your information ');
+}
 },
 render:function render(){
+return(
+
+
+_react2.default.createElement(_reactNative.View,{style:{backgroundColor:'#38bda0'}},
+_react2.default.createElement(Form,{
+ref:'form',
+type:User,
+options:options}),
+
+
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
+onPress:this._save},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save')))));
+
+
+
+
+}});
+
+
+var styles=_reactNative.StyleSheet.create({
+btn:{
+alignItems:'center',
+justifyContent:'center',
+backgroundColor:'#2cb395',
+height:30,
+borderRadius:5},
+
+text:{
+fontWeight:'bold',
+fontSize:16,
+color:'#FFF'}});
+
+
+module.exports=PasswordModifyView;
+}, 858, null, "PTV/pt/passwordmodify.js");
+__d(/* PTV/in/iprofilemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+var _reactNative=require(42            ); // 42 = react-native
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reactNativeElements=require(496                    ); // 496 = react-native-elements
+var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
+
+var _reactNativeModalbox=require(730                    );var _reactNativeModalbox2=babelHelpers.interopRequireDefault(_reactNativeModalbox); // 730 = react-native-modalbox
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
+var _iphonemodify=require(860             );var _iphonemodify2=babelHelpers.interopRequireDefault(_iphonemodify); // 860 = ./iphonemodify
+var _ipasswordmodify=require(861                );var _ipasswordmodify2=babelHelpers.interopRequireDefault(_ipasswordmodify); // 861 = ./ipasswordmodify
+var screenW=_Dimensions2.default.get('window').width;
+var _navigator;
+var IProfileModifyView=_react2.default.createClass({displayName:'IProfileModifyView',
+getInitialState:function getInitialState(){
+_navigator=this.props.navigator;
+var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
+this.state={
+email:this.props.email,
+phone:''};
+
+return{
+email:this.state.email,
+phone:this.state.phone};
+
+},
+componentWillMount:function componentWillMount(){
+var _that=this;
+_reactNative.AsyncStorage.getItem('phone',function(err,result){
+phone=result;
+_that.setState({
+phone:phone});
+
+});
+},
+render:function render(){var _this=this;
 return(
 _react2.default.createElement(_reactNative.ScrollView,{
 contentContainerStyle:{flex:1},
@@ -137198,29 +136720,47 @@ keyboardDismissMode:'on-drag',
 keyboardShouldPersistTaps:'never'},
 _react2.default.createElement(_reactNative.View,{style:styles.maincontain},
 _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
+_react2.default.createElement(_reactNative.View,{style:styles.Topbar},
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'  Update your detail information')),
 
 _react2.default.createElement(_reactNative.View,{style:styles.right})),
 
 
 _react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(Form,{
-ref:'form',
-type:User,
-options:options})),
+_react2.default.createElement(_reactNativeElements.List,null,
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal1.open();}},
+_react2.default.createElement(_reactNativeElements.ListItem,{
+roundAvatar:true,
+title:'Modify Phone number',
+subtitle:
+_react2.default.createElement(_reactNative.View,{style:styles.subtitleView},
+_react2.default.createElement(_reactNative.Text,{style:styles.ratingText},this.state.phone))})),
 
 
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
 
 
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:function onPress(){return _this.refs.modal2.open();}},
+_react2.default.createElement(_reactNativeElements.ListItem,{
+roundAvatar:true,
+title:'Modify Password'}))))),
+
+
+
+
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal1",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_iphonemodify2.default,this.props)),
+
+_react2.default.createElement(_reactNativeModalbox2.default,{style:[styles.modal,styles.modal3],
+position:"center",ref:"modal2",
+isDisabled:this.state.isDisabled},
+_react2.default.createElement(_ipasswordmodify2.default,this.props))));
 
 
 
 }});
-
 
 var styles=_reactNative.StyleSheet.create({
 container:{
@@ -137239,11 +136779,9 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:2,
 flexDirection:'row'},
-
 
 Left:{
 flex:1,
@@ -137253,13 +136791,11 @@ Right:{
 flex:1,
 flexDirection:'row'},
 
-
 maincontain:
 {
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
 
 btn:{
 alignItems:'center',
@@ -137271,11 +136807,18 @@ borderRadius:5},
 text:{
 fontWeight:'bold',
 fontSize:16,
-color:'#FFF'}});
+color:'#FFF'},
+
+modal:{
+padding:20},
+
+modal3:{
+height:320,
+borderRadius:25}});
 
 
-module.exports=PasswordModifyView;
-}, 857, null, "PTV/pt/passwordmodify.js");
+module.exports=IProfileModifyView;
+}, 859, null, "PTV/in/iprofilemodify.js");
 __d(/* PTV/in/iphonemodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -137311,9 +136854,6 @@ return{};
 },
 _save:function _save(){
 var newPhone=this.state.newPhone;
-_reactNative.AsyncStorage.getItem('userid',function(err,result){
-console.log(result);
-var trainee_id=result;
 var url=_network2.default+'instructor/modifyphone.action';
 url+='?phone='+newPhone;
 fetch(url).then(function(response){
@@ -137322,7 +136862,7 @@ return response.json();
 if(res["data"]!=null){
 console.log(res);
 var phone=newPhone.toString();
-_reactNative.AsyncStorage.setItem("phone",phone);
+_reactNative.AsyncStorage.setItem("phone",newPhone);
 _navigator.push({
 title:'IhomeView',
 id:'Ihome'});
@@ -137330,7 +136870,6 @@ id:'Ihome'});
 }else{
 Alert.alert('Fail to display','Please check your data');
 }
-});
 });
 },
 render:function render(){var _this=this;
@@ -137348,7 +136887,7 @@ _react2.default.createElement(_reactNative.View,{style:styles.right})),
 
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.props.phone),
-_react2.default.createElement(_reactNativeElements.FormInput,{containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({newPhone:text});}})),
+_react2.default.createElement(_reactNativeElements.FormInput,{inputStyle:{color:'#fff',fontSize:18,borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({newPhone:text});}})),
 
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
@@ -137423,7 +136962,7 @@ borderRadius:5}});
 
 
 module.exports=IPhoneModifyView;
-}, 858, null, "PTV/in/iphonemodify.js");
+}, 860, null, "PTV/in/iphonemodify.js");
 __d(/* PTV/in/ipasswordmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -137605,9 +137144,10 @@ color:'#FFF'}});
 
 
 module.exports=IPasswordModifyView;
-}, 859, null, "PTV/in/ipasswordmodify.js");
-__d(/* PTV/in/igendermodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+}, 861, null, "PTV/in/ipasswordmodify.js");
+__d(/* PTV/pt/emailmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
+
 
 
 
@@ -137623,41 +137163,41 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _tcombFormNative=require(403                );var _tcombFormNative2=babelHelpers.interopRequireDefault(_tcombFormNative); // 403 = tcomb-form-native
+
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 var _navigator;
-var IGenderModifyView=_react2.default.createClass({displayName:'IGenderModifyView',
+var EmailModifyView=_react2.default.createClass({displayName:'EmailModifyView',
 getInitialState:function getInitialState(){
 _navigator=this.props.navigator;
 var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
 this.state={
-gender:'Male'};
+newEmail:''};
 
 return{
-gender:this.state.gender};
+newEmail:this.state.newEmail};
 
 
 },
 _save:function _save(){
-var gender=this.state.gender;
-console.log(this.state.gender);
-var url=_network2.default+'instructor/modifygender.action';
-url+='?gender='+gender;
-console.log(url);
+var newEmail=this.state.newEmail;
+_reactNative.AsyncStorage.getItem('userid',function(err,result){
+console.log(result);
+var trainee_id=result;
+var url=_network2.default+' ';
 fetch(url).then(function(response){
 return response.json();
 }).then(function(res){
 if(res["data"]!=null){
 console.log(res);
 _navigator.push({
-title:'IhomeView',
-id:'Ihome'});
+title:'ThomeView',
+id:'Thome'});
 
 }else{
-Alert.alert('Fail to display','Please check your data');
+_reactNative.Alert.alert('Fail to display','Please check your data');
 }
-
+});
 });
 },
 render:function render(){var _this=this;
@@ -137674,14 +137214,12 @@ _react2.default.createElement(_reactNative.View,{style:styles.right})),
 
 
 _react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Picker,{
-prompt:'Please choose sportname',
-style:{width:200,color:'#fff',alignItems:'center'},
-selectedValue:this.state.gender,
-onValueChange:function onValueChange(value){return _this.setState({gender:value});}},
-_react2.default.createElement(_reactNative.Picker.Item,{label:'Male',value:'Male'}),
-_react2.default.createElement(_reactNative.Picker.Item,{label:'Female',value:'Female'}))),
-
+_react2.default.createElement(_reactNativeElements.FormLabel,{
+labelStyle:{color:'#fff',fontSize:18}},' Origin:',
+this.props.email),
+_react2.default.createElement(_reactNativeElements.FormInput,{
+containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},
+onChangeText:function onChangeText(text){return _this.setState({newEmail:text});}})),
 
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
@@ -137748,152 +137286,8 @@ fontSize:16,
 color:'#FFF'}});
 
 
-module.exports=IGenderModifyView;
-}, 860, null, "PTV/in/igendermodify.js");
-__d(/* PTV/in/ibirthmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(496                    ); // 496 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var _date=require(473        );var _date2=babelHelpers.interopRequireDefault(_date); // 473 = ./date.js
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var IBirthModifyView=_react2.default.createClass({displayName:'IBirthModifyView',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={};
-
-return{};
-
-
-},
-_save:function _save(){
-var birthday=this.state.date;
-var url=_network2.default+'instructor/modifybirthday.action';
-url+='?birthday='+birthday;
-console.log(url);
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_reactNative.AsyncStorage.setItem("birthday",birthday);
-_navigator.push({
-title:'IhomeView',
-id:'Ihome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Please Choose the Date'),
-_react2.default.createElement(_date2.default,{
-style:styles.datepicker,
-date:this.state.date,
-mode:'date',
-placeholder:'Date',
-format:'YYYY-MM-DD',
-confirmBtnText:'Confirm',
-cancelBtnText:'Cancel',
-onDateChange:function onDateChange(date){_this.setState({date:date});}})),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'}});
-
-
-module.exports=IBirthModifyView;
-}, 861, null, "PTV/in/ibirthmodify.js");
+module.exports=EmailModifyView;
+}, 862, null, "PTV/pt/emailmodify.js");
 __d(/* PTV/in/iwmodify.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -138072,7 +137466,7 @@ flexDirection:'row'}});
 
 
 module.exports=IwView;
-}, 862, null, "PTV/in/iwmodify.js");
+}, 863, null, "PTV/in/iwmodify.js");
 __d(/* PTV/pt/newitem.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -138093,7 +137487,7 @@ var _reactNative=require(42            ); // 42 = react-native
 var _reactNativeElements=require(496                    ); // 496 = react-native-elements
 var _date=require(481        );var _date2=babelHelpers.interopRequireDefault(_date); // 481 = ./date.js
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 
 var screenW=_Dimensions2.default.get('window').width;
 var _navigator;
@@ -138177,7 +137571,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.push({title:'ThomeView',id:'Thome'});}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -138332,7 +137726,7 @@ marginLeft:80}});
 
 
 module.exports=NewitemView;
-}, 863, null, "PTV/pt/newitem.js");
+}, 864, null, "PTV/pt/newitem.js");
 __d(/* PTV/pt/staticmap.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -138451,154 +137845,7 @@ height:250}});
 
 
 module.exports=StaticMap;
-}, 864, null, "PTV/pt/staticmap.js");
-__d(/* PTV/in/description.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
-var _reactNative=require(42            ); // 42 = react-native
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _reactNativeElements=require(496                    ); // 496 = react-native-elements
-var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
-
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
-var screenW=_Dimensions2.default.get('window').width;
-var _navigator;
-var Description=_react2.default.createClass({displayName:'Description',
-getInitialState:function getInitialState(){
-_navigator=this.props.navigator;
-var ds=new _reactNative.ListView.DataSource({rowHasChanged:function rowHasChanged(row1,row2){return true;}});
-this.state={};
-
-
-return{};
-
-
-
-},
-_save:function _save(){
-var description=this.state.description;
-_reactNative.AsyncStorage.getItem('userid',function(err,result){
-console.log(result);
-var trainee_id=result;
-var url=_network2.default+'instructor/modifydescription.action';
-url+='?description='+description;
-fetch(url).then(function(response){
-return response.json();
-}).then(function(res){
-if(res["data"]!=null){
-console.log(res);
-_reactNative.AsyncStorage.setItem("description",description);
-_navigator.push({
-title:'IhomeView',
-id:'Ihome'});
-
-}else{
-Alert.alert('Fail to display','Please check your data');
-}
-});
-});
-},
-render:function render(){var _this=this;
-return(
-_react2.default.createElement(_reactNative.ScrollView,{
-contentContainerStyle:{flex:1},
-keyboardDismissMode:'on-drag',
-keyboardShouldPersistTaps:'never'},
-_react2.default.createElement(_reactNative.View,{style:styles.maincontain},
-_react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottomline]},
-_react2.default.createElement(_reactNative.View,{style:styles.Topbar}),
-
-_react2.default.createElement(_reactNative.View,{style:styles.right})),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNativeElements.FormLabel,{labelStyle:{color:'#fff',fontSize:18}},' Origin:',this.props.phone),
-_react2.default.createElement(_reactNativeElements.FormInput,{containerStyle:{borderBottomColor:'#fff',borderBottomWidth:2},onChangeText:function onChangeText(text){return _this.setState({description:text});}})),
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
-
-
-
-
-
-}});
-
-
-var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
-Top:{
-flexDirection:'row',
-height:50,
-alignItems:'center',
-backgroundColor:'#38bda0',
-justifyContent:'space-between'},
-
-Bottomline:{
-borderBottomWidth:2,
-borderColor:'gray'},
-
-
-Topbar:{
-flex:2,
-flexDirection:'row'},
-
-
-Left:{
-flex:1,
-flexDirection:'row'},
-
-Right:{
-flex:1,
-flexDirection:'row'},
-
-
-maincontain:
-{
-flex:1,
-backgroundColor:'#38bda0',
-flexDirection:'column'},
-
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-height:30,
-borderRadius:5},
-
-text:{
-fontWeight:'bold',
-fontSize:16,
-color:'#FFF'},
-
-btn:{
-alignItems:'center',
-justifyContent:'center',
-backgroundColor:'#2cb395',
-marginTop:50,
-height:30,
-borderRadius:5}});
-
-
-module.exports=Description;
-}, 865, null, "PTV/in/description.js");
+}, 865, null, "PTV/pt/staticmap.js");
 __d(/* PTV/pub/gymcreate.js */function(global, require, module, exports) {var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            ); // 42 = react-native
 
@@ -138654,6 +137901,7 @@ return{};
 },
 _save:function _save(){
 var value=this.refs.form.getValue();
+if(value!=null){
 var name=value["name"];
 var opendate=value["open"];
 var slogan=value["slogan"];
@@ -138677,6 +137925,10 @@ id:'Thome'});
 _reactNative.Alert.alert('Fail to display','Please check your data');
 }
 });
+}else{
+_reactNative.Alert.alert('Sorry','Please input your information ');
+}
+
 },
 render:function render(){
 return(
@@ -138689,7 +137941,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -138707,13 +137959,7 @@ type:Gym})),
 _react2.default.createElement(_reactNative.View,null,
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
 onPress:this._save},
-_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))),
-
-
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.btn,
-onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Text,{style:{color:"white",fontSize:18}},'Back'))))));
+_react2.default.createElement(_reactNative.Text,{style:styles.text},'Save'))))));
 
 
 
@@ -138799,7 +138045,11 @@ alignItems:'center',
 justifyContent:'center',
 backgroundColor:'#2cb395',
 height:30,
-borderRadius:5}});
+borderRadius:5},
+
+text:{
+fontSize:18,
+color:'#fff'}});
 
 
 module.exports=Gymcreate;
@@ -140658,7 +139908,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _top=require(802       );var _top2=babelHelpers.interopRequireDefault(_top); // 802 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -141095,11 +140345,6 @@ renderRow:this.renderRow}))));
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -141111,11 +140356,9 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:1,
 alignItems:'center'},
-
 
 Left:{
 position:'absolute',
@@ -141337,7 +140580,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(837                            ); // 837 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(840                            ); // 840 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -141638,7 +140881,7 @@ var _reactNative=require(42            ); // 42 = react-native
 
 
 
-var _reactNativeMpAndroidChart=require(837                            ); // 837 = react-native-mp-android-chart
+var _reactNativeMpAndroidChart=require(840                            ); // 840 = react-native-mp-android-chart
 var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network); // 476 = ../pub/network
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -141788,7 +141031,7 @@ var _reactNative=require(42            ); // 42 = react-native
 var _Dimensions=require(102         );var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions); // 102 = Dimensions
 var _date=require(473        );var _date2=babelHelpers.interopRequireDefault(_date); // 473 = ./date.js
 var _top=require(802       );var _top2=babelHelpers.interopRequireDefault(_top); // 802 = ./top.js
-var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(816                  ); // 816 = react-native-slider // 476 = ../pub/network
+var _network=require(476             );var _network2=babelHelpers.interopRequireDefault(_network);var Slider=require(819                  ); // 819 = react-native-slider // 476 = ../pub/network
 var screenW=_Dimensions2.default.get('window').width;
 _reactNative.BackAndroid.addEventListener('hardwareBackPress',function(){
 if(_navigator==null){
@@ -141890,7 +141133,7 @@ _react2.default.createElement(_reactNative.View,{style:[styles.Top,styles.Bottom
 _react2.default.createElement(_reactNative.View,{style:[styles.Topbar,styles.Left]},
 _react2.default.createElement(_reactNative.TouchableOpacity,{
 onPress:function onPress(){return _navigator.jumpBack();}},
-_react2.default.createElement(_reactNative.Image,{source:require(828              )}))), // 828 = ../img/back.png
+_react2.default.createElement(_reactNative.Image,{source:require(831              )}))), // 831 = ../img/back.png
 
 
 _react2.default.createElement(_reactNative.View,{style:styles.Topbar},
@@ -141967,11 +141210,6 @@ borderWidth:2}});
 
 
 var styles=_reactNative.StyleSheet.create({
-container:{
-flex:1,
-backgroundColor:'#38bda0',
-justifyContent:'center'},
-
 Top:{
 flexDirection:'row',
 height:50,
@@ -141983,11 +141221,9 @@ Bottomline:{
 borderBottomWidth:2,
 borderColor:'gray'},
 
-
 Topbar:{
 flex:1,
 alignItems:'center'},
-
 
 Left:{
 position:'absolute',
@@ -142004,7 +141240,6 @@ maincontain:
 flex:1,
 backgroundColor:'#38bda0',
 flexDirection:'column'},
-
 
 listview:{
 flex:1},
