@@ -20,8 +20,11 @@ import PlanView from './plan.js';
 import RecordView from './record.js';
 import ProfileView from './profile.js';
 import GymView from '../pub/gym.js';
+import FindView from './find.js';
 import TrainerView from './trainer.js';
 import URLnetowrk from '../pub/network';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 var screenW = Dimensions.get('window').width;
 var _navigator ;
 BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -105,6 +108,15 @@ var ThomeView = React.createClass({
               <TrainerView {...this.props}/>
             </TabNavigator.Item>
             <TabNavigator.Item
+              selected={this.state.selectedTab === 'Find'}
+              title="Find"
+              renderIcon={() => <Image  source={require('../img/User-Add.png') }/>}
+              renderSelectedIcon={() => <Image source={require('../img/User-Add-normal.png') }/>}
+              onPress={() => this.setState({ selectedTab: 'Find' })}       
+            >
+              <FindView {...this.props}/>
+            </TabNavigator.Item>
+            <TabNavigator.Item
               selected={this.state.selectedTab === 'Profile'}
               title="Profile"
               renderIcon={() => <Image  source={require('../img/profile_normal.png') }/>}
@@ -115,6 +127,7 @@ var ThomeView = React.createClass({
             </TabNavigator.Item>
           </TabNavigator>
         </View>
+
       </ScrollView>
     );
   },
@@ -128,6 +141,11 @@ var styles = StyleSheet.create({
   },
   choose:{
     flexDirection:'row'
+  },
+    actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   },
 });
 module.exports = ThomeView;

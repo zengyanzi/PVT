@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import Swipeout from 'react-native-swipeout';
-import URLnetowrk from './network';
+import URLnetowrk from '../pub/network';
 import MapView from 'react-native-maps';
 var screenW = Dimensions.get('window').width;
 var _navigator ;
@@ -36,7 +36,7 @@ BackAndroid.addEventListener('hardwareBackPress', function() {
 
 
 
-class GymmapView extends Component {
+class FindmapView extends Component {
 
 
     constructor() {
@@ -54,4 +54,4 @@ class GymmapView extends Component {
 
 }
 
-module.exports = GymmapView;
+module.exports = FindmapView;

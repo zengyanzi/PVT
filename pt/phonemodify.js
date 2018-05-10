@@ -23,11 +23,9 @@ var PhoneModifyView = React.createClass({
   getInitialState: function(){
     _navigator = this.props.navigator;
     var ds = new ListView.DataSource({rowHasChanged: (row1, row2) => true});
-    this.state = {
-      
+    this.state = {    
     };
-    return {
-      
+    return {    
     };
 
   },
