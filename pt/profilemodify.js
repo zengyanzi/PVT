@@ -11,7 +11,8 @@ import {
   AsyncStorage,
   Picker,
   TouchableHighlight,
-  ListView
+  ListView,
+  Switch
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Dimensions from 'Dimensions';
@@ -48,6 +49,7 @@ var ProfileModifyView = React.createClass({
        })
     })
   },
+
  render: function(){
     return(
       <ScrollView 
@@ -81,6 +83,13 @@ var ProfileModifyView = React.createClass({
                 title='Modify Password'     
               />
               </TouchableOpacity>
+              <View style={{flexDirection: 'row',height: 50,marginBottom:10,marginTop:10}}  >
+                <Text style={{marginLeft:15,marginBottom:10,marginTop:12,marginRight:15}}>Would you like to join the Sports partners?</Text>
+                <Switch
+                  onValueChange={(value) => this.setState({falseSwitchIsOn: value})}
+                  style={{width: 50, height:50}}
+                  value={this.state.falseSwitchIsOn} />
+              </View>
             </List>
           </View>
           <Modal style={[styles.modal, styles.modal3]} 

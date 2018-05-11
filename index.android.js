@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry,ScrollView,View,Text,Image,Navigator,TouchableOpacity,BackAndroid,StyleSheet,AsyncStorage
 } from 'react-native';
-
 var _navigator;
 import InstructwelcomeView from'./in/instructwelcome';
 import InstructregisterView from'./in/instructregister';
@@ -17,7 +16,7 @@ import TraineewelcomeView from './pt/traineewelcome';
 import TraineeloginView from'./pt/traineelogin';
 import TraineeregisterView from'./pt/traineeregister';
 import ThomeView from './pt/Thome';
-import IhomeView from './in/Ihome';
+import IhomeView from './in/Ihome'; 
 import DetailPlanView from './pt/detailplan';
 import TDetailPlanView from './in/Tdetailplan';
 import EditPlanView from './pt/editplan';
