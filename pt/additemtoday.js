@@ -19,6 +19,8 @@ import Dimensions from 'Dimensions';
 import DatePicker from './date.js';
 import Topview from './top.js';
 import URLnetowrk from '../pub/network';
+import { Icon ,Button} from 'react-native-elements';
+
 var screenW = Dimensions.get('window').width;
 BackAndroid.addEventListener('hardwareBackPress', function() {
   if(_navigator == null){
@@ -126,9 +128,8 @@ _submit:function(){
         <View style={styles.maincontain}>
           <View style={[styles.Top,styles.Bottomline]}>
             <View style={[styles.Topbar,styles.Left]}>
-              <TouchableOpacity 
-                  onPress={() => _navigator.push({title:'ThomeView',id:'Thome'})}>
-                <Image source={require('../img/back.png') }/>
+              <TouchableOpacity>
+                  <Icon  reverse  name='navigate-before'   color='#38bda0'  onPress={() =>_navigator.jumpBack()} />
               </TouchableOpacity> 
             </View>
             <View style={styles.Topbar}>
@@ -178,12 +179,13 @@ _submit:function(){
               onValueChange={(value) => Math.floor(this.setState({value}))} />
             <Text style={styles.text}>Value:{this.state.value} </Text>
           </View>
-          <View>
-            <TouchableOpacity style={styles.btn}
-            onPress={this._submit}>
-            <Text style={styles.text}>Save</Text>
-            </TouchableOpacity>
-          </View>
+          <Button
+            raised
+            backgroundColor= '#2cb395'
+            fontSize={20}
+            onPress={this._submit}
+            title='Save' />
+
         </View>
       </ScrollView>
     );
@@ -221,8 +223,8 @@ var styles = StyleSheet.create({
   },
   Left:{
     position: 'absolute', 
-    top: 5, 
-    left: 5
+    top: -12, 
+    left: 1
   },
   Right:{
     position: 'absolute', 

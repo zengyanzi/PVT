@@ -200,8 +200,8 @@ var PlanView = React.createClass({
             <View style={styles.Topbar}>
           </View>    
           <View style={[styles.Topbar,styles.Right]}>
-            <TouchableOpacity 
-                    onPress={() => _navigator.push({title:'AdditemtodayView',id:'additemtoday'})}>
+            <TouchableOpacity >
+                    <Icon  reverse  name='add'   color='#38bda0'  onPress={() => _navigator.push({title:'AdditemtodayView',id:'additemtoday'})} />
               <Image source={require('../img/add_pressed.png') }/>
             </TouchableOpacity> 
           </View>  
@@ -239,7 +239,7 @@ var styles = StyleSheet.create({
   },
   Right:{
    position: 'absolute', 
-    top: 5, 
+    top: -15, 
     right: 5,
   },
   listview: {
